@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqrur0mr06ep5"]
+
+[ext_resource type="Script" path="res://Code/PlayerCharacter/sy_character_body_2d.gd" id="1_ub1mw"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_pqek3"]
+[ext_resource type="Script" path="res://Code/PlayerCharacter/Actions/move.gd" id="3_h6mqu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71oyi"]
+radius = 4.0
+height = 12.0
+
+[node name="character" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_ub1mw")
+
+[node name="temp_image" type="TileMapLayer" parent="."]
+position = Vector2(-6, -12)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
+tile_set = ExtResource("2_pqek3")
+
+[node name="move_collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_71oyi")
+
+[node name="move" type="Node2D" parent="."]
+script = ExtResource("3_h6mqu")

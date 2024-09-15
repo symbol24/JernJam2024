@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://qynt00i0wcet"]
+
+[ext_resource type="Script" path="res://Code/Levels/Room/door.gd" id="1_xp003"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_tbvsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viaak"]
+size = Vector2(20, 12)
+
+[node name="door" type="StaticBody2D"]
+script = ExtResource("1_xp003")
+
+[node name="closed_door" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 4, 0, 1, 0, 0, 0)
+tile_set = ExtResource("2_tbvsa")
+
+[node name="open_door" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 13, 0, 1, 0, 0, 0)
+tile_set = ExtResource("2_tbvsa")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_viaak")

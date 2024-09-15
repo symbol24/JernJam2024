@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cip7ix1nj5vcm"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_2d.gd" id="1_8rodw"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_0gar4"]
+[ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/goblin.tres" id="2_mlpb1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1852"]
+radius = 3.0
+height = 10.0
+
+[node name="Enemy" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_8rodw")
+enemy_data = ExtResource("2_mlpb1")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-6, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 26, 0, 2, 0, 0, 0)
+tile_set = ExtResource("2_0gar4")
+
+[node name="move_collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_o1852")
