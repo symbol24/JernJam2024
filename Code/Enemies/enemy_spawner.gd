@@ -123,7 +123,9 @@ func _check_is_not_instantiated(_data:EnemyData, _list:Array[Enemy2D]) -> bool:
 
 func _remove_enemy_from_all(_enemy:Enemy2D) -> void:
 	all_enemies.erase(_enemy)
-	
+	if not spawn_active and all_enemies.is_empty():
+		Signals.RoomClear.emit()
+
 
 func _return_to_pool(_enemy:Enemy2D) -> void:
 	for each in enemy_pool:

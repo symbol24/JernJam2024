@@ -10,12 +10,21 @@ var range_flat:float = 0:
 	set(value):
 		range_flat = value
 		Signals.UpdateCharacterRange.emit(range_percent, range_flat)
-
+var coins:int = 0:
+	set(value):
+		coins = value
+		Signals.CoinsUpdated.emit(coins)
 
 func setup_data(_owner:CharacterBody2D) -> void:
 	current_hp = base_hp
 	max_hp = base_hp
 	range_percent = base_range
+	coins = 0
 	Signals.ConstructHP.emit(max_hp)
 	if _owner != null: data_owner = _owner
 	else: push_error("Character ", id, " receiving a null owner in set_data.")
+
+
+func heal(_amount:int = 0) -> void:
+	current_hp += _amount
+	Signals.DamageReceived.emit(data_owner, _amount, Damage.Type.HEAL)

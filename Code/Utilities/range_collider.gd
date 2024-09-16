@@ -8,12 +8,12 @@ var total_flat:float = 0
 
 
 func _ready() -> void:
-	Signals.UpdateCharacterRange.connect(_update_range)
 	starting_range = shape.radius
 	current_range = starting_range
+	Signals.UpdateCharacterRange.connect(_update_range)
 
 
 func _update_range(_percent:float, _flat_amount:float) -> void:
-	total_flat += _flat_amount
-	total_percent += _percent
+	total_flat = _flat_amount
+	total_percent = _percent
 	current_range = (starting_range + total_flat) * total_percent

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbfpn76hr5axp"]
+[gd_scene load_steps=9 format=3 uid="uid://bbfpn76hr5axp"]
 
 [ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/walls.tscn" id="1_00730"]
 [ext_resource type="PackedScene" uid="uid://dqrur0mr06ep5" path="res://Scenes/PlayerCharacter/character.tscn" id="1_n6quu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="3_frfjj"]
 [ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Rooms/Room_test/SpawnerDatas/wave_1.tres" id="3_xcyqs"]
 [ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="5_kariq"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="8_bptpa"]
 
 [node name="testmap" type="Node2D" node_paths=PackedStringArray("enemy_spawner") groups=["room"]]
 script = ExtResource("1_ptudo")
@@ -36,3 +37,6 @@ position = Vector2(157, 88)
 
 [node name="enemy_spawner" type="Node2D" parent="."]
 script = ExtResource("5_kariq")
+
+[node name="loot_spawner" type="Node" parent="."]
+script = ExtResource("8_bptpa")

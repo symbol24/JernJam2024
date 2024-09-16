@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=5 format=3 uid="uid://1pxdi0qlvc2i"]
+
+[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="1_3u2ip"]
+[ext_resource type="Resource" uid="uid://c0ujx5yn6l1ya" path="res://Data/Pickups/coin_pickup_data.tres" id="1_oldah"]
+[ext_resource type="Resource" uid="uid://d0hu6xt3lsoig" path="res://Data/Pickups/empty_pickup_data.tres" id="2_7hjki"]
+[ext_resource type="Resource" uid="uid://82v170eocrn7" path="res://Data/Pickups/health_1hp_pickup_data.tres" id="3_fony8"]
+
+[resource]
+script = ExtResource("1_3u2ip")
+id = "goblin_loot_table"
+loot_amount = 1
+items = Array[Dictionary]([{
+"data": ExtResource("1_oldah"),
+"weight": 50
+}, {
+"data": ExtResource("2_7hjki"),
+"weight": 25
+}, {
+"data": ExtResource("3_fony8"),
+"weight": 5
+}])

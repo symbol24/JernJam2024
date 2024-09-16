@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b20c4fc2fo4ep"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_7s36f"]
+[ext_resource type="Script" path="res://Code/Pickups/coin_pickup.gd" id="1_355tl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2oo4k"]
+radius = 7.07107
+
+[node name="Coin" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_355tl")
+
+[node name="pickup_collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2oo4k")
+
+[node name="image" type="TileMapLayer" parent="."]
+position = Vector2(6, -6)
+rotation = 1.5708
+scale = Vector2(1, -1)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 1, 0, 46, 0, 0, 0)
+tile_set = ExtResource("1_7s36f")

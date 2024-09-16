@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqrur0mr06ep5"]
+[gd_scene load_steps=12 format=3 uid="uid://dqrur0mr06ep5"]
 
 [ext_resource type="Script" path="res://Code/PlayerCharacter/sy_character_body_2d.gd" id="1_ub1mw"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_pqek3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7l1yijpsrnor" path="res://Scenes/Weapons/knife_weapon.tscn" id="5_lgf88"]
 [ext_resource type="Script" path="res://Code/Utilities/range_collider.gd" id="6_8478g"]
 [ext_resource type="Script" path="res://Code/Weapons/weapon_controller.gd" id="6_swb04"]
+[ext_resource type="Script" path="res://Code/PlayerCharacter/collector_area.gd" id="8_boypj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_543yi"]
 radius = 40.0
@@ -14,6 +15,9 @@ radius = 40.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71oyi"]
 radius = 4.0
 height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvqpg"]
+radius = 8.06226
 
 [node name="character" type="CharacterBody2D" groups=["player"]]
 z_index = 100
@@ -52,3 +56,12 @@ script = ExtResource("3_h6mqu")
 script = ExtResource("6_swb04")
 
 [node name="Knife" parent="." instance=ExtResource("5_lgf88")]
+
+[node name="collector_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 32
+script = ExtResource("8_boypj")
+
+[node name="collector_collider" type="CollisionShape2D" parent="collector_area"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_kvqpg")

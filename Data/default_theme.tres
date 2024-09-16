@@ -1,5 +1,34 @@
 [gd_resource type="Theme" format=3 uid="uid://juy4qenccfes"]
 
 [resource]
+CoinsRTL/base_type = &"RichTextLabel"
+DmgNumberRTL/base_type = &"RichTextLabel"
+DmgNumberRTL/font_sizes/normal_font_size = 8
+GameTitleRTL/base_type = &"RichTextLabel"
+GameTitleRTL/font_sizes/normal_font_size = 16
+Heal/base_type = &"RichTextLabel"
+Heal/colors/default_color = Color(0, 0.388235, 0, 1)
+Heal/font_sizes/normal_font_size = 8
+HealCrit/base_type = &"RichTextLabel"
+HealCrit/colors/default_color = Color(0, 0.388235, 0, 1)
+HealCrit/font_sizes/normal_font_size = 10
 LoadingRichTextLabel/base_type = &"RichTextLabel"
+Magical/base_type = &"RichTextLabel"
+Magical/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
+Magical/font_sizes/normal_font_size = 8
+MagicalCrit/base_type = &"RichTextLabel"
+MagicalCrit/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
+MagicalCrit/font_sizes/normal_font_size = 10
+Physical/base_type = &"RichTextLabel"
+Physical/colors/default_color = Color(0.392157, 0, 0, 1)
+Physical/font_sizes/normal_font_size = 8
+PhysicalCrit/base_type = &"RichTextLabel"
+PhysicalCrit/colors/default_color = Color(0.392157, 0, 0, 1)
+PhysicalCrit/font_sizes/normal_font_size = 10
+RIDSplashRTL/base_type = &"RichTextLabel"
+RIDSplashRTL/font_sizes/normal_font_size = 16
 RichTextLabel/font_sizes/normal_font_size = 8
+WarningTextRTL/base_type = &"RichTextLabel"
+WarningTextRTL/font_sizes/normal_font_size = 8
+WarningTitleRTL/base_type = &"RichTextLabel"
+WarningTitleRTL/font_sizes/normal_font_size = 16

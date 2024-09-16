@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelLoadData" load_steps=2 format=3 uid="uid://brknjpm4agl0x"]
+
+[ext_resource type="Script" path="res://Code/Levels/level_load_data.gd" id="1_botn8"]
+
+[resource]
+script = ExtResource("1_botn8")
+levels = {
+"boot": "res://Scenes/Levels/boot.tscn",
+"test": "res://Scenes/Levels/testmap.tscn"
+}
+loading_delay = 1.0

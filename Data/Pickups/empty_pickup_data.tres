@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" load_steps=2 format=3 uid="uid://d0hu6xt3lsoig"]
+
+[ext_resource type="Script" path="res://Code/Pickups/pickup_data.gd" id="1_ntdob"]
+
+[resource]
+script = ExtResource("1_ntdob")
+id = "empty"
+type = 3
+value = 0
+scene_path = ""

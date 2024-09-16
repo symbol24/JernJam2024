@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" load_steps=2 format=3 uid="uid://82v170eocrn7"]
+
+[ext_resource type="Script" path="res://Code/Pickups/pickup_data.gd" id="1_wkc8t"]
+
+[resource]
+script = ExtResource("1_wkc8t")
+id = "1hp"
+type = 2
+value = 1
+scene_path = "res://Scenes/Pickups/health_1_hp.tscn"

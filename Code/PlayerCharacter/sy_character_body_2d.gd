@@ -10,6 +10,7 @@ var enemies_in_range:Array[Enemy2D] = []
 func _ready() -> void:
 	character_range.body_entered.connect(_range_body_entered)
 	character_range.body_exited.connect(_range_body_exited)
+	Signals.CollectItem.connect(_collect_item)
 	data = Game.selected_data.duplicate()
 	data.setup_data(self)
 
@@ -32,4 +33,15 @@ func _range_body_entered(_body) -> void:
 func _range_body_exited(_body) -> void:
 	if _body is Enemy2D:
 		enemies_in_range.erase(_body)
-	
+
+
+func _collect_item(_data:PickupData) -> void:
+	match _data.type:
+		PickupData.Type.SPECIAL:
+			pass
+		PickupData.Type.CURRENCY:
+			data.coins += _data.value
+		PickupData.Type.HEALTH:
+			data.heal(_data.value)
+		_:
+			pass

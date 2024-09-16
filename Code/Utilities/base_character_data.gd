@@ -17,6 +17,7 @@ var current_hp:int = 1:
 		if current_hp <= 0:
 			current_hp = 0
 			Signals.CharacterDefeated.emit(self)
+		elif current_hp > max_hp: current_hp = max_hp
 		
 var max_hp:int
 

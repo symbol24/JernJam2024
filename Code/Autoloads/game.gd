@@ -1,11 +1,13 @@
 extends Node
 
 const CHARACTER_DATA = preload("res://Data/main_character.tres")
+const LEVELS = preload("res://Data/levels.tres")
 
 # Damage constants
 const MAX_CC:float = 0.8
 const OVERFLOW_PERCENTAGE:float = 1.0
 
+# Will change if add character selector
 var selected_data:CharacterData = CHARACTER_DATA
 
 var active_room:Room
@@ -28,6 +30,40 @@ var extra_loading := false
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	Signals.RoomReady.connect(_set_active_room)
+	Signals.LoadLevel.connect(load_scene)
+
+
+func _physics_process(_delta: float) -> void:
+	if is_loading:
+		loading_status = ResourceLoader.load_threaded_get_status(to_load, progress)
+		
+		# When loading is complete in ResourceLoader, launch the _complete_load function.
+		if loading_status == ResourceLoader.THREAD_LOAD_LOADED:
+			if !load_complete:
+				load_complete = true
+				_complete_load()
+
+
+func load_scene(_id:String = "") -> void:
+	# Send loadscreen toggle on
+	Signals.ToggleControl.emit("loading", true)
+	
+	# If path is empty, dont try to load.
+	if not LEVELS.levels.has(_id): return
+	var path:String = LEVELS.levels[_id]
+	if path == "": return
+	
+	# If there is an active level, queue_free it.
+	if active_level != null: 
+		var temp := active_level
+		remove_child.call_deferred(temp)
+		temp.queue_free.call_deferred()
+	
+	# Starting the ResourceLoader.
+	to_load = path
+	is_loading = true
+	load_complete = false
+	ResourceLoader.load_threaded_request(to_load)
 
 
 func get_closest_between(_object:Node2D, _list:Array) -> Node2D:
@@ -46,3 +82,24 @@ func get_closest_between(_object:Node2D, _list:Array) -> Node2D:
 
 func _set_active_room(_room:Room) -> void:
 	active_room = _room
+
+
+func _complete_load() -> void:
+	is_loading = false
+	
+	# Get the new level from the ResourceLoader and instantiate it.
+	var new_level := ResourceLoader.load_threaded_get(to_load)
+	active_level = new_level.instantiate()
+	add_child.call_deferred(active_level)
+	
+	# Adding load time if set in the level data
+	if LEVELS.loading_delay > 0.0:
+		var wait_timer := get_tree().create_timer(LEVELS.loading_delay)
+		await wait_timer.timeout
+		
+	# Send loadscreen toggle off
+	Signals.ToggleControl.emit("loading", false)
+
+
+func _pause_tree(_value:bool = false) -> void:
+	get_tree().paused = _value

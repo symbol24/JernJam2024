@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 
-func _toggle_control(_id:String, _visible:bool, _from:String = ""):
+func _toggle_control(_id:String, _visible:bool = true, _from:String = ""):
 	for each in controls:
 		if each.id == _id:
 			each.set_deferred("visible", _visible)

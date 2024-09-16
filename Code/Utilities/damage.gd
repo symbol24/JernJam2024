@@ -4,6 +4,7 @@ enum Type {
 			NONE = 0,
 			PHYSICAL = 1,
 			MAGICAL = 2,
+			HEAL = 3,
 			}
 
 @export var base_damage:int = 0

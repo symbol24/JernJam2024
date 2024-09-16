@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dje6x2hkvnjq1"]
+[gd_scene load_steps=9 format=3 uid="uid://dje6x2hkvnjq1"]
 
 [ext_resource type="Script" path="res://Code/UI/ui.gd" id="1_lclfa"]
 [ext_resource type="Script" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
 [ext_resource type="Script" path="res://Code/UI/loading_screen.gd" id="3_0i6tk"]
+[ext_resource type="Script" path="res://Code/UI/dmg_nbr_manager.gd" id="3_b4g0i"]
+[ext_resource type="Script" path="res://Code/UI/main_menu.gd" id="3_pl2yb"]
+[ext_resource type="Script" path="res://Code/UI/wrappers/sy_button.gd" id="4_1qq4j"]
+[ext_resource type="Script" path="res://Code/UI/coin_label.gd" id="4_e82jq"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="4_tohl0"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_lclfa")
 
 [node name="PlayerUI" type="Control" parent="."]
+visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
@@ -22,8 +28,13 @@ custom_minimum_size = Vector2(36, 0)
 layout_mode = 1
 offset_left = 6.0
 offset_right = 42.0
+offset_bottom = 24.0
 
-[node name="player_hearts" type="GridContainer" parent="PlayerUI/player_hp"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/player_hp"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="player_hearts" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
@@ -31,8 +42,86 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
 
+[node name="spacer" type="Control" parent="PlayerUI/player_hp/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="player_coins" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+columns = 2
+
+[node name="coins_image" type="Control" parent="PlayerUI/player_hp/VBoxContainer/player_coins"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+
+[node name="image" type="TileMapLayer" parent="PlayerUI/player_hp/VBoxContainer/player_coins/coins_image"]
+rotation = 1.5708
+scale = Vector2(1, -1)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 46, 0, 0, 0)
+tile_set = ExtResource("4_tohl0")
+
+[node name="coin_label" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/player_coins"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"CoinsRTL"
+bbcode_enabled = true
+text = "0000"
+scroll_active = false
+shortcut_keys_enabled = false
+script = ExtResource("4_e82jq")
+
+[node name="DamageNumbers" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_b4g0i")
+
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_pl2yb")
+id = "main_menu"
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[node name="game_title_RTL" type="RichTextLabel" parent="MainMenu"]
+custom_minimum_size = Vector2(320, 30)
+layout_mode = 1
+offset_top = 19.0
+offset_right = 320.0
+offset_bottom = 49.0
+theme_type_variation = &"GameTitleRTL"
+bbcode_enabled = true
+text = "game_title"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="btn_play" type="Button" parent="MainMenu"]
+layout_mode = 1
+offset_left = 138.0
+offset_top = 86.0
+offset_right = 179.0
+offset_bottom = 117.0
+text = "Play"
+script = ExtResource("4_1qq4j")
+destination = "test"
+
 [node name="LoadingScreen" type="Control" parent="."]
 visible = false
+top_level = true
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
@@ -59,3 +148,17 @@ theme_type_variation = &"LoadingRichTextLabel"
 bbcode_enabled = true
 text = "Loading"
 scroll_active = false
+
+[node name="logo" type="PanelContainer" parent="LoadingScreen/loading_background"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 0
+offset_left = 252.0
+offset_top = 140.0
+offset_right = 264.0
+offset_bottom = 152.0
+pivot_offset = Vector2(6, 6)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="LoadingScreen/loading_background/logo"]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 30, 0, 45, 0, 0, 0)
+tile_set = ExtResource("4_tohl0")
