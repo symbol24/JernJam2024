@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh5umbkvuivrc"]
+
+[ext_resource type="Script" path="res://Code/Weapons/Projectiles/moving_projectile.gd" id="1_0yl2u"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_8krhd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qr656"]
+radius = 2.0
+height = 10.0
+
+[node name="KnifeProjectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_0yl2u")
+
+[node name="knife_sprite" type="TileMapLayer" parent="."]
+position = Vector2(-8, 0)
+rotation = 0.785398
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 44, 0, 27, 0, 0, 0)
+tile_set = ExtResource("2_8krhd")
+
+[node name="attack_collider" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qr656")

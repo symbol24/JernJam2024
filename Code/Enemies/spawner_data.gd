@@ -5,7 +5,7 @@ class_name SpawnerData extends Resource
 		if id == "": return resource_name
 		return id
 @export var is_triggered_spawn:bool = true
-@export var delay_befor_starting:float = 0.0
+@export var delay_before_starting:float = 0.0
 @export var spawn_amount:int = 1
 @export var spawn_delay_between:float = 1.0
 @export var enemies_to_spawn:Array[EnemyData]

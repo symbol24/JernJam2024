@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbfpn76hr5axp"]
+[gd_scene load_steps=8 format=3 uid="uid://bbfpn76hr5axp"]
 
 [ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/walls.tscn" id="1_00730"]
 [ext_resource type="PackedScene" uid="uid://dqrur0mr06ep5" path="res://Scenes/PlayerCharacter/character.tscn" id="1_n6quu"]
 [ext_resource type="Script" path="res://Code/Levels/Room/room.gd" id="1_ptudo"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_y3wod"]
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="3_frfjj"]
-[ext_resource type="PackedScene" uid="uid://brtjptwo0q5er" path="res://Scenes/Enemies/enemy_spawner.tscn" id="5_2ewv5"]
+[ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Rooms/Room_test/SpawnerDatas/wave_1.tres" id="3_xcyqs"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="5_kariq"]
 
-[node name="testmap" type="Node2D" groups=["room"]]
+[node name="testmap" type="Node2D" node_paths=PackedStringArray("enemy_spawner") groups=["room"]]
 script = ExtResource("1_ptudo")
+spawn_list = Array[ExtResource("2_y3wod")]([ExtResource("3_xcyqs")])
+enemy_spawner = NodePath("enemy_spawner")
 metadata/_edit_vertical_guides_ = [72.0, 252.0]
 metadata/_edit_horizontal_guides_ = [24.0, 156.0]
 
@@ -19,9 +23,6 @@ color = Color(0.122252, 0.122252, 0.122252, 1)
 
 [node name="walls" parent="." instance=ExtResource("1_00730")]
 
-[node name="character" parent="." instance=ExtResource("1_n6quu")]
-position = Vector2(157, 88)
-
 [node name="bottom_door" parent="." instance=ExtResource("3_frfjj")]
 position = Vector2(156, 180)
 id = "bottom"
@@ -30,4 +31,8 @@ id = "bottom"
 position = Vector2(156, 12)
 id = "top"
 
-[node name="enemy_spawner" parent="." instance=ExtResource("5_2ewv5")]
+[node name="character" parent="." instance=ExtResource("1_n6quu")]
+position = Vector2(157, 88)
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+script = ExtResource("5_kariq")

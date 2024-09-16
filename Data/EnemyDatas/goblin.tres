@@ -1,10 +1,17 @@
-[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3 uid="uid://bgy605xjxu6e8"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://bgy605xjxu6e8"]
 
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_0v18b"]
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_gmlhl"]
+[ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/goblin_damage.tres" id="2_pi2bu"]
 
 [resource]
 script = ExtResource("1_gmlhl")
+path = "res://Scenes/Enemies/goblin.tscn"
+contact_damages = Array[ExtResource("1_0v18b")]([ExtResource("2_pi2bu")])
 id = "goblin"
-path = "res://Scenes/Enemies/enemy_2d.tscn"
-speed = 50.0
 base_hp = 1
+speed = 25.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

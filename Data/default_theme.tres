@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://juy4qenccfes"]
+
+[resource]
+LoadingRichTextLabel/base_type = &"RichTextLabel"
+RichTextLabel/font_sizes/normal_font_size = 8

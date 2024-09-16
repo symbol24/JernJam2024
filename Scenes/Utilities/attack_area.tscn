@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://6q1pljx3sqj1"]
+
+[ext_resource type="Script" path="res://Code/Utilities/attack_area.gd" id="1_hdl4c"]
+
+[node name="attack_area" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_hdl4c")
+
+[node name="attack_collider" type="CollisionShape2D" parent="."]

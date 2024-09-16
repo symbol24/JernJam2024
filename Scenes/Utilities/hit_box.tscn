@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs3a7tdd6sa2f"]
+
+[ext_resource type="Script" path="res://Code/Utilities/hit_box.gd" id="1_la2rq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3m333"]
+radius = 4.0
+height = 12.0
+
+[node name="hit_box" type="Area2D"]
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("1_la2rq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_3m333")

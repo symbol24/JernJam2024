@@ -9,7 +9,8 @@ class_name MoveToTarget extends EnemyAction
 
 
 func _physics_process(_delta: float) -> void:
-	parent.set_velocity_by_move(_move(global_position.direction_to(target.global_position), parent.velocity, parent.data.speed, _delta))
+	if target != null and parent != null and parent.data != null:
+		parent.set_velocity_by_move(_move(global_position.direction_to(target.global_position), parent.velocity, parent.data.speed, _delta))
 
 
 func _move(_input:Vector2 = Vector2.ZERO, _previous_vel:Vector2 = Vector2.ZERO, _speed:float = 0.0, _delta:float = 0.0) -> Vector2:

@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl4n2xcosj302"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_2d.gd" id="1_amklp"]
+[ext_resource type="Resource" uid="uid://880t76r1g2ff" path="res://Data/EnemyDatas/hobgoblin.tres" id="2_hhkxl"]
+[ext_resource type="PackedScene" uid="uid://cs3a7tdd6sa2f" path="res://Scenes/Utilities/hit_box.tscn" id="3_jg2f4"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="3_kcq4t"]
+[ext_resource type="PackedScene" uid="uid://b6j3eci3g5cfd" path="res://Scenes/Enemies/Actions/move_to_target.tscn" id="5_kwfhe"]
+[ext_resource type="PackedScene" uid="uid://6q1pljx3sqj1" path="res://Scenes/Utilities/attack_area.tscn" id="6_yifjq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1852"]
+radius = 1.0
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j4dfa"]
+radius = 3.0
+height = 10.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_amklp")
+enemy_data = ExtResource("2_hhkxl")
+
+[node name="hit_box" parent="." instance=ExtResource("3_jg2f4")]
+position = Vector2(0, 5)
+collision_layer = 8
+collision_mask = 4
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-6, 5)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 26, 0, 3, 0, 0, 0)
+tile_set = ExtResource("3_kcq4t")
+
+[node name="move_collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o1852")
+
+[node name="MoveToTarget" parent="." instance=ExtResource("5_kwfhe")]
+
+[node name="attack_area" parent="." instance=ExtResource("6_yifjq")]
+position = Vector2(0, 5)
+is_contact_attack = true
+
+[node name="attack_collider" parent="attack_area" index="0"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_j4dfa")
+
+[editable path="attack_area"]

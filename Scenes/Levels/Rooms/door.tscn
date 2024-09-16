@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viaak"]
 size = Vector2(20, 12)
 
-[node name="door" type="StaticBody2D"]
+[node name="door" type="StaticBody2D" groups=["environment"]]
 script = ExtResource("1_xp003")
 
 [node name="closed_door" type="TileMapLayer" parent="."]

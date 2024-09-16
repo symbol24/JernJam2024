@@ -4,4 +4,10 @@
 
 [resource]
 script = ExtResource("1_6hanh")
+id = "player"
+base_hp = 3
 speed = 50.0
+armor = 0
+shield = 0
+crit_chance = 0.05
+crit_bonus = 0.2

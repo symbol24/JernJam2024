@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://8gsb32nju13x"]
+
+[ext_resource type="Script" path="res://Code/UI/PlayerUi/single_heart.gd" id="1_fwja0"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_weqn2"]
+
+[node name="single_heart" type="Control"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fwja0")
+
+[node name="full_heart" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 78, 0, 37, 0, 0, 0)
+tile_set = ExtResource("2_weqn2")
+
+[node name="empty" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 85, 0, 37, 0, 0, 0)
+tile_set = ExtResource("2_weqn2")
