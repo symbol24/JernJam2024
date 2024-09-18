@@ -10,9 +10,11 @@
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="4_tohl0"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_lclfa")
 
 [node name="PlayerUI" type="Control" parent="."]
+process_mode = 3
 visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
@@ -24,6 +26,7 @@ id = "player_ui"
 
 [node name="player_hp" type="PanelContainer" parent="PlayerUI"]
 unique_name_in_owner = true
+process_mode = 3
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 1
 offset_left = 6.0
@@ -31,11 +34,13 @@ offset_right = 42.0
 offset_bottom = 24.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/player_hp"]
+process_mode = 3
 layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="player_hearts" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
 unique_name_in_owner = true
+process_mode = 3
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
 theme_override_constants/h_separation = 0
@@ -43,15 +48,18 @@ theme_override_constants/v_separation = 0
 columns = 3
 
 [node name="spacer" type="Control" parent="PlayerUI/player_hp/VBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
 [node name="player_coins" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
 columns = 2
 
 [node name="coins_image" type="Control" parent="PlayerUI/player_hp/VBoxContainer/player_coins"]
+process_mode = 3
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
 
@@ -62,6 +70,7 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 46, 0, 0, 0)
 tile_set = ExtResource("4_tohl0")
 
 [node name="coin_label" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/player_coins"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -73,12 +82,14 @@ shortcut_keys_enabled = false
 script = ExtResource("4_e82jq")
 
 [node name="DamageNumbers" type="Control" parent="PlayerUI"]
+process_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_b4g0i")
 
 [node name="MainMenu" type="Control" parent="."]
+process_mode = 3
 visible = false
 clip_contents = true
 custom_minimum_size = Vector2(320, 180)
@@ -120,6 +131,7 @@ script = ExtResource("4_1qq4j")
 destination = "test"
 
 [node name="LoadingScreen" type="Control" parent="."]
+process_mode = 3
 visible = false
 top_level = true
 custom_minimum_size = Vector2(320, 180)

@@ -1,7 +1,6 @@
 class_name EnemyData extends BaseCharacterData
 
 
-@export var path:String = ""
 @export var contact_damages:Array[Damage]
 @export var loot_table:LootTable
 

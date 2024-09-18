@@ -11,8 +11,9 @@ func _ready() -> void:
 	character_range.body_entered.connect(_range_body_entered)
 	character_range.body_exited.connect(_range_body_exited)
 	Signals.CollectItem.connect(_collect_item)
-	data = Game.selected_data.duplicate()
 	data.setup_data(self)
+	_construct_starting_weapon(data.starting_weapon)
+	Signals.PlayerReady.emit(self)
 
 
 func _physics_process(_delta: float) -> void:
@@ -45,3 +46,10 @@ func _collect_item(_data:PickupData) -> void:
 			data.heal(_data.value)
 		_:
 			pass
+
+
+func _construct_starting_weapon(_data:WeaponData) -> void:
+	if _data:
+		var weapon:Weapon = load(_data.weapon_path).instantiate() as Weapon
+		add_child.call_deferred(weapon)
+		

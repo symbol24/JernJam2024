@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddktr274fjwyv"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_fgym7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yytko"]
+
+[node name="shop_item" type="Area2D"]
+
+[node name="interact_collider" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_yytko")
+
+[node name="item" type="TileMapLayer" parent="."]
+position = Vector2(-7, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 79, 0, 37, 0, 0, 0)
+tile_set = ExtResource("1_fgym7")
+
+[node name="cost_icon" type="TileMapLayer" parent="."]
+rotation = 1.5708
+scale = Vector2(1, -1)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 1, 0, 46, 0, 0, 0)
+tile_set = ExtResource("1_fgym7")
+
+[node name="price_label" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "11"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="buy_label" type="RichTextLabel" parent="."]
+offset_left = -7.0
+offset_top = -23.0
+offset_right = 33.0
+offset_bottom = 17.0
+bbcode_enabled = true
+text = "Buy"
+scroll_active = false
+shortcut_keys_enabled = false

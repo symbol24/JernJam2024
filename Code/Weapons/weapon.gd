@@ -36,8 +36,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if timer_active: timer += _delta
-	if shoot_timer_active: shoot_timer += _delta
+	if Game.active_level.active_room is CombatRoom:
+		if timer_active: timer += _delta
+		if shoot_timer_active: shoot_timer += _delta
 
 
 func _instantiate_projectile(_path:String) -> Projectile:
@@ -71,14 +72,14 @@ func _get_target() -> Enemy2D:
 	var result:Enemy2D = null
 	match data.target_type:
 		WeaponData.Target_Type.CLOSEST:
-			if Game.active_room.enemy_spawner.all_enemies.is_empty(): result = null
-			else: result = Game.get_closest_between(parent, Game.active_room.enemy_spawner.all_enemies as Array[Node2D])
+			if Game.active_level.active_room.enemy_spawner.all_enemies.is_empty(): result = null
+			else: result = Game.get_closest_between(parent, Game.active_level.active_room.enemy_spawner.all_enemies as Array[Node2D])
 		WeaponData.Target_Type.RANDOM_IN_RANGE:
 			if parent.enemies_in_range.is_empty(): result = null
 			else: result = parent.enemies_in_range.pick_random()
 		WeaponData.Target_Type.RANDOM_ANYWHERE:
-			if Game.active_room.enemy_spawner.all_enemies.is_empty(): result = null
-			else: result = Game.active_room.enemy_spawner.all_enemies.pick_random()
+			if Game.active_level.active_room.enemy_spawner.all_enemies.is_empty(): result = null
+			else: result = Game.active_level.active_room.enemy_spawner.all_enemies.pick_random()
 		WeaponData.Target_Type.CLOSEST_IN_RANGE:
 			if parent.enemies_in_range.is_empty(): result = null
 			else: result = Game.get_closest_between(parent, parent.enemies_in_ranges as Array[Node2D])

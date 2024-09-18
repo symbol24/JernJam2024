@@ -6,7 +6,6 @@ var dmg_nbr:DamageNumberRTL
 var pool:Array[DamageNumberRTL] = []
 
 
-
 func _ready() -> void:
 	Signals.DamageReceived.connect(_display_dmg_nmbrs)
 	dmg_nbr = DAMAGE_NUMBER.instantiate()
@@ -16,7 +15,7 @@ func _display_dmg_nmbrs(_character:CharacterBody2D, _damage:int, _type:Damage.Ty
 	var new:DamageNumberRTL = _get_dmg_nbr()
 	add_child.call_deferred(new)
 	var variation:String = _get_variation(_type, _is_critical)
-	new.set_damage_number(str(_damage), variation, 10, 1)
+	new.set_damage_number(str(_damage), variation, 15, 0.5)
 	new.global_position = _character.global_position
 	new.display_number()
 

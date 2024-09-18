@@ -1,6 +1,7 @@
 class_name CharacterData extends BaseCharacterData
 
 @export var base_range:float = 1.0
+@export var starting_weapon:WeaponData
 
 var range_percent:float:
 	set(value):

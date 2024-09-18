@@ -2,6 +2,7 @@ extends Node
 
 const CHARACTER_DATA = preload("res://Data/main_character.tres")
 const LEVELS = preload("res://Data/levels.tres")
+const CAMERA_TRANSITION_TIME:float = 0.5
 
 # Damage constants
 const MAX_CC:float = 0.8
@@ -9,8 +10,7 @@ const OVERFLOW_PERCENTAGE:float = 1.0
 
 # Will change if add character selector
 var selected_data:CharacterData = CHARACTER_DATA
-
-var active_room:Room
+var player:SyCharacterBody2D
 
 # A quick variable to check if the tree is paused.
 var is_paused:bool:
@@ -29,8 +29,8 @@ var extra_loading := false
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
-	Signals.RoomReady.connect(_set_active_room)
-	Signals.LoadLevel.connect(load_scene)
+	Signals.LoadLevel.connect(_load_level)
+	Signals.LevelReady.connect(_level_ready)
 
 
 func _physics_process(_delta: float) -> void:
@@ -44,7 +44,22 @@ func _physics_process(_delta: float) -> void:
 				_complete_load()
 
 
-func load_scene(_id:String = "") -> void:
+func get_closest_between(_object:Node2D, _list:Array) -> Node2D:
+	if _object and not _list.is_empty():
+		var closest = _list[0]
+		var last_check = _object.global_position.distance_squared_to(closest.global_position)
+		for each in _list:
+			var check = _object.global_position.distance_squared_to(each.global_position)
+			if check < last_check: 
+				closest = each
+				last_check = check
+		return closest
+	push_error("_get_closest_between was sent faulty parameters")
+	return null
+
+
+func _load_level(_id:String = "") -> void:
+	pause_tree(true)
 	# Send loadscreen toggle on
 	Signals.ToggleControl.emit("loading", true)
 	
@@ -66,24 +81,6 @@ func load_scene(_id:String = "") -> void:
 	ResourceLoader.load_threaded_request(to_load)
 
 
-func get_closest_between(_object:Node2D, _list:Array) -> Node2D:
-	if _object and not _list.is_empty():
-		var closest = _list[0]
-		var last_check = _object.global_position.distance_squared_to(closest.global_position)
-		for each in _list:
-			var check = _object.global_position.distance_squared_to(each.global_position)
-			if check < last_check: 
-				closest = each
-				last_check = check
-		return closest
-	push_error("_get_closest_between was sent faulty parameters")
-	return null
-
-
-func _set_active_room(_room:Room) -> void:
-	active_room = _room
-
-
 func _complete_load() -> void:
 	is_loading = false
 	
@@ -92,14 +89,30 @@ func _complete_load() -> void:
 	active_level = new_level.instantiate()
 	add_child.call_deferred(active_level)
 	
-	# Adding load time if set in the level data
-	if LEVELS.loading_delay > 0.0:
-		var wait_timer := get_tree().create_timer(LEVELS.loading_delay)
-		await wait_timer.timeout
+
+
+func _level_ready(_level:Level) -> void:
+	if _level == active_level:
+		pause_tree(false)
 		
-	# Send loadscreen toggle off
-	Signals.ToggleControl.emit("loading", false)
+		# Adding load time if set in the level data
+		if LEVELS.loading_delay > 0.0:
+			var wait_timer := get_tree().create_timer(LEVELS.loading_delay)
+			await wait_timer.timeout
+			
+		# Send loadscreen toggle off
+		Signals.ToggleControl.emit("loading", false)
 
 
-func _pause_tree(_value:bool = false) -> void:
+func pause_tree(_value:bool = false) -> void:
 	get_tree().paused = _value
+
+
+func get_character() -> SyCharacterBody2D:
+	if player != null: return player
+	else:
+		player = load(selected_data.path).instantiate() as SyCharacterBody2D
+		player.data = selected_data.duplicate()
+		return player
+		
+	

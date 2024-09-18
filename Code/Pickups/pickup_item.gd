@@ -8,8 +8,8 @@ var tween:Tween
 var start_position:Vector2
 
 
-func _ready() -> void:
-	Signals.RoomClear.connect(_go_to_player)
+#func _ready() -> void:
+	#Signals.RoomClear.connect(_go_to_player)
 
 
 func set_pickup(_data:PickupData, _parent:Node, _player:SyCharacterBody2D) -> void:

@@ -1,5 +1,7 @@
 class_name SpawnerData extends Resource
 
+const SPAWN_AREA = [72, 252, 24, 156]
+
 @export var id:String = "":
 	get:
 		if id == "": return resource_name
@@ -17,19 +19,19 @@ class_name SpawnerData extends Resource
 			return [72, 252, 24, 156]
 		else:
 			var error:bool = false
-			if to_return[0] < 72: 
-				to_return[0] = 72
+			if to_return[0] < SPAWN_AREA[0]: 
+				to_return[0] = SPAWN_AREA[0]
 				error = true
-			if to_return[1] > 252: 
-				to_return[0] = 252
+			if to_return[1] > SPAWN_AREA[1]: 
+				to_return[1] = SPAWN_AREA[1]
 				error = true
-			if to_return[2] < 24: 
-				to_return[0] = 24
+			if to_return[2] < SPAWN_AREA[2]: 
+				to_return[2] = SPAWN_AREA[2]
 				error = true
-			if to_return[3] > 156: 
-				to_return[0] = 156
+			if to_return[3] > SPAWN_AREA[3]: 
+				to_return[3] = SPAWN_AREA[3]
 				error = true
-			if error: push_error("Spawn area of ", id, " SpawnerData contains values not in [72, 252, 24, 156]. Values returned clamped.")
+			if error: push_error("Spawn area of ", id, " SpawnerData contains values not in ", SPAWN_AREA, ". Values returned clamped.")
 		
 		return to_return
 		

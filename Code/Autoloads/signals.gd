@@ -5,18 +5,29 @@ signal LoadLevel(id:String)
 signal InstantiateLevels()
 
 
+# Camera
+signal CameraInPosition()
+signal MoveCamera(position:Vector2, time:float)
+
+
 # Rooms
 signal RoomReady(room:Room)
 signal ToggleDoor(id:String, open:bool)
 signal RoomClear()
+signal TransitionToNextRoom()
+
+
+# Levels
+signal LevelReady(level:Level)
 
 
 # Spawning
-signal SpawnNextWave()
+signal SpawnNextWave(room:Room)
 signal ReturnEnemyToPool(enemy:Enemy2D)
 
 
 # Character
+signal PlayerReady(player:SyCharacterBody2D)
 signal HpUpdated(character:BaseCharacterData)
 signal CharacterDefeated(character:BaseCharacterData)
 signal UpdateCharacterRange(range_percent:float, flat_amount:float)

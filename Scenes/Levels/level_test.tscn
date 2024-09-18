@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4dtpqsowmh7o"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_nsaid"]
+[ext_resource type="PackedScene" uid="uid://bbfpn76hr5axp" path="res://Scenes/Levels/Rooms/testroom.tscn" id="2_7fdc7"]
+[ext_resource type="PackedScene" uid="uid://canufgnmperbq" path="res://Scenes/Levels/Rooms/shop_room.tscn" id="3_52klt"]
+[ext_resource type="PackedScene" uid="uid://b4dmj7f23ccfi" path="res://Scenes/Utilities/level_camera.tscn" id="4_82p17"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("camera")]
+process_mode = 3
+script = ExtResource("1_nsaid")
+id = "test"
+camera = NodePath("level_camera")
+
+[node name="testmap" parent="." instance=ExtResource("2_7fdc7")]
+
+[node name="ShopRoom" parent="." instance=ExtResource("3_52klt")]
+position = Vector2(0, -180)
+
+[node name="level_camera" parent="." instance=ExtResource("4_82p17")]

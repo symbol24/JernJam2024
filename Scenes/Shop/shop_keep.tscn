@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qgaj15l1rw1a"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_4f3dh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02vje"]
+radius = 6.0
+height = 22.0
+
+[node name="ShopKeep" type="StaticBody2D"]
+
+[node name="collider" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_02vje")
+
+[node name="sprite" type="TileMapLayer" parent="."]
+position = Vector2(-6, 11)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 254, 255, 1, 0, 50, 0, 48, 0, 0, 0, 0, 0, 255, 255, 1, 0, 50, 0, 49, 0, 0, 0)
+tile_set = ExtResource("1_4f3dh")

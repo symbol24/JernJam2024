@@ -1,6 +1,7 @@
 class_name BaseCharacterData extends Resource
 
 @export var id:String = ""
+@export var path:String = ""
 @export var base_hp:int = 1
 @export var speed:float = 50
 @export var armor:int = 0

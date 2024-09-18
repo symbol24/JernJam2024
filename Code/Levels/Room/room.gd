@@ -1,12 +1,13 @@
 class_name Room extends Node2D
 
-@export var spawn_list:Array[SpawnerData] = []
-@export var enemy_spawner:EnemySpawner
+
+@export var entrance_spawn_point:Marker2D
+@export var camera_point:Marker2D
+
 
 func _ready() -> void:
-	Signals.RoomReady.emit(self)
-	Signals.ToggleControl.emit("player_ui", true)
-	if spawn_list.is_empty(): push_error("Room ", name, " spawn_list is empty, nothing to spawn.")
-	elif not spawn_list.is_empty() and spawn_list[0].is_triggered_spawn:
-		Signals.SpawnNextWave.emit()
-	
+	#print("Room ", name, " ready function")
+	if entrance_spawn_point == null: push_error("Room ", name, " does not have a spawn point marker2d.")
+	if camera_point == null: push_error("Room ", name, " does not have a camera point marker2d.")
+	var level:Level = get_parent() as Level
+	level.room_ready(self)

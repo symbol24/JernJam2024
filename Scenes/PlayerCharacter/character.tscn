@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqrur0mr06ep5"]
+[gd_scene load_steps=10 format=3 uid="uid://dqrur0mr06ep5"]
 
 [ext_resource type="Script" path="res://Code/PlayerCharacter/sy_character_body_2d.gd" id="1_ub1mw"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_pqek3"]
 [ext_resource type="Script" path="res://Code/PlayerCharacter/Actions/move.gd" id="3_h6mqu"]
 [ext_resource type="PackedScene" uid="uid://cs3a7tdd6sa2f" path="res://Scenes/Utilities/hit_box.tscn" id="4_4pkx5"]
-[ext_resource type="PackedScene" uid="uid://c7l1yijpsrnor" path="res://Scenes/Weapons/knife_weapon.tscn" id="5_lgf88"]
 [ext_resource type="Script" path="res://Code/Utilities/range_collider.gd" id="6_8478g"]
-[ext_resource type="Script" path="res://Code/Weapons/weapon_controller.gd" id="6_swb04"]
 [ext_resource type="Script" path="res://Code/PlayerCharacter/collector_area.gd" id="8_boypj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_543yi"]
@@ -32,6 +30,7 @@ tile_set = ExtResource("2_pqek3")
 
 [node name="character_range" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, 5)
 collision_layer = 2
 collision_mask = 8
@@ -42,22 +41,19 @@ shape = SubResource("CircleShape2D_543yi")
 script = ExtResource("6_8478g")
 
 [node name="hit_box" parent="." instance=ExtResource("4_4pkx5")]
+visible = false
 position = Vector2(0, 5)
 
 [node name="move_collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -6)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_71oyi")
 
 [node name="move" type="Node2D" parent="."]
 script = ExtResource("3_h6mqu")
 
-[node name="WeaponController" type="Node2D" parent="."]
-script = ExtResource("6_swb04")
-
-[node name="Knife" parent="." instance=ExtResource("5_lgf88")]
-
 [node name="collector_area" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 32
 script = ExtResource("8_boypj")

@@ -1,12 +1,7 @@
 class_name EnemySpawner extends Node2D
 
 
-const SPAWN_AREA = [72, 252, 24, 156]
-const GOBLIN = preload("res://Data/EnemyDatas/goblin.tres")
-
 @onready var room:Room = get_parent() as Room
-
-var active_room:Room
 
 # Spawning
 var spawn_active:bool = false
@@ -17,7 +12,7 @@ var active_spawn_id:int = 0:
 			spawn_active = false
 			print("Spawn over")
 		else: 
-			_start_next_spawn_data()
+			_start_next_spawn_data(room)
 			
 var instantiated_enemies:Array[Enemy2D] = []
 var enemy_pool:Array[Array] = []
@@ -54,7 +49,6 @@ var wait_next_spawn_timer:float = 0.0:
 
 
 func _ready() -> void:
-	Signals.RoomReady.connect(_set_room)
 	Signals.SpawnNextWave.connect(_start_next_spawn_data)
 	Signals.ReturnEnemyToPool.connect(_return_to_pool)
 	if not room.is_node_ready(): await room.ready
@@ -70,11 +64,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if wait_next_spawn_timer_active: wait_next_spawn_timer += _delta
 	if spawn_timer_active: spawn_timer += _delta
-
-
-func _set_room(_room:Room) -> void:
-	if _room:
-		active_room = _room
 
 
 func _spawn_wave(_id:int) -> void:
@@ -95,10 +84,11 @@ func _spawn_wave(_id:int) -> void:
 			wave_count += 1
 
 
-func _start_next_spawn_data() -> void:
-	spawn_active = true
-	wait_next_spawn_delay = active_room.spawn_list[active_spawn_id].delay_before_starting
-	wait_next_spawn_timer_active = true
+func _start_next_spawn_data(_room:Room) -> void:
+	if _room == room:
+		spawn_active = true
+		wait_next_spawn_delay = room.spawn_list[active_spawn_id].delay_before_starting
+		wait_next_spawn_timer_active = true
 
 
 func _get_instantiated_enemy(_data:EnemyData, _list:Array[Enemy2D]) -> Enemy2D:
@@ -130,11 +120,14 @@ func _remove_enemy_from_all(_enemy:Enemy2D) -> void:
 func _return_to_pool(_enemy:Enemy2D) -> void:
 	for each in enemy_pool:
 		if each.has(_enemy):
+			_remove_enemy_from_all(_enemy)
 			return
 			
 	for each in enemy_pool:
 		if not each.is_empty() and each[0].data.id == _enemy.data.id:
 			each.append(_enemy)
+			_remove_enemy_from_all(_enemy)
 			return
 	
+	_remove_enemy_from_all(_enemy)
 	enemy_pool.append([_enemy])

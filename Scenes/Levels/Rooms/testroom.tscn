@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbfpn76hr5axp"]
+
+[ext_resource type="Script" path="res://Code/Levels/Room/combat_room.gd" id="1_06qjs"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_x87ge"]
+[ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Rooms/Room_test/SpawnerDatas/wave_1.tres" id="3_hr0t2"]
+[ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/combat_room_walls.tscn" id="5_0l80u"]
+[ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="6_6nq3t"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="8_e06up"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="9_71ysd"]
+[ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="9_o448a"]
+[ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="10_xijh4"]
+
+[node name="testmap" type="Node2D" node_paths=PackedStringArray("enemy_spawner", "entrance_spawn_point", "camera_point") groups=["room"]]
+process_mode = 3
+script = ExtResource("1_06qjs")
+spawn_list = Array[ExtResource("2_x87ge")]([ExtResource("3_hr0t2")])
+enemy_spawner = NodePath("enemy_spawner")
+entrance_spawn_point = NodePath("spawn_point")
+camera_point = NodePath("camera_point")
+metadata/_edit_vertical_guides_ = [72.0, 252.0]
+metadata/_edit_horizontal_guides_ = [24.0, 156.0]
+
+[node name="bottom_door2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(320, 180)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[node name="bottom_door3" parent="." instance=ExtResource("5_0l80u")]
+
+[node name="bottom_door" parent="." instance=ExtResource("6_6nq3t")]
+position = Vector2(156, 180)
+id = "bottom"
+
+[node name="top_door" parent="." instance=ExtResource("6_6nq3t")]
+position = Vector2(156, 12)
+id = "top"
+is_top_door = true
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("8_e06up")
+
+[node name="loot_spawner" type="Node" parent="."]
+process_mode = 1
+script = ExtResource("9_71ysd")
+
+[node name="spawn_point" parent="." instance=ExtResource("9_o448a")]
+position = Vector2(165, 157)
+
+[node name="camera_point" parent="." instance=ExtResource("10_xijh4")]

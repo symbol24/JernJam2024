@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4dmj7f23ccfi"]
+
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="1_fd6kt"]
+
+[node name="level_camera" type="Camera2D"]
+process_mode = 3
+script = ExtResource("1_fd6kt")

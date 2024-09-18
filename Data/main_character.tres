@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://dim20x1ui0ogu"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://dim20x1ui0ogu"]
 
 [ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="1_6hanh"]
+[ext_resource type="Resource" uid="uid://dp7l7a4pyyw5q" path="res://Data/Weapons/knife_data.tres" id="2_mb0ic"]
 
 [resource]
 script = ExtResource("1_6hanh")
+base_range = 1.0
+starting_weapon = ExtResource("2_mb0ic")
 id = "player"
+path = "res://Scenes/PlayerCharacter/character.tscn"
 base_hp = 3
 speed = 50.0
 armor = 0

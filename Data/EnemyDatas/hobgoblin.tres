@@ -7,12 +7,12 @@
 
 [resource]
 script = ExtResource("1_i0gbw")
-path = "res://Scenes/Enemies/hobgoblin.tscn"
 contact_damages = Array[ExtResource("1_ll6ii")]([ExtResource("2_keynd")])
 loot_table = ExtResource("3_vnjr1")
 id = "hobgoblin"
+path = "res://Scenes/Enemies/hobgoblin.tscn"
 base_hp = 2
-speed = 50.0
+speed = 40.0
 armor = 0
 shield = 0
 crit_chance = 0.0

@@ -46,6 +46,9 @@ folder_colors={
 [global_group]
 
 enemy=""
+spawn_point=""
+room=""
+camera_point=""
 
 [gui]
 
