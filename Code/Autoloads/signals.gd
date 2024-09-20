@@ -31,14 +31,17 @@ signal PlayerReady(player:SyCharacterBody2D)
 signal HpUpdated(character:BaseCharacterData)
 signal CharacterDefeated(character:BaseCharacterData)
 signal UpdateCharacterRange(range_percent:float, flat_amount:float)
+signal CharacterLevelUpdated(data:BaseCharacterData)
 
 
 # UI
 signal ToggleControl(id:String, is_visible:bool, from:String)
-signal ConstructHP(amount:int)
+signal ConstructHP(character:BaseCharacterData)
 signal DmgNbrReturnToPool(dmg_nbr:DamageNumberRTL)
 signal CoinsUpdated(coins:int)
 signal DamageReceived(character:CharacterBody2D, damage:int, type:Damage.Type, is_critical:bool)
+signal UpdateUiWithWeapon(weapon:WeaponData)
+signal UpdateUiWithTrinket(trinket)
 
 
 # Weapons 
@@ -49,3 +52,7 @@ signal ReturnProjectileToPool(weapom:Weapon)
 signal PickupReturnToPool(item:PickupItem)
 signal CollectItem(data:PickupData)
 signal SpawnLoot(position:Vector2, pickup_data:PickupData)
+
+
+# Shop
+signal ShopItemPurchased(item:ShopItemData)

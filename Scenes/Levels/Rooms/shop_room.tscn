@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://canufgnmperbq"]
+[gd_scene load_steps=8 format=3 uid="uid://canufgnmperbq"]
 
 [ext_resource type="Script" path="res://Code/Levels/Room/shop_room.gd" id="1_0jjjp"]
-[ext_resource type="PackedScene" uid="uid://cxbxwkbiaa7wh" path="res://Scenes/Levels/Rooms/shop_room_walls.tscn" id="2_fqnf0"]
+[ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/combat_room_walls.tscn" id="2_cjcot"]
 [ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="2_tpdd3"]
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="3_yg557"]
 [ext_resource type="PackedScene" uid="uid://qgaj15l1rw1a" path="res://Scenes/Shop/shop_keep.tscn" id="4_luu8o"]
-[ext_resource type="PackedScene" uid="uid://ddktr274fjwyv" path="res://Scenes/Shop/shop_item.tscn" id="5_ipbgx"]
+[ext_resource type="Script" path="res://Code/Shop/shop_builder.gd" id="6_d8cev"]
+[ext_resource type="Resource" uid="uid://f1ydfbch8ioc" path="res://Data/Shop/LootTables/shop_01_loot_table.tres" id="7_lufdt"]
 
 [node name="ShopRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3
@@ -20,29 +21,41 @@ offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.122252, 0.122252, 0.122252, 1)
 
-[node name="walls" parent="." instance=ExtResource("2_fqnf0")]
+[node name="walls" parent="." instance=ExtResource("2_cjcot")]
 
 [node name="bottom_door" parent="." instance=ExtResource("3_yg557")]
 position = Vector2(156, 180)
 id = "bottom"
 
-[node name="door_top_left" parent="." instance=ExtResource("3_yg557")]
-position = Vector2(108, 12)
-id = "top_left"
-is_top_door = true
-
-[node name="door_top_right" parent="." instance=ExtResource("3_yg557")]
-position = Vector2(204, 12)
-id = "top_right"
+[node name="door_top" parent="." instance=ExtResource("3_yg557")]
+position = Vector2(156, 12)
+id = "top"
 is_top_door = true
 
 [node name="ShopKeep" parent="." instance=ExtResource("4_luu8o")]
 position = Vector2(161, 58)
 
-[node name="shop_item" parent="." instance=ExtResource("5_ipbgx")]
-position = Vector2(161, 98)
-
 [node name="spawn_point" type="Marker2D" parent="." groups=["spawn_point"]]
 position = Vector2(162, 156)
 
 [node name="camera_point" parent="." instance=ExtResource("2_tpdd3")]
+
+[node name="ShopBuilder" type="Node2D" parent="." node_paths=PackedStringArray("item_points")]
+script = ExtResource("6_d8cev")
+shop_loot_table = ExtResource("7_lufdt")
+item_points = [NodePath("item1"), NodePath("item2"), NodePath("item3"), NodePath("item4"), NodePath("item5")]
+
+[node name="item1" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(80, 92)
+
+[node name="item2" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(120, 92)
+
+[node name="item3" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(160, 92)
+
+[node name="item4" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(200, 92)
+
+[node name="item5" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(240, 92)

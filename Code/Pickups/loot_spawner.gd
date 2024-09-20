@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _spawn_loot(_position:Vector2, _loot_table:LootTable) -> void:
-	var loot:Array[PickupData] = _loot_table.get_loot()
+	var loot:Array = _loot_table.get_loot()
 	
 	var p:int = 0
 	var positions:Array[Vector2] = [

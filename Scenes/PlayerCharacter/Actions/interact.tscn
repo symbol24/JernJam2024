@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://boumojacofakr"]
+
+[ext_resource type="Script" path="res://Code/PlayerCharacter/Actions/interact.gd" id="1_t3tsw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfggw"]
+radius = 4.0
+height = 12.0
+
+[node name="Interact" type="Node2D"]
+script = ExtResource("1_t3tsw")
+
+[node name="interact_detector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="interact_collider" type="CollisionShape2D" parent="interact_detector"]
+shape = SubResource("CapsuleShape2D_tfggw")

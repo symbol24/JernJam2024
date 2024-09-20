@@ -6,11 +6,11 @@ class_name LootTable extends Resource
 @export var items:Array[Dictionary] = []
 
 
-func get_loot() -> Array[PickupData]:
-	var result:Array[PickupData] = []
+func get_loot(_amount:int = loot_amount) -> Array:
+	var result:Array = []
 	var total_weight:int = _get_total_weight(items)
 	var weighted_table:Array[Dictionary] = _weight_table(items.duplicate(true))
-	for i in loot_amount:
+	for i in _amount:
 		var weight:int = randi_range(0, total_weight) # TODO: replace with rng seeded in Game when done
 		var choice
 		var found:bool = false

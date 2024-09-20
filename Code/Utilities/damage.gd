@@ -23,9 +23,9 @@ func set_owner(_owner:BaseCharacterData) -> void:
 
 func get_damage() -> Damage:
 	if damage_owner != null:
-		final_damage = base_damage
-		var cc:float = crit_chance + damage_owner.crit_chance
-		var cb:float = crit_bonus + damage_owner.crit_bonus
+		final_damage = base_damage + damage_owner.bonus_damage
+		var cc:float = crit_chance + damage_owner.current_cc
+		var cb:float = crit_bonus + damage_owner.current_cb
 		var overflow:float = 0.0
 		if cc > Game.MAX_CC:
 			overflow = cc - Game.MAX_CC

@@ -15,3 +15,8 @@ func set_contact_damages() -> void:
 
 func get_damages() -> Array[Damage]:
 	return damages
+
+
+func _set_damage_owner() -> void:
+	for each in damages:
+		each.damage_owner = parent.data

@@ -1,6 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://juy4qenccfes"]
 
 [resource]
+CharacterNameRTL/base_type = &"RichTextLabel"
+CharacterNameRTL/font_sizes/normal_font_size = 6
 CoinsRTL/base_type = &"RichTextLabel"
 DmgNumberRTL/base_type = &"RichTextLabel"
 DmgNumberRTL/font_sizes/normal_font_size = 8

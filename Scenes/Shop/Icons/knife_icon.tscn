@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://byqgb2ag0ltec"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_v3cs8"]
+
+[node name="KnifeIcon" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 44, 0, 27, 0, 0, 0)
+tile_set = ExtResource("1_v3cs8")

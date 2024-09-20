@@ -1,5 +1,7 @@
 class_name Weapon extends SyAction
 
+const WEAPON_SPAWN_AREA = [72, 252, 24, 156]
+
 @export var weapon_data:WeaponData
 
 @onready var room:Room = get_tree().get_first_node_in_group("room") as Room
@@ -31,6 +33,7 @@ var shoot_timer:float = 0.0:
 func _ready() -> void:
 	Signals.ReturnProjectileToPool.connect(_return_projectile_to_pool)
 	data = weapon_data.duplicate()
+	data.parse_level_data()
 	projectile_instantiated = _instantiate_projectile(data.projectile_path)
 	timer_active = true
 
@@ -68,8 +71,8 @@ func _get_projectile() -> Projectile:
 	else: return projectile_pool.pop_front()
 
 
-func _get_target() -> Enemy2D:
-	var result:Enemy2D = null
+func _get_target():
+	var result = null
 	match data.target_type:
 		WeaponData.Target_Type.CLOSEST:
 			if Game.active_level.active_room.enemy_spawner.all_enemies.is_empty(): result = null
@@ -83,6 +86,8 @@ func _get_target() -> Enemy2D:
 		WeaponData.Target_Type.CLOSEST_IN_RANGE:
 			if parent.enemies_in_range.is_empty(): result = null
 			else: result = Game.get_closest_between(parent, parent.enemies_in_ranges as Array[Node2D])
+		WeaponData.Target_Type.RANDOM_POSITION_ON_MAP:
+			result = Vector2(randi_range(WEAPON_SPAWN_AREA[0], WEAPON_SPAWN_AREA[1]), randi_range(WEAPON_SPAWN_AREA[2], WEAPON_SPAWN_AREA[3]))
 		_:
 			pass
 	

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://bi2s87aerabfn"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_5vbbh"]
+[ext_resource type="Resource" uid="uid://csv8g5qpcfj0g" path="res://Data/Weapons/tornado_data.tres" id="2_a5f3b"]
+
+[resource]
+script = ExtResource("1_5vbbh")
+id = "shop_tornado_item"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([3])
+item_amount = 1
+weapon_data = ExtResource("2_a5f3b")
+icon_path = "res://Scenes/Shop/Icons/tornado_icon.tscn"

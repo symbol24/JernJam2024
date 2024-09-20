@@ -2,6 +2,7 @@ class_name CharacterData extends BaseCharacterData
 
 @export var base_range:float = 1.0
 @export var starting_weapon:WeaponData
+@export var character_sprite:String
 
 var range_percent:float:
 	set(value):
@@ -21,7 +22,8 @@ func setup_data(_owner:CharacterBody2D) -> void:
 	max_hp = base_hp
 	range_percent = base_range
 	coins = 0
-	Signals.ConstructHP.emit(max_hp)
+	level = 1
+	Signals.ConstructHP.emit(self)
 	if _owner != null: data_owner = _owner
 	else: push_error("Character ", id, " receiving a null owner in set_data.")
 

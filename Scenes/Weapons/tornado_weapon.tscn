@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ttrmptppt44b"]
+
+[ext_resource type="Script" path="res://Code/Weapons/tornado_weapon.gd" id="1_5lcxs"]
+[ext_resource type="Resource" uid="uid://csv8g5qpcfj0g" path="res://Data/Weapons/tornado_data.tres" id="2_taay6"]
+
+[node name="TornadoWeapon" type="Node2D"]
+script = ExtResource("1_5lcxs")
+weapon_data = ExtResource("2_taay6")

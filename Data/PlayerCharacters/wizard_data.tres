@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://dx4jis38o1blg"]
+
+[ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="1_sfvuj"]
+[ext_resource type="Resource" uid="uid://csv8g5qpcfj0g" path="res://Data/Weapons/tornado_data.tres" id="2_vpu8j"]
+
+[resource]
+script = ExtResource("1_sfvuj")
+base_range = 1.0
+starting_weapon = ExtResource("2_vpu8j")
+character_sprite = "res://Scenes/PlayerCharacter/Sprites/wizard_sprite.tscn"
+id = "Wizard"
+path = "res://Scenes/PlayerCharacter/character.tscn"
+base_hp = 3
+speed = 50.0
+armor = 0
+shield = 0
+crit_chance = 0.05
+crit_bonus = 0.2

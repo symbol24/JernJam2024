@@ -75,6 +75,7 @@ func _spawn_wave(_id:int) -> void:
 				room.add_child(new_enemy)
 				new_enemy.name = enemy.id + str(enemy_total_spawn_count)
 				new_enemy.set_data(new_enemy.name)
+				new_enemy.set_level(Game.active_level.player.data.level)
 				new_enemy.global_position = Vector2(randf_range(spawn_data.spawn_area[0], spawn_data.spawn_area[1]), randf_range(spawn_data.spawn_area[2], spawn_data.spawn_area[3]))
 				all_enemies.append(new_enemy)
 				enemy_total_spawn_count += 1

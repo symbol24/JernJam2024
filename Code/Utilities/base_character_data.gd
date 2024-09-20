@@ -10,6 +10,10 @@ class_name BaseCharacterData extends Resource
 @export var crit_bonus:float = 0.0
 
 var data_owner:CharacterBody2D
+var level:int = 1:
+	set(value):
+		level = value
+		Signals.CharacterLevelUpdated.emit(self)
 var current_hp:int = 1:
 	set(value):
 		current_hp = value
@@ -19,8 +23,29 @@ var current_hp:int = 1:
 			current_hp = 0
 			Signals.CharacterDefeated.emit(self)
 		elif current_hp > max_hp: current_hp = max_hp
-		
-var max_hp:int
+var bonus_hp:int = 0:
+	set(value):
+		var pre:int = bonus_hp
+		bonus_hp = value
+		var diff:int = bonus_hp - pre
+		current_hp += diff
+		Signals.ConstructHP.emit(self)
+var max_hp:int:
+	get:
+		return base_hp + bonus_hp
+var bonus_damage:int:
+	get:
+		return floori(level * 0.5)
+var bonus_speed:float = 0.0
+var current_speed:float:
+	get:
+		return (speed + bonus_speed) + (level * 0.5)
+var current_cc:float:
+	get:
+		return crit_chance + (float(level)/100)
+var current_cb:float:
+	get:
+		return crit_bonus + (float(level)/50)
 
 
 func setup_data(_owner:CharacterBody2D) -> void:

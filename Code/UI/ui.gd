@@ -1,19 +1,16 @@
 extends CanvasLayer
 
+
 var last_menu:String = ""
 var controls:Array[SyControl] = []
+
 
 func _ready() -> void:
 	Signals.ToggleControl.connect(_toggle_control)
 	controls = _get_controls()
 
 
-
-
-
-
-
-func _toggle_control(_id:String, _visible:bool = true, _from:String = ""):
+func _toggle_control(_id:String, _visible:bool = true, _from:String = "") -> void:
 	for each in controls:
 		if each.id == _id:
 			each.set_deferred("visible", _visible)

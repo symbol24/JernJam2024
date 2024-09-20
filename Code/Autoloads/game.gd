@@ -1,6 +1,9 @@
 extends Node
 
-const CHARACTER_DATA = preload("res://Data/main_character.tres")
+const THIEF = preload("res://Data/PlayerCharacters/thief_data.tres")
+const WIZARD = preload("res://Data/PlayerCharacters/wizard_data.tres")
+const FIGHTER = preload("res://Data/PlayerCharacters/fighter_data.tres")
+const DRUID = preload("res://Data/PlayerCharacters/druid_data.tres")
 const LEVELS = preload("res://Data/levels.tres")
 const CAMERA_TRANSITION_TIME:float = 0.5
 
@@ -9,7 +12,7 @@ const MAX_CC:float = 0.8
 const OVERFLOW_PERCENTAGE:float = 1.0
 
 # Will change if add character selector
-var selected_data:CharacterData = CHARACTER_DATA
+var selected_data:CharacterData = WIZARD
 var player:SyCharacterBody2D
 
 # A quick variable to check if the tree is paused.
@@ -112,7 +115,7 @@ func get_character() -> SyCharacterBody2D:
 	if player != null: return player
 	else:
 		player = load(selected_data.path).instantiate() as SyCharacterBody2D
-		player.data = selected_data.duplicate()
+		player.data = selected_data.duplicate(true)
 		return player
 		
 	

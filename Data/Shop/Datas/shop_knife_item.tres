@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://cqet62c6k34a3"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_bb7q2"]
+[ext_resource type="Resource" uid="uid://dp7l7a4pyyw5q" path="res://Data/Weapons/knife_data.tres" id="2_02our"]
+
+[resource]
+script = ExtResource("1_bb7q2")
+id = "shop_knife_item"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([3])
+item_amount = 1
+weapon_data = ExtResource("2_02our")
+icon_path = "res://Scenes/Shop/Icons/knife_icon.tscn"

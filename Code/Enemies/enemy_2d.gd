@@ -24,6 +24,10 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
+func set_level(_level:int = 1) -> void:
+	data.level = _level
+
+
 func set_velocity_by_move(_new_velocity:Vector2) -> void:
 	velocity = _new_velocity
 

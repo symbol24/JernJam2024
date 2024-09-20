@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://e1m61msdmr81"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_qks65"]
+
+[node name="level_icon" type="Node2D"]
+
+[node name="L" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 83, 0, 48, 0, 0, 0)
+tile_set = ExtResource("1_qks65")
+
+[node name="up_arrow" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 78, 0, 40, 0, 0, 0)
+tile_set = ExtResource("1_qks65")

@@ -1,0 +1,27 @@
+{
+	"level1" : {
+		"hp" : "1",
+		"damage" : "1",
+		"lifetime" : "0.33"
+	},
+	"level2" : {
+		"hp" : "2",
+		"damage" : "1",
+		"lifetime" : "0.33"
+	},
+	"level3" : {
+		"hp" : "2",
+		"damage" : "1",
+		"lifetime" : "0.45"
+	},
+	"level4" : {
+		"hp" : "2",
+		"damage" : "2",
+		"lifetime" : "0.45"
+	},
+	"level5" : {
+		"hp" : "3",
+		"damage" : "2",
+		"lifetime" : "0.7"
+	}
+}
