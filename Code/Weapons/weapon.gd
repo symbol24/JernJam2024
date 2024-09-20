@@ -14,7 +14,7 @@ var spawned_projectile_count:int = 0
 var timer_active:bool = false
 var timer:float = 0.0:
 	set(value):
-		timer = value
+		timer = value 
 		if timer >= data.trigger_delay:
 			timer = 0.0
 			timer_active = false
@@ -30,23 +30,29 @@ var shoot_timer:float = 0.0:
 			_shoot_one_projectile()
 		
 
-func _ready() -> void:
-	Signals.ReturnProjectileToPool.connect(_return_projectile_to_pool)
-	data = weapon_data.duplicate()
-	data.parse_level_data()
-	projectile_instantiated = _instantiate_projectile(data.projectile_path)
-	timer_active = true
-
-
 func _process(_delta: float) -> void:
 	if Game.active_level.active_room is CombatRoom:
 		if timer_active: timer += _delta
 		if shoot_timer_active: shoot_timer += _delta
 
 
+func ready_weapon() -> void:
+	Signals.ReturnProjectileToPool.connect(_return_projectile_to_pool)
+	data = weapon_data.duplicate()
+	data.parse_level_data()
+	#print("data.projectile_path -> ", data.projectile_path)
+	projectile_instantiated = _instantiate_projectile(data.projectile_path)
+	timer_active = true
+
+
 func _instantiate_projectile(_path:String) -> Projectile:
 	if _path:
-		return load(_path).instantiate() as Projectile
+		var proj = load(_path).instantiate() as Projectile
+		if not proj is Projectile:
+			push_error("Projectile ", data.id," not instantiated")
+			return null
+		return proj
+	push_error("Projectile ", data.id," not instantiated")
 	return null
 
 
@@ -54,9 +60,12 @@ func _shoot_one_projectile() -> void:
 	if shoot_count < data.projectile_count:
 		#print("Attempting to shoot a projectile")
 		var proj:Projectile = _get_projectile()
-		room.add_child(proj)
+		if data.remain_on_player:
+			parent.add_child(proj)
+		else:
+			room.add_child(proj)
 		proj.name = data.id + "_" + str(shoot_count) + "_" + str(spawned_projectile_count)
-		proj.set_projectile(data, parent, _get_target())
+		proj.set_projectile(data.duplicate(), parent, _get_target())
 		proj.shoot()
 		shoot_count += 1
 		spawned_projectile_count += 1
@@ -84,10 +93,13 @@ func _get_target():
 			if Game.active_level.active_room.enemy_spawner.all_enemies.is_empty(): result = null
 			else: result = Game.active_level.active_room.enemy_spawner.all_enemies.pick_random()
 		WeaponData.Target_Type.CLOSEST_IN_RANGE:
+			#print("parent: ", parent)
 			if parent.enemies_in_range.is_empty(): result = null
-			else: result = Game.get_closest_between(parent, parent.enemies_in_ranges as Array[Node2D])
+			else: result = Game.get_closest_between(parent, parent.enemies_in_range as Array[Node2D])
 		WeaponData.Target_Type.RANDOM_POSITION_ON_MAP:
 			result = Vector2(randi_range(WEAPON_SPAWN_AREA[0], WEAPON_SPAWN_AREA[1]), randi_range(WEAPON_SPAWN_AREA[2], WEAPON_SPAWN_AREA[3]))
+		WeaponData.Target_Type.SELF:
+			result = parent
 		_:
 			pass
 	

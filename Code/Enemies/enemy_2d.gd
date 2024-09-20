@@ -4,7 +4,7 @@ class_name Enemy2D extends CharacterBody2D
 
 var data:EnemyData
 var attack_areas:Array[AttackArea] = []
-
+var is_prisoner:bool = false
 
 func _ready() -> void:
 	Signals.CharacterDefeated.connect(_enemy_defeated)
@@ -16,12 +16,12 @@ func set_data(_name:String) -> void:
 	data.set_damage_owner()
 	attack_areas = _get_attack_areas()
 	data.hash_id = hash(_name)
+	is_prisoner = false
 
 
 func _physics_process(_delta: float) -> void:
-	
-	
-	move_and_slide()
+	if not is_prisoner:
+		move_and_slide()
 
 
 func set_level(_level:int = 1) -> void:
@@ -45,5 +45,5 @@ func _get_attack_areas() -> Array[AttackArea]:
 func _enemy_defeated(_data:BaseCharacterData) -> void:
 	if _data is EnemyData and _data.hash_id == data.hash_id:
 		Signals.SpawnLoot.emit(global_position, data.loot_table.duplicate())
-		get_parent().remove_child.call_deferred(self)
+		if get_parent() != null: get_parent().remove_child.call_deferred(self)
 		Signals.ReturnEnemyToPool.emit(self)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://be6obcoguhsaa"]
+
+[ext_resource type="Script" path="res://Code/Weapons/Projectiles/bubble_projectile.gd" id="1_6ndut"]
+[ext_resource type="PackedScene" uid="uid://catpchydt20c1" path="res://Scenes/Weapons/Projectiles/sprites/bubble_sprite.tscn" id="1_e6q3s"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_cph5s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1xyw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe4n7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfmti"]
+
+[node name="BubbleProjectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_6ndut")
+
+[node name="bubble_sprite" parent="." instance=ExtResource("1_e6q3s")]
+unique_name_in_owner = true
+position = Vector2(2, 2)
+scale = Vector2(0.66, 0.66)
+
+[node name="explosion" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 49, 0, 0, 0)
+tile_set = ExtResource("2_cph5s")
+
+[node name="attack_collider" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(6, 6)
+shape = SubResource("CircleShape2D_f1xyw")
+disabled = true
+
+[node name="collector_area" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 8
+
+[node name="collector_collider" type="CollisionShape2D" parent="collector_area"]
+unique_name_in_owner = true
+position = Vector2(6, 6)
+shape = SubResource("CircleShape2D_pe4n7")
+
+[node name="wall_detector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+
+[node name="wall_collider" type="CollisionShape2D" parent="wall_detector"]
+position = Vector2(6, 6)
+shape = SubResource("CircleShape2D_bfmti")

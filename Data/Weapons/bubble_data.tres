@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://bf5y828jb36yw"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_60sec"]
+[ext_resource type="Resource" uid="uid://dnnhxhkrvwb6" path="res://Data/Weapons/Damages/bubble_damage.tres" id="2_4y6t6"]
+[ext_resource type="Script" path="res://Code/Weapons/weapon_data.gd" id="2_bgua7"]
+
+[resource]
+script = ExtResource("2_bgua7")
+id = "bubble_weapon"
+weapon_path = "res://Scenes/Weapons/bubble_weapon.tscn"
+projectile_path = "res://Scenes/Weapons/Projectiles/bubble_projectile.tscn"
+icon_path = "res://Scenes/Shop/Icons/bubble_icon.tscn"
+target_type = 3
+level = 1
+level_json = "res://Data/Weapons/LevelData/bubble_levels.json"
+trigger_delay = 2.0
+shoot_delay = 0.05
+projectile_count = 1.0
+damages = Array[ExtResource("1_60sec")]([ExtResource("2_4y6t6")])
+projectile_life_time = 0.4
+projectile_scale = 1.0
+remain_on_player = false
+extras = {
+"captured_lifetime": 0.4
+}

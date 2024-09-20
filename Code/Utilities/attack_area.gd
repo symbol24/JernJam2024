@@ -4,7 +4,6 @@ class_name AttackArea extends Area2D
 @export var damages:Array[Damage]
 
 var parent:CharacterBody2D
-var can_hit:bool = true
 
 
 func set_contact_damages() -> void:

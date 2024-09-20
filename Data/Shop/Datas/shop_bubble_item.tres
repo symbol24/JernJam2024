@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://d38tu4x1tn4x1"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_bgx6t"]
+[ext_resource type="Resource" uid="uid://bf5y828jb36yw" path="res://Data/Weapons/bubble_data.tres" id="2_6dsix"]
+
+[resource]
+script = ExtResource("1_bgx6t")
+id = "shop_bubble_item"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([3])
+item_amount = 1
+weapon_data = ExtResource("2_6dsix")
+icon_path = "res://Scenes/Shop/Icons/bubble_icon.tscn"

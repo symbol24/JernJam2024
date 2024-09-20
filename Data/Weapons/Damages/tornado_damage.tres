@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_7tgon")
 base_damage = 1
-type = 1
+type = 2
 crit_chance = 0.0
 crit_bonus = 0.0

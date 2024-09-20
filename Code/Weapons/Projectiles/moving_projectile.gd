@@ -24,15 +24,9 @@ func _physics_process(_delta: float) -> void:
 		timer += _delta
 
 
-func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target:Enemy2D = null) -> void:
-	parent = _owner
-	data = _data.duplicate()
-	damages = data.damages
-	_set_damage_owner()
-	target = _target
-	global_position = _owner.global_position
+func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = null) -> void:
+	super(_data, _owner, _target)
 	timer = 0.0
-	can_hit = true
 	if data.extras.has("speed"): speed = data.extras["speed"]
 	show()
 	if target != null:
@@ -44,3 +38,11 @@ func _body_entered(_body) -> void:
 	if _body.is_in_group("environment") or _body.is_in_group("enemy"):
 		hide()
 		_return_to_pool()
+
+
+func get_damages() -> Array[Damage]:
+	if can_hit:
+		current_hit_count -= 1
+		_update_base_damages(damages)
+		return damages
+	return []

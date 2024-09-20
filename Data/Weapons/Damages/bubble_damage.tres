@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Damage" load_steps=2 format=3 uid="uid://dnnhxhkrvwb6"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_bhmkp"]
+
+[resource]
+script = ExtResource("1_bhmkp")
+base_damage = 1
+type = 2
+crit_chance = 0.0
+crit_bonus = 0.0

@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://b81lt3p6qgqgw"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://b81lt3p6qgqgw"]
 
 [ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="1_m3o7r"]
-[ext_resource type="Resource" uid="uid://csv8g5qpcfj0g" path="res://Data/Weapons/tornado_data.tres" id="2_7pp1m"]
 
 [resource]
 script = ExtResource("1_m3o7r")
 base_range = 1.0
-starting_weapon = ExtResource("2_7pp1m")
+starting_weapon = "res://Data/Weapons/bubble_data.tres"
 character_sprite = "res://Scenes/PlayerCharacter/Sprites/druid_sprite.tscn"
 id = "Druid"
 path = "res://Scenes/PlayerCharacter/character.tscn"

@@ -19,9 +19,14 @@
 		"trigger_delay": "3",
 		"projectile_life_time": "4"
 	},
-	"level6": {
+	"level5": {
 		"projectile_scale": "2",
 		"trigger_delay": "3",
 		"projectile_life_time": "4"
+	},
+	"level6": {
+		"projectile_scale": "2.5",
+		"trigger_delay": "2.5",
+		"projectile_life_time": "6"
 	}
 }

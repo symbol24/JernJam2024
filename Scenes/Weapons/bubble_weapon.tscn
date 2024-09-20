@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckxhyr2xubx3n"]
+
+[ext_resource type="Script" path="res://Code/Weapons/weapon.gd" id="1_3fw75"]
+[ext_resource type="Resource" uid="uid://bf5y828jb36yw" path="res://Data/Weapons/bubble_data.tres" id="2_03sot"]
+
+[node name="BubbleWeapon" type="Node2D"]
+script = ExtResource("1_3fw75")
+weapon_data = ExtResource("2_03sot")

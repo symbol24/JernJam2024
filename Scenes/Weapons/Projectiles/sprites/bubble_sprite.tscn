@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=4 uid="uid://catpchydt20c1"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_qyov0"]
+
+[node name="BubbleSprite" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(0.0235294, 0.498039, 1, 1)
+tile_map_data = PackedByteArray("AAD/////AQAwAC0AAAD//wAAAQAwAC4AAAD//wEAAQAwAC8AAAAAAP//AQAxAC0AAAAAAAEAAQAxAC8AAAABAP//AQAyAC0AAAABAAAAAQAyAC4AAAABAAEAAQAyAC8AAAA=")
+tile_set = ExtResource("1_qyov0")

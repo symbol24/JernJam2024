@@ -39,8 +39,11 @@ func shoot():
 func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = Vector2.ZERO) -> void:
 	parent = _owner
 	data = _data.duplicate()
+	data.parse_level_data()
+	scale = Vector2(data.projectile_scale, data.projectile_scale)
 	damages = data.damages
 	_set_damage_owner()
+	current_hit_count = hit_count
 	var no_target:bool = false
 	if _target != null:
 		global_position = _target
@@ -83,3 +86,8 @@ func _return_to_pool() -> void:
 	set_deferred("is_active", false)
 	get_parent().remove_child.call_deferred(self)
 	Signals.ReturnProjectileToPool.emit(self)
+
+
+func get_damages() -> Array[Damage]:
+	_update_base_damages(damages)
+	return damages

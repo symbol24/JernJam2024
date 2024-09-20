@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4f40fs1kxi42"]
+
+[ext_resource type="Script" path="res://Code/Weapons/weapon.gd" id="1_jr6x5"]
+[ext_resource type="Resource" uid="uid://cufdfws1r1run" path="res://Data/Weapons/flail_data.tres" id="2_86vio"]
+
+[node name="FlailWeapon" type="Node2D"]
+script = ExtResource("1_jr6x5")
+weapon_data = ExtResource("2_86vio")

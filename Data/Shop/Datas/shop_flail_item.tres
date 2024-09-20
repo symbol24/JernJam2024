@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://byqbgctati0nl"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_sar63"]
+[ext_resource type="Resource" uid="uid://cufdfws1r1run" path="res://Data/Weapons/flail_data.tres" id="2_ujnwc"]
+
+[resource]
+script = ExtResource("1_sar63")
+id = "shop_flail_data"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([3])
+item_amount = 1
+weapon_data = ExtResource("2_ujnwc")
+icon_path = "res://Scenes/Shop/Icons/flail_icon.tscn"

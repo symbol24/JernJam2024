@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://beiymi1vpxpc5"]
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://c7qrmp72rq7pm"]
 
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_6xt6t"]
-[ext_resource type="Script" path="res://Code/Weapons/weapon_data.gd" id="2_18fce"]
-[ext_resource type="Resource" uid="uid://tq3gj2mgi01w" path="res://Data/Weapons/Damages/knife_damage.tres" id="2_c5si7"]
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_br23g"]
+[ext_resource type="Resource" uid="uid://tq3gj2mgi01w" path="res://Data/Weapons/Damages/knife_damage.tres" id="2_v2aw1"]
+[ext_resource type="Script" path="res://Code/Weapons/weapon_data.gd" id="2_vbvjo"]
 
 [resource]
-script = ExtResource("2_18fce")
+script = ExtResource("2_vbvjo")
 id = "knife"
 weapon_path = "res://Scenes/Weapons/knife_weapon.tscn"
 projectile_path = "res://Scenes/Weapons/Projectiles/knife_projectile.tscn"
@@ -16,9 +16,8 @@ level_json = "res://Data/Weapons/LevelData/knife_levels.json"
 trigger_delay = 2.0
 shoot_delay = 0.1
 projectile_count = 1.0
-damages = Array[ExtResource("1_6xt6t")]([ExtResource("2_c5si7")])
+damages = Array[ExtResource("1_br23g")]([ExtResource("2_v2aw1")])
 projectile_life_time = 0.33
 projectile_scale = 1.0
-extras = {
-"speed": 150.0
-}
+remain_on_player = false
+extras = {}

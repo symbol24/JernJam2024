@@ -1,27 +1,32 @@
 {
 	"level1" : {
-		"hp" : "1",
-		"damage" : "1",
-		"lifetime" : "0.33"
+		"trigger_delay" : "2",
+		"base_damage" : "1",
+		"spin_radius" : "90"
 	},
 	"level2" : {
-		"hp" : "2",
-		"damage" : "1",
-		"lifetime" : "0.33"
+		"trigger_delay" : "2",
+		"base_damage" : "2",
+		"spin_radius" : "90"
 	},
 	"level3" : {
-		"hp" : "2",
-		"damage" : "1",
-		"lifetime" : "0.45"
+		"trigger_delay" : "1.5",
+		"base_damage" : "2",
+		"spin_radius" : "90"
 	},
 	"level4" : {
-		"hp" : "2",
-		"damage" : "2",
-		"lifetime" : "0.45"
+		"trigger_delay" : "1.5",
+		"base_damage" : "2",
+		"spin_radius" : "180"
 	},
 	"level5" : {
-		"hp" : "3",
-		"damage" : "2",
-		"lifetime" : "0.7"
+		"trigger_delay" : "1.5",
+		"base_damage" : "2",
+		"spin_radius" : "180"
+	},
+	"level6" : {
+		"trigger_delay" : "0.75",
+		"base_damage" : "3",
+		"spin_radius" : "360"
 	}
 }

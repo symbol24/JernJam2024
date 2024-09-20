@@ -1,32 +1,32 @@
 {
 	"level1": {
-		"count": "1",
-		"damage": "1",
+		"hit_count": "1",
+		"base_damage": "1",
 		"lifetime": "0.33"
 	},
 	"level2": {
-		"count": "2",
-		"damage": "1",
+		"hit_count": "2",
+		"base_damage": "1",
 		"lifetime": "0.33"
 	},
 	"level3": {
-		"count": "2",
-		"damage": "1",
+		"hit_count": "2",
+		"base_damage": "1",
 		"lifetime": "0.45"
 	},
 	"level4": {
-		"count": "2",
-		"damage": "2",
+		"hit_count": "2",
+		"base_damage": "2",
 		"lifetime": "0.45"
 	},
 	"level5": {
-		"count": "3",
-		"damage": "2",
+		"hit_count": "3",
+		"base_damage": "2",
 		"lifetime": "0.45"
 	},
 	"level6": {
-		"count": "3",
-		"damage": "2",
+		"hit_count": "3",
+		"base_damage": "3",
 		"lifetime": "0.7"
 	}
 }

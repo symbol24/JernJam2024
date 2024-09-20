@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://cufdfws1r1run"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_03vib"]
+[ext_resource type="Script" path="res://Code/Weapons/weapon_data.gd" id="2_smilv"]
+[ext_resource type="Resource" uid="uid://cbg3qnafuwso7" path="res://Data/Weapons/Damages/flail_damage.tres" id="2_upvyo"]
+
+[resource]
+script = ExtResource("2_smilv")
+id = "flail"
+weapon_path = "res://Scenes/Weapons/flail_weapon.tscn"
+projectile_path = "res://Scenes/Weapons/Projectiles/flail_projectile.tscn"
+icon_path = "res://Scenes/Shop/Icons/flail_icon.tscn"
+target_type = 4
+level = 1
+level_json = "res://Data/Weapons/LevelData/flail_levels.json"
+trigger_delay = 2.0
+shoot_delay = 0.1
+projectile_count = 1.0
+damages = Array[ExtResource("1_03vib")]([ExtResource("2_upvyo")])
+projectile_life_time = 0.2
+projectile_scale = 1.0
+remain_on_player = true
+extras = {
+"spin_radius": 90.0
+}
