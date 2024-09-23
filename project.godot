@@ -50,6 +50,7 @@ enemy=""
 spawn_point=""
 room=""
 camera_point=""
+generator=""
 
 [gui]
 

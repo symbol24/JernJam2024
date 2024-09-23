@@ -15,7 +15,7 @@ signal RoomReady(room:Room)
 signal ToggleDoor(id:String, open:bool)
 signal RoomClear()
 signal TransitionToNextRoom()
-signal RoomEntered(type)
+signal RoomEntered(type:Room.Room_Type)
 
 
 # Levels
@@ -25,7 +25,7 @@ signal LevelReady(level:Level)
 # Spawning
 signal SpawnNextWave(room:Room)
 signal ReturnEnemyToPool(enemy:Enemy2D)
-signal InstantiateLevelEnemies(rooms:Array[Room])
+signal InstantiateLevelEnemies(level:Level)
 
 
 # Character

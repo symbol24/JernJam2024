@@ -180,7 +180,7 @@ offset_right = 179.0
 offset_bottom = 117.0
 text = "Play"
 script = ExtResource("4_1qq4j")
-destination = "test"
+destination = "fantasy"
 
 [node name="LoadingScreen" type="Control" parent="."]
 process_mode = 3

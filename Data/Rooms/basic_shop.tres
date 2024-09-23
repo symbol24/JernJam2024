@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_mtnvg")
-id = "basic_shop"
+id = "fantasy_shop"
 path = "res://Scenes/Levels/Rooms/basic_shop_room.tscn"
 type = 1

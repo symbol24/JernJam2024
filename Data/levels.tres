@@ -6,7 +6,7 @@
 script = ExtResource("1_botn8")
 levels = {
 "boot": "res://Scenes/Levels/boot.tscn",
-"level_01": "res://Scenes/Levels/level_01.tscn",
+"fantasy": "res://Scenes/Levels/fantasy_level.tscn",
 "test": "res://Scenes/Levels/level_test.tscn"
 }
 loading_delay = 1.0

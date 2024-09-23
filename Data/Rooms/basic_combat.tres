@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_is4ma")
-id = "basic_combat"
+id = "fantasy_combat"
 path = "res://Scenes/Levels/Rooms/basic_combat_room.tscn"
 type = 0

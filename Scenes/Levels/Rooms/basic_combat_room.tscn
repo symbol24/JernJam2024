@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbfpn76hr5axp"]
+[gd_scene load_steps=6 format=3 uid="uid://bbfpn76hr5axp"]
 
 [ext_resource type="Script" path="res://Code/Levels/Room/combat_room.gd" id="1_06qjs"]
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_x87ge"]
-[ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Rooms/Room_test/SpawnerDatas/wave_1.tres" id="3_hr0t2"]
 [ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/combat_room_walls.tscn" id="5_0l80u"]
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="6_6nq3t"]
 [ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="9_o448a"]
@@ -11,7 +9,6 @@
 [node name="testmap" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3
 script = ExtResource("1_06qjs")
-spawn_list = Array[ExtResource("2_x87ge")]([ExtResource("3_hr0t2")])
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")
 metadata/_edit_vertical_guides_ = [72.0, 252.0]

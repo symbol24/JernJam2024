@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ch25rdiddvx0y"]
+[gd_scene load_steps=16 format=3 uid="uid://ch25rdiddvx0y"]
 
 [ext_resource type="Script" path="res://Code/Utilities/data_manager.gd" id="1_suf4a"]
 [ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="2_k5w3v"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://8gsb32nju13x" path="res://Scenes/UI/PlayerUi/single_heart.tscn" id="10_s3q02"]
 [ext_resource type="Script" path="res://Code/UI/Death/dialogue_data.gd" id="11_sk6p1"]
 [ext_resource type="Resource" uid="uid://c4y6r33ucee1g" path="res://Data/Dialogue/first_appearance.tres" id="12_vsydp"]
+[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="13_k2ibi"]
+[ext_resource type="Resource" uid="uid://b2ouxc4oe4wml" path="res://Data/Rooms/basic_combat.tres" id="14_et83s"]
+[ext_resource type="Resource" uid="uid://cfyyn6d6cmxou" path="res://Data/Rooms/basic_shop.tres" id="15_yk2wi"]
 
 [node name="DataManager" type="Node2D"]
 script = ExtResource("1_suf4a")
@@ -21,3 +24,4 @@ shop_item = ExtResource("8_xydc8")
 damage_number = ExtResource("9_ecfj0")
 hp_heart = ExtResource("10_s3q02")
 dialogue_lists = Array[ExtResource("11_sk6p1")]([ExtResource("12_vsydp")])
+room_list = Array[ExtResource("13_k2ibi")]([ExtResource("14_et83s"), ExtResource("15_yk2wi")])

@@ -3,13 +3,14 @@ class_name Level extends Node2D
 @export var id:String = ""
 @export var camera:LevelCamera
 @export var enemy_spawner:EnemySpawner
+@export var enemy_waves:Array[SpawnerData] = []
 
 var player:SyCharacterBody2D
 var rooms:Array = []
-var confirmed_rooms:Array[Room] = []
 var active_room_id:int = 0
 var active_room:Room:
 	get:
+		#print("rooms: ", rooms)
 		if rooms.is_empty(): return null
 		return rooms[active_room_id]
 
@@ -18,24 +19,18 @@ func _ready() -> void:
 	Signals.TransitionToNextRoom.connect(_switch_active_room)
 	Signals.CameraInPosition.connect(_camera_in_room)
 	if camera == null: push_error("Camera missing from level ", id)
-	rooms = get_tree().get_nodes_in_group("room")
-	_all_rooms_ready()
-
+	if get_tree().get_first_node_in_group("generator") == null: push_error("Map Generator scene missing from level tree.")
+	
 
 func room_ready(_room:Room) -> void:
-	confirmed_rooms.append(_room)
+	rooms.append(_room)
 
 
-func _set_player(_player:SyCharacterBody2D) -> void:
-	player = _player
-	print("Player ", player.data.id, " received.")
-
-
-func _all_rooms_ready() -> void:
-	if confirmed_rooms.size() == rooms.size():
-		Signals.InstantiateLevelEnemies.emit(confirmed_rooms)
+func all_rooms_ready() -> void:
+	if rooms.size() == 2:
+		Signals.InstantiateLevelEnemies.emit(self)
 		player = Game.get_character()
-		add_child(player)
+		add_child.call_deferred(player)
 		player.global_position = active_room.entrance_spawn_point.global_position
 		Signals.MoveCamera.emit(active_room.camera_point.global_position, 0)
 		Signals.LevelReady.emit(self)
