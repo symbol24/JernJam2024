@@ -29,6 +29,7 @@ var skip:bool = false
 var displaying:bool = false
 var d_tween:Tween
 var r_tween:Tween
+var death_move_delay:float = randf_range(0.05,0.15)
 
 
 func _ready() -> void:
@@ -39,7 +40,6 @@ func _ready() -> void:
 
 
 func _display_text(_id:String) -> void:
-	print("received id for text: ", _id)
 	current_dialogue_id = _id
 	var line_id:String = DataManager.get_dialogue(_id)
 	if line_id != "done":
@@ -53,17 +53,16 @@ func _display_text(_id:String) -> void:
 		Signals.ToggleControl.emit(UI.last_menu, true, "dialogue")
 
 
-func _move(_delay:float) -> void:
-	var delay:float = _delay / 2
-	#tween = sprite.create_tween()
-	#tween.set_ease(Tween.EASE_OUT_IN)
-	#tween.set_pause_mode(Tween.TweenPauseMode.TWEEN_PAUSE_PROCESS)
-	#tween.tween_property(sprite, "position", starting_pos + (Vector2.UP*3), delay)
-	#tween.tween_property(sprite, "position", starting_pos, delay)
-
-
-func _stop() -> void:
-	pass
+func _move() -> void:
+	if d_tween != null: 
+		d_tween.kill()
+		d_tween = null
+	d_tween = sprite.create_tween()
+	d_tween.set_loops(3)
+	var height:Vector2 = Vector2.UP * 3
+	var delay:float = death_move_delay
+	d_tween.tween_property(sprite, "position", starting_pos + height, delay)
+	d_tween.tween_property(sprite, "position", starting_pos, delay)
 
 
 func _display_with_ratio(_delay:float) -> void:
@@ -71,12 +70,14 @@ func _display_with_ratio(_delay:float) -> void:
 	if r_tween != null: r_tween.kill()
 	r_tween = dialogue_text.create_tween()
 	r_tween.tween_property(dialogue_text, "visible_ratio", 1.0, _delay)
+	_move()
 
 
 func _skip() -> void:
 	if displaying: 
 		if not skip: 
 			skip = true
+			displaying = false
 			_display_with_ratio(skip_delay)
 		else: 
 			_clear_current()
@@ -87,7 +88,6 @@ func _skip() -> void:
 		
 
 func _clear_current() -> void:
-	_stop()
 	dialogue_text.text = ""
 	skip = false
 	displaying = false

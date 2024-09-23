@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RoomData" load_steps=2 format=3 uid="uid://b2ouxc4oe4wml"]
+
+[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="1_is4ma"]
+
+[resource]
+script = ExtResource("1_is4ma")
+id = "basic_combat"
+path = "res://Scenes/Levels/Rooms/basic_combat_room.tscn"
+type = 0

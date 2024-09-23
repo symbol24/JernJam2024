@@ -18,22 +18,22 @@ id = "first_shop"
 loot_amount = 5
 items = Array[Dictionary]([{
 "data": ExtResource("1_ir73u"),
-"weight": 0
+"weight": 5
 }, {
 "data": ExtResource("2_cnhk3"),
-"weight": 0
+"weight": 10
 }, {
 "data": ExtResource("3_7751j"),
-"weight": 0
+"weight": 10
 }, {
 "data": ExtResource("4_o4xgh"),
-"weight": 0
+"weight": 10
 }, {
 "data": ExtResource("5_eqhb2"),
-"weight": 0
+"weight": 10
 }, {
 "data": ExtResource("6_dwn4g"),
-"weight": 0
+"weight": 10
 }, {
 "data": ExtResource("7_sokal"),
 "weight": 10

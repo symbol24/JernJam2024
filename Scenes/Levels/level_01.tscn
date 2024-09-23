@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpfg34wu8ecwl"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_sxiwu"]
+[ext_resource type="PackedScene" uid="uid://b4dmj7f23ccfi" path="res://Scenes/Utilities/level_camera.tscn" id="2_h6phu"]
+[ext_resource type="PackedScene" uid="uid://cqrb5wh7i2rut" path="res://Scenes/Utilities/loot_spawner.tscn" id="3_o4xa1"]
+[ext_resource type="PackedScene" uid="uid://brtjptwo0q5er" path="res://Scenes/Enemies/enemy_spawner.tscn" id="4_u0ib0"]
+
+[node name="Level01" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
+script = ExtResource("1_sxiwu")
+id = "level_01"
+camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
+
+[node name="level_camera" parent="." instance=ExtResource("2_h6phu")]
+
+[node name="LootSpawner" parent="." instance=ExtResource("3_o4xa1")]
+
+[node name="enemy_spawner" parent="." instance=ExtResource("4_u0ib0")]

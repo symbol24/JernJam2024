@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4dtpqsowmh7o"]
 
 [ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_nsaid"]
-[ext_resource type="PackedScene" uid="uid://bbfpn76hr5axp" path="res://Scenes/Levels/Rooms/testroom.tscn" id="2_7fdc7"]
-[ext_resource type="PackedScene" uid="uid://canufgnmperbq" path="res://Scenes/Levels/Rooms/shop_room.tscn" id="3_52klt"]
+[ext_resource type="PackedScene" uid="uid://bbfpn76hr5axp" path="res://Scenes/Levels/Rooms/basic_combat_room.tscn" id="2_7fdc7"]
+[ext_resource type="PackedScene" uid="uid://canufgnmperbq" path="res://Scenes/Levels/Rooms/basic_shop_room.tscn" id="3_52klt"]
 [ext_resource type="PackedScene" uid="uid://b4dmj7f23ccfi" path="res://Scenes/Utilities/level_camera.tscn" id="4_82p17"]
 [ext_resource type="PackedScene" uid="uid://cqrb5wh7i2rut" path="res://Scenes/Utilities/loot_spawner.tscn" id="5_ssyht"]
 [ext_resource type="PackedScene" uid="uid://brtjptwo0q5er" path="res://Scenes/Enemies/enemy_spawner.tscn" id="6_m1mmr"]

@@ -10,6 +10,7 @@ var confirmed_rooms:Array[Room] = []
 var active_room_id:int = 0
 var active_room:Room:
 	get:
+		if rooms.is_empty(): return null
 		return rooms[active_room_id]
 
 
