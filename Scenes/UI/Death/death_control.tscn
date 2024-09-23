@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfcsytalomisv"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_d5miy"]
+[ext_resource type="Script" path="res://Code/UI/Death/death_control.gd" id="1_sf86e"]
+
+[node name="DeathControl" type="Control"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sf86e")
+
+[node name="sprite" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 4)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 26, 0, 48, 0, 0, 0, 0, 0, 1, 0, 1, 0, 26, 0, 49, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, 0, 48, 0, 0, 0, 1, 0, 1, 0, 1, 0, 27, 0, 49, 0, 0, 0)
+tile_set = ExtResource("1_d5miy")

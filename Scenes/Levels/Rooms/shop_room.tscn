@@ -13,6 +13,7 @@ process_mode = 3
 script = ExtResource("1_0jjjp")
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")
+room_type = 1
 metadata/_edit_lock_ = true
 
 [node name="background" type="ColorRect" parent="."]

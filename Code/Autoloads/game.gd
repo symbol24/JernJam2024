@@ -1,18 +1,15 @@
 extends Node
 
-const THIEF = preload("res://Data/PlayerCharacters/thief_data.tres")
-const WIZARD = preload("res://Data/PlayerCharacters/wizard_data.tres")
-const FIGHTER = preload("res://Data/PlayerCharacters/fighter_data.tres")
-const DRUID = preload("res://Data/PlayerCharacters/druid_data.tres")
-const LEVELS = preload("res://Data/levels.tres")
+
 const CAMERA_TRANSITION_TIME:float = 0.5
 
 # Damage constants
 const MAX_CC:float = 0.8
 const OVERFLOW_PERCENTAGE:float = 1.0
 
+
 # Will change if add character selector
-var selected_data:CharacterData = WIZARD
+var selected_data:CharacterData = DataManager.character_datas[3]
 var player:SyCharacterBody2D
 
 # A quick variable to check if the tree is paused.
@@ -21,6 +18,7 @@ var is_paused:bool:
 		return get_tree().paused
 		
 #Levels and loading
+var levels = DataManager.levels
 var active_level:Node
 var is_loading := false
 var to_load := ""
@@ -61,14 +59,30 @@ func get_closest_between(_object:Node2D, _list:Array) -> Node2D:
 	return null
 
 
+func parse_json_data(_json:String) -> Dictionary:
+	var result:Dictionary
+	var file = FileAccess.open(_json, FileAccess.READ)
+	if file:
+		var json_string = file.get_as_text()
+		var json = JSON.new()
+		var error = json.parse(json_string)
+		if error != OK:
+			push_error("JSON file parsing failed for ", _json)
+			return result
+		
+		result = json.data.duplicate()
+		file.close()
+	return result
+
+
 func _load_level(_id:String = "") -> void:
 	pause_tree(true)
 	# Send loadscreen toggle on
 	Signals.ToggleControl.emit("loading", true)
 	
 	# If path is empty, dont try to load.
-	if not LEVELS.levels.has(_id): return
-	var path:String = LEVELS.levels[_id]
+	if not levels.levels.has(_id): return
+	var path:String = levels.levels[_id]
 	if path == "": return
 	
 	# If there is an active level, queue_free it.
@@ -99,8 +113,8 @@ func _level_ready(_level:Level) -> void:
 		pause_tree(false)
 		
 		# Adding load time if set in the level data
-		if LEVELS.loading_delay > 0.0:
-			var wait_timer := get_tree().create_timer(LEVELS.loading_delay)
+		if levels.loading_delay > 0.0:
+			var wait_timer := get_tree().create_timer(levels.loading_delay)
 			await wait_timer.timeout
 			
 		# Send loadscreen toggle off
@@ -114,8 +128,11 @@ func pause_tree(_value:bool = false) -> void:
 func get_character() -> SyCharacterBody2D:
 	if player != null: return player
 	else:
-		player = load(selected_data.path).instantiate() as SyCharacterBody2D
-		player.data = selected_data.duplicate(true)
+		if selected_data is CharacterData:
+			player = load(selected_data.path).instantiate() as SyCharacterBody2D
+			player.data = selected_data.duplicate(true)
+		else: push_error("For some reasonm selected_data is not a character_data...")
+
 		return player
 		
 	

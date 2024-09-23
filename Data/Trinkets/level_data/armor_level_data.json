@@ -1,0 +1,14 @@
+{
+	"level1": {
+		"armor": "1"
+	},
+	"level2": {
+		"armor": "2"
+	},
+	"level3": {
+		"armor": "3"
+	},
+	"level4": {
+		"armor": "4"
+	}
+}

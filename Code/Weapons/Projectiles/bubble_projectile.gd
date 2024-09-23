@@ -60,10 +60,9 @@ func _pop() -> void:
 		prisoner.data.receive_damage(get_damages())
 		prisoner.set_deferred("is_prisoner", false)
 		prisoner.set_deferred("global_position", global_position)
-		if prisoner.get_parent() != null and prisoner.get_parent() == self:
-			remove_child(prisoner)
-			if prisoner.data.current_hp > 0:
-				Game.active_level.active_room.add_child.call_deferred(prisoner)
+		if prisoner.data.current_hp > 0:
+			remove_child.call_deferred(prisoner)
+			Game.active_level.active_room.add_child.call_deferred(prisoner)
 		prisoner = null
 	await get_tree().create_timer(0.2).timeout
 	_return_to_pool()
@@ -73,10 +72,10 @@ func _body_entered(_body) -> void:
 	if prisoner == null and _body.is_in_group("enemy"):
 		_body.get_parent().remove_child.call_deferred(_body)
 		add_child.call_deferred(_body)
-		collector_collider.disabled = true
+		collector_collider.set_deferred("disabled", true)
 		prisoner = _body
-		prisoner.is_prisoner = true
-		prisoner.position = Vector2(6,6)
+		prisoner.set_deferred("is_prisoner", true)
+		prisoner.set_deferred("position", Vector2(6,6))
 
 
 func _wall_detect(_body) -> void:

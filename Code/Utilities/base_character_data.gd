@@ -14,6 +14,7 @@ var level:int = 1:
 	set(value):
 		level = value
 		Signals.CharacterLevelUpdated.emit(self)
+
 var current_hp:int = 1:
 	set(value):
 		current_hp = value
@@ -21,8 +22,11 @@ var current_hp:int = 1:
 		Signals.HpUpdated.emit(self)
 		if current_hp <= 0:
 			current_hp = 0
+			#print(id, " defeated")
+			defeats += 1
 			Signals.CharacterDefeated.emit(self)
 		elif current_hp > max_hp: current_hp = max_hp
+var defeats:int = 0
 var bonus_hp:int = 0:
 	set(value):
 		var pre:int = bonus_hp
@@ -58,7 +62,9 @@ func setup_data(_owner:CharacterBody2D) -> void:
 func receive_damage(_damages:Array[Damage]) -> void:
 	#print(id, " has received damages: ", _damages)
 	for dmg_data in _damages:
-		var damage:Damage = dmg_data.get_damage()
+		var dmg_owner:CharacterData  = dmg_data.damage_owner
+		var damage:Damage = dmg_data.get_damage(int(dmg_owner.get_trinket_value_of("base_damage")), dmg_owner.get_trinket_value_of("crit_chance"), dmg_owner.get_trinket_value_of("crit_bonus"))
+
 		var final_damage:int = damage.final_damage
 		match damage.type:
 			Damage.Type.PHYSICAL:

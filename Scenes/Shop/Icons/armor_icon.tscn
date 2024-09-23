@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5noyyfi7s0il"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_1f5vk"]
+
+[node name="ArmorIcon" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 26, 0, 31, 0, 0, 0)
+tile_set = ExtResource("1_1f5vk")

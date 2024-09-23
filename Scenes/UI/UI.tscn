@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dje6x2hkvnjq1"]
+[gd_scene load_steps=14 format=3 uid="uid://dje6x2hkvnjq1"]
 
 [ext_resource type="Script" path="res://Code/UI/ui.gd" id="1_lclfa"]
 [ext_resource type="Script" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
@@ -8,6 +8,13 @@
 [ext_resource type="Script" path="res://Code/UI/wrappers/sy_button.gd" id="4_1qq4j"]
 [ext_resource type="Script" path="res://Code/UI/coin_label.gd" id="4_e82jq"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="4_tohl0"]
+[ext_resource type="Script" path="res://Code/UI/dialogue.gd" id="9_qlctj"]
+[ext_resource type="PackedScene" uid="uid://cfcsytalomisv" path="res://Scenes/UI/Death/death_control.tscn" id="10_qsm7g"]
+[ext_resource type="Script" path="res://Code/UI/ghost_rte.gd" id="12_inxhk"]
+[ext_resource type="Script" path="res://Code/UI/Death/dialogue_skip_button.gd" id="13_b0qqa"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_7c8hq"]
+script = ExtResource("12_inxhk")
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -15,6 +22,7 @@ script = ExtResource("1_lclfa")
 
 [node name="PlayerUI" type="Control" parent="."]
 process_mode = 3
+visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
@@ -28,9 +36,9 @@ unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 1
-offset_left = 6.0
+offset_left = 3.0
 offset_top = 6.0
-offset_right = 42.0
+offset_right = 39.0
 offset_bottom = 50.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/player_hp"]
@@ -42,28 +50,32 @@ theme_override_constants/separation = 2
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 1
 
 [node name="player_level" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/level_n_name"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
 bbcode_enabled = true
-text = "[center]00[/center]"
+text = "00"
 scroll_active = false
+autowrap_mode = 0
 shortcut_keys_enabled = false
 
 [node name="player_name" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/level_n_name"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
 size_flags_stretch_ratio = 1.8
 theme_type_variation = &"CharacterNameRTL"
 bbcode_enabled = true
 text = "player_name"
 scroll_active = false
+autowrap_mode = 0
 shortcut_keys_enabled = false
 
 [node name="player_hearts" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
@@ -97,13 +109,15 @@ tile_set = ExtResource("4_tohl0")
 
 [node name="coin_label" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/player_coins"]
 process_mode = 3
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
 theme_type_variation = &"CoinsRTL"
 bbcode_enabled = true
 text = "0000"
 scroll_active = false
+autowrap_mode = 0
 shortcut_keys_enabled = false
 script = ExtResource("4_e82jq")
 
@@ -112,11 +126,12 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 3
+columns = 2
 
 [node name="player_trinkets" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+columns = 2
 
 [node name="DamageNumbers" type="Control" parent="PlayerUI"]
 process_mode = 3
@@ -211,3 +226,86 @@ pivot_offset = Vector2(6, 6)
 [node name="TileMapLayer" type="TileMapLayer" parent="LoadingScreen/loading_background/logo"]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 30, 0, 45, 0, 0, 0)
 tile_set = ExtResource("4_tohl0")
+
+[node name="Dialogue" type="Control" parent="."]
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_qlctj")
+id = "dialogue"
+
+[node name="DeathControl" parent="Dialogue" instance=ExtResource("10_qsm7g")]
+process_mode = 3
+layout_mode = 1
+offset_left = 224.0
+offset_top = 84.0
+offset_right = 320.0
+offset_bottom = 180.0
+first_appearance_death_count = 0
+
+[node name="DContainer" type="PanelContainer" parent="Dialogue"]
+process_mode = 3
+layout_mode = 1
+offset_left = 12.0
+offset_top = 108.0
+offset_right = 212.0
+offset_bottom = 168.0
+theme_type_variation = &"DialoguePanelContainer"
+
+[node name="DVBox" type="VBoxContainer" parent="Dialogue/DContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="dialogue_name" type="RichTextLabel" parent="Dialogue/DContainer/DVBox"]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[ghost freq=5.0 span=10.0][shake]Death[/shake][/ghost]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_7c8hq")]
+
+[node name="dialogue_text" type="RichTextLabel" parent="Dialogue/DContainer/DVBox"]
+unique_name_in_owner = true
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0.996078)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_type_variation = &"DialogueText"
+bbcode_enabled = true
+text = "fsdgsghsdgsdg"
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="click_to_continue" type="HBoxContainer" parent="Dialogue/DContainer/DVBox"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="click_continue" type="RichTextLabel" parent="Dialogue/DContainer/DVBox/click_to_continue"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_type_variation = &"ClickContinue"
+bbcode_enabled = true
+text = "[right]Click to Conitnue[/right]"
+scroll_active = false
+
+[node name="skip_button" type="Button" parent="Dialogue"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 0
+offset_left = 12.0
+offset_top = 108.0
+offset_right = 212.0
+offset_bottom = 168.0
+theme_type_variation = &"SkipBtn"
+script = ExtResource("13_b0qqa")

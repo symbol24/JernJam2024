@@ -1,0 +1,14 @@
+{
+	"level1" : {
+		"base_damage" : "1"
+	},
+	"level2" : {
+		"base_damage" : "2"
+	},
+	"level3" : {
+		"base_damage" : "3"
+	},
+	"level4" : {
+		"base_damage" : "4"
+	}
+}

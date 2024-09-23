@@ -1,7 +1,6 @@
 class_name CombatRoom extends Room
 
 @export var spawn_list:Array[SpawnerData] = []
-@export var enemy_spawner:EnemySpawner
 
 
 func _ready() -> void:

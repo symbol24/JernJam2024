@@ -21,11 +21,12 @@ func set_owner(_owner:BaseCharacterData) -> void:
 	if _owner: damage_owner = _owner
 
 
-func get_damage() -> Damage:
+func get_damage(_bonus_damage:int = 0, _bonus_cc:float = 0.0, _bonus_cb = 0.0) -> Damage:
+	#print("damage _bonus_damage: ", _bonus_damage, " _bonus_cc: ", _bonus_cc, " _bonus_cb:", _bonus_cb)
 	if damage_owner != null:
-		final_damage = base_damage + damage_owner.bonus_damage
-		var cc:float = crit_chance + damage_owner.current_cc
-		var cb:float = crit_bonus + damage_owner.current_cb
+		final_damage = base_damage + damage_owner.bonus_damage + _bonus_damage
+		var cc:float = crit_chance + damage_owner.current_cc + _bonus_cc
+		var cb:float = crit_bonus + damage_owner.current_cb + _bonus_cb
 		var overflow:float = 0.0
 		if cc > Game.MAX_CC:
 			overflow = cc - Game.MAX_CC

@@ -1,0 +1,18 @@
+{
+	"level1" : {
+		"crit_chance" : "0.1",
+		"crit_bonus" : "0.25"
+	},
+	"level2" : {
+		"crit_chance" : "0.2",
+		"crit_bonus" : "0.50"
+	},
+	"level3" : {
+		"crit_chance" : "0.3",
+		"crit_bonus" : "0.75"
+	},
+	"level4" : {
+		"crit_chance" : "0.4",
+		"crit_bonus" : "1.0"
+	}
+}

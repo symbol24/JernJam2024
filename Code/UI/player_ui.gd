@@ -1,6 +1,5 @@
 class_name PlayerUi extends SyControl
 
-const SINGLE_HEART = preload("res://Scenes/UI/PlayerUi/single_heart.tscn")
 
 @onready var player_hp: PanelContainer = %player_hp
 @onready var player_hearts: GridContainer = %player_hearts
@@ -13,6 +12,7 @@ var hearts:Array[SingleHeart] = []
 var weapons:Array[WeaponData] = []
 var trinkets:Array = []
 var displayed_weapons:Array[Control] = []
+var displayed_trinkets:Array[Control] = []
 
 func _ready() -> void:
 	super()
@@ -21,6 +21,7 @@ func _ready() -> void:
 	Signals.PlayerReady.connect(_update_character_name)
 	Signals.CharacterLevelUpdated.connect(_update_level)
 	Signals.UpdateUiWithWeapon.connect(_update_weapons)
+	Signals.UpdateUiWithTrinket.connect(_update_trinkets)
 
 
 func _construct_hp(_character:BaseCharacterData) -> void:
@@ -31,7 +32,7 @@ func _construct_hp(_character:BaseCharacterData) -> void:
 		hearts.clear()
 	var j:int = 0
 	for i in _character.max_hp:
-		var new_heart:SingleHeart = SINGLE_HEART.instantiate() as SingleHeart
+		var new_heart:SingleHeart = DataManager.hp_heart.instantiate() as SingleHeart
 		player_hearts.add_child(new_heart)
 		new_heart.current_state = SingleHeart.State.FULL if j < _character.current_hp else SingleHeart.State.EMPTY
 		hearts.append(new_heart)
@@ -71,7 +72,7 @@ func _update_weapons(_weapon:WeaponData) -> void:
 		displayed_weapons.append(control)
 
 
-func _update_trinkets(_trinket) -> void:
+func _update_trinkets(_trinket:TrinketData) -> void:
 	if _trinket:
 		trinkets.append(_trinket)
 
@@ -79,6 +80,6 @@ func _update_trinkets(_trinket) -> void:
 		var control:Control = Control.new()
 		control.add_child(new)
 		control.set_custom_minimum_size(Vector2(12,12))
-		player_weapons.add_child.call_deferred(control)
+		player_trinkets.add_child.call_deferred(control)
 		
-		displayed_weapons.append(control)
+		displayed_trinkets.append(control)

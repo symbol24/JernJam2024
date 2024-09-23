@@ -6,12 +6,13 @@ class_name SyCharacterBody2D extends CharacterBody2D
 var data:CharacterData
 var enemies_in_range:Array[Enemy2D] = []
 var weapons:Array[Weapon] = []
-var trinkets:Array = []
+var trinkets:Array[TrinketData] = []
 
 func _ready() -> void:
 	character_range.body_entered.connect(_range_body_entered)
 	character_range.body_exited.connect(_range_body_exited)
 	Signals.CollectItem.connect(_collect_item)
+	Signals.RoomEntered.connect(_check_for_heal)
 	#print("selected character: ", data.id)
 	#print("Starter weapon: ", data.starting_weapon)
 	_build_character(data)
@@ -70,8 +71,9 @@ func construct_weapon(_data:WeaponData) -> void:
 			weapons[i].data.level += 1
 
 
-func construct_trinket(_data) -> void:
-	print("would construct trinket here")
+func construct_trinket(_data:TrinketData) -> void:
+	if _data:
+		data.add_trinket(_data)
 
 
 func _check_if_have(_weapon:WeaponData = null, _trinket = null) -> int:
@@ -86,3 +88,13 @@ func _check_if_have(_weapon:WeaponData = null, _trinket = null) -> int:
 		pass
 
 	return -1
+
+
+func _check_for_heal(_room_type:Room.Room_Type) -> void:
+	if _room_type == Room.Room_Type.SHOP:
+		for each in data.trinkets:
+			if each.id == "bandaid":
+				if each.level_data.has("level"+str(each.level)):
+					var level_data:Dictionary = each.level_data["level"+str(each.level)]
+					if level_data.has("heal"):
+						data.heal(int(level_data["heal"]))

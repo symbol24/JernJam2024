@@ -1,9 +1,31 @@
-[gd_resource type="Theme" format=3 uid="uid://juy4qenccfes"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://juy4qenccfes"]
+
+[ext_resource type="StyleBox" uid="uid://dv0f6aciuug2x" path="res://Data/StyleBoxes/Dbox_box_flat.tres" id="1_l8gjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yi65i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s26cg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cov4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5olt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huhni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtssh"]
 
 [resource]
+Button/font_sizes/font_size = 5
 CharacterNameRTL/base_type = &"RichTextLabel"
-CharacterNameRTL/font_sizes/normal_font_size = 6
+CharacterNameRTL/font_sizes/normal_font_size = 5
+ClickContinue/base_type = &"RichTextLabel"
+ClickContinue/font_sizes/normal_font_size = 6
 CoinsRTL/base_type = &"RichTextLabel"
+CoinsRTL/font_sizes/normal_font_size = 9
+DialoguePanelContainer/base_type = &"PanelContainer"
+DialoguePanelContainer/styles/panel = ExtResource("1_l8gjg")
+DialogueText/base_type = &"RichTextLabel"
+DialogueText/font_sizes/normal_font_size = 5
 DmgNumberRTL/base_type = &"RichTextLabel"
 DmgNumberRTL/font_sizes/normal_font_size = 8
 GameTitleRTL/base_type = &"RichTextLabel"
@@ -30,6 +52,13 @@ PhysicalCrit/font_sizes/normal_font_size = 10
 RIDSplashRTL/base_type = &"RichTextLabel"
 RIDSplashRTL/font_sizes/normal_font_size = 16
 RichTextLabel/font_sizes/normal_font_size = 8
+SkipBtn/base_type = &"Button"
+SkipBtn/styles/disabled = SubResource("StyleBoxEmpty_yi65i")
+SkipBtn/styles/focus = SubResource("StyleBoxEmpty_s26cg")
+SkipBtn/styles/hover = SubResource("StyleBoxEmpty_cov4a")
+SkipBtn/styles/hover_pressed = SubResource("StyleBoxEmpty_p5olt")
+SkipBtn/styles/normal = SubResource("StyleBoxEmpty_huhni")
+SkipBtn/styles/pressed = SubResource("StyleBoxEmpty_mtssh")
 WarningTextRTL/base_type = &"RichTextLabel"
 WarningTextRTL/font_sizes/normal_font_size = 8
 WarningTitleRTL/base_type = &"RichTextLabel"

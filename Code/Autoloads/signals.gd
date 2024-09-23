@@ -15,6 +15,7 @@ signal RoomReady(room:Room)
 signal ToggleDoor(id:String, open:bool)
 signal RoomClear()
 signal TransitionToNextRoom()
+signal RoomEntered(type)
 
 
 # Levels
@@ -24,6 +25,7 @@ signal LevelReady(level:Level)
 # Spawning
 signal SpawnNextWave(room:Room)
 signal ReturnEnemyToPool(enemy:Enemy2D)
+signal InstantiateLevelEnemies(rooms:Array[Room])
 
 
 # Character
@@ -41,7 +43,7 @@ signal DmgNbrReturnToPool(dmg_nbr:DamageNumberRTL)
 signal CoinsUpdated(coins:int)
 signal DamageReceived(character:CharacterBody2D, damage:int, type:Damage.Type, is_critical:bool)
 signal UpdateUiWithWeapon(weapon:WeaponData)
-signal UpdateUiWithTrinket(trinket)
+signal UpdateUiWithTrinket(trinket:TrinketData)
 
 
 # Weapons 
@@ -56,3 +58,8 @@ signal SpawnLoot(position:Vector2, pickup_data:PickupData)
 
 # Shop
 signal ShopItemPurchased(item:ShopItemData)
+
+
+# Dialogue
+signal DisplayText(text:String)
+signal SkipDialogue()

@@ -56,17 +56,7 @@ var level_data:Dictionary
 
 
 func parse_level_data() -> void:
-	var file = FileAccess.open(level_json, FileAccess.READ)
-	if file:
-		var json_string = file.get_as_text()
-		var json = JSON.new()
-		var result = json.parse(json_string)
-		if result != OK:
-			push_error("Weapon data level json parsing failed for ", id)
-			return
-		
-		level_data = json.data.duplicate()
-		file.close()
+	level_data = Game.parse_json_data(level_json)
 
 
 func get_level_data_for(_variable:String = "") -> float:

@@ -1,6 +1,5 @@
 class_name DmgNumbManager extends Control
 
-const DAMAGE_NUMBER = preload("res://Scenes/UI/damage_number.tscn")
 
 var dmg_nbr:DamageNumberRTL
 var pool:Array[DamageNumberRTL] = []
@@ -8,16 +7,16 @@ var pool:Array[DamageNumberRTL] = []
 
 func _ready() -> void:
 	Signals.DamageReceived.connect(_display_dmg_nmbrs)
-	dmg_nbr = DAMAGE_NUMBER.instantiate()
+	dmg_nbr = DataManager.damage_number.instantiate()
 
 
 func _display_dmg_nmbrs(_character:CharacterBody2D, _damage:int, _type:Damage.Type = Damage.Type.PHYSICAL, _is_critical:bool = false) -> void:
 	var new:DamageNumberRTL = _get_dmg_nbr()
 	add_child.call_deferred(new)
 	var variation:String = _get_variation(_type, _is_critical)
-	new.set_damage_number(str(_damage), variation, 15, 0.5)
-	new.global_position = _character.global_position
-	new.display_number()
+	new.set_damage_number.call_deferred(str(_damage), variation, 15, 0.5)
+	new.set_deferred("global_position", Game.active_level.active_room.to_local(_character.global_position))
+	new.display_number.call_deferred()
 
 
 func _get_dmg_nbr() -> DamageNumberRTL:

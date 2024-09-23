@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="1_eietm"]
 
 [node name="enemy_spawner" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_eietm")

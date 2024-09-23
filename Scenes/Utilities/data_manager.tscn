@@ -1,0 +1,23 @@
+[gd_scene load_steps=13 format=3 uid="uid://ch25rdiddvx0y"]
+
+[ext_resource type="Script" path="res://Code/Utilities/data_manager.gd" id="1_suf4a"]
+[ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="2_k5w3v"]
+[ext_resource type="Resource" uid="uid://b81lt3p6qgqgw" path="res://Data/PlayerCharacters/druid_data.tres" id="3_vpas0"]
+[ext_resource type="Resource" uid="uid://botvapm2dcxre" path="res://Data/PlayerCharacters/fighter_data.tres" id="4_urk8c"]
+[ext_resource type="Resource" uid="uid://dim20x1ui0ogu" path="res://Data/PlayerCharacters/thief_data.tres" id="5_n16ex"]
+[ext_resource type="Resource" uid="uid://dx4jis38o1blg" path="res://Data/PlayerCharacters/wizard_data.tres" id="6_n2p15"]
+[ext_resource type="Resource" uid="uid://brknjpm4agl0x" path="res://Data/levels.tres" id="7_xh7td"]
+[ext_resource type="PackedScene" uid="uid://ddktr274fjwyv" path="res://Scenes/Shop/shop_item.tscn" id="8_xydc8"]
+[ext_resource type="PackedScene" uid="uid://bcccftq73mphh" path="res://Scenes/UI/damage_number.tscn" id="9_ecfj0"]
+[ext_resource type="PackedScene" uid="uid://8gsb32nju13x" path="res://Scenes/UI/PlayerUi/single_heart.tscn" id="10_s3q02"]
+[ext_resource type="Script" path="res://Code/UI/Death/dialogue_data.gd" id="11_sk6p1"]
+[ext_resource type="Resource" uid="uid://c4y6r33ucee1g" path="res://Data/Dialogue/first_appearance.tres" id="12_vsydp"]
+
+[node name="DataManager" type="Node2D"]
+script = ExtResource("1_suf4a")
+character_datas = Array[ExtResource("2_k5w3v")]([ExtResource("3_vpas0"), ExtResource("4_urk8c"), ExtResource("5_n16ex"), ExtResource("6_n2p15")])
+levels = ExtResource("7_xh7td")
+shop_item = ExtResource("8_xydc8")
+damage_number = ExtResource("9_ecfj0")
+hp_heart = ExtResource("10_s3q02")
+dialogue_lists = Array[ExtResource("11_sk6p1")]([ExtResource("12_vsydp")])

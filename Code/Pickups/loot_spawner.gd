@@ -28,9 +28,9 @@ func _spawn_loot(_position:Vector2, _loot_table:LootTable) -> void:
 				push_error("Missing path for ", each.id, " in loot table ", _loot_table.id)
 				continue
 			var new_loot:PickupItem = _get_item_to_spawn(each)
-			new_loot.set_pickup(each, self, player)
-			new_loot.spawn_pickup(positions[p])
 			add_child.call_deferred(new_loot)
+			new_loot.set_pickup.call_deferred(each, self, player)
+			new_loot.spawn_pickup.call_deferred(positions[p])
 			
 			p += 1
 			if p >= positions.size(): p = 0

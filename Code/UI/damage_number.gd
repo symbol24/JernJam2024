@@ -2,10 +2,11 @@ class_name DamageNumberRTL extends RichTextLabel
 
 var duration:float = 1.0
 var distance:float = 10
-
+var value
 
 func set_damage_number(_value:String, _variation:String, _distance:float = 10, _duration:float = 2) -> void:
 	text = _value
+	value = _value
 	theme_type_variation = _variation
 	distance = _distance
 	duration = _duration

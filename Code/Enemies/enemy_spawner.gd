@@ -1,18 +1,28 @@
 class_name EnemySpawner extends Node2D
 
 
-@onready var room:Room = get_parent() as Room
+var level:Level
+var room:Room:
+	get:
+		if level != null: return level.active_room
+		else: 
+			push_error("Level is not set in enemy spawner")
+			return null
 
 # Spawning
-var spawn_active:bool = false
+var spawn_active:bool = false:
+	set(value):
+		spawn_active = value
+		if spawn_active: print("Spawn active in ", room.name)
 var active_spawn_id:int = 0:
 	set(_value):
 		active_spawn_id = _value
-		if active_spawn_id >= room.spawn_list.size(): 
+		if active_spawn_id >= room.spawn_list.size():
+			active_spawn_id = 0
 			spawn_active = false
 			print("Spawn over")
-		else: 
-			_start_next_spawn_data(room)
+		#else: 
+		#	_start_next_spawn_data(room)
 			
 var instantiated_enemies:Array[Enemy2D] = []
 var enemy_pool:Array[Array] = []
@@ -49,21 +59,26 @@ var wait_next_spawn_timer:float = 0.0:
 
 
 func _ready() -> void:
-	Signals.SpawnNextWave.connect(_start_next_spawn_data)
+	level = get_parent() as Level
+	Signals.RoomEntered.connect(_start_next_spawn_data)
 	Signals.ReturnEnemyToPool.connect(_return_to_pool)
-	if not room.is_node_ready(): await room.ready
-	
-	# instantiting one of each enemy
-	for spawn_data in room.spawn_list:
-		for each:EnemyData in spawn_data.enemies_to_spawn:
-			if _check_is_not_instantiated(each, instantiated_enemies):
-				var new_enemy:Enemy2D = load(each.path).instantiate() as Enemy2D
-				instantiated_enemies.append(new_enemy)
+	Signals.InstantiateLevelEnemies.connect(_instantiate_enemies)
 
 
 func _physics_process(_delta: float) -> void:
 	if wait_next_spawn_timer_active: wait_next_spawn_timer += _delta
 	if spawn_timer_active: spawn_timer += _delta
+
+
+func _instantiate_enemies(_rooms:Array[Room]) -> void:
+	# instantiting one of each enemy
+	for r in _rooms:
+		if r is CombatRoom:
+			for spawn_data in r.spawn_list:
+				for each:EnemyData in spawn_data.enemies_to_spawn:
+					if _check_is_not_instantiated(each, instantiated_enemies):
+						var new_enemy:Enemy2D = load(each.path).instantiate() as Enemy2D
+						instantiated_enemies.append(new_enemy)
 
 
 func _spawn_wave(_id:int) -> void:
@@ -76,7 +91,8 @@ func _spawn_wave(_id:int) -> void:
 				new_enemy.name = enemy.id + str(enemy_total_spawn_count)
 				new_enemy.set_data(new_enemy.name)
 				new_enemy.set_level(Game.active_level.player.data.level)
-				new_enemy.global_position = Vector2(randf_range(spawn_data.spawn_area[0], spawn_data.spawn_area[1]), randf_range(spawn_data.spawn_area[2], spawn_data.spawn_area[3]))
+				var pos:Vector2 = room.to_global(Vector2(randf_range(spawn_data.spawn_area[0], spawn_data.spawn_area[1]), randf_range(spawn_data.spawn_area[2], spawn_data.spawn_area[3])))
+				new_enemy.global_position = pos
 				all_enemies.append(new_enemy)
 				enemy_total_spawn_count += 1
 				
@@ -85,8 +101,8 @@ func _spawn_wave(_id:int) -> void:
 			wave_count += 1
 
 
-func _start_next_spawn_data(_room:Room) -> void:
-	if _room == room:
+func _start_next_spawn_data(_room) -> void:
+	if room is CombatRoom:
 		spawn_active = true
 		wait_next_spawn_delay = room.spawn_list[active_spawn_id].delay_before_starting
 		wait_next_spawn_timer_active = true
@@ -113,22 +129,25 @@ func _check_is_not_instantiated(_data:EnemyData, _list:Array[Enemy2D]) -> bool:
 
 
 func _remove_enemy_from_all(_enemy:Enemy2D) -> void:
+	#print("in _remove_enemy_from_all, receiving enemy: ", _enemy.name)
 	all_enemies.erase(_enemy)
+	#print("not spawn_active: ", not spawn_active, " and all_enemies.is_empty(): ", all_enemies.is_empty())
 	if not spawn_active and all_enemies.is_empty():
 		Signals.RoomClear.emit()
 
 
+var count:int = 0
 func _return_to_pool(_enemy:Enemy2D) -> void:
-	for each in enemy_pool:
-		if each.has(_enemy):
-			_remove_enemy_from_all(_enemy)
-			return
-			
+	#print("in _return_to_pool, receing: ", _enemy.name, " with count: ", count)
+	count += 1
+	var in_pool:bool = false
 	for each in enemy_pool:
 		if not each.is_empty() and each[0].data.id == _enemy.data.id:
 			each.append(_enemy)
-			_remove_enemy_from_all(_enemy)
-			return
+			in_pool = true
+			break
 	
+	if not in_pool:
+		enemy_pool.append([_enemy])
+
 	_remove_enemy_from_all(_enemy)
-	enemy_pool.append([_enemy])

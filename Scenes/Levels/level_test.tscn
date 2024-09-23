@@ -1,19 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4dtpqsowmh7o"]
+[gd_scene load_steps=7 format=3 uid="uid://c4dtpqsowmh7o"]
 
 [ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_nsaid"]
 [ext_resource type="PackedScene" uid="uid://bbfpn76hr5axp" path="res://Scenes/Levels/Rooms/testroom.tscn" id="2_7fdc7"]
 [ext_resource type="PackedScene" uid="uid://canufgnmperbq" path="res://Scenes/Levels/Rooms/shop_room.tscn" id="3_52klt"]
 [ext_resource type="PackedScene" uid="uid://b4dmj7f23ccfi" path="res://Scenes/Utilities/level_camera.tscn" id="4_82p17"]
+[ext_resource type="PackedScene" uid="uid://cqrb5wh7i2rut" path="res://Scenes/Utilities/loot_spawner.tscn" id="5_ssyht"]
+[ext_resource type="PackedScene" uid="uid://brtjptwo0q5er" path="res://Scenes/Enemies/enemy_spawner.tscn" id="6_m1mmr"]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("camera")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
 process_mode = 3
 script = ExtResource("1_nsaid")
 id = "test"
 camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
 
 [node name="testmap" parent="." instance=ExtResource("2_7fdc7")]
+metadata/_edit_lock_ = true
 
 [node name="ShopRoom" parent="." instance=ExtResource("3_52klt")]
 position = Vector2(0, -180)
+
+[node name="testmap2" parent="." instance=ExtResource("2_7fdc7")]
+position = Vector2(0, -360)
+metadata/_edit_lock_ = true
+
+[node name="ShopRoom2" parent="." instance=ExtResource("3_52klt")]
+position = Vector2(0, -540)
+
+[node name="LootSpawner" parent="." instance=ExtResource("5_ssyht")]
+
+[node name="enemy_spawner" parent="." instance=ExtResource("6_m1mmr")]
 
 [node name="level_camera" parent="." instance=ExtResource("4_82p17")]

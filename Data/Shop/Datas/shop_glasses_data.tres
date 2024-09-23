@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://k60b20jj4d0g"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_ob7o0"]
+[ext_resource type="Resource" uid="uid://kgf2br324vyw" path="res://Data/Trinkets/glasses_data.tres" id="2_jroko"]
+
+[resource]
+script = ExtResource("1_ob7o0")
+id = "shop_glasses_data"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([4])
+item_amount = 1
+trinket_data = ExtResource("2_jroko")
+icon_path = "res://Scenes/Shop/Icons/glasses_icon.tscn"

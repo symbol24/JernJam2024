@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TrinketData" load_steps=2 format=3 uid="uid://did3sr4sd4apn"]
+
+[ext_resource type="Script" path="res://Code/Trinkets/trinket_data.gd" id="1_hy0oc"]
+
+[resource]
+script = ExtResource("1_hy0oc")
+id = "bandaid"
+icon_path = "res://Scenes/Shop/Icons/bandaid_icon.tscn"
+level_json = "res://Data/Trinkets/level_data/bandaid_level_data.json"

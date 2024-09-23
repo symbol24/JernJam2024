@@ -1,0 +1,14 @@
+{
+	"level1" : {
+		"heal" : "1"
+	},
+	"level2" : {
+		"heal" : "2"
+	},
+	"level3" : {
+		"heal" : "3"
+	},
+	"level4" : {
+		"heal" : "4"
+	}
+}

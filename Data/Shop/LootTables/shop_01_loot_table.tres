@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://f1ydfbch8ioc"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=12 format=3 uid="uid://f1ydfbch8ioc"]
 
 [ext_resource type="Resource" uid="uid://dunbwn7j5bmvc" path="res://Data/Shop/Datas/shop_heart_item.tres" id="1_ir73u"]
 [ext_resource type="Resource" uid="uid://c1lkmnyw4um0o" path="res://Data/Shop/Datas/shop_level_item.tres" id="2_cnhk3"]
@@ -7,6 +7,10 @@
 [ext_resource type="Resource" uid="uid://cqet62c6k34a3" path="res://Data/Shop/Datas/shop_knife_item.tres" id="4_o4xgh"]
 [ext_resource type="Resource" uid="uid://d38tu4x1tn4x1" path="res://Data/Shop/Datas/shop_bubble_item.tres" id="5_eqhb2"]
 [ext_resource type="Resource" uid="uid://byqbgctati0nl" path="res://Data/Shop/Datas/shop_flail_item.tres" id="6_dwn4g"]
+[ext_resource type="Resource" uid="uid://cmmn3mkevre7q" path="res://Data/Shop/Datas/shop_armor_data.tres" id="7_sokal"]
+[ext_resource type="Resource" uid="uid://bd2ndwywnfgd" path="res://Data/Shop/Datas/shop_bandaid_data.tres" id="8_gl6lm"]
+[ext_resource type="Resource" uid="uid://k60b20jj4d0g" path="res://Data/Shop/Datas/shop_glasses_data.tres" id="9_5c2a5"]
+[ext_resource type="Resource" uid="uid://qgymam4aiju5" path="res://Data/Shop/Datas/shop_protein_data.tres" id="10_rgayt"]
 
 [resource]
 script = ExtResource("3_ir20i")
@@ -14,20 +18,32 @@ id = "first_shop"
 loot_amount = 5
 items = Array[Dictionary]([{
 "data": ExtResource("1_ir73u"),
-"weight": 10
+"weight": 0
 }, {
 "data": ExtResource("2_cnhk3"),
-"weight": 10
+"weight": 0
 }, {
 "data": ExtResource("3_7751j"),
-"weight": 20
+"weight": 0
 }, {
 "data": ExtResource("4_o4xgh"),
-"weight": 20
+"weight": 0
 }, {
 "data": ExtResource("5_eqhb2"),
-"weight": 20
+"weight": 0
 }, {
 "data": ExtResource("6_dwn4g"),
-"weight": 20
+"weight": 0
+}, {
+"data": ExtResource("7_sokal"),
+"weight": 10
+}, {
+"data": ExtResource("8_gl6lm"),
+"weight": 10
+}, {
+"data": ExtResource("9_5c2a5"),
+"weight": 10
+}, {
+"data": ExtResource("10_rgayt"),
+"weight": 10
 }])
