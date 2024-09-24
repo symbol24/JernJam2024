@@ -41,7 +41,7 @@ func complete_purchase() -> void:
 func set_data(_data:ShopItemData) -> void:
 	if _data:
 		data = _data.duplicate()
-		price_label.text = str(data.cost_amount)
+		price_label.text = "[center]" + str(data.cost_amount) + "[/center]"
 		match data.cost_type:
 			ShopItemData.Cost_Type.CURRENCY:
 				currency.show()

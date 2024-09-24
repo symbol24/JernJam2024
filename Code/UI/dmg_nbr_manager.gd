@@ -15,7 +15,8 @@ func _display_dmg_nmbrs(_character:CharacterBody2D, _damage:int, _type:Damage.Ty
 	add_child.call_deferred(new)
 	var variation:String = _get_variation(_type, _is_critical)
 	new.set_damage_number.call_deferred(str(_damage), variation, 15, 0.5)
-	new.set_deferred("global_position", Game.active_level.active_room.to_local(_character.global_position))
+	var pos:Vector2 = Vector2(_character.global_position.x - 4, _character.global_position.y - 6)
+	new.set_deferred("global_position", Game.active_level.active_room.to_local(pos))
 	new.display_number.call_deferred()
 
 

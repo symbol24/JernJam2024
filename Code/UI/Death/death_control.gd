@@ -99,7 +99,7 @@ func _check_dialogue_trigger(_room_type:Room.Room_Type) -> void:
 	if _room_type == Room.Room_Type.SHOP:
 		match current_state:
 			State.NORMAL:
-				print("first_appearance_death_count ", first_appearance_death_count)
+				#print("first_appearance_death_count ", first_appearance_death_count)
 				if Game.player.data.defeats > first_appearance_death_count:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("first_appearance")

@@ -32,21 +32,24 @@ tile_set = ExtResource("1_fgym7")
 
 [node name="price_label" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
-offset_left = 1.0
-offset_right = 15.0
-offset_bottom = 11.0
+custom_minimum_size = Vector2(12, 8)
+offset_top = 2.0
+offset_right = 12.0
+offset_bottom = 9.0
+theme_type_variation = &"ShopItemPriceRTL"
 bbcode_enabled = true
-text = "11"
+text = "[center]1[/center]"
 scroll_active = false
 shortcut_keys_enabled = false
 
 [node name="buy_label" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
-offset_left = -7.0
-offset_top = -23.0
-offset_right = 9.0
-offset_bottom = -10.0
+custom_minimum_size = Vector2(24, 8)
+offset_left = -11.0
+offset_top = -21.0
+offset_right = 13.0
+offset_bottom = -13.0
 bbcode_enabled = true
-text = "Buy"
+text = "[center]Buy[/center]"
 scroll_active = false
 shortcut_keys_enabled = false

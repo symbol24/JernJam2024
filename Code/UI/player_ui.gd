@@ -62,24 +62,29 @@ func _update_character_name(_character:CharacterBody2D) -> void:
 func _update_weapons(_weapon:WeaponData) -> void:
 	if _weapon:
 		weapons.append(_weapon)
-		
-		var new:Node2D = load(_weapon.icon_path).instantiate() as Node2D
-		var control:Control = Control.new()
-		control.add_child(new)
-		control.set_custom_minimum_size(Vector2(12,12))
-		player_weapons.add_child.call_deferred(control)
-		
+		var control:Control = _create_item_ui(_weapon.icon_path) as Control
+		var level_rtl:ShopItemRTL = DataManager.item_label.instantiate() as ShopItemRTL
+		control.add_child(level_rtl)
+		level_rtl.position = Vector2(0,7)
+		level_rtl.setup(_weapon.id, 6)
 		displayed_weapons.append(control)
 
 
 func _update_trinkets(_trinket:TrinketData) -> void:
 	if _trinket:
 		trinkets.append(_trinket)
-
-		var new:Node2D = load(_trinket.icon_path).instantiate() as Node2D
-		var control:Control = Control.new()
-		control.add_child(new)
-		control.set_custom_minimum_size(Vector2(12,12))
-		player_trinkets.add_child.call_deferred(control)
-		
+		var control:Control = _create_item_ui(_trinket.icon_path) as Control
+		var level_rtl:ShopItemRTL = DataManager.item_label.instantiate() as ShopItemRTL
+		control.add_child(level_rtl)
+		level_rtl.position = Vector2(0,7)
+		level_rtl.setup(_trinket.id, 4)
 		displayed_trinkets.append(control)
+
+
+func _create_item_ui(_path:String) -> Control:
+	var new:Node2D = load(_path).instantiate() as Node2D
+	var control:Control = Control.new()
+	control.add_child(new)
+	control.set_custom_minimum_size(Vector2(12,12))
+	player_trinkets.add_child.call_deferred(control)
+	return control

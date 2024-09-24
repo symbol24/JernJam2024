@@ -8,8 +8,9 @@
 [ext_resource type="Script" path="res://Code/Shop/shop_builder.gd" id="6_d8cev"]
 [ext_resource type="Resource" uid="uid://f1ydfbch8ioc" path="res://Data/Shop/LootTables/shop_01_loot_table.tres" id="7_lufdt"]
 
-[node name="ShopRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
+[node name="BasicShopRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3
+z_index = -100
 script = ExtResource("1_0jjjp")
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")

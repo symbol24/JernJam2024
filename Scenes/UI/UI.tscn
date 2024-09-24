@@ -202,12 +202,12 @@ offset_bottom = 40.0
 color = Color(0.122252, 0.122252, 0.122252, 1)
 
 [node name="loading_text" type="RichTextLabel" parent="LoadingScreen/loading_background"]
-custom_minimum_size = Vector2(36, 12)
+custom_minimum_size = Vector2(48, 12)
 layout_mode = 1
-offset_left = 209.0
-offset_top = 140.0
-offset_right = 245.0
-offset_bottom = 152.0
+offset_left = 206.0
+offset_top = 142.0
+offset_right = 254.0
+offset_bottom = 154.0
 theme_type_variation = &"LoadingRichTextLabel"
 bbcode_enabled = true
 text = "Loading"

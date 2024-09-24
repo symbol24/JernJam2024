@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr3eg4s5knbbv"]
+
+[ext_resource type="Script" path="res://Code/UI/item_level_rtl.gd" id="1_g6c00"]
+[ext_resource type="Resource" uid="uid://bd2ndwywnfgd" path="res://Data/Shop/Datas/shop_bandaid_data.tres" id="2_sgtji"]
+
+[node name="ItemLevel" type="RichTextLabel"]
+custom_minimum_size = Vector2(12, 5)
+offset_right = 12.0
+offset_bottom = 5.0
+theme_type_variation = &"ShopItemRTL"
+bbcode_enabled = true
+text = "[center]1/5[/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+script = ExtResource("1_g6c00")
+item_data = ExtResource("2_sgtji")

@@ -6,6 +6,7 @@ extends Node2D
 @export var shop_item:Resource
 @export var damage_number:Resource
 @export var hp_heart:Resource
+@export var item_label:Resource
 @export var dialogue_lists:Array[DialogueData]
 @export var room_list:Array[RoomData]
 

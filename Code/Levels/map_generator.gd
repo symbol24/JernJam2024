@@ -29,6 +29,7 @@ func _spawn_next_rooms(_pos:Vector2 = Vector2.ZERO, _y_offset:float = -180) -> V
 		new_combat.global_position = _pos
 		_pos = Vector2(0, _pos.y + _y_offset)
 		level.room_ready(new_combat)
+		new_combat.name = "room_combat_" + str(level.rooms.size())
 
 	if shop != null:
 		var new_shop:ShopRoom = shop.duplicate()
@@ -36,6 +37,7 @@ func _spawn_next_rooms(_pos:Vector2 = Vector2.ZERO, _y_offset:float = -180) -> V
 		new_shop.global_position = _pos
 		_pos = Vector2(0, _pos.y + _y_offset)
 		level.room_ready(new_shop)
+		new_shop.name = "room_shop_" + str(level.rooms.size())
 
 	return _pos
 

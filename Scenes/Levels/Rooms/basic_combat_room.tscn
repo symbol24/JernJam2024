@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="9_o448a"]
 [ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="10_xijh4"]
 
-[node name="testmap" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
+[node name="BasicCombatRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3
+z_index = -100
 script = ExtResource("1_06qjs")
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")

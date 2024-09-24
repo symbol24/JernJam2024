@@ -33,7 +33,8 @@ func _process(_delta: float) -> void:
 
 func shoot():
 	is_active = true
-	_shake()
+	#_shake()
+	_move_to(parent.global_position)
 
 
 func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = Vector2.ZERO) -> void:
@@ -56,16 +57,22 @@ func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = Vector
 	scale = Vector2(1,1) *_data.projectile_scale
 
 
+
+func _move_to(_pos:Vector2) -> void:
+	var m_tween:Tween = self.create_tween()
+	m_tween.tween_property(self, "global_position", _pos, data.projectile_life_time)
+
+
 func _shake(_shake_time:float = 0.1) -> void:
 	if self != null:
 		tween = get_tree().create_tween()
-		tween.tween_property(self, "global_position", _get_random_shake_pos(), _shake_time)
+		tween.tween_property(self, "global_position", _get_random_shake_pos(global_position), _shake_time)
 		await tween.finished
 		_shake(_shake_time)
 
 
-func _get_random_shake_pos() -> Vector2:
-	var result:Vector2 = starting_pos
+func _get_random_shake_pos(_current_pos:Vector2) -> Vector2:
+	var result:Vector2 = _current_pos
 	var direction:String = ["up", "down", "left", "right"].pick_random()
 	match direction:
 		"up":

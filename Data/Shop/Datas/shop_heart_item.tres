@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_nfs6f")
-id = "shop_heart_item"
+id = "shop_heart_data"
 cost_type = 1
 cost_amount = 1
 shop_item_type = Array[int]([2])

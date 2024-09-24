@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_bgua7")
-id = "bubble_weapon"
+id = "bubble"
 weapon_path = "res://Scenes/Weapons/bubble_weapon.tscn"
 projectile_path = "res://Scenes/Weapons/Projectiles/bubble_projectile.tscn"
 icon_path = "res://Scenes/Shop/Icons/bubble_icon.tscn"
