@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RoomData" load_steps=2 format=3 uid="uid://ce5y686brd53h"]
+
+[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="1_copq6"]
+
+[resource]
+script = ExtResource("1_copq6")
+id = "modern_shop"
+path = "res://Scenes/Levels/Rooms/modern_shop_room.tscn"
+type = 1

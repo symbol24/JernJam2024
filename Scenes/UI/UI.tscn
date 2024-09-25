@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dje6x2hkvnjq1"]
+[gd_scene load_steps=15 format=3 uid="uid://dje6x2hkvnjq1"]
 
 [ext_resource type="Script" path="res://Code/UI/ui.gd" id="1_lclfa"]
 [ext_resource type="Script" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cfcsytalomisv" path="res://Scenes/UI/Death/death_control.tscn" id="10_qsm7g"]
 [ext_resource type="Script" path="res://Code/UI/ghost_rte.gd" id="12_inxhk"]
 [ext_resource type="Script" path="res://Code/UI/Death/dialogue_skip_button.gd" id="13_b0qqa"]
+[ext_resource type="Script" path="res://Code/UI/popups.gd" id="13_mexdp"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_7c8hq"]
 script = ExtResource("12_inxhk")
@@ -309,3 +310,33 @@ offset_right = 212.0
 offset_bottom = 168.0
 theme_type_variation = &"SkipBtn"
 script = ExtResource("13_b0qqa")
+
+[node name="Popups" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("13_mexdp")
+
+[node name="small_popup" type="PanelContainer" parent="Popups"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 1
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 60.0
+mouse_filter = 2
+theme_type_variation = &"PopupSmallPanel"
+
+[node name="small_popup_text" type="RichTextLabel" parent="Popups/small_popup"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"PanelSmallRTL"
+bbcode_enabled = true
+scroll_active = false

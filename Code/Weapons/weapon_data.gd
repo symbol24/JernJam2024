@@ -1,5 +1,7 @@
 class_name WeaponData extends Resource
 
+const MAX_LEVEL:int = 6
+
 enum Target_Type {
 					NONE = 0,
 					CLOSEST = 1,
@@ -16,7 +18,11 @@ enum Target_Type {
 @export var projectile_path:String = ""
 @export var icon_path:String = ""
 @export var target_type:Target_Type
-@export var level:int = 1
+@export var level:int = 1:
+	set(value):
+		level = value
+		if level > MAX_LEVEL:
+			level = MAX_LEVEL
 @export var level_json:String = ""
 @export var trigger_delay:float = 1.0:
 	get:

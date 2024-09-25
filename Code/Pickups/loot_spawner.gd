@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _spawn_loot(_position:Vector2, _loot_table:LootTable) -> void:
+	#print("spawning loot at ", _position)
 	var loot:Array = _loot_table.get_loot()
 	
 	var p:int = 0

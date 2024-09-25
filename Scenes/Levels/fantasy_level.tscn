@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpfg34wu8ecwl"]
 
 [ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_jgmgm"]
-[ext_resource type="PackedScene" uid="uid://b4dmj7f23ccfi" path="res://Scenes/Utilities/level_camera.tscn" id="2_do2m5"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_irugx"]
 [ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Rooms/Room_test/SpawnerDatas/wave_1.tres" id="3_hit3g"]
-[ext_resource type="PackedScene" uid="uid://cqrb5wh7i2rut" path="res://Scenes/Utilities/loot_spawner.tscn" id="3_sn8mp"]
-[ext_resource type="PackedScene" uid="uid://brtjptwo0q5er" path="res://Scenes/Enemies/enemy_spawner.tscn" id="4_47p65"]
-[ext_resource type="PackedScene" uid="uid://b5brgkh5lho7x" path="res://Scenes/Levels/map_generator.tscn" id="5_nv8fe"]
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="6_3ells"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="7_oylfw"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="8_i25lw"]
+[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="9_av23d"]
 
 [node name="fantasy_level" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
 script = ExtResource("1_jgmgm")
@@ -15,10 +15,16 @@ camera = NodePath("level_camera")
 enemy_spawner = NodePath("enemy_spawner")
 enemy_waves = Array[ExtResource("2_irugx")]([ExtResource("3_hit3g")])
 
-[node name="level_camera" parent="." instance=ExtResource("2_do2m5")]
+[node name="level_camera" type="Camera2D" parent="."]
+process_mode = 3
+script = ExtResource("6_3ells")
 
-[node name="LootSpawner" parent="." instance=ExtResource("3_sn8mp")]
+[node name="LootSpawner" type="Node2D" parent="."]
+script = ExtResource("7_oylfw")
 
-[node name="enemy_spawner" parent="." instance=ExtResource("4_47p65")]
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("8_i25lw")
 
-[node name="MapGenerator" parent="." instance=ExtResource("5_nv8fe")]
+[node name="MapGenerator" type="Node2D" parent="." groups=["generator"]]
+script = ExtResource("9_av23d")

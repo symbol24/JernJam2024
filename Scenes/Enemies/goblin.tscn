@@ -25,11 +25,6 @@ enemy_data = ExtResource("2_0vajh")
 
 [node name="MoveToTarget" parent="." instance=ExtResource("3_81o6t")]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-6, 5)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 26, 0, 2, 0, 0, 0)
-tile_set = ExtResource("3_r15ng")
-
 [node name="move_collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_o1852")
 
@@ -45,5 +40,10 @@ is_contact_attack = true
 [node name="attack_collider" parent="attack_area" index="0"]
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_qkg4m")
+
+[node name="sprite" type="TileMapLayer" parent="."]
+position = Vector2(-6, 5)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 26, 0, 2, 0, 0, 0)
+tile_set = ExtResource("3_r15ng")
 
 [editable path="attack_area"]

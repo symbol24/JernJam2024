@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbfpn76hr5axp"]
 
 [ext_resource type="Script" path="res://Code/Levels/Room/combat_room.gd" id="1_06qjs"]
-[ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/combat_room_walls.tscn" id="5_0l80u"]
-[ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="6_6nq3t"]
+[ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/Items/combat_room_walls.tscn" id="5_0l80u"]
+[ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/Items/door.tscn" id="6_6nq3t"]
 [ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="9_o448a"]
 [ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="10_xijh4"]
 
@@ -15,13 +15,13 @@ camera_point = NodePath("camera_point")
 metadata/_edit_vertical_guides_ = [72.0, 252.0]
 metadata/_edit_horizontal_guides_ = [24.0, 156.0]
 
-[node name="bottom_door2" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(320, 180)
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.122252, 0.122252, 0.122252, 1)
 
-[node name="bottom_door3" parent="." instance=ExtResource("5_0l80u")]
+[node name="walls" parent="." instance=ExtResource("5_0l80u")]
 
 [node name="bottom_door" parent="." instance=ExtResource("6_6nq3t")]
 position = Vector2(156, 180)

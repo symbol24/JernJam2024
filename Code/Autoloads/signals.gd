@@ -34,6 +34,7 @@ signal HpUpdated(character:BaseCharacterData)
 signal CharacterDefeated(character:BaseCharacterData)
 signal UpdateCharacterRange(range_percent:float, flat_amount:float)
 signal CharacterLevelUpdated(data:BaseCharacterData)
+signal RestCharacter()
 
 
 # UI
@@ -44,6 +45,7 @@ signal CoinsUpdated(coins:int)
 signal DamageReceived(character:CharacterBody2D, damage:int, type:Damage.Type, is_critical:bool)
 signal UpdateUiWithWeapon(weapon:WeaponData)
 signal UpdateUiWithTrinket(trinket:TrinketData)
+signal ResetPlayerUi()
 
 
 # Weapons 
@@ -58,6 +60,8 @@ signal SpawnLoot(position:Vector2, pickup_data:PickupData)
 
 # Shop
 signal ShopItemPurchased(item:ShopItemData)
+signal EnterShopItem(item:ShopItemData)
+signal ExitShopItem(item:ShopItemData)
 
 
 # Dialogue

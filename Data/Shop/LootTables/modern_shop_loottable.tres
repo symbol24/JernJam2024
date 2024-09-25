@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=4 format=3 uid="uid://cll8a80h43jud"]
+
+[ext_resource type="Resource" uid="uid://dunbwn7j5bmvc" path="res://Data/Shop/Datas/shop_heart_item.tres" id="1_3obpp"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="1_82d8d"]
+[ext_resource type="Resource" uid="uid://c1lkmnyw4um0o" path="res://Data/Shop/Datas/shop_level_item.tres" id="2_mhspk"]
+
+[resource]
+script = ExtResource("1_82d8d")
+id = "moder_shop_loottable"
+loot_amount = 5
+items = Array[Dictionary]([{
+"data": ExtResource("1_3obpp"),
+"weight": 10
+}, {
+"data": ExtResource("2_mhspk"),
+"weight": 10
+}])

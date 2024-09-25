@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://canufgnmperbq"]
 
 [ext_resource type="Script" path="res://Code/Levels/Room/shop_room.gd" id="1_0jjjp"]
-[ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/combat_room_walls.tscn" id="2_cjcot"]
+[ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/Items/combat_room_walls.tscn" id="2_cjcot"]
 [ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="2_tpdd3"]
-[ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/door.tscn" id="3_yg557"]
+[ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/Items/door.tscn" id="3_yg557"]
 [ext_resource type="PackedScene" uid="uid://qgaj15l1rw1a" path="res://Scenes/Shop/shop_keep.tscn" id="4_luu8o"]
 [ext_resource type="Script" path="res://Code/Shop/shop_builder.gd" id="6_d8cev"]
 [ext_resource type="Resource" uid="uid://f1ydfbch8ioc" path="res://Data/Shop/LootTables/shop_01_loot_table.tres" id="7_lufdt"]

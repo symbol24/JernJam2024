@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://dt8s3l0g3yvqr"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_5pgwk"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="2_7r8s4"]
+[ext_resource type="Resource" uid="uid://b0xtu0lqhrkx4" path="res://Data/EnemyDatas/Damages/modern_1_damage.tres" id="2_47xfc"]
+[ext_resource type="Resource" uid="uid://dvhwu7oa6rmhx" path="res://Data/EnemyDatas/LootTables/modern_generic_loottable.tres" id="3_irs1s"]
+
+[resource]
+script = ExtResource("2_7r8s4")
+contact_damages = Array[ExtResource("1_5pgwk")]([ExtResource("2_47xfc")])
+loot_table = ExtResource("3_irs1s")
+id = "modern_cyclist"
+path = "res://Scenes/Enemies/modern_cyclist.tscn"
+base_hp = 1
+speed = 30.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

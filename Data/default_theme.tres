@@ -1,6 +1,24 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://juy4qenccfes"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://juy4qenccfes"]
 
 [ext_resource type="StyleBox" uid="uid://dv0f6aciuug2x" path="res://Data/StyleBoxes/Dbox_box_flat.tres" id="1_l8gjg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysxqa"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.027451, 0.00784314, 0.0627451, 0.380392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yi65i"]
 
@@ -43,19 +61,25 @@ Magical/font_sizes/normal_font_size = 8
 MagicalCrit/base_type = &"RichTextLabel"
 MagicalCrit/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
 MagicalCrit/font_sizes/normal_font_size = 10
+PanelSmallRTL/base_type = &"RichTextLabel"
+PanelSmallRTL/font_sizes/normal_font_size = 6
 Physical/base_type = &"RichTextLabel"
 Physical/colors/default_color = Color(1, 0, 0, 1)
 Physical/font_sizes/normal_font_size = 8
 PhysicalCrit/base_type = &"RichTextLabel"
 PhysicalCrit/colors/default_color = Color(1, 0, 0, 1)
 PhysicalCrit/font_sizes/normal_font_size = 10
+PopupSmallPanel/base_type = &"PanelContainer"
+PopupSmallPanel/styles/panel = SubResource("StyleBoxFlat_ysxqa")
 RIDSplashRTL/base_type = &"RichTextLabel"
 RIDSplashRTL/font_sizes/normal_font_size = 16
 RichTextLabel/font_sizes/normal_font_size = 8
 ShopItemPriceRTL/base_type = &"RichTextLabel"
 ShopItemPriceRTL/font_sizes/normal_font_size = 9
 ShopItemRTL/base_type = &"RichTextLabel"
-ShopItemRTL/font_sizes/normal_font_size = 5
+ShopItemRTL/colors/font_outline_color = Color(0, 0, 0, 1)
+ShopItemRTL/constants/outline_size = 1
+ShopItemRTL/font_sizes/normal_font_size = 3
 SkipBtn/base_type = &"Button"
 SkipBtn/styles/disabled = SubResource("StyleBoxEmpty_yi65i")
 SkipBtn/styles/focus = SubResource("StyleBoxEmpty_s26cg")

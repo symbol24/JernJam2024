@@ -13,7 +13,7 @@ var room:Room:
 var spawn_active:bool = false:
 	set(value):
 		spawn_active = value
-		if spawn_active: print("Spawn active in ", room.name)
+		if spawn_active: print("Spawner ", name," active in ", room.name)
 var active_spawn_id:int = 0:
 	set(_value):
 		active_spawn_id = _value
@@ -58,6 +58,7 @@ var wait_next_spawn_timer:float = 0.0:
 
 func _ready() -> void:
 	level = get_parent() as Level
+	Signals.RestCharacter.connect(_clear_spawner)
 	Signals.RoomEntered.connect(_start_next_spawn_data)
 	Signals.ReturnEnemyToPool.connect(_return_to_pool)
 	Signals.InstantiateLevelEnemies.connect(_instantiate_enemies)
@@ -147,3 +148,13 @@ func _return_to_pool(_enemy:Enemy2D) -> void:
 		enemy_pool.append([_enemy])
 
 	_remove_enemy_from_all(_enemy)
+
+
+func _clear_spawner() -> void:
+	for pool in enemy_pool:
+		for each in pool:
+			each.queue_free.call_deferred()
+	enemy_pool.clear()
+	for each in all_enemies:
+		each.queue_free.call_deferred()
+	all_enemies.clear()

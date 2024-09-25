@@ -42,9 +42,11 @@ func _get_attack_areas() -> Array[AttackArea]:
 	return attacks
 
 
+var count:int = 0
 func _enemy_defeated(_data:BaseCharacterData) -> void:
 	if _data is EnemyData and _data.hash_id == data.hash_id:
-		#print("defeating enemy: ", name)
+		#print("defeating enemy: %s, %s amount of times on parent %s" % [name, count, get_parent()])
+		count += 1
 		Signals.SpawnLoot.emit(global_position, data.loot_table.duplicate())
 		if get_parent() != null: get_parent().remove_child.call_deferred(self)
 		Signals.ReturnEnemyToPool.emit(self)

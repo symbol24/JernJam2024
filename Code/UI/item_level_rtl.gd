@@ -3,7 +3,10 @@ class_name ShopItemRTL extends RichTextLabel
 @export var item_data:ShopItemData
 
 var id:String = ""
-var level:int = 1
+var level:int = 1:
+	set(value):
+		level = value
+		if level > max_level: level = max_level
 var max_level:int = 6
 
 
@@ -18,7 +21,7 @@ func setup(_id:String, _max_level:int) -> void:
 
 
 func _update_text(_shop_item_data:ShopItemData) -> void:
-	print(_shop_item_data.id, " == ", "shop_" + id + "_data")
+	#print(_shop_item_data.id, " == ", "shop_" + id + "_data")
 	if _shop_item_data.id == "shop_" + id + "_data":
 		level += 1
 

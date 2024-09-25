@@ -6,13 +6,13 @@ class_name SyCharacterBody2D extends CharacterBody2D
 var data:CharacterData
 var enemies_in_range:Array[Enemy2D] = []
 var weapons:Array[Weapon] = []
-var trinkets:Array[TrinketData] = []
 
 func _ready() -> void:
 	character_range.body_entered.connect(_range_body_entered)
 	character_range.body_exited.connect(_range_body_exited)
 	Signals.CollectItem.connect(_collect_item)
 	Signals.RoomEntered.connect(_check_for_heal)
+	Signals.RestCharacter.connect(_reset_data)
 	#print("selected character: ", data.id)
 	#print("Starter weapon: ", data.starting_weapon)
 	_build_character(data)
@@ -60,13 +60,16 @@ func _collect_item(_data:PickupData) -> void:
 func construct_weapon(_data:WeaponData) -> void:
 	#print("weapond data received: ", _data)
 	if _data:
-		var i:int = _check_if_have(_data, null)
+		var i:int = _check_if_have(_data)
 		if i == -1 :
+			var wd:WeaponData = _data.duplicate(true)
 			var weapon:Weapon = load(_data.weapon_path).instantiate() as Weapon
 			add_child.call_deferred(weapon)
+			weapon.data = wd
 			weapon.ready_weapon.call_deferred()
 			weapons.append(weapon)
-			Signals.UpdateUiWithWeapon.emit(_data.duplicate())
+			data.add_weapon_data(wd)
+			Signals.UpdateUiWithWeapon.emit(wd)
 		else:
 			weapons[i].data.level += 1
 
@@ -76,17 +79,13 @@ func construct_trinket(_data:TrinketData) -> void:
 		data.add_trinket(_data)
 
 
-func _check_if_have(_weapon:WeaponData = null, _trinket = null) -> int:
+func _check_if_have(_weapon:WeaponData = null) -> int:
 	if _weapon != null:
 		var j:int = 0
 		for each in weapons:
 			if each.data.id == _weapon.id:
 				return j
 			j += 1
-	
-	if _trinket != null:
-		pass
-
 	return -1
 
 
@@ -98,3 +97,8 @@ func _check_for_heal(_room_type:Room.Room_Type) -> void:
 					var level_data:Dictionary = each.level_data["level"+str(each.level)]
 					if level_data.has("heal"):
 						data.heal(int(level_data["heal"]))
+
+
+func _reset_data() -> void:
+	weapons.clear()
+	data.reset_data()

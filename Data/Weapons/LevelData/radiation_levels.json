@@ -1,0 +1,32 @@
+{
+	"level1": {
+		"tick_delay": "0.5",
+		"projectile_scale": "5",
+		"base_damage": "1"
+	},
+	"level2": {
+		"tick_delay": "0.17",
+		"projectile_scale": "5",
+		"base_damage": "1"
+	},
+	"level3": {
+		"tick_delay": "0.14",
+		"projectile_scale": "6",
+		"base_damage": "2"
+	},
+	"level4": {
+		"tick_delay": "0.11",
+		"projectile_scale": "6",
+		"base_damage": "2"
+	},
+	"level5": {
+		"tick_delay": "0.08",
+		"projectile_scale": "7",
+		"base_damage": "3"
+	},
+	"level6": {
+		"tick_delay": "0.05",
+		"projectile_scale": "8",
+		"base_damage": "3"
+	}
+}

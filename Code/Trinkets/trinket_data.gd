@@ -1,11 +1,17 @@
 class_name TrinketData extends Resource
 
 
+const MAX_LEVEL:int = 4
+
 @export var id:String = ""
 @export var icon_path:String = ""
 @export var level_json:String = ""
 
-var level:int = 1
+var level:int = 1:
+	set(value):
+		level = value
+		if level > MAX_LEVEL:
+			level = MAX_LEVEL
 var level_data:Dictionary
 
 

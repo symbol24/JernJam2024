@@ -19,7 +19,9 @@ func get_dialogue(_id:String) -> String:
 
 
 func get_room_path(_room_name:String) -> String:
+	#print("receiving room name: ", _room_name)
 	for each in room_list:
 		if _room_name == each.id:
+			#print(" returning room path: ", each.path)
 			return each.path
 	return ""

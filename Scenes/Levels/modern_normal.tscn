@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://don3ulqqppvi2"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_8svsx"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_c7qca"]
+[ext_resource type="Resource" uid="uid://bc7a8ck26jkbj" path="res://Data/Levels/ModernSpawns/modern_01.tres" id="3_wic6c"]
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="4_23l7s"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="5_v8xns"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="6_qwiei"]
+[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="7_52cxv"]
+
+[node name="ModernNormal" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
+script = ExtResource("1_8svsx")
+id = "modern"
+camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
+enemy_waves = Array[ExtResource("2_c7qca")]([ExtResource("3_wic6c")])
+
+[node name="level_camera" type="Camera2D" parent="."]
+process_mode = 3
+script = ExtResource("4_23l7s")
+
+[node name="LootSpawner" type="Node2D" parent="."]
+script = ExtResource("5_v8xns")
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("6_qwiei")
+
+[node name="MapGenerator" type="Node2D" parent="." groups=["generator"]]
+script = ExtResource("7_52cxv")

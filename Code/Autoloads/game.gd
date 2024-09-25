@@ -9,7 +9,7 @@ const OVERFLOW_PERCENTAGE:float = 1.0
 
 
 # Will change if add character selector
-var selected_data:CharacterData = DataManager.character_datas[3]
+var selected_data:CharacterData = DataManager.character_datas[1]
 var player:SyCharacterBody2D
 
 # A quick variable to check if the tree is paused.
@@ -83,6 +83,7 @@ func _load_level(_id:String = "") -> void:
 	# If path is empty, dont try to load.
 	if not levels.levels.has(_id): return
 	var path:String = levels.levels[_id]
+	#print("Found path: ", path)
 	if path == "": return
 	
 	# If there is an active level, queue_free it.
@@ -90,6 +91,7 @@ func _load_level(_id:String = "") -> void:
 		var temp := active_level
 		remove_child.call_deferred(temp)
 		temp.queue_free.call_deferred()
+		await get_tree().process_frame
 	
 	# Starting the ResourceLoader.
 	to_load = path
@@ -100,13 +102,13 @@ func _load_level(_id:String = "") -> void:
 
 func _complete_load() -> void:
 	is_loading = false
-	
+	#print("load complete for ", to_load)
+
 	# Get the new level from the ResourceLoader and instantiate it.
 	var new_level := ResourceLoader.load_threaded_get(to_load)
 	active_level = new_level.instantiate()
 	add_child.call_deferred(active_level)
 	
-
 
 func _level_ready(_level:Level) -> void:
 	if _level == active_level:
@@ -134,5 +136,3 @@ func get_character() -> SyCharacterBody2D:
 		else: push_error("For some reasonm selected_data is not a character_data...")
 
 		return player
-		
-	

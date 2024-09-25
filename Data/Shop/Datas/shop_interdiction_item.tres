@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://bb6lodisoigsh"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_4b0m5"]
+[ext_resource type="Resource" uid="uid://dco6wkole0igc" path="res://Data/Weapons/interdiction_weapon_data.tres" id="2_tk2ij"]
+
+[resource]
+script = ExtResource("1_4b0m5")
+id = "shop_interdiction_item"
+description = "shop_interdiction_desc"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([3])
+item_amount = 1
+weapon_data = ExtResource("2_tk2ij")
+icon_path = "res://Scenes/Shop/Icons/interdiction_icon.tscn"

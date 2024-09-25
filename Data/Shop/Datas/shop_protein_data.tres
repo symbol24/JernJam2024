@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_bptqt")
 id = "shop_protein_data"
+description = "shop_protein_desc"
 cost_type = 1
 cost_amount = 1
 shop_item_type = Array[int]([4])

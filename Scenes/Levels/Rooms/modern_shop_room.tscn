@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=4 uid="uid://bf0hr608m6117"]
+
+[ext_resource type="Script" path="res://Code/Levels/Room/shop_room.gd" id="1_a7onl"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_ikv2p"]
+[ext_resource type="PackedScene" uid="uid://dkxqbl3a8es1x" path="res://Scenes/Levels/Rooms/Items/modern_door.tscn" id="3_e3ka7"]
+[ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="4_ijio5"]
+[ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="5_fv3gm"]
+[ext_resource type="PackedScene" uid="uid://qgaj15l1rw1a" path="res://Scenes/Shop/shop_keep.tscn" id="6_c7snm"]
+[ext_resource type="Script" path="res://Code/Shop/shop_builder.gd" id="7_lgvm2"]
+[ext_resource type="Resource" uid="uid://cll8a80h43jud" path="res://Data/Shop/LootTables/modern_shop_loottable.tres" id="8_uswd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kblxk"]
+size = Vector2(12, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qpvw"]
+size = Vector2(98, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a40q"]
+size = Vector2(96, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4v8p"]
+size = Vector2(12, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxssv"]
+size = Vector2(108, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvv3k"]
+size = Vector2(96, 12)
+
+[node name="modern_shop_room" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point")]
+script = ExtResource("1_a7onl")
+entrance_spawn_point = NodePath("spawn_point")
+camera_point = NodePath("camera_point")
+room_type = 1
+
+[node name="background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(320, 180)
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="walls_tilemap" type="TileMapLayer" parent="walls"]
+tile_map_data = PackedByteArray("AAAEAAAAAQA5AAAAAAAEAAEAAQA5AAAAAAAEAAIAAQA5AAAAAAAEAAMAAQA5AAAAAAAEAAQAAQA5AAAAAAAEAAUAAQA5AAAAAAAEAAYAAQA5AAAAAAAEAAcAAQA5AAAAAAAEAAgAAQA5AAAAAAAEAAkAAQA5AAAAAAAEAAoAAQA5AAAAAAAEAAsAAQA5AAAAAAAEAAwAAQA5AAAAAAAEAA0AAQA5AAAAAAAEAA4AAQA5AAAAAAAFAAAAAQA5AAAAAAAGAAAAAQA5AAAAAAAHAAAAAQA5AAAAAAAIAAAAAQA5AAAAAAAJAAAAAQA5AAAAAAAKAAAAAQA5AAAAAAALAAAAAQA5AAAAAAAMAAAAAQA5AAAAAAAOAAAAAQA5AAAAAAAPAAAAAQA5AAAAAAAQAAAAAQA5AAAAAAARAAAAAQA5AAAAAAASAAAAAQA5AAAAAAATAAAAAQA5AAAAAAAVAAAAAQA5AAAAAAAUAAAAAQA5AAAAAAAVAAEAAQA5AAAAAAAVAAIAAQA5AAAAAAAVAAMAAQA5AAAAAAAVAAQAAQA5AAAAAAAVAAUAAQA5AAAAAAAVAAYAAQA5AAAAAAAVAAcAAQA5AAAAAAAVAAgAAQA5AAAAAAAVAAkAAQA5AAAAAAAVAAoAAQA5AAAAAAAVAAsAAQA5AAAAAAAVAAwAAQA5AAAAAAAVAA0AAQA5AAAAAAAVAA4AAQA5AAAAAAAFAA4AAQA5AAAAAAAGAA4AAQA5AAAAAAAHAA4AAQA5AAAAAAAIAA4AAQA5AAAAAAAJAA4AAQA5AAAAAAAKAA4AAQA5AAAAAAALAA4AAQA5AAAAAAAMAA4AAQA5AAAAAAAOAA4AAQA5AAAAAAAPAA4AAQA5AAAAAAAQAA4AAQA5AAAAAAARAA4AAQA5AAAAAAASAA4AAQA5AAAAAAATAA4AAQA5AAAAAAAUAA4AAQA5AAAAAAA=")
+tile_set = ExtResource("2_ikv2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(54, 90)
+shape = SubResource("RectangleShape2D_kblxk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(107, 6)
+shape = SubResource("RectangleShape2D_6qpvw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
+position = Vector2(216, 6)
+shape = SubResource("RectangleShape2D_0a40q")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls"]
+position = Vector2(258, 90)
+shape = SubResource("RectangleShape2D_k4v8p")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="walls"]
+position = Vector2(102, 174)
+shape = SubResource("RectangleShape2D_mxssv")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="walls"]
+position = Vector2(216, 174)
+shape = SubResource("RectangleShape2D_dvv3k")
+
+[node name="modern_door_bottom" parent="." instance=ExtResource("3_e3ka7")]
+position = Vector2(156, 180)
+id = "bottom"
+
+[node name="modern_door_up" parent="." instance=ExtResource("3_e3ka7")]
+position = Vector2(156, 12)
+id = "top"
+is_top_door = true
+
+[node name="spawn_point" parent="." instance=ExtResource("4_ijio5")]
+position = Vector2(165, 157)
+
+[node name="camera_point" parent="." instance=ExtResource("5_fv3gm")]
+
+[node name="ShopKeep" parent="." instance=ExtResource("6_c7snm")]
+position = Vector2(161, 58)
+
+[node name="ShopBuilder" type="Node2D" parent="." node_paths=PackedStringArray("item_points")]
+script = ExtResource("7_lgvm2")
+shop_loot_table = ExtResource("8_uswd6")
+item_points = [NodePath("item1"), NodePath("item2"), NodePath("item3"), NodePath("item4"), NodePath("item5")]
+
+[node name="item1" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(80, 92)
+
+[node name="item2" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(120, 92)
+
+[node name="item3" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(160, 92)
+
+[node name="item4" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(200, 92)
+
+[node name="item5" type="Marker2D" parent="ShopBuilder"]
+position = Vector2(240, 92)

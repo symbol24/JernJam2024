@@ -16,6 +16,7 @@ enum Item_Type {
 
 
 @export var id:String
+@export var description:String
 @export var cost_type:Cost_Type
 @export var cost_amount:int = 0
 @export var shop_item_type:Array[Item_Type]

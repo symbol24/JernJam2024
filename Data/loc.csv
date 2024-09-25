@@ -6,4 +6,15 @@ first_appearance_01,"Woah, woah, woah, woah, woah! What's going on here?"
 first_appearance_02,Why are you not dead? What is the meaning of this?
 first_appearance_03,Who are you anyways? You know what? I don't care. I'm just gonna make sur this doesn't happen again.
 first_appearance_04,"Let's reset this and see what we can do. So, 3 hearts? Check. Zero coins? Check. Remove ""weapons""? Check. Get rid of the ""trinkets?"" Check."
-,
+shop_armor_desc,Trinket: Reduce incoming damage.
+shop_bandaid_desc,Trinket: Heal Heart(s) when entering a shop.
+shop_bubble_desc,Weapon: Shoot bubbles to capture enemies and push them back. Deals damage when popped. Will aim at random target.
+shop_flail_desc,Weapon: Hit enemies in an arc around you. Will aim the the closest enemy if possible.
+shop_glasses_desc,Trinket: Look cool and stylish while dealing extra damage with more critical chance and critical damage.
+shop_heart_desc,Heal 1 Heart.
+shop_knife_desc,Weapon: Thow knives at enemies. Will target enemies in range.
+shop_level_desc,Increase your character level by 1.
+shop_protein_desc,PROTEIN! GET YOUR MUSCLE ON AND DO MORE DAMAGE WITH PROTEIN!
+shop_tornado_desc,Weapon: Spawn tornados at random poritions on the map that move towards you.
+first_reset_01,"Ok, you've done that enough. Let's see if you can do it again."
+first_reset_02,And off to the start you go!

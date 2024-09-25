@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkxqbl3a8es1x"]
+
+[ext_resource type="Script" path="res://Code/Levels/Room/door.gd" id="1_jj1wf"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_wscqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qifse"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dboto"]
+size = Vector2(20, 5)
+
+[node name="modern_door" type="StaticBody2D"]
+script = ExtResource("1_jj1wf")
+
+[node name="closed_door" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 67, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_wscqa")
+
+[node name="open_door" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 71, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_wscqa")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_qifse")
+
+[node name="transition_detector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="detector_collider" type="CollisionShape2D" parent="transition_detector"]
+position = Vector2(7, -8.5)
+shape = SubResource("RectangleShape2D_dboto")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://y8wu6sxrt3pf"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_2d.gd" id="1_hy4g6"]
+[ext_resource type="Resource" uid="uid://dojhn1gxr4fcl" path="res://Data/EnemyDatas/modern_skateboarder.tres" id="2_f7jyo"]
+[ext_resource type="PackedScene" uid="uid://b6j3eci3g5cfd" path="res://Scenes/Enemies/Actions/move_to_target.tscn" id="3_nntmo"]
+[ext_resource type="PackedScene" uid="uid://cs3a7tdd6sa2f" path="res://Scenes/Utilities/hit_box.tscn" id="4_k37lf"]
+[ext_resource type="PackedScene" uid="uid://6q1pljx3sqj1" path="res://Scenes/Utilities/attack_area.tscn" id="5_j0xl0"]
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="6_41cqk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvw3n"]
+radius = 1.0
+height = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t84u"]
+radius = 6.0
+
+[node name="ModernSkateboarder" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_hy4g6")
+enemy_data = ExtResource("2_f7jyo")
+
+[node name="MoveToTarget" parent="." instance=ExtResource("3_nntmo")]
+
+[node name="move_collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fvw3n")
+
+[node name="hit_box" parent="." instance=ExtResource("4_k37lf")]
+position = Vector2(0, 5)
+collision_layer = 8
+collision_mask = 4
+
+[node name="attack_area" parent="." instance=ExtResource("5_j0xl0")]
+position = Vector2(0, 5)
+is_contact_attack = true
+
+[node name="attack_collider" parent="attack_area" index="0"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_1t84u")
+
+[node name="sprite" type="TileMapLayer" parent="."]
+position = Vector2(-6, 6)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 69, 0, 10, 0, 0, 0)
+tile_set = ExtResource("6_41cqk")
+
+[editable path="attack_area"]

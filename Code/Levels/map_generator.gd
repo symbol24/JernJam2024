@@ -44,12 +44,14 @@ func _spawn_next_rooms(_pos:Vector2 = Vector2.ZERO, _y_offset:float = -180) -> V
 
 func _instantiate_rooms(_level_id:String = "fantasy") -> void:
 	var combat_path:String = DataManager.get_room_path(_level_id + "_combat")
-	if combat_path: combat = load(combat_path).instantiate() as CombatRoom
+	if combat_path: 
+		combat = load(combat_path).instantiate() as CombatRoom
 	else: 
 		push_error("No path found for ", _level_id, "_combat. Room instantiation interrupted.")
 		return
 	var shop_path:String = DataManager.get_room_path(_level_id + "_shop")
-	if shop_path: shop = load(shop_path).instantiate() as ShopRoom
+	if shop_path: 
+		shop = load(shop_path).instantiate() as ShopRoom
 	else: 
 		push_error("No path found for ", _level_id, "_shop. Room instantiation interrupted.")
 		return

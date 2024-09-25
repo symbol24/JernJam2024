@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_bgx6t")
 id = "shop_bubble_data"
+description = "shop_bubble_desc"
 cost_type = 1
 cost_amount = 1
 shop_item_type = Array[int]([3])

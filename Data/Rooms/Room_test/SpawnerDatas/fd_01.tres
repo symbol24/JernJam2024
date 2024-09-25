@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=4 format=3 uid="uid://flndgt84b5b8"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_655yn"]
+[ext_resource type="Resource" uid="uid://880t76r1g2ff" path="res://Data/EnemyDatas/hobgoblin.tres" id="2_2sm7i"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_ifjyh"]
+
+[resource]
+script = ExtResource("2_ifjyh")
+id = "fd-01"
+is_triggered_spawn = true
+delay_before_starting = 1.0
+spawn_amount = 10
+spawn_delay_between = 0.5
+enemies_to_spawn = Array[ExtResource("1_655yn")]([ExtResource("2_2sm7i")])
+spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

@@ -30,9 +30,6 @@ func interact() -> void:
 		
 		item.complete_purchase()
 		Signals.ShopItemPurchased.emit(shopitemdata)
-	
-	elif result.has("result") and not result["result"]:
-		print("unable to purchase")
 
 
 func _area_entered(_area) -> void:

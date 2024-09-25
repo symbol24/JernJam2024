@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bseebu4tsl2bk"]
+
+[ext_resource type="Script" path="res://Code/Weapons/Projectiles/radiation_projectile.gd" id="1_0ttjr"]
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_3av8m"]
+[ext_resource type="PackedScene" uid="uid://bo26nbr6ax0td" path="res://Scenes/Weapons/Projectiles/sprites/radiation_sprite.tscn" id="2_4v4ed"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vnmi4"]
+radius = 6.0
+
+[node name="RadiationProjectile" type="Area2D"]
+z_index = -90
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_0ttjr")
+damages = Array[ExtResource("2_3av8m")]([null])
+
+[node name="collider" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_vnmi4")
+
+[node name="radiation_sprite" parent="." instance=ExtResource("2_4v4ed")]
+unique_name_in_owner = true
+z_index = -10

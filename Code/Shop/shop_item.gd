@@ -1,11 +1,14 @@
 class_name ShopItem extends Area2D
 
 
+@export var unable_to_buy_color:Color = Color.DARK_RED
+@export var unable_to_buy_timer:float = 0.2
+
 @onready var buy_label: RichTextLabel = %buy_label
 @onready var price_label: RichTextLabel = %price_label
 @onready var currency: TileMapLayer = %currency
 @onready var health: TileMapLayer = %health
-@onready var icon_point: Marker2D = %icon_point
+@onready var icon_point: Marker2D = %icon_point 
 
 var data:ShopItemData
 var depleted:bool = false
@@ -31,6 +34,9 @@ func interact(_data:CharacterData) -> Dictionary:
 		_:
 			pass
 
+	if result["result"] == false:
+		_fail_feedback()
+
 	return result
 
 
@@ -55,9 +61,17 @@ func set_data(_data:ShopItemData) -> void:
 		name = data.id + "_0"
 
 
+func _fail_feedback() -> void:
+	var tween:Tween = price_label.create_tween()
+	tween.tween_property(price_label, "modulate", unable_to_buy_color, unable_to_buy_timer)
+	tween.tween_property(price_label, "modulate", Color.WHITE, unable_to_buy_timer)
+
+
 func _body_entered(_body) -> void:
 	buy_label.show()
+	Signals.EnterShopItem.emit(data)
 
 
 func _body_exited(_body) -> void:
 	buy_label.hide()
+	Signals.ExitShopItem.emit(data)

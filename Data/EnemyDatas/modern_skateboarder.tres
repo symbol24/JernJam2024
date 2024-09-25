@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://dojhn1gxr4fcl"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_3hi8j"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="2_1xg4m"]
+[ext_resource type="Resource" uid="uid://b0xtu0lqhrkx4" path="res://Data/EnemyDatas/Damages/modern_1_damage.tres" id="2_6mi4t"]
+[ext_resource type="Resource" uid="uid://dvhwu7oa6rmhx" path="res://Data/EnemyDatas/LootTables/modern_generic_loottable.tres" id="3_pved7"]
+
+[resource]
+script = ExtResource("2_1xg4m")
+contact_damages = Array[ExtResource("1_3hi8j")]([ExtResource("2_6mi4t")])
+loot_table = ExtResource("3_pved7")
+id = "modern_skateboarder"
+path = "res://Scenes/Enemies/modern_skateboarder.tscn"
+base_hp = 1
+speed = 30.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

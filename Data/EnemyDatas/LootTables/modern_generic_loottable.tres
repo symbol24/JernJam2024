@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=5 format=3 uid="uid://dvhwu7oa6rmhx"]
+
+[ext_resource type="Resource" uid="uid://d0hu6xt3lsoig" path="res://Data/Pickups/empty_pickup_data.tres" id="1_0xe4y"]
+[ext_resource type="Resource" uid="uid://c0ujx5yn6l1ya" path="res://Data/Pickups/coin_pickup_data.tres" id="2_k4463"]
+[ext_resource type="Resource" uid="uid://82v170eocrn7" path="res://Data/Pickups/health_1hp_pickup_data.tres" id="3_koprn"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="4_oby5e"]
+
+[resource]
+script = ExtResource("4_oby5e")
+id = "modern_generic_loottable"
+loot_amount = 1
+items = Array[Dictionary]([{
+"data": ExtResource("1_0xe4y"),
+"weight": 50
+}, {
+"data": ExtResource("2_k4463"),
+"weight": 35
+}, {
+"data": ExtResource("3_koprn"),
+"weight": 5
+}])

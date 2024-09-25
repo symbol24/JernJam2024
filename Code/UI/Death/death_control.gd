@@ -4,13 +4,16 @@ class_name DeathControl extends Control
 enum State {
 				NORMAL = 0,
 				FIRST_APPEARANCE = 1,
-
+				FIRST_RESET = 2,
+				FIRST_DIFF_CHANGE = 3,
 			}
 
 
 @export var normal_delay:float = 5
 @export var skip_delay:float = 0.1
 @export var first_appearance_death_count:int = 20
+@export var first_reset_death_count:int = 5
+@export var first_diff_change_death_count:int = 5
 
 @onready var sprite: TileMapLayer = %sprite
 @onready var dialogue_text:RichTextLabel = %dialogue_text
@@ -30,6 +33,7 @@ var displaying:bool = false
 var d_tween:Tween
 var r_tween:Tween
 var death_move_delay:float = randf_range(0.05,0.15)
+var last_death_count:int = 0
 
 
 func _ready() -> void:
@@ -51,6 +55,7 @@ func _display_text(_id:String) -> void:
 	else:
 		dialogue_text.text = ""
 		Signals.ToggleControl.emit(UI.last_menu, true, "dialogue")
+		_trigger_next_sequence(current_state)
 
 
 func _move() -> void:
@@ -105,9 +110,36 @@ func _check_dialogue_trigger(_room_type:Room.Room_Type) -> void:
 					_display_text("first_appearance")
 					current_state = State.FIRST_APPEARANCE
 			State.FIRST_APPEARANCE:
+				if Game.player.data.defeats > last_death_count + first_reset_death_count:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("first_reset")
+					current_state = State.FIRST_RESET
+			State.FIRST_RESET:
+				if Game.player.data.defeats > last_death_count + first_diff_change_death_count:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("first_diff_change")
+					current_state = State.FIRST_DIFF_CHANGE
+			State.FIRST_DIFF_CHANGE:
+
 				pass
 			_:
 				pass
-
+		
+	last_death_count = Game.player.data.defeats
 
 	
+func _trigger_next_sequence(_cuurent_state:State) -> void:
+	match _cuurent_state:
+		State.NORMAL:
+			pass
+		State.FIRST_APPEARANCE:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("fantasy")
+		State.FIRST_RESET:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("fantasy")
+		State.FIRST_DIFF_CHANGE:
+
+				pass
+		_:
+			pass

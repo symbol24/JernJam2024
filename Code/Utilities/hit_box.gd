@@ -9,6 +9,6 @@ func _ready() -> void:
 
 
 func _area_entered(_area) -> void:
-	if _area.has_method("get_damages"):
+	if not _area is RadiationProjectile and _area.has_method("get_damages"):
 		if parent.data != null:
 			parent.data.receive_damage(_area.get_damages())

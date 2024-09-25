@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_bb7q2")
 id = "shop_knife_data"
+description = "shop_knife_desc"
 cost_type = 1
 cost_amount = 1
 shop_item_type = Array[int]([3])

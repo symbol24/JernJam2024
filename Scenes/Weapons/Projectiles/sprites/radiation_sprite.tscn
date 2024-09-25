@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo26nbr6ax0td"]
+
+[ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_ifgr7"]
+
+[node name="RadiationSprite" type="Node2D"]
+
+[node name="sprite" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.156863)
+z_index = -100
+position = Vector2(-6.5, -6.5)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 63, 0, 24, 0, 0, 0)
+tile_set = ExtResource("1_ifgr7")

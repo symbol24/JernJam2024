@@ -10,9 +10,10 @@ class_name PlayerUi extends SyControl
 
 var hearts:Array[SingleHeart] = []
 var weapons:Array[WeaponData] = []
-var trinkets:Array = []
+var trinkets:Array[TrinketData] = []
 var displayed_weapons:Array[Control] = []
 var displayed_trinkets:Array[Control] = []
+var count:int = 0
 
 func _ready() -> void:
 	super()
@@ -22,6 +23,7 @@ func _ready() -> void:
 	Signals.CharacterLevelUpdated.connect(_update_level)
 	Signals.UpdateUiWithWeapon.connect(_update_weapons)
 	Signals.UpdateUiWithTrinket.connect(_update_trinkets)
+	Signals.ResetPlayerUi.connect(_reset)
 
 
 func _construct_hp(_character:BaseCharacterData) -> void:
@@ -65,9 +67,10 @@ func _update_weapons(_weapon:WeaponData) -> void:
 		var control:Control = _create_item_ui(_weapon.icon_path) as Control
 		var level_rtl:ShopItemRTL = DataManager.item_label.instantiate() as ShopItemRTL
 		control.add_child(level_rtl)
-		level_rtl.position = Vector2(0,7)
-		level_rtl.setup(_weapon.id, 6)
+		level_rtl.position = Vector2(0,9)
+		level_rtl.setup(_weapon.id, WeaponData.MAX_LEVEL)
 		displayed_weapons.append(control)
+		player_weapons.add_child.call_deferred(control)
 
 
 func _update_trinkets(_trinket:TrinketData) -> void:
@@ -76,9 +79,10 @@ func _update_trinkets(_trinket:TrinketData) -> void:
 		var control:Control = _create_item_ui(_trinket.icon_path) as Control
 		var level_rtl:ShopItemRTL = DataManager.item_label.instantiate() as ShopItemRTL
 		control.add_child(level_rtl)
-		level_rtl.position = Vector2(0,7)
-		level_rtl.setup(_trinket.id, 4)
+		level_rtl.position = Vector2(0,9)
+		level_rtl.setup(_trinket.id, TrinketData.MAX_LEVEL)
 		displayed_trinkets.append(control)
+		player_trinkets.add_child.call_deferred(control)
 
 
 func _create_item_ui(_path:String) -> Control:
@@ -86,5 +90,23 @@ func _create_item_ui(_path:String) -> Control:
 	var control:Control = Control.new()
 	control.add_child(new)
 	control.set_custom_minimum_size(Vector2(12,12))
-	player_trinkets.add_child.call_deferred(control)
+	control.name = "item_0" + str(count)
+	count += 1
 	return control
+
+
+func _reset() -> void:
+	for each in displayed_weapons:
+		if each.get_parent():
+			each.remove_child.call_deferred(each)
+		each.queue_free.call_deferred()
+	displayed_weapons.clear()
+	for each in displayed_trinkets:
+		if each.get_parent():
+			each.remove_child.call_deferred(each)
+		each.queue_free.call_deferred()
+	displayed_trinkets.clear()
+	weapons.clear()
+	trinkets.clear()
+	count = 0
+	player_level.text = "[center]1[/center]"

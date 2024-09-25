@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://q0b1bn21nx08"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_mlg7q"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_ymf3q"]
+[ext_resource type="Resource" uid="uid://flndgt84b5b8" path="res://Data/Rooms/Room_test/SpawnerDatas/fd_01.tres" id="3_0m54i"]
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="4_63mqw"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="5_3io0t"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="6_3fxaf"]
+[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="7_2wwwk"]
+
+[node name="FantasyDifficult" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
+script = ExtResource("1_mlg7q")
+id = "fantasy"
+camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
+enemy_waves = Array[ExtResource("2_ymf3q")]([ExtResource("3_0m54i")])
+
+[node name="level_camera" type="Camera2D" parent="."]
+process_mode = 3
+script = ExtResource("4_63mqw")
+
+[node name="LootSpawner" type="Node2D" parent="."]
+script = ExtResource("5_3io0t")
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("6_3fxaf")
+
+[node name="MapGenerator" type="Node2D" parent="." groups=["generator"]]
+script = ExtResource("7_2wwwk")

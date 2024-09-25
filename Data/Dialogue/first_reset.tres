@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bk1mxuog3alkc"]
+
+[ext_resource type="Script" path="res://Code/UI/Death/dialogue_data.gd" id="1_kok7r"]
+
+[resource]
+script = ExtResource("1_kok7r")
+id = "first_reset"
+lines = Array[String](["first_reset_01", "first_reset_02"])
