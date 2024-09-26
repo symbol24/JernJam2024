@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_tw5an"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_wa8xw"]
-[ext_resource type="Resource" uid="uid://880t76r1g2ff" path="res://Data/EnemyDatas/hobgoblin.tres" id="2_yhj2m"]
+[ext_resource type="Resource" uid="uid://880t76r1g2ff" path="res://Data/EnemyDatas/fantasy_hobgoblin.tres" id="2_yhj2m"]
 
 [resource]
 script = ExtResource("2_wa8xw")
-id = "wave_2_hobgoblins"
+id = "fn_02"
 is_triggered_spawn = false
 delay_before_starting = 1.0
 spawn_amount = 5
 spawn_delay_between = 1.0
 enemies_to_spawn = Array[ExtResource("1_tw5an")]([ExtResource("2_yhj2m")])
-spawn_area = Array[float]([72.0, 162.0, 24.0, 156.0])
+spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

@@ -21,6 +21,8 @@ var active_spawn_id:int = 0:
 			active_spawn_id = 0
 			spawn_active = false
 			print("Spawn over")
+		else:
+			_start_next_spawn_data(room.room_type)
 			
 var instantiated_enemies:Array[Enemy2D] = []
 var enemy_pool:Array[Array] = []
@@ -55,6 +57,8 @@ var wait_next_spawn_timer:float = 0.0:
 			wait_next_spawn_timer_active = false
 			_spawn_wave(active_spawn_id)
 
+var enemy_level:int = 0
+
 
 func _ready() -> void:
 	level = get_parent() as Level
@@ -64,7 +68,7 @@ func _ready() -> void:
 	Signals.InstantiateLevelEnemies.connect(_instantiate_enemies)
 
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	if wait_next_spawn_timer_active: wait_next_spawn_timer += _delta
 	if spawn_timer_active: spawn_timer += _delta
 
@@ -87,7 +91,7 @@ func _spawn_wave(_id:int) -> void:
 				room.add_child(new_enemy)
 				new_enemy.name = enemy.id + str(enemy_total_spawn_count)
 				new_enemy.set_data(new_enemy.name)
-				new_enemy.set_level(Game.active_level.player.data.level)
+				new_enemy.set_level(enemy_level)
 				var pos:Vector2 = room.to_global(Vector2(randf_range(spawn_data.spawn_area[0], spawn_data.spawn_area[1]), randf_range(spawn_data.spawn_area[2], spawn_data.spawn_area[3])))
 				new_enemy.global_position = pos
 				all_enemies.append(new_enemy)
@@ -100,6 +104,7 @@ func _spawn_wave(_id:int) -> void:
 
 func _start_next_spawn_data(_room:Room.Room_Type) -> void:
 	if _room == Room.Room_Type.COMBAT:
+		enemy_level += 1
 		spawn_active = true
 		wait_next_spawn_delay = level.enemy_waves[active_spawn_id].delay_before_starting
 		wait_next_spawn_timer_active = true
@@ -133,10 +138,7 @@ func _remove_enemy_from_all(_enemy:Enemy2D) -> void:
 		Signals.RoomClear.emit()
 
 
-var count:int = 0
 func _return_to_pool(_enemy:Enemy2D) -> void:
-	#print("in _return_to_pool, receing: ", _enemy.name, " with count: ", count)
-	count += 1
 	var in_pool:bool = false
 	for each in enemy_pool:
 		if not each.is_empty() and each[0].data.id == _enemy.data.id:
@@ -148,6 +150,7 @@ func _return_to_pool(_enemy:Enemy2D) -> void:
 		enemy_pool.append([_enemy])
 
 	_remove_enemy_from_all(_enemy)
+	room.remove_child.call_deferred(_enemy)
 
 
 func _clear_spawner() -> void:

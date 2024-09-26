@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=5 format=3 uid="uid://duxgscytnyx6t"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_o3axv"]
+[ext_resource type="Resource" uid="uid://880t76r1g2ff" path="res://Data/EnemyDatas/fantasy_hobgoblin.tres" id="2_6w4dk"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_jsdnc"]
+[ext_resource type="Resource" uid="uid://ocpff3bk61dm" path="res://Data/EnemyDatas/fantasy_lizardman.tres" id="3_u64um"]
+
+[resource]
+script = ExtResource("2_jsdnc")
+id = "fd_04"
+is_triggered_spawn = false
+delay_before_starting = 0.0
+spawn_amount = 10
+spawn_delay_between = 1.0
+enemies_to_spawn = Array[ExtResource("1_o3axv")]([ExtResource("2_6w4dk"), ExtResource("3_u64um")])
+spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

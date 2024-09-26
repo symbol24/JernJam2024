@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Enemies/enemy_2d.gd" id="1_8rodw"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_0gar4"]
-[ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/goblin.tres" id="2_mlpb1"]
+[ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/fantasy_goblin.tres" id="2_mlpb1"]
 [ext_resource type="PackedScene" uid="uid://cs3a7tdd6sa2f" path="res://Scenes/Utilities/hit_box.tscn" id="3_4m8c5"]
 [ext_resource type="PackedScene" uid="uid://b6j3eci3g5cfd" path="res://Scenes/Enemies/Actions/move_to_target.tscn" id="5_2u1lw"]
 [ext_resource type="PackedScene" uid="uid://6q1pljx3sqj1" path="res://Scenes/Utilities/attack_area.tscn" id="6_f34kj"]

@@ -9,7 +9,7 @@ const OVERFLOW_PERCENTAGE:float = 1.0
 
 
 # Will change if add character selector
-var selected_data:CharacterData = DataManager.character_datas[1]
+var selected_data:CharacterData = DataManager.character_datas[0]
 var player:SyCharacterBody2D
 
 # A quick variable to check if the tree is paused.

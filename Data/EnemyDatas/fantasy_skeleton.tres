@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://cu7ykjirtu055"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_uoip7"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="2_cpiga"]
+[ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/fantasy_1_damage.tres" id="2_sw8ir"]
+[ext_resource type="Resource" uid="uid://1pxdi0qlvc2i" path="res://Data/EnemyDatas/LootTables/fantasy_generic_loot_table.tres" id="3_d2xfc"]
+
+[resource]
+script = ExtResource("2_cpiga")
+contact_damages = Array[ExtResource("1_uoip7")]([ExtResource("2_sw8ir")])
+loot_table = ExtResource("3_d2xfc")
+id = "fantasy_skeleton"
+path = "res://Scenes/Enemies/fantasy_skeleton.tscn"
+base_hp = 3
+speed = 15.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

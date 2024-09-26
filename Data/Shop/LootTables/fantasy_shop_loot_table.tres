@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=12 format=3 uid="uid://f1ydfbch8ioc"]
+
+[ext_resource type="Resource" uid="uid://dunbwn7j5bmvc" path="res://Data/Shop/Datas/shop_heart_item.tres" id="1_k311b"]
+[ext_resource type="Resource" uid="uid://c1lkmnyw4um0o" path="res://Data/Shop/Datas/shop_level_item.tres" id="2_blhk5"]
+[ext_resource type="Resource" uid="uid://bi2s87aerabfn" path="res://Data/Shop/Datas/shop_tornado_item.tres" id="3_1avd0"]
+[ext_resource type="Resource" uid="uid://cqet62c6k34a3" path="res://Data/Shop/Datas/shop_knife_item.tres" id="4_fyqna"]
+[ext_resource type="Resource" uid="uid://d38tu4x1tn4x1" path="res://Data/Shop/Datas/shop_bubble_item.tres" id="5_lmoy2"]
+[ext_resource type="Resource" uid="uid://byqbgctati0nl" path="res://Data/Shop/Datas/shop_flail_item.tres" id="6_0jwkr"]
+[ext_resource type="Resource" uid="uid://cmmn3mkevre7q" path="res://Data/Shop/Datas/shop_armor_data.tres" id="7_r2nr6"]
+[ext_resource type="Resource" uid="uid://bd2ndwywnfgd" path="res://Data/Shop/Datas/shop_bandaid_data.tres" id="8_fsr3x"]
+[ext_resource type="Resource" uid="uid://k60b20jj4d0g" path="res://Data/Shop/Datas/shop_glasses_data.tres" id="9_rmswn"]
+[ext_resource type="Resource" uid="uid://qgymam4aiju5" path="res://Data/Shop/Datas/shop_protein_data.tres" id="10_5ixt5"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="11_kopmb"]
+
+[resource]
+script = ExtResource("11_kopmb")
+id = "fantasy_shop"
+loot_amount = 5
+items = Array[Dictionary]([{
+"data": ExtResource("1_k311b"),
+"weight": 5
+}, {
+"data": ExtResource("2_blhk5"),
+"weight": 10
+}, {
+"data": ExtResource("3_1avd0"),
+"weight": 10
+}, {
+"data": ExtResource("4_fyqna"),
+"weight": 10
+}, {
+"data": ExtResource("5_lmoy2"),
+"weight": 10
+}, {
+"data": ExtResource("6_0jwkr"),
+"weight": 10
+}, {
+"data": ExtResource("7_r2nr6"),
+"weight": 10
+}, {
+"data": ExtResource("8_fsr3x"),
+"weight": 10
+}, {
+"data": ExtResource("9_rmswn"),
+"weight": 10
+}, {
+"data": ExtResource("10_5ixt5"),
+"weight": 10
+}])

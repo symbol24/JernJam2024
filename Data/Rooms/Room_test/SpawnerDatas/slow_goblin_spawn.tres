@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_jsooe"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_kvlls"]
-[ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/goblin.tres" id="2_ugm18"]
+[ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/fantasy_goblin.tres" id="2_ugm18"]
 
 [resource]
 script = ExtResource("2_kvlls")

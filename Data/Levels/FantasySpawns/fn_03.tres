@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=4 format=3 uid="uid://dc4v0p4luff6g"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_cn51p"]
+[ext_resource type="Resource" uid="uid://ocpff3bk61dm" path="res://Data/EnemyDatas/fantasy_lizardman.tres" id="2_4ti0y"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_w8k8q"]
+
+[resource]
+script = ExtResource("2_w8k8q")
+id = "fn_03"
+is_triggered_spawn = false
+delay_before_starting = 0.0
+spawn_amount = 5
+spawn_delay_between = 1.0
+enemies_to_spawn = Array[ExtResource("1_cn51p")]([ExtResource("2_4ti0y")])
+spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

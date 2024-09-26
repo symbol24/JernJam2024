@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_0v18b"]
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_gmlhl"]
-[ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/goblin_damage.tres" id="2_pi2bu"]
-[ext_resource type="Resource" uid="uid://1pxdi0qlvc2i" path="res://Data/EnemyDatas/LootTables/gobling_loot_table.tres" id="3_x3cuy"]
+[ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/fantasy_1_damage.tres" id="2_pi2bu"]
+[ext_resource type="Resource" uid="uid://1pxdi0qlvc2i" path="res://Data/EnemyDatas/LootTables/fantasy_generic_loot_table.tres" id="3_x3cuy"]
 
 [resource]
 script = ExtResource("1_gmlhl")
-path = "res://Scenes/Enemies/goblin.tscn"
 contact_damages = Array[ExtResource("1_0v18b")]([ExtResource("2_pi2bu")])
 loot_table = ExtResource("3_x3cuy")
 id = "goblin"
+path = "res://Scenes/Enemies/fantasy_goblin.tscn"
 base_hp = 1
 speed = 25.0
 armor = 0

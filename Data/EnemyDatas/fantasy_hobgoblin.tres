@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_i0gbw"]
 [ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_ll6ii"]
-[ext_resource type="Resource" uid="uid://b7di0kgrsuce2" path="res://Data/EnemyDatas/Damages/hobgoblin_damage.tres" id="2_keynd"]
+[ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/fantasy_1_damage.tres" id="2_vjfl0"]
 [ext_resource type="Resource" uid="uid://b0cplhu3hhd3e" path="res://Data/EnemyDatas/LootTables/hobgoblin_loot_table.tres" id="3_vnjr1"]
 
 [resource]
 script = ExtResource("1_i0gbw")
-contact_damages = Array[ExtResource("1_ll6ii")]([ExtResource("2_keynd")])
+contact_damages = Array[ExtResource("1_ll6ii")]([ExtResource("2_vjfl0")])
 loot_table = ExtResource("3_vnjr1")
 id = "hobgoblin"
-path = "res://Scenes/Enemies/hobgoblin.tscn"
+path = "res://Scenes/Enemies/fantasy_hobgoblin.tscn"
 base_hp = 2
-speed = 40.0
+speed = 20.0
 armor = 0
 shield = 0
 crit_chance = 0.0

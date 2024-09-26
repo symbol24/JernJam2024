@@ -10,6 +10,6 @@ id = "modern_02"
 is_triggered_spawn = false
 delay_before_starting = 0.0
 spawn_amount = 5
-spawn_delay_between = 0.5
+spawn_delay_between = 1.0
 enemies_to_spawn = Array[ExtResource("1_sbfsp")]([ExtResource("2_0ac4t")])
 spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

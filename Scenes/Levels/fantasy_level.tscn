@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpfg34wu8ecwl"]
+[gd_scene load_steps=10 format=3 uid="uid://bpfg34wu8ecwl"]
 
 [ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_jgmgm"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_irugx"]
-[ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Rooms/Room_test/SpawnerDatas/wave_1.tres" id="3_hit3g"]
+[ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Levels/FantasySpawns/fn_01.tres" id="3_hit3g"]
+[ext_resource type="Resource" uid="uid://c1yqro1r8t1cn" path="res://Data/Levels/FantasySpawns/fn_02.tres" id="4_6d8uq"]
+[ext_resource type="Resource" uid="uid://dc4v0p4luff6g" path="res://Data/Levels/FantasySpawns/fn_03.tres" id="5_njmj3"]
 [ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="6_3ells"]
 [ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="7_oylfw"]
 [ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="8_i25lw"]
@@ -13,7 +15,7 @@ script = ExtResource("1_jgmgm")
 id = "fantasy"
 camera = NodePath("level_camera")
 enemy_spawner = NodePath("enemy_spawner")
-enemy_waves = Array[ExtResource("2_irugx")]([ExtResource("3_hit3g")])
+enemy_waves = Array[ExtResource("2_irugx")]([ExtResource("3_hit3g"), ExtResource("4_6d8uq"), ExtResource("5_njmj3")])
 
 [node name="level_camera" type="Camera2D" parent="."]
 process_mode = 3

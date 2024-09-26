@@ -139,7 +139,8 @@ func _trigger_next_sequence(_cuurent_state:State) -> void:
 			Signals.RestCharacter.emit()
 			Signals.LoadLevel.emit("fantasy")
 		State.FIRST_DIFF_CHANGE:
-
-				pass
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("modern_normal")
+			
 		_:
 			pass

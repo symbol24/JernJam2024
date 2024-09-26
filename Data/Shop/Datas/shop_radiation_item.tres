@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://3tvycgss12at"]
+
+[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_0p2jj"]
+[ext_resource type="Resource" uid="uid://bhgl8b4k5wnq1" path="res://Data/Weapons/radiation_data.tres" id="2_jrano"]
+
+[resource]
+script = ExtResource("1_0p2jj")
+id = "shop_radiation_item"
+description = "shop_radiation_desc"
+cost_type = 1
+cost_amount = 1
+shop_item_type = Array[int]([3])
+item_amount = 1
+weapon_data = ExtResource("2_jrano")
+icon_path = "res://Scenes/Shop/Icons/radiation_icon.tscn"

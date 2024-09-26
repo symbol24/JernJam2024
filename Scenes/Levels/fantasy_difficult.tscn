@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_mlg7q"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_ymf3q"]
-[ext_resource type="Resource" uid="uid://flndgt84b5b8" path="res://Data/Rooms/Room_test/SpawnerDatas/fd_01.tres" id="3_0m54i"]
+[ext_resource type="Resource" uid="uid://flndgt84b5b8" path="res://Data/Levels/FantasySpawns/fd_01.tres" id="3_0m54i"]
 [ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="4_63mqw"]
 [ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="5_3io0t"]
 [ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="6_3fxaf"]

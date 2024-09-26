@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://ocpff3bk61dm"]
+
+[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_712gu"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="2_3t6jc"]
+[ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/fantasy_1_damage.tres" id="2_4o0mx"]
+[ext_resource type="Resource" uid="uid://1pxdi0qlvc2i" path="res://Data/EnemyDatas/LootTables/fantasy_generic_loot_table.tres" id="3_j2u64"]
+
+[resource]
+script = ExtResource("2_3t6jc")
+contact_damages = Array[ExtResource("1_712gu")]([ExtResource("2_4o0mx")])
+loot_table = ExtResource("3_j2u64")
+id = "fantasy_lizardman"
+path = "res://Scenes/Enemies/fantasy_lizardman.tscn"
+base_hp = 1
+speed = 25.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

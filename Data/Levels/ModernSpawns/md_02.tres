@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=5 format=3 uid="uid://d4khmipql5m48"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_fv6jc"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_2v53y"]
+[ext_resource type="Resource" uid="uid://dt8s3l0g3yvqr" path="res://Data/EnemyDatas/modern_cyclist_data.tres" id="2_3fcx8"]
+[ext_resource type="Resource" uid="uid://cukxq3euta5t1" path="res://Data/EnemyDatas/modern_osha_dude.tres" id="3_ttekj"]
+
+[resource]
+script = ExtResource("2_2v53y")
+id = "md_02"
+is_triggered_spawn = false
+delay_before_starting = 0.0
+spawn_amount = 10
+spawn_delay_between = 1.0
+enemies_to_spawn = Array[ExtResource("1_fv6jc")]([ExtResource("2_3fcx8"), ExtResource("3_ttekj")])
+spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

@@ -1,8 +1,16 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=4 format=3 uid="uid://cll8a80h43jud"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=12 format=3 uid="uid://cll8a80h43jud"]
 
 [ext_resource type="Resource" uid="uid://dunbwn7j5bmvc" path="res://Data/Shop/Datas/shop_heart_item.tres" id="1_3obpp"]
 [ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="1_82d8d"]
 [ext_resource type="Resource" uid="uid://c1lkmnyw4um0o" path="res://Data/Shop/Datas/shop_level_item.tres" id="2_mhspk"]
+[ext_resource type="Resource" uid="uid://cmmn3mkevre7q" path="res://Data/Shop/Datas/shop_armor_data.tres" id="3_hcynx"]
+[ext_resource type="Resource" uid="uid://bd2ndwywnfgd" path="res://Data/Shop/Datas/shop_bandaid_data.tres" id="4_3mcei"]
+[ext_resource type="Resource" uid="uid://k60b20jj4d0g" path="res://Data/Shop/Datas/shop_glasses_data.tres" id="5_ss65m"]
+[ext_resource type="Resource" uid="uid://bb6lodisoigsh" path="res://Data/Shop/Datas/shop_interdiction_item.tres" id="6_dhgby"]
+[ext_resource type="Resource" uid="uid://cqet62c6k34a3" path="res://Data/Shop/Datas/shop_knife_item.tres" id="7_eydkh"]
+[ext_resource type="Resource" uid="uid://qgymam4aiju5" path="res://Data/Shop/Datas/shop_protein_data.tres" id="8_sp68f"]
+[ext_resource type="Resource" uid="uid://3tvycgss12at" path="res://Data/Shop/Datas/shop_radiation_item.tres" id="9_37rc3"]
+[ext_resource type="Resource" uid="uid://bi2s87aerabfn" path="res://Data/Shop/Datas/shop_tornado_item.tres" id="10_5i6df"]
 
 [resource]
 script = ExtResource("1_82d8d")
@@ -14,4 +22,28 @@ items = Array[Dictionary]([{
 }, {
 "data": ExtResource("2_mhspk"),
 "weight": 10
+}, {
+"data": ExtResource("3_hcynx"),
+"weight": 20
+}, {
+"data": ExtResource("4_3mcei"),
+"weight": 20
+}, {
+"data": ExtResource("5_ss65m"),
+"weight": 20
+}, {
+"data": ExtResource("6_dhgby"),
+"weight": 20
+}, {
+"data": ExtResource("7_eydkh"),
+"weight": 20
+}, {
+"data": ExtResource("8_sp68f"),
+"weight": 20
+}, {
+"data": ExtResource("9_37rc3"),
+"weight": 20
+}, {
+"data": ExtResource("10_5i6df"),
+"weight": 20
 }])

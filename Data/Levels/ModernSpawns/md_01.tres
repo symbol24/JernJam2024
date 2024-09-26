@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=5 format=3 uid="uid://wkx5i01hxykf"]
+
+[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_8drwv"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_cfbm5"]
+[ext_resource type="Resource" uid="uid://c286vaood2fsw" path="res://Data/EnemyDatas/modern_businessman.tres" id="2_iwppg"]
+[ext_resource type="Resource" uid="uid://dojhn1gxr4fcl" path="res://Data/EnemyDatas/modern_skateboarder.tres" id="3_eoci5"]
+
+[resource]
+script = ExtResource("2_cfbm5")
+id = "md_01"
+is_triggered_spawn = true
+delay_before_starting = 0.0
+spawn_amount = 10
+spawn_delay_between = 1.0
+enemies_to_spawn = Array[ExtResource("1_8drwv")]([ExtResource("2_iwppg"), ExtResource("3_eoci5")])
+spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])
