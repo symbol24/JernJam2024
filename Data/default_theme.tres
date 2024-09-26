@@ -1,6 +1,39 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://juy4qenccfes"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://juy4qenccfes"]
 
 [ext_resource type="StyleBox" uid="uid://dv0f6aciuug2x" path="res://Data/StyleBoxes/Dbox_box_flat.tres" id="1_l8gjg"]
+[ext_resource type="Texture2D" uid="uid://b70kby8a1txjr" path="res://Textures/options_slider_normal.png" id="2_mghud"]
+[ext_resource type="Texture2D" uid="uid://bqb4d55ooit8e" path="res://Textures/options_slider_disabled.png" id="3_fbtfv"]
+[ext_resource type="Texture2D" uid="uid://08s63nvdl2ou" path="res://Textures/options_slider_highlight.png" id="4_1q58k"]
+[ext_resource type="Texture2D" uid="uid://bugcafvpeccct" path="res://Textures/options_slider_tick.png" id="5_xgm43"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qblqw"]
+bg_color = Color(0.234255, 0.625631, 0.937089, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5ua7"]
+bg_color = Color(0.591706, 0.505122, 0.932827, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.591706, 0.505122, 0.932827, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thiry"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0279652, 0.00472888, 0.0718249, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfl2d"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysxqa"]
 content_margin_left = 3.0
@@ -32,6 +65,8 @@ shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtssh"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aupoa"]
+
 [resource]
 Button/font_sizes/font_size = 5
 CharacterNameRTL/base_type = &"RichTextLabel"
@@ -40,6 +75,8 @@ ClickContinue/base_type = &"RichTextLabel"
 ClickContinue/font_sizes/normal_font_size = 6
 CoinsRTL/base_type = &"RichTextLabel"
 CoinsRTL/font_sizes/normal_font_size = 9
+ControlsRTL/base_type = &"RichTextLabel"
+ControlsRTL/font_sizes/normal_font_size = 6
 DialoguePanelContainer/base_type = &"PanelContainer"
 DialoguePanelContainer/styles/panel = ExtResource("1_l8gjg")
 DialogueText/base_type = &"RichTextLabel"
@@ -61,8 +98,23 @@ Magical/font_sizes/normal_font_size = 8
 MagicalCrit/base_type = &"RichTextLabel"
 MagicalCrit/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
 MagicalCrit/font_sizes/normal_font_size = 10
+OptionRTL/base_type = &"RichTextLabel"
+OptionRTL/font_sizes/normal_font_size = 5
+OptionsSlider/base_type = &"HSlider"
+OptionsSlider/icons/grabber = ExtResource("2_mghud")
+OptionsSlider/icons/grabber_disabled = ExtResource("3_fbtfv")
+OptionsSlider/icons/grabber_highlight = ExtResource("4_1q58k")
+OptionsSlider/icons/tick = ExtResource("5_xgm43")
+OptionsSlider/styles/grabber_area = SubResource("StyleBoxFlat_qblqw")
+OptionsSlider/styles/slider = SubResource("StyleBoxFlat_h5ua7")
 PanelSmallRTL/base_type = &"RichTextLabel"
 PanelSmallRTL/font_sizes/normal_font_size = 6
+PauseMenuContainer/base_type = &"PanelContainer"
+PauseMenuContainer/styles/panel = SubResource("StyleBoxFlat_thiry")
+PauseMenuPanels/base_type = &"PanelContainer"
+PauseMenuPanels/styles/panel = SubResource("StyleBoxFlat_dfl2d")
+PauseTitle/base_type = &"RichTextLabel"
+PauseTitle/font_sizes/normal_font_size = 12
 Physical/base_type = &"RichTextLabel"
 Physical/colors/default_color = Color(1, 0, 0, 1)
 Physical/font_sizes/normal_font_size = 8
@@ -87,6 +139,10 @@ SkipBtn/styles/hover = SubResource("StyleBoxEmpty_cov4a")
 SkipBtn/styles/hover_pressed = SubResource("StyleBoxEmpty_p5olt")
 SkipBtn/styles/normal = SubResource("StyleBoxEmpty_huhni")
 SkipBtn/styles/pressed = SubResource("StyleBoxEmpty_mtssh")
+SoundOptionPanel/base_type = &"PanelContainer"
+SoundOptionPanel/styles/panel = SubResource("StyleBoxEmpty_aupoa")
+TabBar/font_sizes/font_size = 6
+TabContainer/font_sizes/font_size = 5
 WarningTextRTL/base_type = &"RichTextLabel"
 WarningTextRTL/font_sizes/normal_font_size = 8
 WarningTitleRTL/base_type = &"RichTextLabel"

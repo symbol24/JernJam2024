@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3 uid="uid://c0cw2ynl7rto1"]
+
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="1_dt8y6"]
+[ext_resource type="Resource" uid="uid://dim20x1ui0ogu" path="res://Data/PlayerCharacters/thief_data.tres" id="1_fjyfj"]
+[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="2_ywqob"]
+[ext_resource type="Resource" uid="uid://flndgt84b5b8" path="res://Data/Levels/FantasySpawns/fd_01.tres" id="3_118f2"]
+[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="3_ip1gx"]
+[ext_resource type="Resource" uid="uid://cqdupudeonnhs" path="res://Data/Levels/FantasySpawns/fd_02.tres" id="4_1l3yn"]
+[ext_resource type="Resource" uid="uid://jb8mykokek4w" path="res://Data/Levels/FantasySpawns/fd_03.tres" id="5_kufp5"]
+[ext_resource type="Resource" uid="uid://duxgscytnyx6t" path="res://Data/Levels/FantasySpawns/fd_04.tres" id="6_ocrvu"]
+[ext_resource type="Resource" uid="uid://b2ouxc4oe4wml" path="res://Data/Rooms/basic_combat.tres" id="8_8k4c8"]
+[ext_resource type="Resource" uid="uid://cfyyn6d6cmxou" path="res://Data/Rooms/basic_shop.tres" id="9_lpbl2"]
+[ext_resource type="Resource" uid="uid://f1ydfbch8ioc" path="res://Data/Shop/LootTables/fantasy_shop_loot_table.tres" id="11_8pkuu"]
+
+[resource]
+script = ExtResource("3_ip1gx")
+id = "fantasy_difficult"
+character = ExtResource("1_fjyfj")
+rooms = Array[ExtResource("2_ywqob")]([ExtResource("8_8k4c8"), ExtResource("9_lpbl2")])
+shop_loot_table = ExtResource("11_8pkuu")
+enemy_waves = Array[ExtResource("1_dt8y6")]([ExtResource("3_118f2"), ExtResource("4_1l3yn"), ExtResource("5_kufp5"), ExtResource("6_ocrvu")])

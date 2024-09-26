@@ -8,7 +8,6 @@
 [resource]
 script = ExtResource("4_mej32")
 id = "fd_03"
-is_triggered_spawn = false
 delay_before_starting = 0.0
 spawn_amount = 10
 spawn_delay_between = 1.0

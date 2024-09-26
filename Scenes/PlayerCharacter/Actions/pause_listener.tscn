@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkgtkwu05yb5t"]
+
+[ext_resource type="Script" path="res://Code/PlayerCharacter/Actions/pause_listener.gd" id="1_mvrr0"]
+
+[node name="PauseListener" type="Node2D"]
+script = ExtResource("1_mvrr0")

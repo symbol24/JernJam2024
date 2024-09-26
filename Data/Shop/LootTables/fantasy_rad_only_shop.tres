@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=5 format=3 uid="uid://cwn27elpdd75t"]
+
+[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="1_ge03t"]
+[ext_resource type="Resource" uid="uid://dunbwn7j5bmvc" path="res://Data/Shop/Datas/shop_heart_item.tres" id="1_rxtnw"]
+[ext_resource type="Resource" uid="uid://c1lkmnyw4um0o" path="res://Data/Shop/Datas/shop_level_item.tres" id="2_322dx"]
+[ext_resource type="Resource" uid="uid://3tvycgss12at" path="res://Data/Shop/Datas/shop_radiation_item.tres" id="3_dwrvq"]
+
+[resource]
+script = ExtResource("1_ge03t")
+id = "fantasy_rad_only_shop"
+loot_amount = 5
+items = Array[Dictionary]([{
+"data": ExtResource("1_rxtnw"),
+"weight": 1
+}, {
+"data": ExtResource("2_322dx"),
+"weight": 1
+}, {
+"data": ExtResource("3_dwrvq"),
+"weight": 100
+}])

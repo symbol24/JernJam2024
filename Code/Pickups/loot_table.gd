@@ -41,7 +41,7 @@ func get_loot(_amount:int = loot_amount, _data:CharacterData = null) -> Array:
 		if choice.has("data"):
 			result.append(choice["data"])
 			i += 1
-		else: push_error(choice, " does not have a proper dictionary setup in loot table ", id)
+		#else: push_error(choice, " does not have a proper dictionary setup in loot table ", id)
 		
 	return result
 	

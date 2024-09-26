@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ch25rdiddvx0y"]
+[gd_scene load_steps=25 format=3 uid="uid://ch25rdiddvx0y"]
 
 [ext_resource type="Script" path="res://Code/Utilities/data_manager.gd" id="1_suf4a"]
 [ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="2_k5w3v"]
@@ -13,11 +13,17 @@
 [ext_resource type="Resource" uid="uid://c4y6r33ucee1g" path="res://Data/Dialogue/first_appearance.tres" id="12_vsydp"]
 [ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="13_k2ibi"]
 [ext_resource type="Resource" uid="uid://b2ouxc4oe4wml" path="res://Data/Rooms/basic_combat.tres" id="14_et83s"]
-[ext_resource type="Resource" uid="uid://bk1mxuog3alkc" path="res://Data/Dialogue/first_reset.tres" id="14_r7if5"]
-[ext_resource type="Resource" uid="uid://co87vqiurkrtr" path="res://Data/Dialogue/first_diff_change.tres" id="15_vkr23"]
+[ext_resource type="Resource" uid="uid://bk1mxuog3alkc" path="res://Data/Dialogue/second_reset.tres" id="14_r7if5"]
+[ext_resource type="Resource" uid="uid://3bufonxjv1pm" path="res://Data/Dialogue/to_modern_difficult.tres" id="14_rbl7h"]
+[ext_resource type="Resource" uid="uid://co87vqiurkrtr" path="res://Data/Dialogue/to_fantasy_difficult.tres" id="15_vkr23"]
+[ext_resource type="Resource" uid="uid://gxwbm18gf8tf" path="res://Data/Dialogue/to_modern_normal.tres" id="15_yfg0n"]
 [ext_resource type="Resource" uid="uid://cfyyn6d6cmxou" path="res://Data/Rooms/basic_shop.tres" id="15_yk2wi"]
+[ext_resource type="Resource" uid="uid://yr17n8xxf1bt" path="res://Data/Dialogue/to_fantasy_only_rad.tres" id="16_uoxd0"]
+[ext_resource type="Resource" uid="uid://m8uqms6ffiq5" path="res://Data/Dialogue/death_gives_up.tres" id="17_6p0u8"]
+[ext_resource type="Resource" uid="uid://b3s0dknqyn4fs" path="res://Data/Dialogue/to_modern_no_weapons.tres" id="18_2i52u"]
 [ext_resource type="Resource" uid="uid://y4cydnx42r4o" path="res://Data/Rooms/modern_combat.tres" id="18_vaelg"]
 [ext_resource type="Resource" uid="uid://ce5y686brd53h" path="res://Data/Rooms/modern_shop.tres" id="19_6gelf"]
+[ext_resource type="PackedScene" uid="uid://13uv80udl5ab" path="res://Scenes/Levels/generic_level.tscn" id="22_eocuk"]
 
 [node name="DataManager" type="Node2D"]
 script = ExtResource("1_suf4a")
@@ -27,5 +33,6 @@ shop_item = ExtResource("8_xydc8")
 damage_number = ExtResource("9_ecfj0")
 hp_heart = ExtResource("10_s3q02")
 item_label = ExtResource("11_qhsl0")
-dialogue_lists = Array[ExtResource("11_sk6p1")]([ExtResource("12_vsydp"), ExtResource("14_r7if5"), ExtResource("15_vkr23")])
+dialogue_lists = Array[ExtResource("11_sk6p1")]([ExtResource("12_vsydp"), ExtResource("14_r7if5"), ExtResource("15_vkr23"), ExtResource("14_rbl7h"), ExtResource("15_yfg0n"), ExtResource("16_uoxd0"), ExtResource("17_6p0u8"), ExtResource("18_2i52u")])
 room_list = Array[ExtResource("13_k2ibi")]([ExtResource("14_et83s"), ExtResource("15_yk2wi"), ExtResource("18_vaelg"), ExtResource("19_6gelf")])
+generic_level = ExtResource("22_eocuk")

@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("2_5lusw")
 id = "modern_01"
-is_triggered_spawn = true
 delay_before_starting = 0.0
 spawn_amount = 5
 spawn_delay_between = 1.0

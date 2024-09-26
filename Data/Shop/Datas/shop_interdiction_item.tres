@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_4b0m5")
-id = "shop_interdiction_item"
+id = "shop_interdiction_data"
 description = "shop_interdiction_desc"
 cost_type = 1
 cost_amount = 1

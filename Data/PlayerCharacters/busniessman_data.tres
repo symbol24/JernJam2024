@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_vbg28")
 base_range = 1.0
-starting_weapon = "res://Data/Weapons/Damages/interdiction_damage.tres"
+starting_weapon = "res://Data/Weapons/interdiction_weapon_data.tres"
 character_sprite = "res://Scenes/PlayerCharacter/Sprites/businessman_sprite.tscn"
 id = "businessman"
 path = "res://Scenes/PlayerCharacter/character.tscn"

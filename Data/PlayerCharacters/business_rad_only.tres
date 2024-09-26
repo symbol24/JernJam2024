@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://bt1baafguntmi"]
+
+[ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="1_06rg8"]
+
+[resource]
+script = ExtResource("1_06rg8")
+base_range = 1.0
+starting_weapon = "res://Data/Weapons/radiation_data.tres"
+character_sprite = "res://Scenes/PlayerCharacter/Sprites/businessman_sprite.tscn"
+id = "business_rad_only"
+path = "res://Scenes/PlayerCharacter/character.tscn"
+base_hp = 3
+speed = 50.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

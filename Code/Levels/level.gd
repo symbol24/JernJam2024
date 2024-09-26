@@ -5,6 +5,7 @@ class_name Level extends Node2D
 @export var enemy_spawner:EnemySpawner
 @export var enemy_waves:Array[SpawnerData] = []
 
+var data:LevelData
 var player:SyCharacterBody2D
 var rooms:Array = []
 var active_room_id:int = 0
@@ -31,11 +32,25 @@ func all_rooms_ready() -> void:
 		Signals.InstantiateLevelEnemies.emit(self)
 		player = Game.get_character()
 		add_child.call_deferred(player)
+		await player.ready
 		player.global_position = active_room.entrance_spawn_point.global_position
 		Signals.MoveCamera.emit(active_room.camera_point.global_position, 0)
 		Signals.LevelReady.emit(self)
 		Signals.ToggleControl.emit("player_ui", true)
 		Signals.RoomEntered.emit(active_room.room_type)
+
+
+func get_combat_room() -> RoomData:
+	for each:RoomData in data.rooms:
+		if each.type == Room.Room_Type.COMBAT: return each
+	return null
+
+
+func get_shop_room() -> RoomData:
+	for each:RoomData in data.rooms:
+		if each.type == Room.Room_Type.SHOP: return each
+	return null
+
 
 
 func _switch_active_room() -> void:

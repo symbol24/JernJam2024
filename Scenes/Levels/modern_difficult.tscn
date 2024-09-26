@@ -1,0 +1,33 @@
+[gd_scene load_steps=11 format=3 uid="uid://pytsguhlj666"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_xd0yp"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_oo7w3"]
+[ext_resource type="Resource" uid="uid://wkx5i01hxykf" path="res://Data/Levels/ModernSpawns/md_01.tres" id="3_alab3"]
+[ext_resource type="Resource" uid="uid://d4khmipql5m48" path="res://Data/Levels/ModernSpawns/md_02.tres" id="4_0118f"]
+[ext_resource type="Resource" uid="uid://dbjk05tq1yrw8" path="res://Data/Levels/ModernSpawns/md_03.tres" id="5_qn05t"]
+[ext_resource type="Resource" uid="uid://rh3tbwip0c5y" path="res://Data/Levels/ModernSpawns/md_04.tres" id="6_qwtoj"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="7_j3abp"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="8_bi7s3"]
+[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="9_fbj77"]
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="10_35ayg"]
+
+[node name="ModernDifficult" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
+script = ExtResource("1_xd0yp")
+id = "modern"
+camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
+enemy_waves = Array[ExtResource("2_oo7w3")]([ExtResource("3_alab3"), ExtResource("4_0118f"), ExtResource("5_qn05t"), ExtResource("6_qwtoj")])
+
+[node name="level_camera" type="Camera2D" parent="."]
+process_mode = 3
+script = ExtResource("10_35ayg")
+
+[node name="LootSpawner" type="Node2D" parent="."]
+script = ExtResource("7_j3abp")
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("8_bi7s3")
+
+[node name="MapGenerator" type="Node2D" parent="." groups=["generator"]]
+script = ExtResource("9_fbj77")

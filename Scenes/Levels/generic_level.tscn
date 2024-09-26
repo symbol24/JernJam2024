@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://13uv80udl5ab"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_13tu7"]
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="1_i70fi"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="2_32u33"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="3_innv4"]
+[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="4_02n6l"]
+
+[node name="GenericLevel" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
+z_index = -500
+script = ExtResource("1_13tu7")
+camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
+
+[node name="level_camera" type="Camera2D" parent="."]
+process_mode = 3
+script = ExtResource("1_i70fi")
+
+[node name="LootSpawner" type="Node2D" parent="."]
+script = ExtResource("2_32u33")
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("3_innv4")
+
+[node name="MapGenerator" type="Node2D" parent="." groups=["generator"]]
+script = ExtResource("4_02n6l")

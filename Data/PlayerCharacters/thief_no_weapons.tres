@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://dsrjrxw8pekj2"]
+
+[ext_resource type="Script" path="res://Code/PlayerCharacter/character_data.gd" id="1_aruh8"]
+
+[resource]
+script = ExtResource("1_aruh8")
+base_range = 1.0
+starting_weapon = ""
+character_sprite = "res://Scenes/PlayerCharacter/Sprites/thief_sprite.tscn"
+id = "thief no weapon"
+path = "res://Scenes/PlayerCharacter/character.tscn"
+base_hp = 6
+speed = 50.0
+armor = 0
+shield = 0
+crit_chance = 0.0
+crit_bonus = 0.0

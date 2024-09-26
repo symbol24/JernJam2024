@@ -1,8 +1,12 @@
 extends CanvasLayer
 
 
+var current_menu:String = ""
 var last_menu:String = ""
 var controls:Array[SyControl] = []
+var can_pause:bool:
+	get:
+		return current_menu != "dialogue" and current_menu != "loading" and Game.active_level != null
 
 
 func _ready() -> void:
@@ -13,6 +17,7 @@ func _ready() -> void:
 func _toggle_control(_id:String, _visible:bool = true, _from:String = "") -> void:
 	for each in controls:
 		if each.id == _id:
+			current_menu = _id
 			each.set_deferred("visible", _visible)
 		else:
 			if _visible: each.set_deferred("visible", false)

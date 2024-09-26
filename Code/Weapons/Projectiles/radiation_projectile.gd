@@ -38,7 +38,7 @@ func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = null) 
 	parent = _owner
 	data = _data.duplicate()
 	data.parse_level_data()
-	_update_scale(data.projectile_scale)
+	update_scale(data.projectile_scale)
 	damages = data.damages
 	_set_damage_owner()
 	current_hit_count = hit_count
@@ -53,7 +53,7 @@ func _damage_tick() -> void:
 			each.data.receive_damage(damages)
 
 
-func _update_scale(_value:float = 1) -> void:
+func update_scale(_value:float = 1) -> void:
 	collider.shape.set_deferred("radius", starting_radius * _value)
 	radiation_sprite.scale = Vector2(1,1) * _value
 

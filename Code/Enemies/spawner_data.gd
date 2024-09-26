@@ -6,7 +6,6 @@ const SPAWN_AREA = [72, 252, 24, 156]
 	get:
 		if id == "": return resource_name
 		return id
-@export var is_triggered_spawn:bool = true
 @export var delay_before_starting:float = 0.0
 @export var spawn_amount:int = 1
 @export var spawn_delay_between:float = 1.0

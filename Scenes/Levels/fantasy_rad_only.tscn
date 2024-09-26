@@ -1,0 +1,33 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcb2kq5x57fy0"]
+
+[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_hweu1"]
+[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="2_7icwm"]
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_q1ex1"]
+[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="3_1dflr"]
+[ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Levels/FantasySpawns/fn_01.tres" id="3_u35hk"]
+[ext_resource type="Resource" uid="uid://c1yqro1r8t1cn" path="res://Data/Levels/FantasySpawns/fn_02.tres" id="4_g1rrt"]
+[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="4_qxvih"]
+[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="5_h40vj"]
+[ext_resource type="Resource" uid="uid://dc4v0p4luff6g" path="res://Data/Levels/FantasySpawns/fn_03.tres" id="5_mhdmv"]
+[ext_resource type="Resource" uid="uid://dwvtrpfjkxae1" path="res://Data/Levels/FantasySpawns/fn_04.tres" id="6_puaw2"]
+
+[node name="FantasyRadOnly" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
+script = ExtResource("1_hweu1")
+id = "fantasy_rad_only"
+camera = NodePath("level_camera")
+enemy_spawner = NodePath("enemy_spawner")
+enemy_waves = Array[ExtResource("2_q1ex1")]([ExtResource("3_u35hk"), ExtResource("4_g1rrt"), ExtResource("5_mhdmv"), ExtResource("6_puaw2")])
+
+[node name="level_camera" type="Camera2D" parent="."]
+process_mode = 3
+script = ExtResource("2_7icwm")
+
+[node name="LootSpawner" type="Node2D" parent="."]
+script = ExtResource("3_1dflr")
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("4_qxvih")
+
+[node name="MapGenerator" type="Node2D" parent="." groups=["generator"]]
+script = ExtResource("5_h40vj")

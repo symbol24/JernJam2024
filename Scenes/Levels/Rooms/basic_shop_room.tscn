@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://canufgnmperbq"]
+[gd_scene load_steps=7 format=3 uid="uid://canufgnmperbq"]
 
 [ext_resource type="Script" path="res://Code/Levels/Room/shop_room.gd" id="1_0jjjp"]
 [ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/Items/combat_room_walls.tscn" id="2_cjcot"]
@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/Items/door.tscn" id="3_yg557"]
 [ext_resource type="PackedScene" uid="uid://qgaj15l1rw1a" path="res://Scenes/Shop/shop_keep.tscn" id="4_luu8o"]
 [ext_resource type="Script" path="res://Code/Shop/shop_builder.gd" id="6_d8cev"]
-[ext_resource type="Resource" uid="uid://f1ydfbch8ioc" path="res://Data/Shop/LootTables/fantasy_shop_loot_table.tres" id="7_lufdt"]
 
 [node name="BasicShopRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3
-z_index = -100
+z_index = -500
 script = ExtResource("1_0jjjp")
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")
@@ -43,8 +42,8 @@ position = Vector2(162, 156)
 [node name="camera_point" parent="." instance=ExtResource("2_tpdd3")]
 
 [node name="ShopBuilder" type="Node2D" parent="." node_paths=PackedStringArray("item_points")]
+unique_name_in_owner = true
 script = ExtResource("6_d8cev")
-shop_loot_table = ExtResource("7_lufdt")
 item_points = [NodePath("item1"), NodePath("item2"), NodePath("item3"), NodePath("item4"), NodePath("item5")]
 
 [node name="item1" type="Marker2D" parent="ShopBuilder"]

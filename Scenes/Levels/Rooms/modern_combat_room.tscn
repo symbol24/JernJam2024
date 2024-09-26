@@ -25,6 +25,7 @@ size = Vector2(108, 12)
 size = Vector2(96, 12)
 
 [node name="ModernCombatRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point")]
+z_index = -500
 script = ExtResource("1_tqqej")
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")

@@ -11,7 +11,7 @@ var y_offset:float = -180
 
 func _ready() -> void:
 	Signals.RoomEntered.connect(_receive_room_entered)
-	_instantiate_rooms(level.id)
+	_instantiate_rooms(level.get_combat_room(), level.get_shop_room())
 	if combat != null and shop != null:
 		current_pos = _spawn_next_rooms(current_pos, y_offset)
 		level.all_rooms_ready()
@@ -38,22 +38,21 @@ func _spawn_next_rooms(_pos:Vector2 = Vector2.ZERO, _y_offset:float = -180) -> V
 		_pos = Vector2(0, _pos.y + _y_offset)
 		level.room_ready(new_shop)
 		new_shop.name = "room_shop_" + str(level.rooms.size())
+		new_shop.shop_loot_table = level.data.shop_loot_table
 
 	return _pos
 
 
-func _instantiate_rooms(_level_id:String = "fantasy") -> void:
-	var combat_path:String = DataManager.get_room_path(_level_id + "_combat")
-	if combat_path: 
-		combat = load(combat_path).instantiate() as CombatRoom
-	else: 
-		push_error("No path found for ", _level_id, "_combat. Room instantiation interrupted.")
+func _instantiate_rooms(_combat_room_data:RoomData, _shop_room_data:RoomData) -> void:
+	#print("Trying to instantiate rooms.")
+	if _combat_room_data == null or _shop_room_data == null:
+		push_error("One or more room data missing in ", level.data.id, " level data.")
 		return
-	var shop_path:String = DataManager.get_room_path(_level_id + "_shop")
-	if shop_path: 
-		shop = load(shop_path).instantiate() as ShopRoom
-	else: 
-		push_error("No path found for ", _level_id, "_shop. Room instantiation interrupted.")
-		return
+
+	combat = load(_combat_room_data.path).instantiate() as CombatRoom
+
+	shop = load(_shop_room_data.path).instantiate() as ShopRoom
+	
+	#print("Rooms instantiated.")
 	
 

@@ -3,12 +3,13 @@ extends Node2D
 
 @export var character_datas:Array[CharacterData] = []
 @export var levels:LevelLoadData
-@export var shop_item:Resource
-@export var damage_number:Resource
-@export var hp_heart:Resource
-@export var item_label:Resource
+@export var shop_item:PackedScene
+@export var damage_number:PackedScene
+@export var hp_heart:PackedScene
+@export var item_label:PackedScene
 @export var dialogue_lists:Array[DialogueData]
 @export var room_list:Array[RoomData]
+@export var generic_level:PackedScene
 
 
 func get_dialogue(_id:String) -> String:

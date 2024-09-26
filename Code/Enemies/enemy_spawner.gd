@@ -13,24 +13,24 @@ var room:Room:
 var spawn_active:bool = false:
 	set(value):
 		spawn_active = value
-		if spawn_active: print("Spawner ", name," active in ", room.name)
+		#if spawn_active: print("Spawner ", name," active in ", room.name)
 var active_spawn_id:int = 0:
 	set(_value):
 		active_spawn_id = _value
-		if active_spawn_id >= level.enemy_waves.size():
+		if active_spawn_id >= _get_amount_of_waves():
 			active_spawn_id = 0
 			spawn_active = false
 			print("Spawn over")
 		else:
 			_start_next_spawn_data(room.room_type)
-			
+
 var instantiated_enemies:Array[Enemy2D] = []
 var enemy_pool:Array[Array] = []
 var all_enemies:Array[Enemy2D] = []
 var wave_count:int = 0:
 	set(_value):
 		wave_count = _value
-		if wave_count >= level.enemy_waves[active_spawn_id].spawn_amount:
+		if wave_count >= level.data.enemy_waves[active_spawn_id].spawn_amount:
 			wave_count = 0
 			spawn_timer_active = false
 			active_spawn_id += 1
@@ -57,7 +57,7 @@ var wait_next_spawn_timer:float = 0.0:
 			wait_next_spawn_timer_active = false
 			_spawn_wave(active_spawn_id)
 
-var enemy_level:int = 0
+var room_count:int = 0
 
 
 func _ready() -> void:
@@ -75,7 +75,7 @@ func _process(_delta: float) -> void:
 
 func _instantiate_enemies(_level:Level) -> void:
 	# instantiting one of each enemy
-	for spawn_data in _level.enemy_waves:
+	for spawn_data in _level.data.enemy_waves:
 		for each:EnemyData in spawn_data.enemies_to_spawn:
 			if _check_is_not_instantiated(each, instantiated_enemies):
 				var new_enemy:Enemy2D = load(each.path).instantiate() as Enemy2D
@@ -84,14 +84,14 @@ func _instantiate_enemies(_level:Level) -> void:
 
 func _spawn_wave(_id:int) -> void:
 	if spawn_active:
-		var spawn_data:SpawnerData = level.enemy_waves[_id]
+		var spawn_data:SpawnerData = level.data.enemy_waves[_id]
 		if spawn_data != null:
 			for enemy:EnemyData in spawn_data.enemies_to_spawn:
 				var new_enemy = _get_instantiated_enemy(enemy, instantiated_enemies)
 				room.add_child(new_enemy)
 				new_enemy.name = enemy.id + str(enemy_total_spawn_count)
 				new_enemy.set_data(new_enemy.name)
-				new_enemy.set_level(enemy_level)
+				new_enemy.set_level(_get_enemy_level())
 				var pos:Vector2 = room.to_global(Vector2(randf_range(spawn_data.spawn_area[0], spawn_data.spawn_area[1]), randf_range(spawn_data.spawn_area[2], spawn_data.spawn_area[3])))
 				new_enemy.global_position = pos
 				all_enemies.append(new_enemy)
@@ -104,9 +104,9 @@ func _spawn_wave(_id:int) -> void:
 
 func _start_next_spawn_data(_room:Room.Room_Type) -> void:
 	if _room == Room.Room_Type.COMBAT:
-		enemy_level += 1
+		room_count += 1
 		spawn_active = true
-		wait_next_spawn_delay = level.enemy_waves[active_spawn_id].delay_before_starting
+		wait_next_spawn_delay = level.data.enemy_waves[active_spawn_id].delay_before_starting
 		wait_next_spawn_timer_active = true
 
 
@@ -161,3 +161,17 @@ func _clear_spawner() -> void:
 	for each in all_enemies:
 		each.queue_free.call_deferred()
 	all_enemies.clear()
+
+
+func _get_amount_of_waves() -> int:
+	if room_count > level.data.enemy_waves.size() and room_count <= level.data.enemy_waves.size() * level.data.enemy_waves.size():
+		return ceili(room_count/level.data.enemy_waves.size())
+	elif room_count > level.data.enemy_waves.size() * level.data.enemy_waves.size():
+		return level.data.enemy_waves.size()
+	return 1
+
+
+func _get_enemy_level() -> int:
+	if room_count > 4:
+		return ceili(room_count/4)
+	return 1

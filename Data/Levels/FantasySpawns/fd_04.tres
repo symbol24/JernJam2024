@@ -8,7 +8,6 @@
 [resource]
 script = ExtResource("2_jsdnc")
 id = "fd_04"
-is_triggered_spawn = false
 delay_before_starting = 0.0
 spawn_amount = 10
 spawn_delay_between = 1.0

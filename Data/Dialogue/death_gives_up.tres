@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://m8uqms6ffiq5"]
+
+[ext_resource type="Script" path="res://Code/UI/Death/dialogue_data.gd" id="1_tsqlp"]
+
+[resource]
+script = ExtResource("1_tsqlp")
+id = "death_gives_up"
+lines = Array[String](["dgu_01", "dgu_02", "dgu_03"])

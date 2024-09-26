@@ -9,7 +9,7 @@ var rotation_target_path
 var projectile_speed:float:
 	get:
 		if data.level_data.has("projectile_speed"):
-			print(data.level_data["projectile_speed"])
+			#print(data.level_data["projectile_speed"])
 			return float(data.level_data["projectile_speed"])
 		else:
 			return 1

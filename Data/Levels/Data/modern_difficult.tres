@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3 uid="uid://ctush7kbr67w5"]
+
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="1_0yd6l"]
+[ext_resource type="Resource" uid="uid://cohbtvh3vmjn5" path="res://Data/PlayerCharacters/busniessman_data.tres" id="1_174qw"]
+[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="2_5yeoq"]
+[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="3_6eaa2"]
+[ext_resource type="Resource" uid="uid://wkx5i01hxykf" path="res://Data/Levels/ModernSpawns/md_01.tres" id="3_xm8ka"]
+[ext_resource type="Resource" uid="uid://d4khmipql5m48" path="res://Data/Levels/ModernSpawns/md_02.tres" id="4_cub8o"]
+[ext_resource type="Resource" uid="uid://y4cydnx42r4o" path="res://Data/Rooms/modern_combat.tres" id="4_ufdqb"]
+[ext_resource type="Resource" uid="uid://ce5y686brd53h" path="res://Data/Rooms/modern_shop.tres" id="5_fn4aw"]
+[ext_resource type="Resource" uid="uid://dbjk05tq1yrw8" path="res://Data/Levels/ModernSpawns/md_03.tres" id="5_lqqj2"]
+[ext_resource type="Resource" uid="uid://rh3tbwip0c5y" path="res://Data/Levels/ModernSpawns/md_04.tres" id="6_3p5c8"]
+[ext_resource type="Resource" uid="uid://cll8a80h43jud" path="res://Data/Shop/LootTables/modern_shop_loottable.tres" id="11_j2u0m"]
+
+[resource]
+script = ExtResource("3_6eaa2")
+id = "modern_difficult"
+character = ExtResource("1_174qw")
+rooms = Array[ExtResource("2_5yeoq")]([ExtResource("4_ufdqb"), ExtResource("5_fn4aw")])
+shop_loot_table = ExtResource("11_j2u0m")
+enemy_waves = Array[ExtResource("1_0yd6l")]([ExtResource("3_xm8ka"), ExtResource("4_cub8o"), ExtResource("5_lqqj2"), ExtResource("6_3p5c8")])

@@ -8,7 +8,6 @@
 [resource]
 script = ExtResource("2_cfbm5")
 id = "md_01"
-is_triggered_spawn = true
 delay_before_starting = 0.0
 spawn_amount = 10
 spawn_delay_between = 1.0

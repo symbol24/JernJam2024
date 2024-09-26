@@ -1,9 +1,11 @@
 class_name ShopBuilder extends Node2D 
 
 
-@export var shop_loot_table:LootTable
 @export var item_points:Array[Marker2D]
 
+var shop_loot_table:LootTable:
+	get:
+		return get_parent().shop_loot_table
 
 func _ready() -> void:
 	#_build_shop()

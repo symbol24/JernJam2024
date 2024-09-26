@@ -114,7 +114,7 @@ func is_weapon_max_level(_id:String) -> bool:
 	if not weapons.is_empty():
 		for each in weapons:
 			if each.id == _id:
-				print("weapon chech, each.level: ", each.level)
+				#print("weapon check, each.level: ", each.level)
 				return each.level == WeaponData.MAX_LEVEL
 	return false
 
@@ -123,6 +123,6 @@ func is_trinket_max_level(_id:String) -> bool:
 	if not trinkets.is_empty():
 		for each in trinkets:
 			if each.id == _id:
-				print("trinket chech, each.level: ", each.level)
+				#print("trinket check, each.level: ", each.level)
 				return each.level == TrinketData.MAX_LEVEL
 	return false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dje6x2hkvnjq1"]
+[gd_scene load_steps=25 format=3 uid="uid://dje6x2hkvnjq1"]
 
 [ext_resource type="Script" path="res://Code/UI/ui.gd" id="1_lclfa"]
 [ext_resource type="Script" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
@@ -8,13 +8,25 @@
 [ext_resource type="Script" path="res://Code/UI/wrappers/sy_button.gd" id="4_1qq4j"]
 [ext_resource type="Script" path="res://Code/UI/coin_label.gd" id="4_e82jq"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="4_tohl0"]
+[ext_resource type="Script" path="res://Code/UI/pause_menu.gd" id="8_fpcoo"]
+[ext_resource type="Script" path="res://Code/UI/pause_menu_tab_containergd.gd" id="9_jufhb"]
 [ext_resource type="Script" path="res://Code/UI/dialogue.gd" id="9_qlctj"]
 [ext_resource type="PackedScene" uid="uid://cfcsytalomisv" path="res://Scenes/UI/Death/death_control.tscn" id="10_qsm7g"]
+[ext_resource type="PackedScene" uid="uid://bgi64goim1u4n" path="res://Scenes/UI/sound_option.tscn" id="10_wtta0"]
+[ext_resource type="Texture2D" uid="uid://d2madieycdhqq" path="res://Textures/controls_kb.png" id="11_474ws"]
+[ext_resource type="Texture2D" uid="uid://daxi3t3gab1ve" path="res://Textures/controls_gamepad.png" id="12_fneil"]
 [ext_resource type="Script" path="res://Code/UI/ghost_rte.gd" id="12_inxhk"]
 [ext_resource type="Script" path="res://Code/UI/Death/dialogue_skip_button.gd" id="13_b0qqa"]
 [ext_resource type="Script" path="res://Code/UI/popups.gd" id="13_mexdp"]
+[ext_resource type="Texture2D" uid="uid://csl53wb184w83" path="res://Textures/gamepad_start.png" id="13_uuhbh"]
+[ext_resource type="Texture2D" uid="uid://b8tile151fjlm" path="res://Textures/gamepad_a.png" id="14_pxney"]
+[ext_resource type="Texture2D" uid="uid://dfcdmab8lje5w" path="res://Textures/gamepad_stick.png" id="15_0caxv"]
+[ext_resource type="Script" path="res://Code/UI/result_screen.gd" id="16_0vq87"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_7c8hq"]
+script = ExtResource("12_inxhk")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_kgduh"]
 script = ExtResource("12_inxhk")
 
 [node name="UI" type="CanvasLayer"]
@@ -181,7 +193,307 @@ offset_right = 179.0
 offset_bottom = 117.0
 text = "Play"
 script = ExtResource("4_1qq4j")
-destination = "fantasy"
+destination = "fantasy_normal"
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_fpcoo")
+id = "pause_menu"
+
+[node name="panel_background" type="PanelContainer" parent="PauseMenu"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_type_variation = &"PauseMenuContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="pause_title" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_type_variation = &"PauseTitle"
+bbcode_enabled = true
+text = "pause_title"
+scroll_active = false
+
+[node name="TabContainer" type="TabContainer" parent="PauseMenu/panel_background/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 2
+script = ExtResource("9_jufhb")
+
+[node name="panel_1" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"PauseMenuPanels"
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="sub_title" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+bbcode_enabled = true
+text = "audio_sub_title"
+scroll_active = false
+
+[node name="sound_option" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
+layout_mode = 2
+
+[node name="sound_option2" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
+layout_mode = 2
+
+[node name="bus_slider" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option2/HBoxContainer" index="1"]
+bus_id = "Music"
+
+[node name="sound_option3" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
+layout_mode = 2
+
+[node name="bus_slider" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option3/HBoxContainer" index="1"]
+bus_id = "SFX"
+
+[node name="panel_2" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"PauseMenuPanels"
+metadata/_tab_index = 1
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2"]
+layout_mode = 2
+texture = ExtResource("11_474ws")
+
+[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2"]
+layout_mode = 2
+
+[node name="esc" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 26.0
+offset_bottom = 33.0
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "ESC"
+scroll_active = false
+
+[node name="W" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+offset_left = 41.0
+offset_top = 51.0
+offset_right = 56.0
+offset_bottom = 57.0
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "W"
+scroll_active = false
+
+[node name="E" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+offset_left = 54.0
+offset_top = 51.0
+offset_right = 69.0
+offset_bottom = 57.0
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "E"
+scroll_active = false
+
+[node name="A" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+offset_left = 32.0
+offset_top = 65.0
+offset_right = 47.0
+offset_bottom = 71.0
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "A"
+scroll_active = false
+
+[node name="S" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+offset_left = 45.0
+offset_top = 65.0
+offset_right = 60.0
+offset_bottom = 71.0
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "S"
+scroll_active = false
+
+[node name="D" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+offset_left = 58.0
+offset_top = 65.0
+offset_right = 73.0
+offset_bottom = 71.0
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "D
+"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+custom_minimum_size = Vector2(100, 117)
+layout_mode = 1
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 117.0
+theme_override_constants/separation = 10
+
+[node name="space" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="esc2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "esc_controls"
+scroll_active = false
+
+[node name="E2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "e_controls"
+scroll_active = false
+
+[node name="W2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "w_controls"
+scroll_active = false
+
+[node name="A2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "a_controls"
+scroll_active = false
+
+[node name="S2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "s_controls"
+scroll_active = false
+
+[node name="D2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(15, 6)
+layout_mode = 2
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "d_controls"
+scroll_active = false
+
+[node name="panel_3" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_type_variation = &"PauseMenuPanels"
+metadata/_tab_index = 2
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3"]
+layout_mode = 2
+texture = ExtResource("12_fneil")
+
+[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3"]
+custom_minimum_size = Vector2(100, 117)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control"]
+custom_minimum_size = Vector2(100, 117)
+layout_mode = 2
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 117.0
+theme_override_constants/separation = 20
+
+[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_uuhbh")
+
+[node name="start" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "gamepad_start"
+scroll_active = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("14_pxney")
+
+[node name="a" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "gamepad_a"
+scroll_active = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("15_0caxv")
+
+[node name="stick" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_type_variation = &"ControlsRTL"
+bbcode_enabled = true
+text = "gamepad_stick"
+scroll_active = false
+
+[node name="ResultScreen" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_0vq87")
+id = "result_screen"
 
 [node name="LoadingScreen" type="Control" parent="."]
 process_mode = 3
@@ -246,7 +558,6 @@ offset_left = 224.0
 offset_top = 84.0
 offset_right = 320.0
 offset_bottom = 180.0
-first_appearance_death_count = 0
 
 [node name="DContainer" type="PanelContainer" parent="Dialogue"]
 process_mode = 3
@@ -284,6 +595,7 @@ theme_type_variation = &"DialogueText"
 bbcode_enabled = true
 text = "fsdgsghsdgsdg"
 scroll_active = false
+custom_effects = [SubResource("RichTextEffect_kgduh")]
 visible_characters_behavior = 1
 
 [node name="click_to_continue" type="HBoxContainer" parent="Dialogue/DContainer/DVBox"]
@@ -340,3 +652,6 @@ mouse_filter = 2
 theme_type_variation = &"PanelSmallRTL"
 bbcode_enabled = true
 scroll_active = false
+
+[editable path="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option2"]
+[editable path="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option3"]

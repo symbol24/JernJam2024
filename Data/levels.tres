@@ -1,6 +1,13 @@
-[gd_resource type="Resource" script_class="LevelLoadData" load_steps=2 format=3 uid="uid://brknjpm4agl0x"]
+[gd_resource type="Resource" script_class="LevelLoadData" load_steps=9 format=3 uid="uid://brknjpm4agl0x"]
 
 [ext_resource type="Script" path="res://Code/Levels/level_load_data.gd" id="1_botn8"]
+[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="1_gi0d8"]
+[ext_resource type="Resource" uid="uid://4j1xd0j3ps7c" path="res://Data/Levels/Data/fantasy_normal.tres" id="2_w1d0c"]
+[ext_resource type="Resource" uid="uid://c0cw2ynl7rto1" path="res://Data/Levels/Data/fantasy_difficult.tres" id="3_ynxr4"]
+[ext_resource type="Resource" uid="uid://6md006xsnjxe" path="res://Data/Levels/Data/fantasy_rad_only.tres" id="4_4x0ot"]
+[ext_resource type="Resource" uid="uid://ctush7kbr67w5" path="res://Data/Levels/Data/modern_difficult.tres" id="5_v50eo"]
+[ext_resource type="Resource" uid="uid://bt0yp6a005whg" path="res://Data/Levels/Data/modern_normal.tres" id="6_jshm1"]
+[ext_resource type="Resource" uid="uid://dej0px1234f1r" path="res://Data/Levels/Data/modern_no_weapons.tres" id="7_fqgou"]
 
 [resource]
 script = ExtResource("1_botn8")
@@ -8,7 +15,10 @@ levels = {
 "boot": "res://Scenes/Levels/boot.tscn",
 "fantasy": "res://Scenes/Levels/fantasy_level.tscn",
 "fantasy_difficult": "res://Scenes/Levels/fantasy_difficult.tscn",
+"fantasy_rad_only": "res://Scenes/Levels/fantasy_rad_only.tscn",
+"modern_difficult": "res://Scenes/Levels/modern_difficult.tscn",
 "modern_normal": "res://Scenes/Levels/modern_normal.tscn",
 "test": "res://Scenes/Levels/level_test.tscn"
 }
 loading_delay = 1.0
+level_datas = Array[ExtResource("1_gi0d8")]([ExtResource("2_w1d0c"), ExtResource("3_ynxr4"), ExtResource("4_4x0ot"), ExtResource("5_v50eo"), ExtResource("6_jshm1"), ExtResource("7_fqgou")])

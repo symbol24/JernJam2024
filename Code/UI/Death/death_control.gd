@@ -2,28 +2,42 @@ class_name DeathControl extends Control
 
 
 enum State {
-				NORMAL = 0,
-				FIRST_APPEARANCE = 1,
-				FIRST_RESET = 2,
-				FIRST_DIFF_CHANGE = 3,
+				WAITING_FIRST_DEATH = 0,
+				FIRST_RESET = 1,
+				SECOND_RESET = 2,
+				FANTASY_DIFFICULT = 3,
+				MODERN_NORMAL = 4,
+				MODERN_DIFFICULT = 5,
+				FANTASY_DIFFICULT_ONLY_RAD = 6,
+				MODERN_NO_WEAPONS = 7,
+				DEATH_GIVES_UP = 8,
 			}
 
 
-@export var normal_delay:float = 5
 @export var skip_delay:float = 0.1
-@export var first_appearance_death_count:int = 20
-@export var first_reset_death_count:int = 5
-@export var first_diff_change_death_count:int = 5
+@export var death_count_for_first_reset:int = 20
+@export var death_count_for_second_reset:int = 5
+@export var death_count_for_fantasy_difficult:int = 5
+@export var death_count_for_modern_normal:int = 5
+@export var death_count_for_modern_difficult:int = 5
+@export var death_count_for_fantasy_difficult_only_rad:int = 5
+@export var death_count_for_modern_no_weapon:int = 5
+@export var death_count_for_death_give_up:int = 50
+@export var room_count_check:int = 40
 
 @onready var sprite: TileMapLayer = %sprite
 @onready var dialogue_text:RichTextLabel = %dialogue_text
 
-var current_state:State = State.NORMAL
-
+var current_state:State = State.WAITING_FIRST_DEATH
+var normal_delay:float:
+	get:
+		return char_count * 0.05
 var current_dialogue_id:String = ""
 var char_count := 0
-var current := 0
-var timer := 0.0
+var timer := 0.0:
+	set(value):
+		timer = value
+		_end_timer_check(timer)
 var show_delay := 0.2
 var char_update := false
 var current_text:String
@@ -34,6 +48,7 @@ var d_tween:Tween
 var r_tween:Tween
 var death_move_delay:float = randf_range(0.05,0.15)
 var last_death_count:int = 0
+var room_count:int = 0
 
 
 func _ready() -> void:
@@ -74,6 +89,7 @@ func _display_with_ratio(_delay:float) -> void:
 	displaying = true
 	if r_tween != null: r_tween.kill()
 	r_tween = dialogue_text.create_tween()
+	r_tween.finished.connect(func(): skip = true)
 	r_tween.tween_property(dialogue_text, "visible_ratio", 1.0, _delay)
 	_move()
 
@@ -99,48 +115,85 @@ func _clear_current() -> void:
 
 
 func _check_dialogue_trigger(_room_type:Room.Room_Type) -> void:
-	#print("not first_appearance ", not first_appearance, " Game.player.data.defeats ", Game.player.data.defeats)
-
+	room_count += 1
 	if _room_type == Room.Room_Type.SHOP:
 		match current_state:
-			State.NORMAL:
-				#print("first_appearance_death_count ", first_appearance_death_count)
-				if Game.player.data.defeats > first_appearance_death_count:
+			State.WAITING_FIRST_DEATH:
+				if Game.player.data.defeats > death_count_for_first_reset or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("first_appearance")
-					current_state = State.FIRST_APPEARANCE
-			State.FIRST_APPEARANCE:
-				if Game.player.data.defeats > last_death_count + first_reset_death_count:
-					Signals.ToggleControl.emit("dialogue", true, "player_ui")
-					_display_text("first_reset")
 					current_state = State.FIRST_RESET
 			State.FIRST_RESET:
-				if Game.player.data.defeats > last_death_count + first_diff_change_death_count:
+				if Game.player.data.defeats > last_death_count + death_count_for_second_reset or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
-					_display_text("first_diff_change")
-					current_state = State.FIRST_DIFF_CHANGE
-			State.FIRST_DIFF_CHANGE:
-
-				pass
+					_display_text("second_reset")
+					current_state = State.SECOND_RESET
+			State.SECOND_RESET:
+				if Game.player.data.defeats > last_death_count + death_count_for_fantasy_difficult or room_count >= room_count_check:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("to_fantasy_difficult")
+					current_state = State.FANTASY_DIFFICULT
+			State.FANTASY_DIFFICULT:
+				if Game.player.data.defeats > last_death_count + death_count_for_modern_normal or room_count >= room_count_check:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("to_modern_normal")
+					current_state = State.MODERN_NORMAL
+			State.MODERN_NORMAL:
+				if Game.player.data.defeats > last_death_count + death_count_for_modern_difficult or room_count >= room_count_check:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("to_modern_difficult")
+					current_state = State.MODERN_DIFFICULT
+			State.MODERN_DIFFICULT:
+				if Game.player.data.defeats > last_death_count + death_count_for_fantasy_difficult_only_rad or room_count >= room_count_check:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("to_fantasy_only_rad")
+					current_state = State.FANTASY_DIFFICULT_ONLY_RAD
+			State.FANTASY_DIFFICULT_ONLY_RAD:
+				if Game.player.data.defeats > last_death_count + death_count_for_modern_no_weapon or room_count >= room_count_check:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("to_modern_no_weapons")
+					current_state = State.MODERN_NO_WEAPONS
+			State.MODERN_NO_WEAPONS:
+				if Game.player.data.defeats > last_death_count + death_count_for_death_give_up:
+					Signals.ToggleControl.emit("dialogue", true, "player_ui")
+					_display_text("death_gives_up")
+					current_state = State.DEATH_GIVES_UP
 			_:
 				pass
 		
 	last_death_count = Game.player.data.defeats
-
 	
-func _trigger_next_sequence(_cuurent_state:State) -> void:
-	match _cuurent_state:
-		State.NORMAL:
+func _trigger_next_sequence(_current_state:State) -> void:
+	room_count = 0
+	match _current_state:
+		State.WAITING_FIRST_DEATH:
 			pass
-		State.FIRST_APPEARANCE:
-			Signals.RestCharacter.emit()
-			Signals.LoadLevel.emit("fantasy")
 		State.FIRST_RESET:
 			Signals.RestCharacter.emit()
-			Signals.LoadLevel.emit("fantasy")
-		State.FIRST_DIFF_CHANGE:
+			Signals.LoadLevel.emit("fantasy_normal")
+		State.SECOND_RESET:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("fantasy_normal")
+		State.FANTASY_DIFFICULT:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("fantasy_difficult")
+		State.MODERN_NORMAL:
 			Signals.RestCharacter.emit()
 			Signals.LoadLevel.emit("modern_normal")
-			
+		State.MODERN_DIFFICULT:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("modern_difficult")
+		State.FANTASY_DIFFICULT_ONLY_RAD:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("fantasy_rad_only")
+		State.MODERN_NO_WEAPONS:
+			Signals.RestCharacter.emit()
+			Signals.LoadLevel.emit("modern_no_weapons")
+		State.DEATH_GIVES_UP:
+			Signals.ToggleControl.emit("result_screen", true, "dialogue")
 		_:
 			pass
+
+
+func _end_timer_check(_timer:float) -> void:
+	pass

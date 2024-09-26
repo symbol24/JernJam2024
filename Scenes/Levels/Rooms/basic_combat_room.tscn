@@ -8,7 +8,7 @@
 
 [node name="BasicCombatRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3
-z_index = -100
+z_index = -500
 script = ExtResource("1_06qjs")
 entrance_spawn_point = NodePath("spawn_point")
 camera_point = NodePath("camera_point")

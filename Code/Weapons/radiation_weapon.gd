@@ -17,6 +17,8 @@ func _receive_room_entered(_room_type:Room.Room_Type) -> void:
 	if projectile == null:
 		if _room_type == Room.Room_Type.COMBAT:
 			_shoot_one_projectile()
+	else:
+		projectile.update_scale(projectile.data.get_level_data_for("projectile_scale"))
 
 
 func _shoot_one_projectile() -> void:

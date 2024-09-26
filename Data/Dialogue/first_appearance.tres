@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_3froa")
 id = "first_appearance"
-lines = Array[String](["first_appearance_01", "first_appearance_02", "first_appearance_03", "first_appearance_04"])
+lines = Array[String](["fa_01", "fa_02", "fa_03", "fa_04"])
