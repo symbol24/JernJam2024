@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://cekgxt14fkshd"]
+
+[ext_resource type="AudioStream" uid="uid://bye5gg6ead647" path="res://Audio/SFX/heal_collect.wav" id="1_07ps0"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_x0oat"]
+
+[resource]
+script = ExtResource("1_x0oat")
+id = "heal_pickup"
+files = Array[AudioStream]([ExtResource("1_07ps0")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

@@ -5,3 +5,7 @@ class_name SyControl extends Control
 
 func _ready() -> void:
 	hide()
+
+
+func play_entry() -> void:
+	pass

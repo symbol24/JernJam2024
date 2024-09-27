@@ -23,6 +23,7 @@ var range_timer:float = 0.0:
 			range_timer = 0.0
 			if prisoner == null:
 				_pop()
+var popping:bool = true
 
 
 func _ready() -> void:
@@ -51,30 +52,32 @@ func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = null) 
 
 
 func _pop() -> void:
+	popping = true
+	Audio.play_audio(DataManager.get_audio_file("bubble_pop"))
 	bubble_sprite.hide()
 	explosion.show()
 	is_active = false
 	await get_tree().create_timer(0.1).timeout
 	explosion.hide()
 	if prisoner != null:
+		remove_child.call_deferred(prisoner)
 		prisoner.data.receive_damage(get_damages())
 		prisoner.set_deferred("is_prisoner", false)
 		prisoner.set_deferred("global_position", global_position)
-		if prisoner.data.current_hp > 0:
-			remove_child.call_deferred(prisoner)
-			Game.active_level.active_room.add_child.call_deferred(prisoner)
 		prisoner = null
 	await get_tree().create_timer(0.2).timeout
+	popping = false
 	_return_to_pool()
 
 
+
 func _body_entered(_body) -> void:
-	if prisoner == null and _body.is_in_group("enemy"):
+	if not popping and prisoner == null and _body.is_in_group("enemy") and not _body.is_prisoner:
 		_body.get_parent().remove_child.call_deferred(_body)
 		add_child.call_deferred(_body)
 		collector_collider.set_deferred("disabled", true)
 		prisoner = _body
-		prisoner.set_deferred("is_prisoner", true)
+		prisoner.is_prisoner = true
 		prisoner.set_deferred("position", Vector2(6,6))
 
 

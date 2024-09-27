@@ -56,6 +56,7 @@ enum Target_Type {
 			return result
 		return projectile_scale
 @export var remain_on_player:bool = false
+@export var audio_file_name:String = ""
 @export var extras:Dictionary = {}
 
 var level_data:Dictionary

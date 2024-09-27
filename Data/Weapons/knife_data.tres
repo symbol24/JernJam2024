@@ -20,4 +20,5 @@ damages = Array[ExtResource("1_br23g")]([ExtResource("2_v2aw1")])
 projectile_life_time = 0.33
 projectile_scale = 1.0
 remain_on_player = false
+audio_file_name = "knife_throw"
 extras = {}

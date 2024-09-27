@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://be6obcoguhsaa"]
+[gd_scene load_steps=6 format=3 uid="uid://be6obcoguhsaa"]
 
 [ext_resource type="Script" path="res://Code/Weapons/Projectiles/bubble_projectile.gd" id="1_6ndut"]
 [ext_resource type="PackedScene" uid="uid://catpchydt20c1" path="res://Scenes/Weapons/Projectiles/sprites/bubble_sprite.tscn" id="1_e6q3s"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_cph5s"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f1xyw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pe4n7"]
 
@@ -28,7 +26,6 @@ tile_set = ExtResource("2_cph5s")
 [node name="attack_collider" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(6, 6)
-shape = SubResource("CircleShape2D_f1xyw")
 disabled = true
 
 [node name="collector_area" type="Area2D" parent="."]

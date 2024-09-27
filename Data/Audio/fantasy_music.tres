@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=5 format=3 uid="uid://c1dceppey6tlo"]
+
+[ext_resource type="AudioStream" uid="uid://u06g36i6drrp" path="res://Audio/Music/Unknown Caverns.mp3" id="1_gvxpg"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_iains"]
+[ext_resource type="AudioStream" uid="uid://baie0rd2ttxsp" path="res://Audio/Music/Mushroom Tunnels.mp3" id="2_3ljm6"]
+[ext_resource type="AudioStream" uid="uid://x20dmk1q2er0" path="res://Audio/Music/Caustic.mp3" id="3_mecqj"]
+
+[resource]
+script = ExtResource("1_iains")
+id = "fantasy_music"
+files = Array[AudioStream]([ExtResource("1_gvxpg"), ExtResource("2_3ljm6"), ExtResource("3_mecqj")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true
+always_play = false
+is_unique = false

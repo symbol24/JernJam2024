@@ -45,3 +45,18 @@ d_controls,D - Move Right
 gamepad_start,Start - Pause Menu
 gamepad_a,A - Interact / Buy
 gamepad_stick,Left Stick - Move
+result_title,[center]Results[/center]
+result_text,"Congratulations! You have survived not dieing. It appears [ghost][shake]Death[/shake][/ghost] was unable to kill you. As a reward, have my thanks for playing."
+result_death_count,[right]Total Death Count:[/right]
+quit_button,Return to main menu
+rid_company_name,[center]Robots in Disguise[/center]
+warning1_title,[center]Warning[/center]
+warning1_text,"[center]No Deaths, Reapers, Charons, Hades, Lucifers, Pluto, Hel, Kali, Anubis, Ah Puch, Mictlantecuhtli, Shinigami, Yama, or any other non-denominational  Dieti or representation of death has been harmed in the process of making this game.[/center]"
+game_title,[center]In Death We Trust[/center]
+rid_logo_name,Robots in Disguise
+tm_label,[center]NOT TM AND NOT C 2024
+rid_sub_name,[center]Robots in Diguise
+made_for,[center]Made using
+godot,[center]Godot
+btn_1_player,[center]1 Player
+back_btn,Back

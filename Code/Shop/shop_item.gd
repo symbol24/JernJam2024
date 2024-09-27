@@ -41,6 +41,7 @@ func interact(_data:CharacterData) -> Dictionary:
 
 
 func complete_purchase() -> void:
+	Audio.play_audio(DataManager.get_audio_file("shop_buy"))
 	queue_free.call_deferred()
 
 
@@ -62,6 +63,7 @@ func set_data(_data:ShopItemData) -> void:
 
 
 func _fail_feedback() -> void:
+	Audio.play_audio(DataManager.get_audio_file("buy_cant"))
 	var tween:Tween = price_label.create_tween()
 	tween.tween_property(price_label, "modulate", unable_to_buy_color, unable_to_buy_timer)
 	tween.tween_property(price_label, "modulate", Color.WHITE, unable_to_buy_timer)

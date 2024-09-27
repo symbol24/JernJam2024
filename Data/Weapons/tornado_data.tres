@@ -21,4 +21,6 @@ projectile_count = 1.0
 damages = Array[ExtResource("1_bbqv7")]([ExtResource("2_ngvx7")])
 projectile_life_time = 3.0
 projectile_scale = 1.0
+remain_on_player = false
+audio_file_name = "tornado_spawn"
 extras = {}

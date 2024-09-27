@@ -11,3 +11,4 @@ enum Type {
 @export var type:Type = Type.EMPTY
 @export var value:int = 0
 @export var scene_path:String = ""
+@export var audio_file_name:String = ""

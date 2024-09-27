@@ -10,6 +10,7 @@ var projectile_instantiated:Projectile
 var projectile_pool:Array[Projectile] = []
 var shoot_count:int = 0
 var spawned_projectile_count:int = 0
+var targets:Array = []
 var timer_active:bool = false
 var timer:float = 0.0:
 	set(value):
@@ -80,12 +81,16 @@ func _shoot_one_projectile() -> void:
 		else:
 			Game.active_level.active_room.add_child(proj)
 		proj.name = data.id + "_" + str(shoot_count) + "_" + str(spawned_projectile_count)
-		proj.set_projectile(data.duplicate(), parent, _get_target())
+		var target = _get_target(targets)
+		proj.set_projectile(data.duplicate(), parent, target)
+		targets.append(target)
 		proj.shoot()
+		Audio.play_audio(DataManager.get_audio_file(data.audio_file_name))
 		shoot_count += 1
 		spawned_projectile_count += 1
 		shoot_timer_active = true
 	else:
+		targets.clear()
 		shoot_count = 0
 		timer_active = true
 
@@ -95,7 +100,7 @@ func _get_projectile() -> Projectile:
 	else: return projectile_pool.pop_front()
 
 
-func _get_target():
+func _get_target(_previous_targets:Array):
 	var result = null
 	match data.target_type:
 		WeaponData.Target_Type.CLOSEST:
@@ -108,7 +113,6 @@ func _get_target():
 			if Game.active_level.enemy_spawner.all_enemies.is_empty(): result = null
 			else: result = Game.active_level.enemy_spawner.all_enemies.pick_random()
 		WeaponData.Target_Type.CLOSEST_IN_RANGE:
-			#print("parent: ", parent)
 			if parent.enemies_in_range.is_empty(): result = null
 			else: result = Game.get_closest_between(parent, parent.enemies_in_range as Array[Node2D])
 		WeaponData.Target_Type.RANDOM_POSITION_ON_MAP:

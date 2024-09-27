@@ -160,7 +160,7 @@ func _level_ready(_level:Level) -> void:
 
 func pause_tree(_value:bool = false) -> void:
 	get_tree().paused = _value
-	print(get_tree().paused)
+	#print(get_tree().paused)
 
 
 func get_character() -> SyCharacterBody2D:

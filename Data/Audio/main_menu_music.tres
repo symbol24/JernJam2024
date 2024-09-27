@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://dmffyskg02ub4"]
+
+[ext_resource type="AudioStream" uid="uid://b4qswqdvj6nv8" path="res://Audio/Music/Crystal Clear Loop.mp3" id="1_8stm7"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_cb1lw"]
+
+[resource]
+script = ExtResource("1_cb1lw")
+id = "main_menu_music"
+files = Array[AudioStream]([ExtResource("1_8stm7")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true
+always_play = false
+is_unique = false

@@ -1,5 +1,6 @@
 class_name SyButton extends Button
 
+
 enum Btn_Type {
 				LEVEL = 0,
 				MENU = 1,

@@ -260,7 +260,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_52ndn"]
 resource_name = "warning1"
-length = 4.0
+length = 20.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -269,7 +269,7 @@ tracks/0/path = NodePath("warning1_title:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -281,7 +281,7 @@ tracks/1/path = NodePath("warning1_title:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2, 2.8, 4),
+"times": PackedFloat32Array(0, 1.2, 18.8, 20),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -293,7 +293,7 @@ tracks/2/path = NodePath("warning2_text:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -305,7 +305,7 @@ tracks/3/path = NodePath("warning2_text:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.2, 2.8, 4),
+"times": PackedFloat32Array(0, 1.2, 18.8, 20),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -381,7 +381,7 @@ offset_right = 320.0
 offset_bottom = 152.0
 theme_type_variation = &"WarningTextRTL"
 bbcode_enabled = true
-text = "warning1_title"
+text = "warning1_text"
 scroll_active = false
 shortcut_keys_enabled = false
 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=5 format=3 uid="uid://xy226c8aoic3"]
+
+[ext_resource type="AudioStream" uid="uid://b62rbol2y3fx" path="res://Audio/Music/Countersunk Fast.mp3" id="1_2p3km"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_fpoks"]
+[ext_resource type="AudioStream" uid="uid://cwqlbk2gagnmv" path="res://Audio/Music/Electromagnetic Waves.mp3" id="2_7kbm3"]
+[ext_resource type="AudioStream" uid="uid://ddhew23w1pv3h" path="res://Audio/Music/Paddle Through the Cosmos.mp3" id="3_50o2x"]
+
+[resource]
+script = ExtResource("1_fpoks")
+id = "modern_music"
+files = Array[AudioStream]([ExtResource("1_2p3km"), ExtResource("2_7kbm3"), ExtResource("3_50o2x")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true
+always_play = false
+is_unique = false

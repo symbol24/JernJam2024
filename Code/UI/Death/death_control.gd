@@ -1,6 +1,8 @@
 class_name DeathControl extends Control
 
 
+const CHAR_DELAY:float = 0.05
+
 enum State {
 				WAITING_FIRST_DEATH = 0,
 				FIRST_RESET = 1,
@@ -31,7 +33,7 @@ enum State {
 var current_state:State = State.WAITING_FIRST_DEATH
 var normal_delay:float:
 	get:
-		return char_count * 0.05
+		return char_count * CHAR_DELAY
 var current_dialogue_id:String = ""
 var char_count := 0
 var timer := 0.0:
@@ -49,6 +51,12 @@ var r_tween:Tween
 var death_move_delay:float = randf_range(0.05,0.15)
 var last_death_count:int = 0
 var room_count:int = 0
+var audio_timer:float = 0.0:
+	set(value):
+		audio_timer = value
+		if audio_timer >= CHAR_DELAY:
+			audio_timer = 0.0
+			_play_blurp()
 
 
 func _ready() -> void:
@@ -56,6 +64,14 @@ func _ready() -> void:
 	Signals.DisplayText.connect(_display_text)
 	Signals.SkipDialogue.connect(_skip)
 	Signals.RoomEntered.connect(_check_dialogue_trigger)
+
+
+func _process(delta: float) -> void:
+	if displaying: audio_timer += delta
+
+
+func _play_blurp() -> void:
+	Audio.play_audio(DataManager.get_audio_file("text_blurp"))
 
 
 func _display_text(_id:String) -> void:
@@ -89,9 +105,13 @@ func _display_with_ratio(_delay:float) -> void:
 	displaying = true
 	if r_tween != null: r_tween.kill()
 	r_tween = dialogue_text.create_tween()
-	r_tween.finished.connect(func(): skip = true)
+	r_tween.finished.connect(_end_displaying)
 	r_tween.tween_property(dialogue_text, "visible_ratio", 1.0, _delay)
 	_move()
+
+
+func _end_displaying() -> void:
+	displaying = false
 
 
 func _skip() -> void:
@@ -99,6 +119,7 @@ func _skip() -> void:
 		if not skip: 
 			skip = true
 			displaying = false
+			audio_timer = 0.0
 			_display_with_ratio(skip_delay)
 		else: 
 			_clear_current()
@@ -112,6 +133,7 @@ func _clear_current() -> void:
 	dialogue_text.text = ""
 	skip = false
 	displaying = false
+	audio_timer = 0.0
 
 
 func _check_dialogue_trigger(_room_type:Room.Room_Type) -> void:
@@ -190,6 +212,7 @@ func _trigger_next_sequence(_current_state:State) -> void:
 			Signals.RestCharacter.emit()
 			Signals.LoadLevel.emit("modern_no_weapons")
 		State.DEATH_GIVES_UP:
+			Signals.RunEnded.emit()
 			Signals.ToggleControl.emit("result_screen", true, "dialogue")
 		_:
 			pass

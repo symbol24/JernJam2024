@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://ckd8kl808t4av"]
+
+[ext_resource type="AudioStream" uid="uid://blwbs5sw6ncvm" path="res://Audio/SFX/coin.wav" id="1_he2bh"]
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_jmwph"]
+
+[resource]
+script = ExtResource("1_jmwph")
+id = "coin_pickup"
+files = Array[AudioStream]([ExtResource("1_he2bh")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

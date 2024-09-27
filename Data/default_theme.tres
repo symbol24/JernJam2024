@@ -1,10 +1,23 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://juy4qenccfes"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://juy4qenccfes"]
 
 [ext_resource type="StyleBox" uid="uid://dv0f6aciuug2x" path="res://Data/StyleBoxes/Dbox_box_flat.tres" id="1_l8gjg"]
 [ext_resource type="Texture2D" uid="uid://b70kby8a1txjr" path="res://Textures/options_slider_normal.png" id="2_mghud"]
 [ext_resource type="Texture2D" uid="uid://bqb4d55ooit8e" path="res://Textures/options_slider_disabled.png" id="3_fbtfv"]
 [ext_resource type="Texture2D" uid="uid://08s63nvdl2ou" path="res://Textures/options_slider_highlight.png" id="4_1q58k"]
 [ext_resource type="Texture2D" uid="uid://bugcafvpeccct" path="res://Textures/options_slider_tick.png" id="5_xgm43"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu54w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgtuy"]
+content_margin_left = 60.0
+content_margin_top = 5.0
+content_margin_right = 60.0
+content_margin_bottom = 5.0
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxg4u"]
+content_margin_left = 50.0
+content_margin_right = 50.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qblqw"]
 bg_color = Color(0.234255, 0.625631, 0.937089, 1)
@@ -53,6 +66,13 @@ shadow_color = Color(0, 0, 0, 0.203922)
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jnrf"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yi65i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s26cg"]
@@ -66,6 +86,9 @@ shadow_offset = Vector2(1, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtssh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aupoa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_br70j"]
+content_margin_left = 20.0
 
 [resource]
 Button/font_sizes/font_size = 5
@@ -85,6 +108,8 @@ DmgNumberRTL/base_type = &"RichTextLabel"
 DmgNumberRTL/font_sizes/normal_font_size = 8
 GameTitleRTL/base_type = &"RichTextLabel"
 GameTitleRTL/font_sizes/normal_font_size = 16
+GameTitleSpritePanel/base_type = &"PanelContainer"
+GameTitleSpritePanel/styles/panel = SubResource("StyleBoxEmpty_yu54w")
 Heal/base_type = &"RichTextLabel"
 Heal/colors/default_color = Color(0, 0.730016, 9.62615e-07, 1)
 Heal/font_sizes/normal_font_size = 8
@@ -98,6 +123,13 @@ Magical/font_sizes/normal_font_size = 8
 MagicalCrit/base_type = &"RichTextLabel"
 MagicalCrit/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
 MagicalCrit/font_sizes/normal_font_size = 10
+MainMenu6RTL/base_type = &"RichTextLabel"
+MainMenu6RTL/colors/default_color = Color(0.804743, 0.804743, 0.804743, 1)
+MainMenu6RTL/font_sizes/normal_font_size = 6
+MainMenuPanel/base_type = &"PanelContainer"
+MainMenuPanel/styles/panel = SubResource("StyleBoxFlat_kgtuy")
+MenuBtnPanel/base_type = &"PanelContainer"
+MenuBtnPanel/styles/panel = SubResource("StyleBoxEmpty_bxg4u")
 OptionRTL/base_type = &"RichTextLabel"
 OptionRTL/font_sizes/normal_font_size = 5
 OptionsSlider/base_type = &"HSlider"
@@ -123,8 +155,13 @@ PhysicalCrit/colors/default_color = Color(1, 0, 0, 1)
 PhysicalCrit/font_sizes/normal_font_size = 10
 PopupSmallPanel/base_type = &"PanelContainer"
 PopupSmallPanel/styles/panel = SubResource("StyleBoxFlat_ysxqa")
+RIDMiniLogo/base_type = &"RichTextLabel"
+RIDMiniLogo/colors/default_color = Color(0.633757, 0.633757, 0.633757, 1)
+RIDMiniLogo/font_sizes/normal_font_size = 10
 RIDSplashRTL/base_type = &"RichTextLabel"
 RIDSplashRTL/font_sizes/normal_font_size = 16
+ResultPanel/base_type = &"PanelContainer"
+ResultPanel/styles/panel = SubResource("StyleBoxFlat_7jnrf")
 RichTextLabel/font_sizes/normal_font_size = 8
 ShopItemPriceRTL/base_type = &"RichTextLabel"
 ShopItemPriceRTL/font_sizes/normal_font_size = 9
@@ -147,3 +184,5 @@ WarningTextRTL/base_type = &"RichTextLabel"
 WarningTextRTL/font_sizes/normal_font_size = 8
 WarningTitleRTL/base_type = &"RichTextLabel"
 WarningTitleRTL/font_sizes/normal_font_size = 16
+top_rid_logo/base_type = &"PanelContainer"
+top_rid_logo/styles/panel = SubResource("StyleBoxEmpty_br70j")

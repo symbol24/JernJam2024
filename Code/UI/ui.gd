@@ -19,6 +19,7 @@ func _toggle_control(_id:String, _visible:bool = true, _from:String = "") -> voi
 		if each.id == _id:
 			current_menu = _id
 			each.set_deferred("visible", _visible)
+			if _visible: each.play_entry()
 		else:
 			if _visible: each.set_deferred("visible", false)
 	

@@ -20,6 +20,7 @@ damages = Array[ExtResource("1_03vib")]([ExtResource("2_upvyo")])
 projectile_life_time = 0.2
 projectile_scale = 1.0
 remain_on_player = true
+audio_file_name = "flail_swing"
 extras = {
 "spin_radius": 90.0
 }

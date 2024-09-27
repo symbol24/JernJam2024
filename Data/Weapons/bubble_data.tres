@@ -20,6 +20,7 @@ damages = Array[ExtResource("1_60sec")]([ExtResource("2_4y6t6")])
 projectile_life_time = 0.4
 projectile_scale = 1.0
 remain_on_player = false
+audio_file_name = "bubble_shoot"
 extras = {
 "captured_lifetime": 0.4
 }

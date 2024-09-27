@@ -25,6 +25,7 @@ func spawn_pickup(_position:Vector2) -> void:
 
 
 func pickup() -> PickupData:
+	Audio.play_audio(DataManager.get_audio_file(pickup_data.audio_file_name))
 	_return_to_pool()
 	return pickup_data.duplicate() if pickup_data != null else PickupData.new()
 

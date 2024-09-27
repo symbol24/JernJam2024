@@ -8,3 +8,4 @@ id = "coin"
 type = 1
 value = 1
 scene_path = "res://Scenes/Pickups/coin.tscn"
+audio_file_name = "coin_pickup"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=5 format=3 uid="uid://chf0ur7jmbw8w"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_t4tcj"]
+[ext_resource type="AudioStream" uid="uid://vlmuyaasbquq" path="res://Audio/Music/Herding Cats.mp3" id="1_wa7ex"]
+[ext_resource type="AudioStream" uid="uid://dw6cpjqnp3dfs" path="res://Audio/Music/Herding Pidgeons.mp3" id="2_26mrh"]
+[ext_resource type="AudioStream" uid="uid://b56oxtrcivhxc" path="res://Audio/Music/Take it Back.mp3" id="3_lr25b"]
+
+[resource]
+script = ExtResource("1_t4tcj")
+id = "shop_music"
+files = Array[AudioStream]([ExtResource("1_wa7ex"), ExtResource("2_26mrh"), ExtResource("3_lr25b")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = true
+always_play = false
+is_unique = false

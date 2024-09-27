@@ -19,6 +19,7 @@ var active_room:Room:
 func _ready() -> void:
 	Signals.TransitionToNextRoom.connect(_switch_active_room)
 	Signals.CameraInPosition.connect(_camera_in_room)
+	Signals.RoomEntered.connect(_play_music)
 	if camera == null: push_error("Camera missing from level ", id)
 	if get_tree().get_first_node_in_group("generator") == null: push_error("Map Generator scene missing from level tree.")
 	
@@ -66,3 +67,16 @@ func _switch_active_room() -> void:
 func _camera_in_room() -> void:
 	Signals.RoomEntered.emit(active_room.room_type)
 	Game.pause_tree(false)
+
+
+func _play_music(_room_type:Room.Room_Type) -> void:
+	match _room_type:
+		Room.Room_Type.COMBAT:
+			var file_name:String
+			if data.id.contains("fantasy"):
+				file_name = "fantasy"
+			elif data.id.contains("modern"):
+				file_name = "modern"
+			Audio.play_audio(DataManager.get_audio_file(file_name+"_music"))
+		_:
+			Audio.play_audio(DataManager.get_audio_file("shop_music"))

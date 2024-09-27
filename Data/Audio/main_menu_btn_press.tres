@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://bndhn5uwyfayk"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_08ggh"]
+[ext_resource type="AudioStream" uid="uid://c64m6dulh6xp5" path="res://Audio/SFX/button_press.wav" id="1_qv2yw"]
+
+[resource]
+script = ExtResource("1_08ggh")
+id = "main_menu_btn"
+files = Array[AudioStream]([ExtResource("1_qv2yw")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

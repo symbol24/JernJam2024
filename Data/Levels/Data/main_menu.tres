@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=4 format=3 uid="uid://do3ekr7ea6j8w"]
+
+[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="1_ykj64"]
+[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="2_u2pfc"]
+[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="3_inrq7"]
+
+[resource]
+script = ExtResource("3_inrq7")
+id = "main_menu"
+rooms = Array[ExtResource("2_u2pfc")]([])
+enemy_waves = Array[ExtResource("1_ykj64")]([])

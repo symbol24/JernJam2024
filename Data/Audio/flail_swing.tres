@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://dapb5m4xyniv2"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_db1es"]
+[ext_resource type="AudioStream" uid="uid://c64m6dulh6xp5" path="res://Audio/SFX/button_press.wav" id="1_ds8n7"]
+
+[resource]
+script = ExtResource("1_db1es")
+id = "flail_swing"
+files = Array[AudioStream]([ExtResource("1_ds8n7")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

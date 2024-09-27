@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=2 format=3 uid="uid://bj7o58078uliq"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_empex"]
+
+[resource]
+script = ExtResource("1_empex")
+id = "interdiction_appear"
+files = Array[AudioStream]([])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

@@ -23,6 +23,7 @@ func _open_door() -> void:
 func _toggle_door(_id:String = "", _open:bool = false) -> void:
 	if _id == id:
 		if _open:
+			Audio.play_audio(DataManager.get_audio_file("door_open"))
 			closed_door.hide()
 			open_door.show()
 			collider.set_deferred("disabled", true)

@@ -11,4 +11,5 @@ func _ready() -> void:
 func _area_entered(_area) -> void:
 	if not _area is RadiationProjectile and _area.has_method("get_damages"):
 		if parent.data != null:
+			Audio.play_audio(DataManager.get_audio_file("player_hit"))
 			parent.data.receive_damage(_area.get_damages())

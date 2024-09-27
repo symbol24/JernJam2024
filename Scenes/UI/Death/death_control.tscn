@@ -8,6 +8,7 @@ custom_minimum_size = Vector2(96, 96)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_sf86e")
+death_count_for_first_reset = 1
 
 [node name="sprite" type="TileMapLayer" parent="."]
 unique_name_in_owner = true

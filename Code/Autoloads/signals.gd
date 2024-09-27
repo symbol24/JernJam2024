@@ -3,6 +3,7 @@ extends Node
 # Game
 signal LoadLevel(id:String)
 signal InstantiateLevels()
+signal RunEnded()
 
 
 # Camera
@@ -46,6 +47,7 @@ signal DamageReceived(character:CharacterBody2D, damage:int, type:Damage.Type, i
 signal UpdateUiWithWeapon(weapon:WeaponData)
 signal UpdateUiWithTrinket(trinket:TrinketData)
 signal ResetPlayerUi()
+signal SkipMainMenuMusic()
 
 
 # Weapons 

@@ -29,8 +29,9 @@ func set_projectile(_data:WeaponData, _owner:SyCharacterBody2D, _target = null) 
 	global_position = _owner.global_position
 
 
-func shoot():
+func shoot() -> void:
 	is_active = true
+	Audio.play_audio(DataManager.get_audio_file(data.audio_file_name))
 
 
 func _return_to_pool() -> void:

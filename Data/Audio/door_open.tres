@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://dheufll3k6rc6"]
+
+[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_12vxm"]
+[ext_resource type="AudioStream" uid="uid://jx1k44tud6jm" path="res://Audio/SFX/sfx_door.mp3" id="1_k4mu2"]
+
+[resource]
+script = ExtResource("1_12vxm")
+id = "door_open"
+files = Array[AudioStream]([ExtResource("1_k4mu2")])
+volume_db = -10.0
+min_pitch_scale = 1.0
+max_pitch_scale = 1.0
+is_music = false
+always_play = false
+is_unique = false

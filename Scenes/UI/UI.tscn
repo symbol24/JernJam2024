@@ -1,19 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://dje6x2hkvnjq1"]
+[gd_scene load_steps=50 format=3 uid="uid://dje6x2hkvnjq1"]
 
 [ext_resource type="Script" path="res://Code/UI/ui.gd" id="1_lclfa"]
 [ext_resource type="Script" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
 [ext_resource type="Script" path="res://Code/UI/loading_screen.gd" id="3_0i6tk"]
 [ext_resource type="Script" path="res://Code/UI/dmg_nbr_manager.gd" id="3_b4g0i"]
 [ext_resource type="Script" path="res://Code/UI/main_menu.gd" id="3_pl2yb"]
-[ext_resource type="Script" path="res://Code/UI/wrappers/sy_button.gd" id="4_1qq4j"]
 [ext_resource type="Script" path="res://Code/UI/coin_label.gd" id="4_e82jq"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="4_tohl0"]
+[ext_resource type="Texture2D" uid="uid://dyw64as13xw4o" path="res://Textures/game_logo.png" id="7_m7c4y"]
+[ext_resource type="Texture2D" uid="uid://du6ly0y0w31d1" path="res://Textures/mini_rid_logo.png" id="7_p74q5"]
 [ext_resource type="Script" path="res://Code/UI/pause_menu.gd" id="8_fpcoo"]
+[ext_resource type="Script" path="res://Code/UI/main_menu_btn.gd" id="9_8t8tj"]
 [ext_resource type="Script" path="res://Code/UI/pause_menu_tab_containergd.gd" id="9_jufhb"]
 [ext_resource type="Script" path="res://Code/UI/dialogue.gd" id="9_qlctj"]
+[ext_resource type="Texture2D" uid="uid://xpimgwn4nwt3" path="res://Textures/1player_btn.png" id="10_2dy1x"]
+[ext_resource type="Texture2D" uid="uid://cc30b0gb58ohy" path="res://Textures/menu_arrow.png" id="10_nekb5"]
 [ext_resource type="PackedScene" uid="uid://cfcsytalomisv" path="res://Scenes/UI/Death/death_control.tscn" id="10_qsm7g"]
 [ext_resource type="PackedScene" uid="uid://bgi64goim1u4n" path="res://Scenes/UI/sound_option.tscn" id="10_wtta0"]
 [ext_resource type="Texture2D" uid="uid://d2madieycdhqq" path="res://Textures/controls_kb.png" id="11_474ws"]
+[ext_resource type="Texture2D" uid="uid://oirixd8fsx3i" path="res://Textures/1player_btn_pressed.png" id="11_mpo85"]
 [ext_resource type="Texture2D" uid="uid://daxi3t3gab1ve" path="res://Textures/controls_gamepad.png" id="12_fneil"]
 [ext_resource type="Script" path="res://Code/UI/ghost_rte.gd" id="12_inxhk"]
 [ext_resource type="Script" path="res://Code/UI/Death/dialogue_skip_button.gd" id="13_b0qqa"]
@@ -22,6 +27,172 @@
 [ext_resource type="Texture2D" uid="uid://b8tile151fjlm" path="res://Textures/gamepad_a.png" id="14_pxney"]
 [ext_resource type="Texture2D" uid="uid://dfcdmab8lje5w" path="res://Textures/gamepad_stick.png" id="15_0caxv"]
 [ext_resource type="Script" path="res://Code/UI/result_screen.gd" id="16_0vq87"]
+[ext_resource type="Script" path="res://Code/UI/quit_btn.gd" id="18_hpfpx"]
+[ext_resource type="Script" path="res://Code/UI/pause_menu_back_btn.gd" id="21_gb7g5"]
+
+[sub_resource type="Animation" id="Animation_ojhg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fd3rt"]
+resource_name = "intro"
+length = 3.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1), Vector2i(8, 1), Vector2i(9, 1), Vector2i(10, 1), Vector2i(11, 1), Vector2i(12, 1), Vector2i(13, 1), Vector2i(14, 1), Vector2i(15, 1), Vector2i(16, 1), Vector2i(17, 1), Vector2i(18, 1), Vector2i(19, 1), Vector2i(20, 1), Vector2i(21, 1), Vector2i(22, 1), Vector2i(23, 1), Vector2i(24, 1), Vector2i(25, 1), Vector2i(26, 1), Vector2i(27, 1), Vector2i(28, 1), Vector2i(29, 1), Vector2i(30, 1), Vector2i(31, 1), Vector2i(32, 1), Vector2i(33, 1), Vector2i(34, 1), Vector2i(35, 1), Vector2i(36, 1), Vector2i(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_sparkle"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_uw4fe"]
+resource_name = "still"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logo:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnnn7"]
+_data = {
+"RESET": SubResource("Animation_ojhg3"),
+"intro": SubResource("Animation_fd3rt"),
+"still": SubResource("Animation_uw4fe")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evtmp"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl8qn"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xjsl"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(40, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4psb6"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(60, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji6hj"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(80, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyih4"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(100, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaarj"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(120, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc1j1"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(140, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr7ek"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(160, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_154h5"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(180, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb3mj"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(200, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmr73"]
+atlas = ExtResource("10_nekb5")
+region = Rect2(220, 20, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dej6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evtmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl8qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xjsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4psb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji6hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyih4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaarj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc1j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr7ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_154h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb3mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmr73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_jeuqn"]
+script = ExtResource("12_inxhk")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_7c8hq"]
 script = ExtResource("12_inxhk")
@@ -165,35 +336,127 @@ offset_bottom = 40.0
 script = ExtResource("3_pl2yb")
 id = "main_menu"
 
-[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+[node name="main_menu_paen" type="PanelContainer" parent="MainMenu"]
 clip_contents = true
 custom_minimum_size = Vector2(320, 180)
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.122252, 0.122252, 0.122252, 1)
-
-[node name="game_title_RTL" type="RichTextLabel" parent="MainMenu"]
-custom_minimum_size = Vector2(320, 30)
-layout_mode = 1
-offset_top = 19.0
+layout_mode = 0
 offset_right = 320.0
-offset_bottom = 49.0
-theme_type_variation = &"GameTitleRTL"
-bbcode_enabled = true
-text = "game_title"
-scroll_active = false
-shortcut_keys_enabled = false
+offset_bottom = 180.0
+theme_type_variation = &"MainMenuPanel"
 
-[node name="btn_play" type="Button" parent="MainMenu"]
-layout_mode = 1
-offset_left = 138.0
-offset_top = 86.0
-offset_right = 179.0
-offset_bottom = 117.0
-text = "Play"
-script = ExtResource("4_1qq4j")
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/main_menu_paen"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenu/main_menu_paen/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"top_rid_logo"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/main_menu_paen/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="mini_logo" type="TextureRect" parent="MainMenu/main_menu_paen/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_p74q5")
+stretch_mode = 2
+
+[node name="rid_logo" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+theme_type_variation = &"RIDMiniLogo"
+bbcode_enabled = true
+text = "rid_logo_name"
+scroll_active = false
+
+[node name="sprite_container" type="PanelContainer" parent="MainMenu/main_menu_paen/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_type_variation = &"GameTitleSpritePanel"
+
+[node name="logo" type="Sprite2D" parent="MainMenu/main_menu_paen/VBoxContainer/sprite_container"]
+texture = ExtResource("7_m7c4y")
+centered = false
+hframes = 37
+vframes = 2
+frame = 37
+
+[node name="animator" type="AnimationPlayer" parent="MainMenu/main_menu_paen/VBoxContainer/sprite_container"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_tnnn7")
+}
+
+[node name="btnContainer" type="PanelContainer" parent="MainMenu/main_menu_paen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_type_variation = &"MenuBtnPanel"
+
+[node name="hbox" type="HBoxContainer" parent="MainMenu/main_menu_paen/VBoxContainer/btnContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="arrow_control" type="Control" parent="MainMenu/main_menu_paen/VBoxContainer/btnContainer/hbox"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="arrow" type="AnimatedSprite2D" parent="MainMenu/main_menu_paen/VBoxContainer/btnContainer/hbox/arrow_control"]
+sprite_frames = SubResource("SpriteFrames_dej6g")
+autoplay = "default"
+frame_progress = 0.51004
+centered = false
+
+[node name="btn_play" type="TextureButton" parent="MainMenu/main_menu_paen/VBoxContainer/btnContainer/hbox" node_paths=PackedStringArray("parent")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_2dy1x")
+texture_pressed = ExtResource("11_mpo85")
+script = ExtResource("9_8t8tj")
 destination = "fantasy_normal"
+parent = NodePath("../../../../..")
+audio = "main_menu_btn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_type_variation = &"MainMenu6RTL"
+bbcode_enabled = true
+text = "tm_label"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_type_variation = &"MainMenu6RTL"
+bbcode_enabled = true
+text = "rid_sub_name"
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_type_variation = &"MainMenu6RTL"
+bbcode_enabled = true
+text = "made_for"
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_type_variation = &"MainMenu6RTL"
+bbcode_enabled = true
+text = "godot"
+scroll_active = false
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 3
@@ -226,59 +489,59 @@ bbcode_enabled = true
 text = "pause_title"
 scroll_active = false
 
-[node name="TabContainer" type="TabContainer" parent="PauseMenu/panel_background/VBoxContainer"]
+[node name="pause_menu_tab_container" type="TabContainer" parent="PauseMenu/panel_background/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 2
+current_tab = 0
 script = ExtResource("9_jufhb")
 
-[node name="panel_1" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer"]
-visible = false
+[node name="panel_1" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container"]
 layout_mode = 2
 theme_type_variation = &"PauseMenuPanels"
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="sub_title" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer"]
+[node name="sub_title" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 bbcode_enabled = true
 text = "audio_sub_title"
 scroll_active = false
 
-[node name="sound_option" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
+[node name="sound_option" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
 layout_mode = 2
 
-[node name="sound_option2" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
+[node name="sound_option2" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
 layout_mode = 2
 
-[node name="bus_slider" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option2/HBoxContainer" index="1"]
+[node name="bus_slider" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer/sound_option2/HBoxContainer" index="1"]
 bus_id = "Music"
 
-[node name="sound_option3" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
+[node name="sound_option3" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer" instance=ExtResource("10_wtta0")]
 layout_mode = 2
 
-[node name="bus_slider" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option3/HBoxContainer" index="1"]
+[node name="bus_slider" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer/sound_option3/HBoxContainer" index="1"]
 bus_id = "SFX"
 
-[node name="panel_2" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer"]
+[node name="panel_2" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container"]
 visible = false
 layout_mode = 2
 theme_type_variation = &"PauseMenuPanels"
 metadata/_tab_index = 1
 
-[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2"]
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2"]
 layout_mode = 2
 texture = ExtResource("11_474ws")
 
-[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2"]
+[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2"]
 layout_mode = 2
 
-[node name="esc" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="esc" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 offset_left = 16.0
@@ -290,7 +553,7 @@ bbcode_enabled = true
 text = "ESC"
 scroll_active = false
 
-[node name="W" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="W" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 offset_left = 41.0
@@ -302,7 +565,7 @@ bbcode_enabled = true
 text = "W"
 scroll_active = false
 
-[node name="E" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="E" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 offset_left = 54.0
@@ -314,7 +577,7 @@ bbcode_enabled = true
 text = "E"
 scroll_active = false
 
-[node name="A" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="A" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 offset_left = 32.0
@@ -326,7 +589,7 @@ bbcode_enabled = true
 text = "A"
 scroll_active = false
 
-[node name="S" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="S" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 offset_left = 45.0
@@ -338,7 +601,7 @@ bbcode_enabled = true
 text = "S"
 scroll_active = false
 
-[node name="D" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="D" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 offset_left = 58.0
@@ -351,7 +614,7 @@ text = "D
 "
 scroll_active = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control"]
 custom_minimum_size = Vector2(100, 117)
 layout_mode = 1
 offset_left = 100.0
@@ -359,10 +622,10 @@ offset_right = 200.0
 offset_bottom = 117.0
 theme_override_constants/separation = 10
 
-[node name="space" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="space" type="Control" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="esc2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="esc2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 theme_type_variation = &"ControlsRTL"
@@ -370,7 +633,7 @@ bbcode_enabled = true
 text = "esc_controls"
 scroll_active = false
 
-[node name="E2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="E2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 theme_type_variation = &"ControlsRTL"
@@ -378,7 +641,7 @@ bbcode_enabled = true
 text = "e_controls"
 scroll_active = false
 
-[node name="W2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="W2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 theme_type_variation = &"ControlsRTL"
@@ -386,7 +649,7 @@ bbcode_enabled = true
 text = "w_controls"
 scroll_active = false
 
-[node name="A2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="A2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 theme_type_variation = &"ControlsRTL"
@@ -394,7 +657,7 @@ bbcode_enabled = true
 text = "a_controls"
 scroll_active = false
 
-[node name="S2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="S2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 theme_type_variation = &"ControlsRTL"
@@ -402,7 +665,7 @@ bbcode_enabled = true
 text = "s_controls"
 scroll_active = false
 
-[node name="D2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_2/Control/VBoxContainer"]
+[node name="D2" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_2/Control/VBoxContainer"]
 custom_minimum_size = Vector2(15, 6)
 layout_mode = 2
 theme_type_variation = &"ControlsRTL"
@@ -410,20 +673,21 @@ bbcode_enabled = true
 text = "d_controls"
 scroll_active = false
 
-[node name="panel_3" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer"]
+[node name="panel_3" type="PanelContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container"]
+visible = false
 layout_mode = 2
 theme_type_variation = &"PauseMenuPanels"
 metadata/_tab_index = 2
 
-[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3"]
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3"]
 layout_mode = 2
 texture = ExtResource("12_fneil")
 
-[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3"]
+[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3"]
 custom_minimum_size = Vector2(100, 117)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control"]
 custom_minimum_size = Vector2(100, 117)
 layout_mode = 2
 offset_left = 100.0
@@ -431,17 +695,17 @@ offset_right = 200.0
 offset_bottom = 117.0
 theme_override_constants/separation = 20
 
-[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+[node name="Control" type="Control" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("13_uuhbh")
 
-[node name="start" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer"]
+[node name="start" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -451,14 +715,14 @@ bbcode_enabled = true
 text = "gamepad_start"
 scroll_active = false
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("14_pxney")
 
-[node name="a" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer2"]
+[node name="a" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -468,14 +732,14 @@ bbcode_enabled = true
 text = "gamepad_a"
 scroll_active = false
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 texture = ExtResource("15_0caxv")
 
-[node name="stick" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_3/Control/VBoxContainer/HBoxContainer3"]
+[node name="stick" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_3/Control/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -485,7 +749,28 @@ bbcode_enabled = true
 text = "gamepad_stick"
 scroll_active = false
 
+[node name="btn_layer" type="Control" parent="PauseMenu/panel_background"]
+layout_mode = 2
+
+[node name="back_btn" type="Button" parent="PauseMenu/panel_background/btn_layer"]
+custom_minimum_size = Vector2(40, 15)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -20.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "back_btn"
+script = ExtResource("21_gb7g5")
+
 [node name="ResultScreen" type="Control" parent="."]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
@@ -494,6 +779,69 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("16_0vq87")
 id = "result_screen"
+
+[node name="PanelContainer" type="PanelContainer" parent="ResultScreen"]
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_type_variation = &"ResultPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultScreen/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="result_title" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_type_variation = &"PauseTitle"
+bbcode_enabled = true
+text = "result_title"
+scroll_active = false
+
+[node name="result_text" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+bbcode_enabled = true
+text = "result_text
+"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_jeuqn")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="death_count_label" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "result_death_count"
+scroll_active = false
+
+[node name="death_count" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0"
+scroll_active = false
+
+[node name="quit_btn" type="Button" parent="ResultScreen"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 140.0
+offset_right = -20.0
+offset_bottom = 160.0
+grow_horizontal = 0
+text = "quit_button"
+script = ExtResource("18_hpfpx")
 
 [node name="LoadingScreen" type="Control" parent="."]
 process_mode = 3
@@ -628,8 +976,8 @@ clip_contents = true
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 320.0
+offset_bottom = 180.0
 mouse_filter = 2
 script = ExtResource("13_mexdp")
 
@@ -653,5 +1001,5 @@ theme_type_variation = &"PanelSmallRTL"
 bbcode_enabled = true
 scroll_active = false
 
-[editable path="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option2"]
-[editable path="PauseMenu/panel_background/VBoxContainer/TabContainer/panel_1/VBoxContainer/sound_option3"]
+[editable path="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer/sound_option2"]
+[editable path="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer/sound_option3"]
