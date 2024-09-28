@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c5hfd0nw46867"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 318.0
+offset_bottom = 184.0
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 61.0
+offset_right = 279.0
+offset_bottom = 114.0
+bbcode_enabled = true
+text = "[center]In Death we Trust"
+scroll_active = false
