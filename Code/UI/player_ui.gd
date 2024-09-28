@@ -58,7 +58,7 @@ func _update_level(_data:BaseCharacterData) -> void:
 
 
 func _update_character_name(_character:CharacterBody2D) -> void:
-	player_name.text = _character.data.id
+	player_name.text = tr(_character.data.id)
 
 
 func _update_weapons(_weapon:WeaponData) -> void:

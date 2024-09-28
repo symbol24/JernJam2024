@@ -36,10 +36,6 @@ var normal_delay:float:
 		return char_count * CHAR_DELAY
 var current_dialogue_id:String = ""
 var char_count := 0
-var timer := 0.0:
-	set(value):
-		timer = value
-		_end_timer_check(timer)
 var show_delay := 0.2
 var char_update := false
 var current_text:String
@@ -64,6 +60,7 @@ func _ready() -> void:
 	Signals.DisplayText.connect(_display_text)
 	Signals.SkipDialogue.connect(_skip)
 	Signals.RoomEntered.connect(_check_dialogue_trigger)
+	Signals.CharacterDefeated.connect(_death_check)
 
 
 func _process(delta: float) -> void:
@@ -141,45 +138,40 @@ func _check_dialogue_trigger(_room_type:Room.Room_Type) -> void:
 	if _room_type == Room.Room_Type.SHOP:
 		match current_state:
 			State.WAITING_FIRST_DEATH:
-				if Game.player.data.defeats > death_count_for_first_reset or room_count >= room_count_check:
+				if Game.player.data.defeats >= death_count_for_first_reset or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("first_appearance")
 					current_state = State.FIRST_RESET
 			State.FIRST_RESET:
-				if Game.player.data.defeats > last_death_count + death_count_for_second_reset or room_count >= room_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_second_reset or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("second_reset")
 					current_state = State.SECOND_RESET
 			State.SECOND_RESET:
-				if Game.player.data.defeats > last_death_count + death_count_for_fantasy_difficult or room_count >= room_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_fantasy_difficult or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_fantasy_difficult")
 					current_state = State.FANTASY_DIFFICULT
 			State.FANTASY_DIFFICULT:
-				if Game.player.data.defeats > last_death_count + death_count_for_modern_normal or room_count >= room_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_modern_normal or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_modern_normal")
 					current_state = State.MODERN_NORMAL
 			State.MODERN_NORMAL:
-				if Game.player.data.defeats > last_death_count + death_count_for_modern_difficult or room_count >= room_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_modern_difficult or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_modern_difficult")
 					current_state = State.MODERN_DIFFICULT
 			State.MODERN_DIFFICULT:
-				if Game.player.data.defeats > last_death_count + death_count_for_fantasy_difficult_only_rad or room_count >= room_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_fantasy_difficult_only_rad or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_fantasy_only_rad")
 					current_state = State.FANTASY_DIFFICULT_ONLY_RAD
 			State.FANTASY_DIFFICULT_ONLY_RAD:
-				if Game.player.data.defeats > last_death_count + death_count_for_modern_no_weapon or room_count >= room_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_modern_no_weapon or room_count >= room_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_modern_no_weapons")
 					current_state = State.MODERN_NO_WEAPONS
-			State.MODERN_NO_WEAPONS:
-				if Game.player.data.defeats > last_death_count + death_count_for_death_give_up:
-					Signals.ToggleControl.emit("dialogue", true, "player_ui")
-					_display_text("death_gives_up")
-					current_state = State.DEATH_GIVES_UP
 			_:
 				pass
 		
@@ -218,5 +210,10 @@ func _trigger_next_sequence(_current_state:State) -> void:
 			pass
 
 
-func _end_timer_check(_timer:float) -> void:
-	pass
+func _death_check(_char_data:BaseCharacterData) -> void:
+	if current_state == State.MODERN_NO_WEAPONS and _char_data is CharacterData:
+		if Game.player.data.defeats >= last_death_count + death_count_for_death_give_up:
+			Game.pause_tree(true)
+			Signals.ToggleControl.emit("dialogue", true, "player_ui")
+			_display_text("death_gives_up")
+			current_state = State.DEATH_GIVES_UP

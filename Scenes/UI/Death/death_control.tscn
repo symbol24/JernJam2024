@@ -9,6 +9,13 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_sf86e")
 death_count_for_first_reset = 1
+death_count_for_second_reset = 2
+death_count_for_fantasy_difficult = 3
+death_count_for_modern_difficult = 1
+death_count_for_fantasy_difficult_only_rad = 3
+death_count_for_modern_no_weapon = 1
+death_count_for_death_give_up = 20
+room_count_check = 12
 
 [node name="sprite" type="TileMapLayer" parent="."]
 unique_name_in_owner = true

@@ -36,8 +36,6 @@ func shoot() -> void:
 
 func _return_to_pool() -> void:
 	set_deferred("is_active", false)
-	if get_parent() != null:
-		get_parent().remove_child.call_deferred(self)
 	Signals.ReturnProjectileToPool.emit(self)
 
 

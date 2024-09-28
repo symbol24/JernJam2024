@@ -26,7 +26,7 @@
 	},
 	"level6": {
 		"projectile_scale": "2.5",
-		"trigger_delay": "2.5",
-		"projectile_life_time": "6"
+		"trigger_delay": "2",
+		"projectile_life_time": "5"
 	}
 }

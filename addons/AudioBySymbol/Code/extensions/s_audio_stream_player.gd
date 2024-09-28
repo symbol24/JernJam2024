@@ -10,4 +10,5 @@ func _ready() -> void:
 	finished.connect(exit_tree)
 	
 func exit_tree() -> void:
+	stop()
 	AudioExiting.emit(self)

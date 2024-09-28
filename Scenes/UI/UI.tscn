@@ -751,6 +751,7 @@ scroll_active = false
 
 [node name="btn_layer" type="Control" parent="PauseMenu/panel_background"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="back_btn" type="Button" parent="PauseMenu/panel_background/btn_layer"]
 custom_minimum_size = Vector2(40, 15)
@@ -804,8 +805,7 @@ scroll_active = false
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 bbcode_enabled = true
-text = "result_text
-"
+text = "result_text"
 scroll_active = false
 custom_effects = [SubResource("RichTextEffect_jeuqn")]
 
@@ -830,6 +830,7 @@ text = "0"
 scroll_active = false
 
 [node name="quit_btn" type="Button" parent="ResultScreen"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 1
 anchors_preset = 1

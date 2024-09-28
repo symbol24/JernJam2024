@@ -22,5 +22,4 @@ func display_number() -> void:
 
 func _return_to_pool() -> void:
 	hide()
-	get_parent().remove_child.call_deferred(self)
 	Signals.DmgNbrReturnToPool.emit(self)

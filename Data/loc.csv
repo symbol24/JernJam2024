@@ -5,21 +5,21 @@ lorem_ipsum3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentes
 shop_armor_desc,Trinket: Reduce incoming damage.
 shop_bandaid_desc,Trinket: Heal Heart(s) when entering a shop.
 shop_bubble_desc,Weapon: Shoot bubbles to capture enemies and push them back. Deals damage when popped. Will aim at random target.
-shop_flail_desc,Weapon: Hit enemies in an arc around you. Will aim the the closest enemy if possible.
+shop_flail_desc,Weapon: Hit enemies in an arc around you. Will aim the  closest enemy if possible.
 shop_glasses_desc,Trinket: Look cool and stylish while dealing extra damage with more critical chance and critical damage.
 shop_heart_desc,Heal 1 Heart.
 shop_knife_desc,Weapon: Thow knives at enemies. Will target enemies in range.
 shop_level_desc,"Increase your character level by 1. Increase damage, movement speed, critical chance and damage over time."
 shop_protein_desc,PROTEIN! GET YOUR MUSCLE ON AND DO MORE DAMAGE WITH PROTEIN!
-shop_tornado_desc,Weapon: Spawn tornados at random poritions on the map that move towards you.
+shop_tornado_desc,Weapon: Spawn tornados at random positions on the map that move towards you.
 fa_01,"Woah, woah, woah, woah, woah! What's going on here?"
 fa_02,Why are you not dead? What is the meaning of this?
-fa_03,Who are you anyways? You know what? I don't care. I'm just gonna make sur this doesn't happen again.
+fa_03,Who are you anyways? You know what? I don't care. I'm just going to make sure this doesn't happen again.
 fa_04,"Let's reset this and see what we can do. So, 3 hearts? Check. Zero coins? Check. Remove ""weapons""? Check. Get rid of the ""trinkets?"" Check."
 sr_01,"Ok, you've done that enough. Let's see if you can do it again."
 sr_02,And off to the start you go!
 tfd_01,It seems I have misjudged you. A mistake I will not do a second time.
-tfd_02,It is time to remove the kid gloves. Lets see if you can do this with even more enemies.
+tfd_02,It is time to remove the kid gloves. Let's see if you can do this with even more enemies.
 tmn_01,"It seems, that also was a waste. Time for some more drastic measures."
 tmn_02,"Let's see if the future can content with you. Well, your future that is. "
 tmd_01,Wu.. How? Who?
@@ -45,18 +45,21 @@ d_controls,D - Move Right
 gamepad_start,Start - Pause Menu
 gamepad_a,A - Interact / Buy
 gamepad_stick,Left Stick - Move
-result_title,[center]Results[/center]
-result_text,"Congratulations! You have survived not dieing. It appears [ghost][shake]Death[/shake][/ghost] was unable to kill you. As a reward, have my thanks for playing."
+result_title, 
+result_text,"Congratulations! You have survived not dying. It appears [ghost][shake]Death[/shake][/ghost] was unable to kill you. As a reward, have my [rainbow]thanks[/rainbow] for playing."
 result_death_count,[right]Total Death Count:[/right]
 quit_button,Return to main menu
 rid_company_name,[center]Robots in Disguise[/center]
 warning1_title,[center]Warning[/center]
-warning1_text,"[center]No Deaths, Reapers, Charons, Hades, Lucifers, Pluto, Hel, Kali, Anubis, Ah Puch, Mictlantecuhtli, Shinigami, Yama, or any other non-denominational  Dieti or representation of death has been harmed in the process of making this game.[/center]"
+warning1_text,"[center]No Deaths, Reapers, Charon, Hades, Lucifers, Pluto, Hel, Kali, Anubis, Ah Puch, Mictlantecuhtli, Shinigami, Yama, or any other non-denominational  Deiti or representation of death has been harmed in the process of making this game.[/center]"
 game_title,[center]In Death We Trust[/center]
 rid_logo_name,Robots in Disguise
 tm_label,[center]NOT TM AND NOT C 2024
-rid_sub_name,[center]Robots in Diguise
+rid_sub_name,[center]Robots in Disguise
 made_for,[center]Made using
 godot,[center]Godot
 btn_1_player,[center]1 Player
 back_btn,Back
+business_rad_only,Weakling
+Thief,Hero
+thief_no_weapon,Meat

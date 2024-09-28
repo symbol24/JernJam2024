@@ -81,7 +81,7 @@ func _shoot_one_projectile() -> void:
 		else:
 			Game.active_level.active_room.add_child(proj)
 		proj.name = data.id + "_" + str(shoot_count) + "_" + str(spawned_projectile_count)
-		var target = _get_target(targets)
+		var target = _get_target()
 		proj.set_projectile(data.duplicate(), parent, target)
 		targets.append(target)
 		proj.shoot()
@@ -100,12 +100,12 @@ func _get_projectile() -> Projectile:
 	else: return projectile_pool.pop_front()
 
 
-func _get_target(_previous_targets:Array):
+func _get_target():
 	var result = null
 	match data.target_type:
 		WeaponData.Target_Type.CLOSEST:
-			if Game.active_level.active_room.all_enemies.is_empty(): result = null
-			else: result = Game.get_closest_between(parent, Game.active_level.active_room.enemy_spawner.all_enemies as Array[Node2D])
+			if Game.active_level.enemy_spawner.all_enemies.is_empty(): result = null
+			else: result = Game.get_closest_between(parent, Game.active_level.enemy_spawner.all_enemies as Array[Node2D])
 		WeaponData.Target_Type.RANDOM_IN_RANGE:
 			if parent.enemies_in_range.is_empty(): result = null
 			else: result = parent.enemies_in_range.pick_random()
@@ -127,4 +127,8 @@ func _get_target(_previous_targets:Array):
 
 func _return_projectile_to_pool(_projectile:Projectile) -> void:
 	if _projectile.data.id == data.id:
+		if data.remain_on_player:
+			parent.remove_child.call_deferred(_projectile)
+		else:
+			Game.active_level.active_room.remove_child.call_deferred(_projectile)
 		projectile_pool.append(_projectile)

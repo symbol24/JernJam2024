@@ -7,6 +7,7 @@ var pool:Array[DamageNumberRTL] = []
 
 func _ready() -> void:
 	Signals.DamageReceived.connect(_display_dmg_nmbrs)
+	Signals.DmgNbrReturnToPool.connect(_return_to_pool)
 	dmg_nbr = DataManager.damage_number.instantiate()
 
 
@@ -41,3 +42,8 @@ func _get_variation(_type:Damage.Type, _is_critical:bool) -> String:
 			result = "DamageNumberRTL"
 	
 	return result
+
+
+func _return_to_pool(_dmg_nbr:DamageNumberRTL) -> void:
+	remove_child.call_deferred(_dmg_nbr)
+	pool.append(_dmg_nbr)

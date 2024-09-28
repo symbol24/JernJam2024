@@ -91,7 +91,6 @@ func _return_to_pool() -> void:
 	if tween != null:
 		tween.stop()
 	set_deferred("is_active", false)
-	get_parent().remove_child.call_deferred(self)
 	Signals.ReturnProjectileToPool.emit(self)
 
 

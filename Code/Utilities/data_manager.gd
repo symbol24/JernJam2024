@@ -6,6 +6,7 @@ const MUSIC = [
 				"res://Data/Audio/fantasy_music.tres",
 				"res://Data/Audio/modern_music.tres",
 				"res://Data/Audio/shop_music.tres",
+				"res://Data/Audio/result_music.tres",
 			]
 const SFX = [
 			"res://Data/Audio/coin_pickup.tres", 

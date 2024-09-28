@@ -27,9 +27,6 @@ var loading_status := 0.0
 var progress := []
 var extra_loading := false
 
-# Extra
-var death_count:int = 0
-
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
@@ -76,11 +73,6 @@ func parse_json_data(_json:String) -> Dictionary:
 		result = json.data.duplicate()
 		file.close()
 	return result
-
-
-func _add_death(_data:BaseCharacterData) -> void:
-	if _data is CharacterData:
-		death_count += 1
 
 
 func _load_level(_id:String = "") -> void:

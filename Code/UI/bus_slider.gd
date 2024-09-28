@@ -8,8 +8,8 @@ class_name BusSlider extends HSlider
 
 func _ready() -> void:
 	bus_name.text = bus_id
-	# TODO: add set of value from audio manager
+	value = Audio.DEFAULT.get(bus_id.to_lower()+"_volume")
 
 
 func _value_changed(_new_value: float) -> void:
-	pass
+	Audio.BusVolumeUpdate.emit(bus_id, _new_value)

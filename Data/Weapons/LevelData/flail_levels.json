@@ -2,7 +2,7 @@
 	"level1" : {
 		"trigger_delay" : "2",
 		"base_damage" : "1",
-		"spin_radius" : "90"
+		"spin_radius" : "45"
 	},
 	"level2" : {
 		"trigger_delay" : "2",
@@ -22,7 +22,7 @@
 	"level5" : {
 		"trigger_delay" : "1.5",
 		"base_damage" : "2",
-		"spin_radius" : "180"
+		"spin_radius" : "270"
 	},
 	"level6" : {
 		"trigger_delay" : "0.75",

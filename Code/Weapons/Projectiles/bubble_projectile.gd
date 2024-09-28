@@ -73,11 +73,11 @@ func _pop() -> void:
 
 func _body_entered(_body) -> void:
 	if not popping and prisoner == null and _body.is_in_group("enemy") and not _body.is_prisoner:
-		_body.get_parent().remove_child.call_deferred(_body)
-		add_child.call_deferred(_body)
-		collector_collider.set_deferred("disabled", true)
 		prisoner = _body
 		prisoner.is_prisoner = true
+		collector_collider.set_deferred("disabled", true)
+		_body.get_parent().remove_child.call_deferred(_body)
+		add_child.call_deferred(_body)
 		prisoner.set_deferred("position", Vector2(6,6))
 
 
