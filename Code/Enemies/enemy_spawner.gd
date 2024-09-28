@@ -172,6 +172,6 @@ func _get_amount_of_waves() -> int:
 
 
 func _get_enemy_level() -> int:
-	if room_count > 4:
-		return ceili(room_count/4)
+	if room_count > 2:
+		return ceili(room_count/2)
 	return 1
