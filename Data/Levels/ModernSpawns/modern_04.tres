@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="SpawnerData" load_steps=4 format=3 uid="uid://cfc44v3uodkvl"]
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=7 format=3 uid="uid://cfc44v3uodkvl"]
 
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_hktu8"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_r3juc"]
 [ext_resource type="Resource" uid="uid://cukxq3euta5t1" path="res://Data/EnemyDatas/modern_osha_dude.tres" id="2_ttfnq"]
+[ext_resource type="Resource" uid="uid://dt8s3l0g3yvqr" path="res://Data/EnemyDatas/modern_cyclist_data.tres" id="3_qju5y"]
+[ext_resource type="Resource" uid="uid://c286vaood2fsw" path="res://Data/EnemyDatas/modern_businessman.tres" id="4_4njw0"]
+[ext_resource type="Resource" uid="uid://dojhn1gxr4fcl" path="res://Data/EnemyDatas/modern_skateboarder.tres" id="5_mv2e0"]
 
 [resource]
 script = ExtResource("2_r3juc")
 id = "modern_04"
 delay_before_starting = 0.0
 spawn_amount = 5
-spawn_delay_between = 1.0
-enemies_to_spawn = Array[ExtResource("1_hktu8")]([ExtResource("2_ttfnq")])
+spawn_delay_between = 2.0
+enemies_to_spawn = Array[ExtResource("1_hktu8")]([ExtResource("2_ttfnq"), ExtResource("3_qju5y"), ExtResource("4_4njw0"), ExtResource("5_mv2e0")])
 spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

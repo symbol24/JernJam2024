@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="SpawnerData" load_steps=4 format=3 uid="uid://cpudhfbv4ej70"]
+[gd_resource type="Resource" script_class="SpawnerData" load_steps=5 format=3 uid="uid://cpudhfbv4ej70"]
 
 [ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_t44il"]
 [ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/fantasy_goblin.tres" id="2_e3qw6"]
 [ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_jeich"]
+[ext_resource type="Resource" uid="uid://ocpff3bk61dm" path="res://Data/EnemyDatas/fantasy_lizardman.tres" id="3_0iuok"]
 
 [resource]
 script = ExtResource("2_jeich")
 id = "fn_01"
-is_triggered_spawn = true
 delay_before_starting = 1.0
-spawn_amount = 5
+spawn_amount = 10
 spawn_delay_between = 2.0
-enemies_to_spawn = Array[ExtResource("1_t44il")]([ExtResource("2_e3qw6")])
+enemies_to_spawn = Array[ExtResource("1_t44il")]([ExtResource("2_e3qw6"), ExtResource("3_0iuok")])
 spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

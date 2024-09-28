@@ -10,6 +10,6 @@ script = ExtResource("2_ifjyh")
 id = "fd-01"
 delay_before_starting = 1.0
 spawn_amount = 10
-spawn_delay_between = 1.0
+spawn_delay_between = 0.5
 enemies_to_spawn = Array[ExtResource("1_655yn")]([ExtResource("2_2sm7i"), ExtResource("3_7ov6x")])
 spawn_area = Array[float]([72.0, 252.0, 24.0, 156.0])

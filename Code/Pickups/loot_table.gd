@@ -12,7 +12,7 @@ func get_loot(_amount:int = loot_amount, _data:CharacterData = null) -> Array:
 	var weighted_table:Array[Dictionary] = _weight_table(items.duplicate(true))
 	var i:int = 0
 	while i < _amount:
-		var weight:int = randi_range(0, total_weight) # TODO: replace with rng seeded in Game when done
+		var weight:int = randi_range(0, total_weight)
 		var choice:Dictionary
 		var found:bool = false
 		for item in weighted_table:
@@ -23,15 +23,29 @@ func get_loot(_amount:int = loot_amount, _data:CharacterData = null) -> Array:
 						var wd:WeaponData = _data.get_weapon_data(item["data"].weapon_data.id)
 						if wd:
 							#print("Weapon level of ", wd.id, " ", wd.level)
-							if wd.level == WeaponData.MAX_LEVEL:
-								#print("weapon ", wd.id, " should be skipped")
+							var lc:int = WeaponData.MAX_LEVEL - wd.level
+							if lc == 0:
 								skip = true
+							elif item.has("item_diff"):
+								if item["item_diff"] > 0:
+									item["item_diff"] = lc - 1
+								else:
+									skip = true
+							else:
+								item["item_diff"] = lc - 1
 					if item["data"].trinket_data:
 						var td:TrinketData = _data.get_trinket_data(item["data"].trinket_data.id)
 						if td:
-							if td.level == TrinketData.MAX_LEVEL:
-								#print("trinket ", td.id, " should be skipped")
+							var lc:int = TrinketData.MAX_LEVEL - td.level
+							if lc == 0:
 								skip = true
+							elif item.has("item_diff"):
+								if item["item_diff"] > 0:
+									item["item_diff"] = lc - 1
+								else:
+									skip = true
+							else:
+								item["item_diff"] = lc - 1
 				if skip:
 					continue
 				else:
