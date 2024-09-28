@@ -149,37 +149,37 @@ func _check_dialogue_trigger(_room_type:Room.Room_Type) -> void:
 	if _room_type == Room.Room_Type.SHOP:
 		match current_state:
 			State.WAITING_FIRST_DEATH:
-				if Game.player.data.defeats >= death_count_for_first_reset or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= death_count_for_first_reset or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("first_appearance")
 					current_state = State.FIRST_RESET
 			State.FIRST_RESET:
-				if Game.player.data.defeats >= last_death_count + death_count_for_second_reset or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_second_reset or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("second_reset")
 					current_state = State.SECOND_RESET
 			State.SECOND_RESET:
-				if Game.player.data.defeats >= last_death_count + death_count_for_fantasy_difficult or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_fantasy_difficult or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_fantasy_difficult")
 					current_state = State.FANTASY_DIFFICULT
 			State.FANTASY_DIFFICULT:
-				if Game.player.data.defeats >= last_death_count + death_count_for_modern_normal or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_modern_normal or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_modern_normal")
 					current_state = State.MODERN_NORMAL
 			State.MODERN_NORMAL:
-				if Game.player.data.defeats >= last_death_count + death_count_for_modern_difficult or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_modern_difficult or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_modern_difficult")
 					current_state = State.MODERN_DIFFICULT
 			State.MODERN_DIFFICULT:
-				if Game.player.data.defeats >= last_death_count + death_count_for_fantasy_difficult_only_rad or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_fantasy_difficult_only_rad or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_fantasy_only_rad")
 					current_state = State.FANTASY_DIFFICULT_ONLY_RAD
 			State.FANTASY_DIFFICULT_ONLY_RAD:
-				if Game.player.data.defeats >= last_death_count + death_count_for_modern_no_weapon or room_count >= room_count_check or Game.player.dat.level >= level_count_check:
+				if Game.player.data.defeats >= last_death_count + death_count_for_modern_no_weapon or room_count >= room_count_check or Game.player.data.level >= level_count_check:
 					Signals.ToggleControl.emit("dialogue", true, "player_ui")
 					_display_text("to_modern_no_weapons")
 					current_state = State.MODERN_NO_WEAPONS
