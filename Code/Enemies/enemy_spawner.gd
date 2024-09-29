@@ -1,5 +1,7 @@
 class_name EnemySpawner extends Node2D
 
+const SPAWN_AREA = [72, 252, 24, 156]
+const DISTANCE_MIN:float = 1000
 
 var level:Level
 var room:Room:
@@ -92,8 +94,8 @@ func _spawn_wave(_id:int) -> void:
 				new_enemy.name = enemy.id + str(enemy_total_spawn_count)
 				new_enemy.set_data(new_enemy.name)
 				new_enemy.set_level(_get_enemy_level())
-				var pos:Vector2 = room.to_global(Vector2(randf_range(spawn_data.spawn_area[0], spawn_data.spawn_area[1]), randf_range(spawn_data.spawn_area[2], spawn_data.spawn_area[3])))
-				new_enemy.global_position = pos
+				var pos:Vector2 = _get_spawn_point(room, Game.player)
+				new_enemy.position = pos
 				all_enemies.append(new_enemy)
 				enemy_total_spawn_count += 1
 				
@@ -175,3 +177,14 @@ func _get_enemy_level() -> int:
 	if room_count > 2:
 		return ceili(room_count/2)
 	return 1
+
+
+func _get_spawn_point(_room:Room, _player:SyCharacterBody2D) -> Vector2:
+	var found:bool = false
+	var result:Vector2
+	while not found:
+		result = Vector2(randi_range(SPAWN_AREA[0], SPAWN_AREA[1]), randi_range(SPAWN_AREA[2], SPAWN_AREA[3]))
+		if result.distance_squared_to(_room.to_local(_player.global_position)) > DISTANCE_MIN:
+			found = true
+	print("Enemy spawn pos: ", result)
+	return result

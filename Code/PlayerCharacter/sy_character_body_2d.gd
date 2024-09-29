@@ -6,6 +6,7 @@ class_name SyCharacterBody2D extends CharacterBody2D
 var data:CharacterData
 var enemies_in_range:Array[Enemy2D] = []
 var weapons:Array[Weapon] = []
+var quads:Array = []
 
 func _ready() -> void:
 	character_range.body_entered.connect(_range_body_entered)

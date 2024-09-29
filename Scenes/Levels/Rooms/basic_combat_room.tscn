@@ -33,6 +33,5 @@ id = "top"
 is_top_door = true
 
 [node name="spawn_point" parent="." instance=ExtResource("9_o448a")]
-position = Vector2(165, 157)
 
 [node name="camera_point" parent="." instance=ExtResource("10_xijh4")]
