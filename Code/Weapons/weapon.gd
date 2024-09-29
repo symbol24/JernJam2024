@@ -52,6 +52,7 @@ func ready_weapon() -> void:
 
 func _start(_incase = null) -> void:
 	timer_active = true
+	_shoot_one_projectile()
 
 
 func _stop(_incase = null) -> void:

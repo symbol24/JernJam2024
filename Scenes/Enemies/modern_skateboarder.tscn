@@ -8,8 +8,8 @@
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="6_41cqk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvw3n"]
-radius = 1.0
-height = 6.0
+radius = 3.0
+height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t84u"]
 radius = 6.0
@@ -27,6 +27,7 @@ enemy_data = ExtResource("2_f7jyo")
 shape = SubResource("CapsuleShape2D_fvw3n")
 
 [node name="hit_box" parent="." instance=ExtResource("4_k37lf")]
+visible = false
 position = Vector2(0, 5)
 collision_layer = 8
 collision_mask = 4

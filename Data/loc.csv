@@ -36,14 +36,14 @@ panel_1,Settings
 panel_2,Keyboard
 panel_3,Gamepad
 audio_sub_title,[center]Audio[/center]
-esc_controls,Escape - Pause Menu
+esc_controls,Bksp - Pause
 w_controls,W - Move Up
-e_controls,E - Interact / Buy
+e_controls,E - Interact/Buy
 a_controls,A - Move Left
 s_controls,S - Move Down
 d_controls,D - Move Right
-gamepad_start,Start - Pause Menu
-gamepad_a,A - Interact / Buy
+gamepad_start,Start - Pause
+gamepad_a,A - Interact/Buy
 gamepad_stick,Left Stick - Move
 result_text,"Congratulations! You have survived not dying. It appears [ghost][shake]Death[/shake][/ghost] was unable to kill you. As a reward, have my [rainbow]thanks[/rainbow] for playing."
 result_death_count,[right]Total Death Count:[/right]

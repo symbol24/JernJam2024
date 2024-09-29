@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://6q1pljx3sqj1" path="res://Scenes/Utilities/attack_area.tscn" id="6_yifjq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1852"]
-radius = 1.0
-height = 6.0
+radius = 3.0
+height = 10.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j4dfa"]
 radius = 3.0

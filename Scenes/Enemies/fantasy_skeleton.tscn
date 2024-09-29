@@ -8,8 +8,8 @@
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="5_sgj00"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0d60q"]
-radius = 1.0
-height = 6.0
+radius = 3.0
+height = 10.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m5k0"]
 radius = 4.0

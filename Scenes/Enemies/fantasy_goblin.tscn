@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://6q1pljx3sqj1" path="res://Scenes/Utilities/attack_area.tscn" id="6_6b6dk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1852"]
-radius = 1.0
-height = 6.0
+radius = 3.0
+height = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkg4m"]
 radius = 3.0
@@ -29,11 +29,13 @@ enemy_data = ExtResource("2_0vajh")
 shape = SubResource("CapsuleShape2D_o1852")
 
 [node name="hit_box" parent="." instance=ExtResource("4_b1opc")]
+visible = false
 position = Vector2(0, 5)
 collision_layer = 8
 collision_mask = 4
 
 [node name="attack_area" parent="." instance=ExtResource("6_6b6dk")]
+visible = false
 position = Vector2(0, 5)
 is_contact_attack = true
 
