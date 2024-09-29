@@ -11,6 +11,11 @@ func _ready() -> void:
 	Signals.ControlSwitch.connect(_switch_texture)
 
 
+func _pressed() -> void:
+	Game.pause_tree(true)
+	Signals.ToggleControl.emit("pause_menu", true, "player_ui")
+
+
 func _switch_texture(_type:Game.CONTROLS) -> void:
 	match _type:
 		Game.CONTROLS.MOUSE_KEYBOARD:
