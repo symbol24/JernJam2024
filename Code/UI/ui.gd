@@ -16,6 +16,20 @@ var mouse_timer:float = 0.0:
 			mouse_timer = 0.0
 			mouse_countdown = false
 			_toggle_mouse(false)
+var show_mouse_delay:float = 3
+var show_mouse_timer:float = 0.0:
+	set(value):
+		show_mouse_timer = value
+		if show_mouse_timer >= show_mouse_delay:
+			show_mouse_timer = 0
+			_toggle_mouse(true)
+			mouse_countdown = true
+
+
+func _input(event: InputEvent) -> void:
+	if Game.active_level != null and Input.mouse_mode == Input.MOUSE_MODE_HIDDEN:
+		if event is InputEventMouseMotion:
+			show_mouse_timer += 0.1
 
 
 func _ready() -> void:
@@ -41,7 +55,9 @@ func _toggle_control(_id:String, _visible:bool = true, _from:String = "") -> voi
 	match _id:
 		"player_ui": 
 			mouse_countdown = true
+			mouse_timer = 0.0
 		"main_menu", "pause_menu", "result_screen", "dialogue":
+			mouse_countdown = false
 			_toggle_mouse(true)
 		
 

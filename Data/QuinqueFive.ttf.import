@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b0immaclybluc"
-path="res://.godot/imported/quaver.ttf-9a79e9e7e7e213052bc04dc5ab2e2acd.fontdata"
+uid="uid://djoqegrg40dhb"
+path="res://.godot/imported/QuinqueFive.ttf-896acf33e9fd32d1d6ca9bb145a73ba5.fontdata"
 
 [deps]
 
-source_file="res://Data/quaver.ttf"
-dest_files=["res://.godot/imported/quaver.ttf-9a79e9e7e7e213052bc04dc5ab2e2acd.fontdata"]
+source_file="res://Data/QuinqueFive.ttf"
+dest_files=["res://.godot/imported/QuinqueFive.ttf-896acf33e9fd32d1d6ca9bb145a73ba5.fontdata"]
 
 [params]
 

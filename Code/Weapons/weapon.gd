@@ -50,9 +50,10 @@ func ready_weapon() -> void:
 	timer_active = true
 
 
-func _start(_incase = null) -> void:
-	timer_active = true
-	_shoot_one_projectile()
+func _start(_room_type:Room.Room_Type) -> void:
+	if _room_type == Room.Room_Type.COMBAT:
+		timer_active = true
+		_shoot_one_projectile()
 
 
 func _stop(_incase = null) -> void:
