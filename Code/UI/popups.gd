@@ -19,7 +19,7 @@ func _display_small(_timer:float = 0.0) -> void:
 
 func _display_shop_item(_item:ShopItemData) -> void:
 	if _item:
-		small_popup_text.text = "[center]" + tr(_item.description) + "[/center]"
+		small_popup_text.text = "[center]" + tr(_item.description)
 		_display_small(0.0)
 
 

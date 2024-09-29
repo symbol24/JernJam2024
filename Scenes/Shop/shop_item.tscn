@@ -50,6 +50,7 @@ offset_left = -11.0
 offset_top = -21.0
 offset_right = 13.0
 offset_bottom = -13.0
+theme_type_variation = &"ShopBuy"
 bbcode_enabled = true
 text = "[center]Buy[/center]"
 scroll_active = false

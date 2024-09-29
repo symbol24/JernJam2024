@@ -6,7 +6,7 @@
 [node name="ItemLevel" type="RichTextLabel"]
 custom_minimum_size = Vector2(12, 5)
 offset_right = 12.0
-offset_bottom = 5.0
+offset_bottom = 12.0
 theme_type_variation = &"ShopItemRTL"
 bbcode_enabled = true
 text = "[center]1/5[/center]"

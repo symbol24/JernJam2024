@@ -2,32 +2,32 @@ keys,en
 lorem_ipsum,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor ornare lorem, non lobortis sem eleifend at. Donec euismod ullamcorper est sed eleifend. In non magna nisl. Nulla blandit elit dolor, in eleifend nibh tincidunt eu. Cras iaculis orci et felis rhoncus tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam ut suscipit diam. Sed luctus laoreet nisl id tincidunt. Phasellus congue, urna a placerat posuere, ex metus pellentesque velit, vel pretium eros neque quis enim. Vivamus elementum scelerisque urna sit amet tristique. Vestibulum elementum massa quis diam accumsan semper. Aenean accumsan odio at hendrerit dignissim."
 lorem_ipsum2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor ornare lorem, non lobortis sem eleifend at. Donec euismod ullamcorper est sed eleifend. In non magna nisl. Nulla blandit elit dolor, in eleifend nibh tincidunt eu. Cras iaculis orci et felis rhoncus tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam ut suscipit diam. Sed luctus laoreet nisl id tincidunt. Phasellus congue, urna a placerat posuere, ex metus pellentesque velit, vel pretium eros neque quis enim. Vivamus elementum scelerisque urna sit amet tristique. Vestibulum elementum massa quis diam accumsan semper. Aenean accumsan odio at hendrerit dignissim."
 lorem_ipsum3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor ornare lorem, non lobortis sem eleifend at. Donec euismod ullamcorper est sed eleifend. In non magna nisl. Nulla blandit elit dolor, in eleifend nibh tincidunt eu. Cras iaculis orci et felis rhoncus tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam ut suscipit diam. Sed luctus laoreet nisl id tincidunt. Phasellus congue, urna a placerat posuere, ex metus pellentesque velit, vel pretium eros neque quis enim. Vivamus elementum scelerisque urna sit amet tristique. Vestibulum elementum massa quis diam accumsan semper. Aenean accumsan odio at hendrerit dignissim."
-shop_armor_desc,Trinket: Reduce incoming damage.
-shop_bandaid_desc,Trinket: Heal Heart(s) when entering a shop.
-shop_bubble_desc,Weapon: Shoot bubbles to capture enemies and push them back. Deals damage when popped. Will aim at random target.
-shop_flail_desc,Weapon: Hit enemies in an arc around you. Will aim the  closest enemy if possible.
-shop_glasses_desc,Trinket: Look cool and stylish while dealing extra damage with more critical chance and critical damage.
-shop_heart_desc,Heal 1 Heart.
-shop_knife_desc,Weapon: Thow knives at enemies. Will target enemies in range.
-shop_level_desc,"Increase your character level by 1. Increase damage, movement speed, critical chance and damage over time."
-shop_protein_desc,PROTEIN! GET YOUR MUSCLE ON AND DO MORE DAMAGE WITH PROTEIN!
-shop_tornado_desc,Weapon: Spawn tornados at random positions on the map that move towards you.
+shop_armor_desc,[font size=5]Trinket Armor: Reduce 1 incoming damage per armor.
+shop_bandaid_desc,[font size=5]Trinket Bandaid: Heal 1 Heart per bandaud when entering a shop.
+shop_bubble_desc,Weapon Bubble: Shoot bubbles to capture enemies and push them back. Deals damage when popped. Aims at random targets.
+shop_flail_desc,Weapon Flail: Hit enemies in an arc around you. Aims at the closest enemy if possible.
+shop_glasses_desc,"Trinket Shades: Look cool and stylish whit these [rainbow]RAD[/rainbow] shades! Oh and, something, something, critical bonuses."
+shop_heart_desc,[font size=7]Gain a [color=red]Heart[/color] permanantly.
+shop_knife_desc,[font size=5]Weapon Knives: Thow knives at enemies. Will target enemies in range.
+shop_level_desc,"Increase your character level by [color=green]1[/color]. Increases damage, movement speed, critical chance and critical damage."
+shop_protein_desc,[font size=5][color=a5320b][shake]PROTEIN[/shake]! GET YOUR MUSCLE ON AND DO MORE DAMAGE WITH PROTEIN!
+shop_tornado_desc,[font size=5]Weapon Tornados: Spawn tornados at random positions on the map that move towards you.
 fa_01,"Woah, woah, woah, woah, woah! What's going on here?"
 fa_02,Why are you not dead? What is the meaning of this?
 fa_03,Who are you anyways? You know what? I don't care. I'm just going to make sure this doesn't happen again.
-fa_04,"Let's reset this and see what we can do. So, 3 hearts? Check. Zero coins? Check. Remove ""weapons""? Check. Get rid of the ""trinkets?"" Check."
+fa_04,Let's reset you... 3 [color=red]hearts[/color]? Check. Zero [color=gold]coins[/color]? Check. One [color=purple]weapon[/color]? Check. Get rid of [color=blue]trinkets[/color]? Check.
 sr_01,"Ok, you've done that enough. Let's see if you can do it again."
 sr_02,And off to the start you go!
 tfd_01,It seems I have misjudged you. A mistake I will not do a second time.
 tfd_02,It is time to remove the kid gloves. Let's see if you can do this with even more enemies.
 tmn_01,"It seems, that also was a waste. Time for some more drastic measures."
-tmn_02,"Let's see if the future can content with you. Well, your future that is. "
-tmd_01,Wu.. How? Who?
-tmd_02,Alright. Let's crank the difficulty up again!
-tfra_01,[shake]ARRGGH![/shake] WHAT IS THE MEANING OF THIS?!?!
-tfra_02,YOU SHALL KNOW THE [pulse]WRATH[/pulse] OF [shake][ghost]DEATH[/ghost][/shake]! ONE DOES NOT SIMPLY WALK INTO MY DOMAIN!
-tfra_03,To the past. And let's make sur you can't do much! No wepoans! No Trinkets! Just the Radiation!
-tmnw_01,"HOW?! You have the worst weapon possible! OK! No more Mister Nice Death. No weapons, no chance!"
+tmn_02,"Let's see if the future can [color=lightpink]contend[/color] with you. Well, [color=green]your[/color] future that is. "
+tmd_01,[font size=8]Wuh... How? Who?
+tmd_02,Alright. Let's crank the [color=red]difficulty[/color] up again!
+tfra_01,[font size=8][shake]ARRGGH![/shake] WHAT IS THE MEANING OF THIS?!?!
+tfra_02,[font size=6]YOU SHALL KNOW THE [pulse]WRATH[/pulse] OF [shake][ghost]DEATH[/ghost][/shake]! ONE DOES NOT SIMPLY WALK INTO MY DOMAIN!
+tfra_03,"To the past. And let's make sur you can't do much! No Trinkets! No other weapons, Just the [color=yellow]Radiation[/color]!"
+tmnw_01,"HOW?! You have the worst weapon possible! OK! No more Mister Nice [ghost freq=5.0 span=10.0][shake]Death[/shake][/ghost]. No weapons, no chance!"
 dgu_01,"Please stop. No more. I give up. You win. I can't kill you. You can't die. Whatever is going on, I don't like it."
 dgu_02,Let's just call it quits and never speak of this ever again. Ok?
 dgu_03,"Ok, bye."
@@ -45,7 +45,6 @@ d_controls,D - Move Right
 gamepad_start,Start - Pause Menu
 gamepad_a,A - Interact / Buy
 gamepad_stick,Left Stick - Move
-result_title, 
 result_text,"Congratulations! You have survived not dying. It appears [ghost][shake]Death[/shake][/ghost] was unable to kill you. As a reward, have my [rainbow]thanks[/rainbow] for playing."
 result_death_count,[right]Total Death Count:[/right]
 quit_button,Return to main menu
@@ -60,6 +59,7 @@ made_for,[center]Made using
 godot,[center]Godot
 btn_1_player,[center]1 Player
 back_btn,Back
-business_rad_only,Weakling
+business_rad_only,Weak
 Thief,Hero
 thief_no_weapon,Meat
+businessman,Slave

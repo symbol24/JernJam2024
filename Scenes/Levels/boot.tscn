@@ -349,10 +349,10 @@ centered = false
 [node name="rid_label" type="RichTextLabel" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(320, 12)
+custom_minimum_size = Vector2(320, 30)
 offset_top = 135.0
 offset_right = 320.0
-offset_bottom = 155.0
+offset_bottom = 151.0
 theme_type_variation = &"RIDSplashRTL"
 bbcode_enabled = true
 text = "rid_company_name"
@@ -362,7 +362,7 @@ shortcut_keys_enabled = false
 [node name="warning1_title" type="RichTextLabel" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(320, 20)
+custom_minimum_size = Vector2(320, 30)
 offset_top = 44.0
 offset_right = 320.0
 offset_bottom = 64.0

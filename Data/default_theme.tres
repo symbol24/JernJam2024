@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://juy4qenccfes"]
+[gd_resource type="Theme" load_steps=24 format=3 uid="uid://juy4qenccfes"]
 
 [ext_resource type="StyleBox" uid="uid://dv0f6aciuug2x" path="res://Data/StyleBoxes/Dbox_box_flat.tres" id="1_l8gjg"]
 [ext_resource type="Texture2D" uid="uid://b70kby8a1txjr" path="res://Textures/options_slider_normal.png" id="2_mghud"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bugcafvpeccct" path="res://Textures/options_slider_tick.png" id="5_xgm43"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu54w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dixl2"]
+content_margin_left = 8.0
+content_margin_right = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgtuy"]
 content_margin_left = 60.0
@@ -88,41 +92,46 @@ bg_color = Color(0.121569, 0.121569, 0.121569, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aupoa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_br70j"]
-content_margin_left = 20.0
+content_margin_left = 0.0
 
 [resource]
 Button/font_sizes/font_size = 5
 CharacterNameRTL/base_type = &"RichTextLabel"
-CharacterNameRTL/font_sizes/normal_font_size = 5
+CharacterNameRTL/font_sizes/normal_font_size = 4
 ClickContinue/base_type = &"RichTextLabel"
-ClickContinue/font_sizes/normal_font_size = 6
+ClickContinue/font_sizes/normal_font_size = 5
 CoinsRTL/base_type = &"RichTextLabel"
-CoinsRTL/font_sizes/normal_font_size = 9
+CoinsRTL/font_sizes/normal_font_size = 7
 ControlsRTL/base_type = &"RichTextLabel"
-ControlsRTL/font_sizes/normal_font_size = 6
+ControlsRTL/font_sizes/normal_font_size = 5
 DialoguePanelContainer/base_type = &"PanelContainer"
 DialoguePanelContainer/styles/panel = ExtResource("1_l8gjg")
 DialogueText/base_type = &"RichTextLabel"
 DialogueText/font_sizes/normal_font_size = 5
+DialogueTitle/base_type = &"RichTextLabel"
+DialogueTitle/font_sizes/normal_font_size = 7
 DmgNumberRTL/base_type = &"RichTextLabel"
 DmgNumberRTL/font_sizes/normal_font_size = 8
 GameTitleRTL/base_type = &"RichTextLabel"
-GameTitleRTL/font_sizes/normal_font_size = 16
+GameTitleRTL/font_sizes/normal_font_size = 32
 GameTitleSpritePanel/base_type = &"PanelContainer"
 GameTitleSpritePanel/styles/panel = SubResource("StyleBoxEmpty_yu54w")
 Heal/base_type = &"RichTextLabel"
 Heal/colors/default_color = Color(0, 0.730016, 9.62615e-07, 1)
-Heal/font_sizes/normal_font_size = 8
+Heal/font_sizes/normal_font_size = 6
 HealCrit/base_type = &"RichTextLabel"
 HealCrit/colors/default_color = Color(0, 0.730016, 9.62615e-07, 1)
-HealCrit/font_sizes/normal_font_size = 10
+HealCrit/font_sizes/normal_font_size = 16
+IconPanel/base_type = &"PanelContainer"
+IconPanel/styles/panel = SubResource("StyleBoxEmpty_dixl2")
 LoadingRichTextLabel/base_type = &"RichTextLabel"
+LoadingRichTextLabel/font_sizes/normal_font_size = 10
 Magical/base_type = &"RichTextLabel"
 Magical/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
-Magical/font_sizes/normal_font_size = 8
+Magical/font_sizes/normal_font_size = 16
 MagicalCrit/base_type = &"RichTextLabel"
 MagicalCrit/colors/default_color = Color(1.05888e-06, 0.39836, 0.506891, 1)
-MagicalCrit/font_sizes/normal_font_size = 10
+MagicalCrit/font_sizes/normal_font_size = 32
 MainMenu6RTL/base_type = &"RichTextLabel"
 MainMenu6RTL/colors/default_color = Color(0.804743, 0.804743, 0.804743, 1)
 MainMenu6RTL/font_sizes/normal_font_size = 6
@@ -131,7 +140,7 @@ MainMenuPanel/styles/panel = SubResource("StyleBoxFlat_kgtuy")
 MenuBtnPanel/base_type = &"PanelContainer"
 MenuBtnPanel/styles/panel = SubResource("StyleBoxEmpty_bxg4u")
 OptionRTL/base_type = &"RichTextLabel"
-OptionRTL/font_sizes/normal_font_size = 5
+OptionRTL/font_sizes/normal_font_size = 3
 OptionsSlider/base_type = &"HSlider"
 OptionsSlider/icons/grabber = ExtResource("2_mghud")
 OptionsSlider/icons/grabber_disabled = ExtResource("3_fbtfv")
@@ -140,31 +149,37 @@ OptionsSlider/icons/tick = ExtResource("5_xgm43")
 OptionsSlider/styles/grabber_area = SubResource("StyleBoxFlat_qblqw")
 OptionsSlider/styles/slider = SubResource("StyleBoxFlat_h5ua7")
 PanelSmallRTL/base_type = &"RichTextLabel"
-PanelSmallRTL/font_sizes/normal_font_size = 6
+PanelSmallRTL/font_sizes/normal_font_size = 4
 PauseMenuContainer/base_type = &"PanelContainer"
 PauseMenuContainer/styles/panel = SubResource("StyleBoxFlat_thiry")
 PauseMenuPanels/base_type = &"PanelContainer"
 PauseMenuPanels/styles/panel = SubResource("StyleBoxFlat_dfl2d")
+PauseSubTitle/base_type = &"RichTextLabel"
+PauseSubTitle/font_sizes/normal_font_size = 5
 PauseTitle/base_type = &"RichTextLabel"
 PauseTitle/font_sizes/normal_font_size = 12
 Physical/base_type = &"RichTextLabel"
 Physical/colors/default_color = Color(1, 0, 0, 1)
-Physical/font_sizes/normal_font_size = 8
+Physical/font_sizes/normal_font_size = 6
 PhysicalCrit/base_type = &"RichTextLabel"
 PhysicalCrit/colors/default_color = Color(1, 0, 0, 1)
 PhysicalCrit/font_sizes/normal_font_size = 10
+PlayerLevelRTL/base_type = &"RichTextLabel"
+PlayerLevelRTL/font_sizes/normal_font_size = 8
 PopupSmallPanel/base_type = &"PanelContainer"
 PopupSmallPanel/styles/panel = SubResource("StyleBoxFlat_ysxqa")
 RIDMiniLogo/base_type = &"RichTextLabel"
 RIDMiniLogo/colors/default_color = Color(0.633757, 0.633757, 0.633757, 1)
-RIDMiniLogo/font_sizes/normal_font_size = 10
+RIDMiniLogo/font_sizes/normal_font_size = 8
 RIDSplashRTL/base_type = &"RichTextLabel"
 RIDSplashRTL/font_sizes/normal_font_size = 16
 ResultPanel/base_type = &"PanelContainer"
 ResultPanel/styles/panel = SubResource("StyleBoxFlat_7jnrf")
-RichTextLabel/font_sizes/normal_font_size = 8
+RichTextLabel/font_sizes/normal_font_size = 12
+ShopBuy/base_type = &"RichTextLabel"
+ShopBuy/font_sizes/normal_font_size = 6
 ShopItemPriceRTL/base_type = &"RichTextLabel"
-ShopItemPriceRTL/font_sizes/normal_font_size = 9
+ShopItemPriceRTL/font_sizes/normal_font_size = 6
 ShopItemRTL/base_type = &"RichTextLabel"
 ShopItemRTL/colors/font_outline_color = Color(0, 0, 0, 1)
 ShopItemRTL/constants/outline_size = 1
@@ -178,10 +193,10 @@ SkipBtn/styles/normal = SubResource("StyleBoxEmpty_huhni")
 SkipBtn/styles/pressed = SubResource("StyleBoxEmpty_mtssh")
 SoundOptionPanel/base_type = &"PanelContainer"
 SoundOptionPanel/styles/panel = SubResource("StyleBoxEmpty_aupoa")
-TabBar/font_sizes/font_size = 6
+TabBar/font_sizes/font_size = 12
 TabContainer/font_sizes/font_size = 5
 WarningTextRTL/base_type = &"RichTextLabel"
-WarningTextRTL/font_sizes/normal_font_size = 8
+WarningTextRTL/font_sizes/normal_font_size = 6
 WarningTitleRTL/base_type = &"RichTextLabel"
 WarningTitleRTL/font_sizes/normal_font_size = 16
 top_rid_logo/base_type = &"PanelContainer"

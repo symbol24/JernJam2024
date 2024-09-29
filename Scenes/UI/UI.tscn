@@ -220,10 +220,10 @@ unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 1
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 39.0
-offset_bottom = 50.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 38.0
+offset_bottom = 46.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI/player_hp"]
 process_mode = 3
@@ -238,10 +238,10 @@ theme_override_constants/separation = 1
 
 [node name="player_level" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/level_n_name"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 8)
+custom_minimum_size = Vector2(18, 8)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+theme_type_variation = &"PlayerLevelRTL"
 bbcode_enabled = true
 text = "00"
 scroll_active = false
@@ -250,16 +250,16 @@ shortcut_keys_enabled = false
 
 [node name="player_name" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/level_n_name"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 5)
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.8
 theme_type_variation = &"CharacterNameRTL"
 bbcode_enabled = true
-text = "player_name"
+text = "hero"
 scroll_active = false
-autowrap_mode = 0
+autowrap_mode = 1
 shortcut_keys_enabled = false
 
 [node name="player_hearts" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
@@ -268,8 +268,8 @@ process_mode = 3
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
 columns = 3
 
 [node name="player_coins" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
@@ -293,10 +293,10 @@ tile_set = ExtResource("4_tohl0")
 
 [node name="coin_label" type="RichTextLabel" parent="PlayerUI/player_hp/VBoxContainer/player_coins"]
 process_mode = 3
-custom_minimum_size = Vector2(0, 8)
+custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 8
 theme_type_variation = &"CoinsRTL"
 bbcode_enabled = true
 text = "0000"
@@ -305,16 +305,26 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 script = ExtResource("4_e82jq")
 
-[node name="player_weapons" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
+[node name="icons_panel" type="PanelContainer" parent="PlayerUI/player_hp/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"IconPanel"
+
+[node name="player_weapons" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer/icons_panel"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
 columns = 2
 
-[node name="player_trinkets" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PlayerUI/player_hp/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"IconPanel"
+
+[node name="player_trinkets" type="GridContainer" parent="PlayerUI/player_hp/VBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
 columns = 2
 
 [node name="DamageNumbers" type="Control" parent="PlayerUI"]
@@ -346,7 +356,7 @@ theme_type_variation = &"MainMenuPanel"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/main_menu_paen"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MainMenu/main_menu_paen/VBoxContainer"]
 layout_mode = 2
@@ -365,15 +375,15 @@ texture = ExtResource("7_p74q5")
 stretch_mode = 2
 
 [node name="rid_logo" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer/PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 3.0
+size_flags_vertical = 8
 theme_type_variation = &"RIDMiniLogo"
 bbcode_enabled = true
 text = "rid_logo_name"
 scroll_active = false
+autowrap_mode = 0
 
 [node name="sprite_container" type="PanelContainer" parent="MainMenu/main_menu_paen/VBoxContainer"]
 clip_contents = true
@@ -427,7 +437,7 @@ parent = NodePath("../../../../..")
 audio = "main_menu_btn"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
-custom_minimum_size = Vector2(0, 6)
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 theme_type_variation = &"MainMenu6RTL"
 bbcode_enabled = true
@@ -435,7 +445,7 @@ text = "tm_label"
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
-custom_minimum_size = Vector2(0, 6)
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 theme_type_variation = &"MainMenu6RTL"
 bbcode_enabled = true
@@ -443,7 +453,7 @@ text = "rid_sub_name"
 scroll_active = false
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
-custom_minimum_size = Vector2(0, 6)
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 theme_type_variation = &"MainMenu6RTL"
 bbcode_enabled = true
@@ -451,7 +461,7 @@ text = "made_for"
 scroll_active = false
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="MainMenu/main_menu_paen/VBoxContainer"]
-custom_minimum_size = Vector2(0, 6)
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 theme_type_variation = &"MainMenu6RTL"
 bbcode_enabled = true
@@ -509,6 +519,7 @@ theme_override_constants/separation = 5
 [node name="sub_title" type="RichTextLabel" parent="PauseMenu/panel_background/VBoxContainer/pause_menu_tab_container/panel_1/VBoxContainer"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
+theme_type_variation = &"PauseSubTitle"
 bbcode_enabled = true
 text = "audio_sub_title"
 scroll_active = false
@@ -798,7 +809,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_type_variation = &"PauseTitle"
 bbcode_enabled = true
-text = "result_title"
+text = " "
 scroll_active = false
 
 [node name="result_text" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer"]
@@ -810,15 +821,18 @@ scroll_active = false
 custom_effects = [SubResource("RichTextEffect_jeuqn")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ResultScreen/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
 [node name="death_count_label" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 bbcode_enabled = true
 text = "result_death_count"
 scroll_active = false
+autowrap_mode = 0
 
 [node name="death_count" type="RichTextLabel" parent="ResultScreen/PanelContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -866,10 +880,10 @@ color = Color(0.122252, 0.122252, 0.122252, 1)
 [node name="loading_text" type="RichTextLabel" parent="LoadingScreen/loading_background"]
 custom_minimum_size = Vector2(48, 12)
 layout_mode = 1
-offset_left = 206.0
-offset_top = 142.0
-offset_right = 254.0
-offset_bottom = 154.0
+offset_left = 166.0
+offset_top = 139.0
+offset_right = 253.0
+offset_bottom = 152.0
 theme_type_variation = &"LoadingRichTextLabel"
 bbcode_enabled = true
 text = "Loading"
@@ -925,9 +939,11 @@ theme_override_constants/separation = 2
 [node name="dialogue_name" type="RichTextLabel" parent="Dialogue/DContainer/DVBox"]
 unique_name_in_owner = true
 process_mode = 3
+clip_contents = false
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
+theme_type_variation = &"DialogueTitle"
 bbcode_enabled = true
 text = "[ghost freq=5.0 span=10.0][shake]Death[/shake][/ghost]"
 scroll_active = false
@@ -942,7 +958,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 theme_type_variation = &"DialogueText"
 bbcode_enabled = true
-text = "fsdgsghsdgsdg"
 scroll_active = false
 custom_effects = [SubResource("RichTextEffect_kgduh")]
 visible_characters_behavior = 1
