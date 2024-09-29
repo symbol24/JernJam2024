@@ -15,6 +15,8 @@
 [resource]
 script = ExtResource("3_ip1gx")
 id = "fantasy_difficult"
+level_name = "fantasy"
+level_difficulty = "diff_difficult"
 character = ExtResource("1_fjyfj")
 rooms = Array[ExtResource("2_ywqob")]([ExtResource("8_8k4c8"), ExtResource("9_lpbl2")])
 shop_loot_table = ExtResource("11_8pkuu")

@@ -46,7 +46,7 @@ gamepad_start,Start - Pause
 gamepad_a,A - Interact/Buy
 gamepad_stick,Left Stick - Move
 result_text,"Congratulations! You have survived not dying. It appears [ghost][shake]Death[/shake][/ghost] was unable to kill you. As a reward, have my [rainbow]thanks[/rainbow] for playing."
-result_death_count,[right]Total Death Count:[/right]
+result_death_count,[right]Deaths:[/right]
 quit_button,Return to main menu
 rid_company_name,[center]Robots in Disguise[/center]
 warning1_title,[center]Warning[/center]
@@ -63,3 +63,11 @@ business_rad_only,Weak
 Thief,Hero
 thief_no_weapon,Meat
 businessman,Slave
+fantasy,Dungeon
+modern,City
+diff_normal,Normal
+diff_difficult,Difficult
+diff_rad,Rad only
+diff_extreme,Extreme
+Bksp,Bksp
+pbtn_text,Pause

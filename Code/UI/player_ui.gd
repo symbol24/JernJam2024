@@ -7,6 +7,10 @@ class_name PlayerUi extends SyControl
 @onready var player_name: RichTextLabel = %player_name
 @onready var player_weapons: GridContainer = %player_weapons
 @onready var player_trinkets: GridContainer = %player_trinkets
+@onready var level_name:RichTextLabel = %level_name
+@onready var level_difficulty:RichTextLabel = %level_difficulty
+@onready var enemy_level:RichTextLabel = %enemy_level
+@onready var room_count:RichTextLabel = %room_count
 
 var hearts:Array[SingleHeart] = []
 var weapons:Array[WeaponData] = []
@@ -24,6 +28,19 @@ func _ready() -> void:
 	Signals.UpdateUiWithWeapon.connect(_update_weapons)
 	Signals.UpdateUiWithTrinket.connect(_update_trinkets)
 	Signals.ResetPlayerUi.connect(_reset)
+	Signals.UpdateLevelData.connect(_update_level_data)
+	Signals.RoomEntered.connect(_update_enemy_level)
+
+
+func _update_level_data(_level:Level) -> void:
+	level_name.text = tr(_level.data.level_name)
+	level_difficulty.text = tr(_level.data.level_difficulty)
+
+
+func _update_enemy_level(_room_type:Room.Room_Type) -> void:
+	if _room_type == Room.Room_Type.COMBAT:
+		enemy_level.text = "[right]" + str(Game.active_level.enemy_spawner._get_enemy_level())
+		room_count.text = "[right]" + str(Game.active_level.enemy_spawner.room_count-1)
 
 
 func _construct_hp(_character:BaseCharacterData) -> void:

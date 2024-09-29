@@ -15,6 +15,8 @@
 [resource]
 script = ExtResource("3_las05")
 id = "modern_no_weapons"
+level_name = "modern"
+level_difficulty = "diff_extreme"
 character = ExtResource("1_m7naf")
 rooms = Array[ExtResource("2_4a7mh")]([ExtResource("7_5jjxa"), ExtResource("8_ut272")])
 shop_loot_table = ExtResource("10_pyp2p")

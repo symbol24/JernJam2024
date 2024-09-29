@@ -84,7 +84,7 @@ func play_audio(_audio_file:AudioFile = null) -> SAudioStreamPlayer:
 			
 		return new_player
 	else:
-		push_error("Pay_Audio is receiving a null value.")
+		push_warning("Pay_Audio is receiving a null value.")
 		return null
 
 

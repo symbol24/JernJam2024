@@ -1,5 +1,9 @@
 extends Node
 
+enum CONTROLS {
+			MOUSE_KEYBOARD = 0,
+			GAMEPAD = 1,
+			}
 
 const CAMERA_TRANSITION_TIME:float = 0.5
 
@@ -26,6 +30,25 @@ var load_complete := false
 var loading_status := 0.0
 var progress := []
 var extra_loading := false
+var current_controls:CONTROLS = CONTROLS.MOUSE_KEYBOARD:
+	set(value):
+		current_controls = value
+		Signals.ControlSwitch.emit(current_controls)
+var key_timer:SceneTreeTimer
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if current_controls == CONTROLS.GAMEPAD:
+			current_controls = CONTROLS.MOUSE_KEYBOARD
+	if event is InputEventMouse:
+		if current_controls == CONTROLS.GAMEPAD:
+			if key_timer == null:
+				key_timer = get_tree().create_timer(0.3)
+				if not key_timer.timeout.is_connected(_switch_to_keyboard):
+					key_timer.timeout.connect(_switch_to_keyboard)
+	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		if current_controls == CONTROLS.MOUSE_KEYBOARD:
+			current_controls = CONTROLS.GAMEPAD
 
 
 func _ready() -> void:
@@ -75,6 +98,23 @@ func parse_json_data(_json:String) -> Dictionary:
 	return result
 
 
+func pause_tree(_value:bool = false) -> void:
+	get_tree().paused = _value
+	#print(get_tree().paused)
+
+
+func get_character() -> SyCharacterBody2D:
+	if player != null: return player
+	else:
+		if active_level.data.character is CharacterData:
+			selected_data = active_level.data.character
+			player = load(active_level.data.character.path).instantiate() as SyCharacterBody2D
+			player.data = active_level.data.character.duplicate(true)
+		else: push_error("For some reasonm selected_data is not a character_data...")
+
+		return player
+
+
 func _load_level(_id:String = "") -> void:
 	#print("Trying to load level: ", _id)
 	pause_tree(true)
@@ -99,6 +139,7 @@ func _load_level(_id:String = "") -> void:
 	#print("Adding level as child")
 	#print(active_level.data.id)
 	add_child(active_level)
+	Signals.UpdateLevelData.emit(active_level)
 	
 
 
@@ -149,19 +190,8 @@ func _level_ready(_level:Level) -> void:
 		# Send loadscreen toggle off
 		Signals.ToggleControl.emit("loading", false)
 
+func _switch_to_keyboard() -> void:
+	if current_controls == CONTROLS.GAMEPAD:
+		current_controls = CONTROLS.MOUSE_KEYBOARD
 
-func pause_tree(_value:bool = false) -> void:
-	get_tree().paused = _value
-	#print(get_tree().paused)
-
-
-func get_character() -> SyCharacterBody2D:
-	if player != null: return player
-	else:
-		if active_level.data.character is CharacterData:
-			selected_data = active_level.data.character
-			player = load(active_level.data.character.path).instantiate() as SyCharacterBody2D
-			player.data = active_level.data.character.duplicate(true)
-		else: push_error("For some reasonm selected_data is not a character_data...")
-
-		return player
+	key_timer = null

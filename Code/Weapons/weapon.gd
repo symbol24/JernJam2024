@@ -52,11 +52,13 @@ func ready_weapon() -> void:
 
 func _start(_room_type:Room.Room_Type) -> void:
 	if _room_type == Room.Room_Type.COMBAT:
+		is_active = true
 		timer_active = true
 		_shoot_one_projectile()
 
 
 func _stop(_incase = null) -> void:
+	is_active = false
 	timer_active = false
 	timer = 0.0
 	shoot_timer_active = false
@@ -75,26 +77,27 @@ func _instantiate_projectile(_path:String) -> Projectile:
 
 
 func _shoot_one_projectile() -> void:
-	if shoot_count < data.projectile_count:
-		#print("Attempting to shoot a projectile")
-		var proj:Projectile = _get_projectile()
-		if data.remain_on_player:
-			parent.add_child(proj)
+	if is_active:
+		if shoot_count < data.projectile_count:
+			#print("Attempting to shoot a projectile")
+			var proj:Projectile = _get_projectile()
+			if data.remain_on_player:
+				parent.add_child(proj)
+			else:
+				Game.active_level.active_room.add_child(proj)
+			proj.name = data.id + "_" + str(shoot_count) + "_" + str(spawned_projectile_count)
+			var target = _get_target()
+			proj.set_projectile(data.duplicate(), parent, target)
+			targets.append(target)
+			proj.shoot()
+			Audio.play_audio(DataManager.get_audio_file(data.audio_file_name))
+			shoot_count += 1
+			spawned_projectile_count += 1
+			shoot_timer_active = true
 		else:
-			Game.active_level.active_room.add_child(proj)
-		proj.name = data.id + "_" + str(shoot_count) + "_" + str(spawned_projectile_count)
-		var target = _get_target()
-		proj.set_projectile(data.duplicate(), parent, target)
-		targets.append(target)
-		proj.shoot()
-		Audio.play_audio(DataManager.get_audio_file(data.audio_file_name))
-		shoot_count += 1
-		spawned_projectile_count += 1
-		shoot_timer_active = true
-	else:
-		targets.clear()
-		shoot_count = 0
-		timer_active = true
+			targets.clear()
+			shoot_count = 0
+			timer_active = true
 
 
 func _get_projectile() -> Projectile:

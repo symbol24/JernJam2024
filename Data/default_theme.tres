@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=24 format=3 uid="uid://juy4qenccfes"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://juy4qenccfes"]
 
 [ext_resource type="StyleBox" uid="uid://dv0f6aciuug2x" path="res://Data/StyleBoxes/Dbox_box_flat.tres" id="1_l8gjg"]
 [ext_resource type="Texture2D" uid="uid://b70kby8a1txjr" path="res://Textures/options_slider_normal.png" id="2_mghud"]
@@ -11,6 +11,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dixl2"]
 content_margin_left = 8.0
 content_margin_right = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e52ex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgtuy"]
 content_margin_left = 60.0
@@ -97,11 +99,11 @@ content_margin_left = 0.0
 [resource]
 Button/font_sizes/font_size = 5
 CharacterNameRTL/base_type = &"RichTextLabel"
-CharacterNameRTL/font_sizes/normal_font_size = 4
+CharacterNameRTL/font_sizes/normal_font_size = 3
 ClickContinue/base_type = &"RichTextLabel"
 ClickContinue/font_sizes/normal_font_size = 5
 CoinsRTL/base_type = &"RichTextLabel"
-CoinsRTL/font_sizes/normal_font_size = 7
+CoinsRTL/font_sizes/normal_font_size = 5
 ControlsRTL/base_type = &"RichTextLabel"
 ControlsRTL/font_sizes/normal_font_size = 4
 DialoguePanelContainer/base_type = &"PanelContainer"
@@ -124,6 +126,12 @@ HealCrit/colors/default_color = Color(0, 0.730016, 9.62615e-07, 1)
 HealCrit/font_sizes/normal_font_size = 16
 IconPanel/base_type = &"PanelContainer"
 IconPanel/styles/panel = SubResource("StyleBoxEmpty_dixl2")
+LevelData2RTL/base_type = &"RichTextLabel"
+LevelData2RTL/font_sizes/normal_font_size = 2
+LevelDataRTL/base_type = &"RichTextLabel"
+LevelDataRTL/font_sizes/normal_font_size = 4
+LevelPanel/base_type = &"PanelContainer"
+LevelPanel/styles/panel = SubResource("StyleBoxEmpty_e52ex")
 LoadingRichTextLabel/base_type = &"RichTextLabel"
 LoadingRichTextLabel/font_sizes/normal_font_size = 10
 Magical/base_type = &"RichTextLabel"
@@ -150,6 +158,8 @@ OptionsSlider/styles/grabber_area = SubResource("StyleBoxFlat_qblqw")
 OptionsSlider/styles/slider = SubResource("StyleBoxFlat_h5ua7")
 PanelSmallRTL/base_type = &"RichTextLabel"
 PanelSmallRTL/font_sizes/normal_font_size = 4
+PauseBtnKey/base_type = &"RichTextLabel"
+PauseBtnKey/font_sizes/normal_font_size = 3
 PauseMenuContainer/base_type = &"PanelContainer"
 PauseMenuContainer/styles/panel = SubResource("StyleBoxFlat_thiry")
 PauseMenuPanels/base_type = &"PanelContainer"
@@ -165,7 +175,7 @@ PhysicalCrit/base_type = &"RichTextLabel"
 PhysicalCrit/colors/default_color = Color(1, 0, 0, 1)
 PhysicalCrit/font_sizes/normal_font_size = 10
 PlayerLevelRTL/base_type = &"RichTextLabel"
-PlayerLevelRTL/font_sizes/normal_font_size = 8
+PlayerLevelRTL/font_sizes/normal_font_size = 6
 PopupSmallPanel/base_type = &"PanelContainer"
 PopupSmallPanel/styles/panel = SubResource("StyleBoxFlat_ysxqa")
 RIDMiniLogo/base_type = &"RichTextLabel"
@@ -175,7 +185,9 @@ RIDSplashRTL/base_type = &"RichTextLabel"
 RIDSplashRTL/font_sizes/normal_font_size = 16
 ResultPanel/base_type = &"PanelContainer"
 ResultPanel/styles/panel = SubResource("StyleBoxFlat_7jnrf")
-RichTextLabel/font_sizes/normal_font_size = 12
+ResultText/base_type = &"RichTextLabel"
+ResultText/font_sizes/normal_font_size = 6
+RichTextLabel/font_sizes/normal_font_size = 10
 ShopBuy/base_type = &"RichTextLabel"
 ShopBuy/font_sizes/normal_font_size = 6
 ShopItemPriceRTL/base_type = &"RichTextLabel"

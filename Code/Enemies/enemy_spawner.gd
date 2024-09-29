@@ -112,7 +112,7 @@ func _start_next_spawn_data(_room:Room.Room_Type) -> void:
 
 func _get_instantiated_enemy(_data:EnemyData, _list:Array[Enemy2D]) -> Enemy2D:
 	for enemy in _list:
-		if enemy.enemy_data.id == _data.id:
+		if enemy != null and enemy.enemy_data != null and enemy.enemy_data.id == _data.id:
 			return enemy.duplicate()
 	return null
 

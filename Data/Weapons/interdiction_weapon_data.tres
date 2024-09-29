@@ -14,13 +14,13 @@ target_type = 0
 level = 1
 level_json = "res://Data/Weapons/LevelData/interdiction_levels.json"
 trigger_delay = 6.0
-shoot_delay = 1.0
+shoot_delay = 0.0
 projectile_count = 1.0
 damages = Array[ExtResource("1_rwndn")]([ExtResource("2_3tpru")])
 projectile_life_time = 6.0
 projectile_scale = 1.0
 remain_on_player = true
-audio_file_name = "interdiction_appear"
+audio_file_name = ""
 extras = {
 "projectile_speed": 10.0
 }

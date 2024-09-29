@@ -14,8 +14,9 @@ script = ExtResource("1_4ykmo")
 hit_count = -1
 
 [node name="InterdictionSignSprite" parent="." instance=ExtResource("2_w4gxo")]
-position = Vector2(-6, -6)
+position = Vector2(-6, -36)
 
 [node name="attack_collider" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -30)
 shape = SubResource("CircleShape2D_x4110")
