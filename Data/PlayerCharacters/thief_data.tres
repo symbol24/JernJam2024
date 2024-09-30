@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_hrwsc")
 base_range = 1.0
-starting_weapon = "res://Data/Weapons/knife_data.tres"
+starting_weapon = "res://Data/Weapons/bubble_data.tres"
 character_sprite = "res://Scenes/PlayerCharacter/Sprites/thief_sprite.tscn"
 id = "Thief"
 path = "res://Scenes/PlayerCharacter/character.tscn"

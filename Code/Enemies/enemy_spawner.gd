@@ -186,5 +186,5 @@ func _get_spawn_point(_room:Room, _player:SyCharacterBody2D) -> Vector2:
 		result = Vector2(randi_range(SPAWN_AREA[0], SPAWN_AREA[1]), randi_range(SPAWN_AREA[2], SPAWN_AREA[3]))
 		if result.distance_squared_to(_room.to_local(_player.global_position)) > DISTANCE_MIN:
 			found = true
-	print("Enemy spawn pos: ", result)
+	#print("Enemy spawn pos: ", result)
 	return result

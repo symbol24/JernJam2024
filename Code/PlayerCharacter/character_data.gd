@@ -91,6 +91,7 @@ func receive_damage(_damages:Array[Damage]) -> void:
 		#print("Final damage: ",final_damage)
 		current_hp -= final_damage
 		Signals.DamageReceived.emit(data_owner, final_damage)
+		Signals.Shake.emit(0.2, 0.3)
 
 func add_weapon_data(_data:WeaponData) -> void:
 	weapons.append(_data)

@@ -40,7 +40,7 @@ is_contact_attack = true
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_1t84u")
 
-[node name="sprite" type="TileMapLayer" parent="."]
+[node name="sprite" type="TileMapLayer" parent="." groups=["enemy"]]
 position = Vector2(-6, 6)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 69, 0, 10, 0, 0, 0)
 tile_set = ExtResource("6_41cqk")

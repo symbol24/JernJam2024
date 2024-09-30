@@ -61,14 +61,14 @@ func _pop() -> void:
 	explosion.hide()
 	if prisoner != null:
 		remove_child.call_deferred(prisoner)
-		prisoner.data.receive_damage(get_damages())
+		Game.active_level.active_room.add_child.call_deferred(prisoner)
 		prisoner.set_deferred("is_prisoner", false)
 		prisoner.set_deferred("global_position", global_position)
-		prisoner = null
-	await get_tree().create_timer(0.2).timeout
+		prisoner.data.receive_damage.call_deferred(get_damages())
+	
+	prisoner = null
 	popping = false
 	_return_to_pool()
-
 
 
 func _body_entered(_body) -> void:
@@ -76,7 +76,7 @@ func _body_entered(_body) -> void:
 		prisoner = _body
 		prisoner.is_prisoner = true
 		collector_collider.set_deferred("disabled", true)
-		_body.get_parent().remove_child.call_deferred(_body)
+		Game.active_level.active_room.remove_child.call_deferred(_body)
 		add_child.call_deferred(_body)
 		prisoner.set_deferred("position", Vector2(6,6))
 

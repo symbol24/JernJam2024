@@ -50,6 +50,7 @@ signal ResetPlayerUi()
 signal SkipMainMenuMusic()
 signal UpdateLevelData(level:Level)
 signal ControlSwitch(type:Game.CONTROLS)
+signal Shake(time:float, strength:float)
 
 
 # Weapons 

@@ -24,7 +24,7 @@ enemy_data = ExtResource("2_h5hqb")
 
 [node name="MoveToTarget" parent="." instance=ExtResource("2_3kgy5")]
 
-[node name="move_collider" type="CollisionShape2D" parent="."]
+[node name="move_collider" type="CollisionShape2D" parent="." groups=["enemy"]]
 shape = SubResource("CapsuleShape2D_0d60q")
 
 [node name="hit_box" parent="." instance=ExtResource("3_metl4")]
