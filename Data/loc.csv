@@ -8,10 +8,12 @@ shop_bubble_desc,Weapon Bubble: Shoot bubbles to capture enemies and push them b
 shop_flail_desc,Weapon Flail: Hit enemies in an arc around you. Aims at the closest enemy if possible.
 shop_glasses_desc,"Trinket Shades: Look cool and stylish whit these [rainbow]RAD[/rainbow] shades! Oh and, something, something, critical bonuses."
 shop_heart_desc,[font size=7]Gain a [color=red]Heart[/color] permanantly.
-shop_knife_desc,[font size=5]Weapon Knives: Thow knives at enemies. Will target enemies in range.
+shop_knife_desc,[font size=5]Weapon Knives: Throw knives at enemies. Will target enemies in range.
 shop_level_desc,"Increase your character level by [color=green]1[/color]. Increases damage, movement speed, critical chance and critical damage."
 shop_protein_desc,[font size=5][color=a5320b][shake]PROTEIN[/shake]! GET YOUR MUSCLE ON AND DO MORE DAMAGE WITH PROTEIN!
 shop_tornado_desc,[font size=5]Weapon Tornados: Spawn tornados at random positions on the map that move towards you.
+shop_radiation_desc,[font size=5]Weapon Signs: [color=darkred]Interdiction[/color] signs spin around you.
+shop_interdiction_desc,Weapon Radiation: An area of [color=yellow]radiation[/color] around you deals damage to enemies
 fa_01,"Woah, woah, woah, woah, woah! What's going on here?"
 fa_02,Why are you not dead? What is the meaning of this?
 fa_03,Who are you anyways? You know what? I don't care. I'm just going to make sure this doesn't happen again.
@@ -26,7 +28,7 @@ tmd_01,[font size=8]Wuh... How? Who?
 tmd_02,Alright. Let's crank the [color=red]difficulty[/color] up again!
 tfra_01,[font size=8][shake]ARRGGH![/shake] WHAT IS THE MEANING OF THIS?!?!
 tfra_02,[font size=6]YOU SHALL KNOW THE [pulse]WRATH[/pulse] OF [shake][ghost]DEATH[/ghost][/shake]! ONE DOES NOT SIMPLY WALK INTO MY DOMAIN!
-tfra_03,"To the past. And let's make sur you can't do much! No Trinkets! No other weapons, Just the [color=yellow]Radiation[/color]!"
+tfra_03,"To the past. And let's make sure you can't do much! No Trinkets! No other weapons, Just the [color=yellow]Radiation[/color]!"
 tmnw_01,"HOW?! You have the worst weapon possible! OK! No more Mister Nice [ghost freq=5.0 span=10.0][shake]Death[/shake][/ghost]. No weapons, no chance!"
 dgu_01,"Please stop. No more. I give up. You win. I can't kill you. You can't die. Whatever is going on, I don't like it."
 dgu_02,Let's just call it quits and never speak of this ever again. Ok?

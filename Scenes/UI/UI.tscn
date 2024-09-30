@@ -218,7 +218,6 @@ script = ExtResource("1_lclfa")
 
 [node name="PlayerUI" type="Control" parent="."]
 process_mode = 3
-visible = false
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 3
 anchors_preset = 0
@@ -388,7 +387,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_vertical = 0
-theme_type_variation = &"LevelDataRTL"
+theme_type_variation = &"LevelData3RTL"
 bbcode_enabled = true
 text = "Extreme"
 scroll_active = false
@@ -999,6 +998,82 @@ scroll_active = false
 
 [node name="quit_btn" type="Button" parent="ResultScreen"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 140.0
+offset_right = -20.0
+offset_bottom = 160.0
+grow_horizontal = 0
+text = "quit_button"
+script = ExtResource("18_hpfpx")
+
+[node name="ResultScreen2" type="Control" parent="."]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_0vq87")
+id = "result_screen"
+
+[node name="PanelContainer" type="PanelContainer" parent="ResultScreen2"]
+clip_contents = true
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_type_variation = &"ResultPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultScreen2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="result_title" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_type_variation = &"PauseTitle"
+bbcode_enabled = true
+text = " "
+scroll_active = false
+
+[node name="result_text" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_type_variation = &"ResultText"
+bbcode_enabled = true
+text = "result_text"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_jeuqn")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultScreen2/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="death_count_label" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+bbcode_enabled = true
+text = "result_death_count"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="death_count" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0"
+scroll_active = false
+
+[node name="quit_btn" type="Button" parent="ResultScreen2"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 1
 anchors_preset = 1

@@ -33,7 +33,7 @@ enum State {
 @onready var sprite: TileMapLayer = %sprite
 @onready var dialogue_text:RichTextLabel = %dialogue_text
 
-var current_state:State = State.TEST
+var current_state:State = State.WAITING_FIRST_DEATH
 var normal_delay:float:
 	get:
 		return char_count * CHAR_DELAY
