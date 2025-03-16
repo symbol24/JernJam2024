@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioFile" load_steps=5 format=3 uid="uid://c1dceppey6tlo"]
 
 [ext_resource type="AudioStream" uid="uid://u06g36i6drrp" path="res://Audio/Music/Unknown Caverns.mp3" id="1_gvxpg"]
-[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_iains"]
+[ext_resource type="Script" uid="uid://ckvj6wia7478y" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_iains"]
 [ext_resource type="AudioStream" uid="uid://baie0rd2ttxsp" path="res://Audio/Music/Mushroom Tunnels.mp3" id="2_3ljm6"]
 [ext_resource type="AudioStream" uid="uid://x20dmk1q2er0" path="res://Audio/Music/Caustic.mp3" id="3_mecqj"]
 

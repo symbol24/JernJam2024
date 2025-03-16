@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SpawnerData" load_steps=5 format=3 uid="uid://rh3tbwip0c5y"]
 
-[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_utvsc"]
+[ext_resource type="Script" uid="uid://jt8lb7jscbai" path="res://Code/Enemies/enemy_data.gd" id="1_utvsc"]
 [ext_resource type="Resource" uid="uid://cukxq3euta5t1" path="res://Data/EnemyDatas/modern_osha_dude.tres" id="2_gko2e"]
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_ns3w6"]
+[ext_resource type="Script" uid="uid://byjfawgs0wch2" path="res://Code/Enemies/spawner_data.gd" id="2_ns3w6"]
 [ext_resource type="Resource" uid="uid://dojhn1gxr4fcl" path="res://Data/EnemyDatas/modern_skateboarder.tres" id="3_nt0t7"]
 
 [resource]

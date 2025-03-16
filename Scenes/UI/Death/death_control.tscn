@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfcsytalomisv"]
 
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_d5miy"]
-[ext_resource type="Script" path="res://Code/UI/Death/death_control.gd" id="1_sf86e"]
+[ext_resource type="Script" uid="uid://b7uje5v4q2ioq" path="res://Code/UI/Death/death_control.gd" id="1_sf86e"]
 
 [node name="DeathControl" type="Control"]
 custom_minimum_size = Vector2(96, 96)

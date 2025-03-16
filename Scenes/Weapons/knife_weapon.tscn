@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7l1yijpsrnor"]
 
-[ext_resource type="Script" path="res://Code/Weapons/knife_weapon.gd" id="1_gk5fd"]
+[ext_resource type="Script" uid="uid://c8dje817ldjfb" path="res://Code/Weapons/knife_weapon.gd" id="1_gk5fd"]
 [ext_resource type="Resource" uid="uid://c7qrmp72rq7pm" path="res://Data/Weapons/knife_data.tres" id="2_mvkv8"]
 
 [node name="Knife" type="Node2D"]

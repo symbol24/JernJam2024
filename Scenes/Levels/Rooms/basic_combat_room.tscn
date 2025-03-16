@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbfpn76hr5axp"]
 
-[ext_resource type="Script" path="res://Code/Levels/Room/combat_room.gd" id="1_06qjs"]
+[ext_resource type="Script" uid="uid://dvohjwjv1ivp2" path="res://Code/Levels/Room/combat_room.gd" id="1_06qjs"]
 [ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/Items/combat_room_walls.tscn" id="5_0l80u"]
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/Items/door.tscn" id="6_6nq3t"]
 [ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="9_o448a"]

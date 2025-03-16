@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b20c4fc2fo4ep"]
 
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_7s36f"]
-[ext_resource type="Script" path="res://Code/Pickups/coin_pickup.gd" id="1_355tl"]
+[ext_resource type="Script" uid="uid://b3jln0j41j6an" path="res://Code/Pickups/coin_pickup.gd" id="1_355tl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2oo4k"]
 radius = 7.07107

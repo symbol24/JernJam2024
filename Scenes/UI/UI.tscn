@@ -1,23 +1,23 @@
 [gd_scene load_steps=56 format=3 uid="uid://dje6x2hkvnjq1"]
 
-[ext_resource type="Script" path="res://Code/UI/ui.gd" id="1_lclfa"]
-[ext_resource type="Script" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
-[ext_resource type="Script" path="res://Code/UI/loading_screen.gd" id="3_0i6tk"]
-[ext_resource type="Script" path="res://Code/UI/dmg_nbr_manager.gd" id="3_b4g0i"]
-[ext_resource type="Shader" path="res://Code/Shaders/shaker.gdshader" id="3_c2m26"]
-[ext_resource type="Script" path="res://Code/UI/main_menu.gd" id="3_pl2yb"]
-[ext_resource type="Script" path="res://Code/UI/shake_rect.gd" id="4_77nsu"]
-[ext_resource type="Script" path="res://Code/UI/coin_label.gd" id="4_e82jq"]
+[ext_resource type="Script" uid="uid://bn5662wwm4ww" path="res://Code/UI/ui.gd" id="1_lclfa"]
+[ext_resource type="Script" uid="uid://dgiritkbu0u4o" path="res://Code/UI/player_ui.gd" id="2_c6sal"]
+[ext_resource type="Script" uid="uid://chwqfnvew8xe8" path="res://Code/UI/loading_screen.gd" id="3_0i6tk"]
+[ext_resource type="Script" uid="uid://beye2agwafi8b" path="res://Code/UI/dmg_nbr_manager.gd" id="3_b4g0i"]
+[ext_resource type="Shader" uid="uid://cr5qdva2qc2tl" path="res://Code/Shaders/shaker.gdshader" id="3_c2m26"]
+[ext_resource type="Script" uid="uid://dj6216c5ppl5p" path="res://Code/UI/main_menu.gd" id="3_pl2yb"]
+[ext_resource type="Script" uid="uid://dj441qyse0bu8" path="res://Code/UI/shake_rect.gd" id="4_77nsu"]
+[ext_resource type="Script" uid="uid://bevuw46c405h6" path="res://Code/UI/coin_label.gd" id="4_e82jq"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="4_tohl0"]
 [ext_resource type="Texture2D" uid="uid://bxi7uy2whs3y2" path="res://Textures/key_pause_btn.png" id="6_lxai6"]
 [ext_resource type="Texture2D" uid="uid://cptp5x57a7f8l" path="res://Textures/key_outline.png" id="6_v6fr3"]
-[ext_resource type="Script" path="res://Code/UI/pause_button_player_ui.gd" id="7_8il0r"]
+[ext_resource type="Script" uid="uid://dbdkewu0u0lpg" path="res://Code/UI/pause_button_player_ui.gd" id="7_8il0r"]
 [ext_resource type="Texture2D" uid="uid://dyw64as13xw4o" path="res://Textures/game_logo.png" id="7_m7c4y"]
 [ext_resource type="Texture2D" uid="uid://du6ly0y0w31d1" path="res://Textures/mini_rid_logo.png" id="7_p74q5"]
-[ext_resource type="Script" path="res://Code/UI/pause_menu.gd" id="8_fpcoo"]
-[ext_resource type="Script" path="res://Code/UI/main_menu_btn.gd" id="9_8t8tj"]
-[ext_resource type="Script" path="res://Code/UI/pause_menu_tab_containergd.gd" id="9_jufhb"]
-[ext_resource type="Script" path="res://Code/UI/dialogue.gd" id="9_qlctj"]
+[ext_resource type="Script" uid="uid://dnst5r5ifs3ej" path="res://Code/UI/pause_menu.gd" id="8_fpcoo"]
+[ext_resource type="Script" uid="uid://ddo8c2d53eqtl" path="res://Code/UI/main_menu_btn.gd" id="9_8t8tj"]
+[ext_resource type="Script" uid="uid://bs5wmmxb0mvki" path="res://Code/UI/pause_menu_tab_containergd.gd" id="9_jufhb"]
+[ext_resource type="Script" uid="uid://b63f34hphitmc" path="res://Code/UI/dialogue.gd" id="9_qlctj"]
 [ext_resource type="Texture2D" uid="uid://xpimgwn4nwt3" path="res://Textures/1player_btn.png" id="10_2dy1x"]
 [ext_resource type="Texture2D" uid="uid://cc30b0gb58ohy" path="res://Textures/menu_arrow.png" id="10_nekb5"]
 [ext_resource type="PackedScene" uid="uid://cfcsytalomisv" path="res://Scenes/UI/Death/death_control.tscn" id="10_qsm7g"]
@@ -25,15 +25,15 @@
 [ext_resource type="Texture2D" uid="uid://d2madieycdhqq" path="res://Textures/controls_kb.png" id="11_474ws"]
 [ext_resource type="Texture2D" uid="uid://oirixd8fsx3i" path="res://Textures/1player_btn_pressed.png" id="11_mpo85"]
 [ext_resource type="Texture2D" uid="uid://daxi3t3gab1ve" path="res://Textures/controls_gamepad.png" id="12_fneil"]
-[ext_resource type="Script" path="res://Code/UI/ghost_rte.gd" id="12_inxhk"]
-[ext_resource type="Script" path="res://Code/UI/Death/dialogue_skip_button.gd" id="13_b0qqa"]
-[ext_resource type="Script" path="res://Code/UI/popups.gd" id="13_mexdp"]
+[ext_resource type="Script" uid="uid://gv11w8mnmh0f" path="res://Code/UI/ghost_rte.gd" id="12_inxhk"]
+[ext_resource type="Script" uid="uid://byd2cmsmluia3" path="res://Code/UI/Death/dialogue_skip_button.gd" id="13_b0qqa"]
+[ext_resource type="Script" uid="uid://fbf1nt2uix2l" path="res://Code/UI/popups.gd" id="13_mexdp"]
 [ext_resource type="Texture2D" uid="uid://csl53wb184w83" path="res://Textures/gamepad_start.png" id="13_uuhbh"]
 [ext_resource type="Texture2D" uid="uid://b8tile151fjlm" path="res://Textures/gamepad_a.png" id="14_pxney"]
 [ext_resource type="Texture2D" uid="uid://dfcdmab8lje5w" path="res://Textures/gamepad_stick.png" id="15_0caxv"]
-[ext_resource type="Script" path="res://Code/UI/result_screen.gd" id="16_0vq87"]
-[ext_resource type="Script" path="res://Code/UI/quit_btn.gd" id="18_hpfpx"]
-[ext_resource type="Script" path="res://Code/UI/pause_menu_back_btn.gd" id="21_gb7g5"]
+[ext_resource type="Script" uid="uid://cpwp6vmom68b3" path="res://Code/UI/result_screen.gd" id="16_0vq87"]
+[ext_resource type="Script" uid="uid://dr05n0e8lqwll" path="res://Code/UI/quit_btn.gd" id="18_hpfpx"]
+[ext_resource type="Script" uid="uid://dxaxj5yxhqc52" path="res://Code/UI/pause_menu_back_btn.gd" id="21_gb7g5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a0ykv"]
 shader = ExtResource("3_c2m26")
@@ -106,9 +106,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tnnn7"]
 _data = {
-"RESET": SubResource("Animation_ojhg3"),
-"intro": SubResource("Animation_fd3rt"),
-"still": SubResource("Animation_uw4fe")
+&"RESET": SubResource("Animation_ojhg3"),
+&"intro": SubResource("Animation_fd3rt"),
+&"still": SubResource("Animation_uw4fe")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evtmp"]
@@ -541,7 +541,7 @@ frame = 37
 [node name="animator" type="AnimationPlayer" parent="MainMenu/main_menu_paen/VBoxContainer/sprite_container"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_tnnn7")
+&"": SubResource("AnimationLibrary_tnnn7")
 }
 
 [node name="btnContainer" type="PanelContainer" parent="MainMenu/main_menu_paen/VBoxContainer"]
@@ -998,82 +998,6 @@ scroll_active = false
 
 [node name="quit_btn" type="Button" parent="ResultScreen"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -120.0
-offset_top = 140.0
-offset_right = -20.0
-offset_bottom = 160.0
-grow_horizontal = 0
-text = "quit_button"
-script = ExtResource("18_hpfpx")
-
-[node name="ResultScreen2" type="Control" parent="."]
-visible = false
-clip_contents = true
-custom_minimum_size = Vector2(320, 180)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("16_0vq87")
-id = "result_screen"
-
-[node name="PanelContainer" type="PanelContainer" parent="ResultScreen2"]
-clip_contents = true
-custom_minimum_size = Vector2(320, 180)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_type_variation = &"ResultPanel"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ResultScreen2/PanelContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="result_title" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-theme_type_variation = &"PauseTitle"
-bbcode_enabled = true
-text = " "
-scroll_active = false
-
-[node name="result_text" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
-layout_mode = 2
-theme_type_variation = &"ResultText"
-bbcode_enabled = true
-text = "result_text"
-scroll_active = false
-custom_effects = [SubResource("RichTextEffect_jeuqn")]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ResultScreen2/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 2
-
-[node name="death_count_label" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-bbcode_enabled = true
-text = "result_death_count"
-scroll_active = false
-autowrap_mode = 0
-
-[node name="death_count" type="RichTextLabel" parent="ResultScreen2/PanelContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "0"
-scroll_active = false
-
-[node name="quit_btn" type="Button" parent="ResultScreen2"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 1
 anchors_preset = 1

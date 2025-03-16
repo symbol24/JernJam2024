@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://bxgpti0dew284"]
 
 [ext_resource type="AudioStream" uid="uid://b8f7dhkl4ed3" path="res://Audio/SFX/8bit-jump4.wav" id="1_fuuve"]
-[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_i0vs8"]
+[ext_resource type="Script" uid="uid://ckvj6wia7478y" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_i0vs8"]
 
 [resource]
 script = ExtResource("1_i0vs8")

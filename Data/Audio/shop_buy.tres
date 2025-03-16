@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://baq1rgml6evfn"]
 
-[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_3ifl5"]
+[ext_resource type="Script" uid="uid://ckvj6wia7478y" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_3ifl5"]
 [ext_resource type="AudioStream" uid="uid://q1y474b6aq1h" path="res://Audio/SFX/shop_buy.wav" id="1_23ets"]
 
 [resource]

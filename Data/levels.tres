@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelLoadData" load_steps=9 format=3 uid="uid://brknjpm4agl0x"]
 
-[ext_resource type="Script" path="res://Code/Levels/level_load_data.gd" id="1_botn8"]
-[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="1_gi0d8"]
+[ext_resource type="Script" uid="uid://dk336l5dctb6a" path="res://Code/Levels/level_load_data.gd" id="1_botn8"]
+[ext_resource type="Script" uid="uid://b55abkk7mnnt3" path="res://Code/Levels/level_data.gd" id="1_gi0d8"]
 [ext_resource type="Resource" uid="uid://4j1xd0j3ps7c" path="res://Data/Levels/Data/fantasy_normal.tres" id="2_w1d0c"]
 [ext_resource type="Resource" uid="uid://c0cw2ynl7rto1" path="res://Data/Levels/Data/fantasy_difficult.tres" id="3_ynxr4"]
 [ext_resource type="Resource" uid="uid://6md006xsnjxe" path="res://Data/Levels/Data/fantasy_rad_only.tres" id="4_4x0ot"]

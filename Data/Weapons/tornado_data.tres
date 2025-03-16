@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://csv8g5qpcfj0g"]
 
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_bbqv7"]
-[ext_resource type="Script" path="res://Code/Weapons/weapon_data.gd" id="2_1vgd4"]
+[ext_resource type="Script" uid="uid://dlrr47orwyrlc" path="res://Code/Utilities/damage.gd" id="1_bbqv7"]
+[ext_resource type="Script" uid="uid://bqiuoodfo1yui" path="res://Code/Weapons/weapon_data.gd" id="2_1vgd4"]
 [ext_resource type="Resource" uid="uid://8h31eyud0yjm" path="res://Data/Weapons/Damages/tornado_damage.tres" id="2_ngvx7"]
 
 [resource]

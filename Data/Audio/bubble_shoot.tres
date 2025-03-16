@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://djvxsj78ktdor"]
 
 [ext_resource type="AudioStream" uid="uid://cbfqo6s61y40k" path="res://Audio/SFX/bubble_shoot.wav" id="1_uqaut"]
-[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_vr4dv"]
+[ext_resource type="Script" uid="uid://ckvj6wia7478y" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_vr4dv"]
 
 [resource]
 script = ExtResource("1_vr4dv")

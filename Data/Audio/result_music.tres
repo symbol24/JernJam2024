@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioFile" load_steps=3 format=3 uid="uid://csluclicsvteo"]
 
 [ext_resource type="AudioStream" uid="uid://drsowy37h8m7r" path="res://Audio/Music/Sea of Life.mp3" id="1_d3k3h"]
-[ext_resource type="Script" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_x8nop"]
+[ext_resource type="Script" uid="uid://ckvj6wia7478y" path="res://addons/AudioBySymbol/Code/Audio/audio_file.gd" id="1_x8nop"]
 
 [resource]
 script = ExtResource("1_x8nop")
