@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LootTable" load_steps=12 format=3 uid="uid://cll8a80h43jud"]
 
 [ext_resource type="Resource" uid="uid://dunbwn7j5bmvc" path="res://Data/Shop/Datas/shop_heart_item.tres" id="1_3obpp"]
-[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="1_82d8d"]
+[ext_resource type="Script" uid="uid://rrtvpmi6cl0s" path="res://Code/Pickups/loot_table.gd" id="1_82d8d"]
 [ext_resource type="Resource" uid="uid://c1lkmnyw4um0o" path="res://Data/Shop/Datas/shop_level_item.tres" id="2_mhspk"]
 [ext_resource type="Resource" uid="uid://cmmn3mkevre7q" path="res://Data/Shop/Datas/shop_armor_data.tres" id="3_hcynx"]
 [ext_resource type="Resource" uid="uid://bd2ndwywnfgd" path="res://Data/Shop/Datas/shop_bandaid_data.tres" id="4_3mcei"]

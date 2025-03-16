@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://880t76r1g2ff"]
 
-[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_i0gbw"]
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_ll6ii"]
+[ext_resource type="Script" uid="uid://jt8lb7jscbai" path="res://Code/Enemies/enemy_data.gd" id="1_i0gbw"]
+[ext_resource type="Script" uid="uid://dlrr47orwyrlc" path="res://Code/Utilities/damage.gd" id="1_ll6ii"]
 [ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/fantasy_1_damage.tres" id="2_vjfl0"]
 [ext_resource type="Resource" uid="uid://b0cplhu3hhd3e" path="res://Data/EnemyDatas/LootTables/hobgoblin_loot_table.tres" id="3_vnjr1"]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://cu7ykjirtu055"]
 
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_uoip7"]
-[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="2_cpiga"]
+[ext_resource type="Script" uid="uid://dlrr47orwyrlc" path="res://Code/Utilities/damage.gd" id="1_uoip7"]
+[ext_resource type="Script" uid="uid://jt8lb7jscbai" path="res://Code/Enemies/enemy_data.gd" id="2_cpiga"]
 [ext_resource type="Resource" uid="uid://gsb7niwdfl58" path="res://Data/EnemyDatas/Damages/fantasy_1_damage.tres" id="2_sw8ir"]
 [ext_resource type="Resource" uid="uid://1pxdi0qlvc2i" path="res://Data/EnemyDatas/LootTables/fantasy_generic_loot_table.tres" id="3_d2xfc"]
 

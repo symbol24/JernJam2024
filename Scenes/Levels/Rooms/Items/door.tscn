@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://qynt00i0wcet"]
 
-[ext_resource type="Script" path="res://Code/Levels/Room/door.gd" id="1_xp003"]
+[ext_resource type="Script" uid="uid://cdbm4cti17fov" path="res://Code/Levels/Room/door.gd" id="1_xp003"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_tbvsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viaak"]

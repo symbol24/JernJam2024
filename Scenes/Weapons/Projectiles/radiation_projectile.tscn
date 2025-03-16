@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bseebu4tsl2bk"]
 
-[ext_resource type="Script" path="res://Code/Weapons/Projectiles/radiation_projectile.gd" id="1_0ttjr"]
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="2_3av8m"]
+[ext_resource type="Script" uid="uid://e24h02foq54a" path="res://Code/Weapons/Projectiles/radiation_projectile.gd" id="1_0ttjr"]
+[ext_resource type="Script" uid="uid://dlrr47orwyrlc" path="res://Code/Utilities/damage.gd" id="2_3av8m"]
 [ext_resource type="PackedScene" uid="uid://bo26nbr6ax0td" path="res://Scenes/Weapons/Projectiles/sprites/radiation_sprite.tscn" id="2_4v4ed"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vnmi4"]

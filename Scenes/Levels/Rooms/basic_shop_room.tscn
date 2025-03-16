@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://canufgnmperbq"]
 
-[ext_resource type="Script" path="res://Code/Levels/Room/shop_room.gd" id="1_0jjjp"]
+[ext_resource type="Script" uid="uid://ea78xvsis7ah" path="res://Code/Levels/Room/shop_room.gd" id="1_0jjjp"]
 [ext_resource type="PackedScene" uid="uid://bothidf3ksfk6" path="res://Scenes/Levels/Rooms/Items/combat_room_walls.tscn" id="2_cjcot"]
 [ext_resource type="PackedScene" uid="uid://dij4bor7a7cvm" path="res://Scenes/Utilities/camera_point.tscn" id="2_tpdd3"]
 [ext_resource type="PackedScene" uid="uid://qynt00i0wcet" path="res://Scenes/Levels/Rooms/Items/door.tscn" id="3_yg557"]
 [ext_resource type="PackedScene" uid="uid://qgaj15l1rw1a" path="res://Scenes/Shop/shop_keep.tscn" id="4_luu8o"]
-[ext_resource type="Script" path="res://Code/Shop/shop_builder.gd" id="6_d8cev"]
+[ext_resource type="Script" uid="uid://cne8vquejgjpd" path="res://Code/Shop/shop_builder.gd" id="6_d8cev"]
 
 [node name="BasicShopRoom" type="Node2D" node_paths=PackedStringArray("entrance_spawn_point", "camera_point") groups=["room"]]
 process_mode = 3

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ShopItemData" load_steps=3 format=3 uid="uid://k60b20jj4d0g"]
 
-[ext_resource type="Script" path="res://Code/Shop/shop_item_data.gd" id="1_ob7o0"]
+[ext_resource type="Script" uid="uid://bdwg8ledyndbt" path="res://Code/Shop/shop_item_data.gd" id="1_ob7o0"]
 [ext_resource type="Resource" uid="uid://kgf2br324vyw" path="res://Data/Trinkets/glasses_data.tres" id="2_jroko"]
 
 [resource]

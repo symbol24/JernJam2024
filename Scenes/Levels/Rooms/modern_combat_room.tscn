@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://dcxcnwnw3v0fx"]
 
-[ext_resource type="Script" path="res://Code/Levels/Room/combat_room.gd" id="1_tqqej"]
+[ext_resource type="Script" uid="uid://dvohjwjv1ivp2" path="res://Code/Levels/Room/combat_room.gd" id="1_tqqej"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_kx2wy"]
 [ext_resource type="PackedScene" uid="uid://dkxqbl3a8es1x" path="res://Scenes/Levels/Rooms/Items/modern_door.tscn" id="3_12785"]
 [ext_resource type="PackedScene" uid="uid://dhjjcf25kc2dn" path="res://Scenes/Utilities/spawn_point.tscn" id="4_821ut"]

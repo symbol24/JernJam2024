@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3 uid="uid://6md006xsnjxe"]
 
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="1_7oxmv"]
+[ext_resource type="Script" uid="uid://byjfawgs0wch2" path="res://Code/Enemies/spawner_data.gd" id="1_7oxmv"]
 [ext_resource type="Resource" uid="uid://bt1baafguntmi" path="res://Data/PlayerCharacters/business_rad_only.tres" id="1_up11m"]
-[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="2_nkigo"]
-[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="3_7xylg"]
+[ext_resource type="Script" uid="uid://b73jt6iqfj1uc" path="res://Code/Levels/Room/room_data.gd" id="2_nkigo"]
+[ext_resource type="Script" uid="uid://b55abkk7mnnt3" path="res://Code/Levels/level_data.gd" id="3_7xylg"]
 [ext_resource type="Resource" uid="uid://flndgt84b5b8" path="res://Data/Levels/FantasySpawns/fd_01.tres" id="3_v0tdc"]
 [ext_resource type="Resource" uid="uid://d4khmipql5m48" path="res://Data/Levels/ModernSpawns/md_02.tres" id="4_fyi3o"]
 [ext_resource type="Resource" uid="uid://wkx5i01hxykf" path="res://Data/Levels/ModernSpawns/md_01.tres" id="4_uvsas"]

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SpawnerData" load_steps=6 format=3 uid="uid://dc4v0p4luff6g"]
 
-[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_cn51p"]
+[ext_resource type="Script" uid="uid://jt8lb7jscbai" path="res://Code/Enemies/enemy_data.gd" id="1_cn51p"]
 [ext_resource type="Resource" uid="uid://ocpff3bk61dm" path="res://Data/EnemyDatas/fantasy_lizardman.tres" id="2_4ti0y"]
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_w8k8q"]
+[ext_resource type="Script" uid="uid://byjfawgs0wch2" path="res://Code/Enemies/spawner_data.gd" id="2_w8k8q"]
 [ext_resource type="Resource" uid="uid://cu7ykjirtu055" path="res://Data/EnemyDatas/fantasy_skeleton.tres" id="3_hh20r"]
 [ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/fantasy_goblin.tres" id="4_3ec1f"]
 

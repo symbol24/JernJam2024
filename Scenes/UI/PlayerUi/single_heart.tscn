@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8gsb32nju13x"]
 
-[ext_resource type="Script" path="res://Code/UI/PlayerUi/single_heart.gd" id="1_fwja0"]
+[ext_resource type="Script" uid="uid://cm68uudqyp6yf" path="res://Code/UI/PlayerUi/single_heart.gd" id="1_fwja0"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="2_weqn2"]
 
 [node name="single_heart" type="Control"]

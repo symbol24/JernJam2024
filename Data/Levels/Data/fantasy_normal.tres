@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3 uid="uid://4j1xd0j3ps7c"]
 
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="1_5ue2f"]
+[ext_resource type="Script" uid="uid://byjfawgs0wch2" path="res://Code/Enemies/spawner_data.gd" id="1_5ue2f"]
 [ext_resource type="Resource" uid="uid://dim20x1ui0ogu" path="res://Data/PlayerCharacters/thief_data.tres" id="1_ll2sl"]
-[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="2_qc5cs"]
+[ext_resource type="Script" uid="uid://b73jt6iqfj1uc" path="res://Code/Levels/Room/room_data.gd" id="2_qc5cs"]
 [ext_resource type="Resource" uid="uid://cpudhfbv4ej70" path="res://Data/Levels/FantasySpawns/fn_01.tres" id="3_x68ql"]
-[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="3_xj3wn"]
+[ext_resource type="Script" uid="uid://b55abkk7mnnt3" path="res://Code/Levels/level_data.gd" id="3_xj3wn"]
 [ext_resource type="Resource" uid="uid://c1yqro1r8t1cn" path="res://Data/Levels/FantasySpawns/fn_02.tres" id="4_t7dce"]
 [ext_resource type="Resource" uid="uid://dc4v0p4luff6g" path="res://Data/Levels/FantasySpawns/fn_03.tres" id="5_gg0e2"]
 [ext_resource type="Resource" uid="uid://dwvtrpfjkxae1" path="res://Data/Levels/FantasySpawns/fn_04.tres" id="6_bx6vv"]

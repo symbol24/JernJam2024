@@ -79,8 +79,6 @@ func play_audio(_audio_file:AudioFile = null) -> SAudioStreamPlayer:
 		new_player.name = _audio_file.id
 
 		if new_player: new_player.play()
-		#if _audio_file.is_music:
-			#print("Audio player received music ", _audio_file.id)
 			
 		return new_player
 	else:
@@ -123,6 +121,9 @@ func play_audio_3d(_audio_file:AudioFile = null, _position:Vector3 = Vector3.ZER
 	else:
 		push_error("Pay_Audio_3D is receiving a null value.")
 		return null
+
+
+
 
 
 # Resets the buses to the default values in the AudioData resource (see const above)

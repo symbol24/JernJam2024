@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://boumojacofakr"]
 
-[ext_resource type="Script" path="res://Code/PlayerCharacter/Actions/interact.gd" id="1_t3tsw"]
+[ext_resource type="Script" uid="uid://bpab20swsnabl" path="res://Code/PlayerCharacter/Actions/interact.gd" id="1_t3tsw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfggw"]
 radius = 4.0

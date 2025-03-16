@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddktr274fjwyv"]
 
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="1_fgym7"]
-[ext_resource type="Script" path="res://Code/Shop/shop_item.gd" id="1_fq0h4"]
+[ext_resource type="Script" uid="uid://ciye6mkqb53mx" path="res://Code/Shop/shop_item.gd" id="1_fq0h4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mkl5l"]
 resource_local_to_scene = true

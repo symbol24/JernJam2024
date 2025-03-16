@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://c7qrmp72rq7pm"]
 
-[ext_resource type="Script" path="res://Code/Utilities/damage.gd" id="1_br23g"]
+[ext_resource type="Script" uid="uid://dlrr47orwyrlc" path="res://Code/Utilities/damage.gd" id="1_br23g"]
 [ext_resource type="Resource" uid="uid://tq3gj2mgi01w" path="res://Data/Weapons/Damages/knife_damage.tres" id="2_v2aw1"]
-[ext_resource type="Script" path="res://Code/Weapons/weapon_data.gd" id="2_vbvjo"]
+[ext_resource type="Script" uid="uid://bqiuoodfo1yui" path="res://Code/Weapons/weapon_data.gd" id="2_vbvjo"]
 
 [resource]
 script = ExtResource("2_vbvjo")

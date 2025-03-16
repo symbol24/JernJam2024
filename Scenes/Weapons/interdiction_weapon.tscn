@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpqfikletujpy"]
 
-[ext_resource type="Script" path="res://Code/Weapons/interdiction_weapon.gd" id="1_6ar8q"]
+[ext_resource type="Script" uid="uid://c0us8as0l4m0n" path="res://Code/Weapons/interdiction_weapon.gd" id="1_6ar8q"]
 [ext_resource type="Resource" uid="uid://dco6wkole0igc" path="res://Data/Weapons/interdiction_weapon_data.tres" id="2_043j3"]
 
 [node name="InterdictionWeapon" type="Node2D"]

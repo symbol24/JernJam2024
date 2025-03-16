@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dor822g7j83h3"]
 
-[ext_resource type="Script" path="res://Code/Enemies/enemy_2d.gd" id="1_isuqq"]
+[ext_resource type="Script" uid="uid://bblxb13x3m0me" path="res://Code/Enemies/enemy_2d.gd" id="1_isuqq"]
 [ext_resource type="Resource" uid="uid://bgy605xjxu6e8" path="res://Data/EnemyDatas/fantasy_goblin.tres" id="2_0vajh"]
 [ext_resource type="PackedScene" uid="uid://b6j3eci3g5cfd" path="res://Scenes/Enemies/Actions/move_to_target.tscn" id="3_81o6t"]
 [ext_resource type="TileSet" uid="uid://db2msis1gxlja" path="res://Data/main_tileset.tres" id="3_r15ng"]

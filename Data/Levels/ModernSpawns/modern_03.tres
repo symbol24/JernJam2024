@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SpawnerData" load_steps=4 format=3 uid="uid://dlngsm21y3mlx"]
 
-[ext_resource type="Script" path="res://Code/Enemies/enemy_data.gd" id="1_hbslh"]
+[ext_resource type="Script" uid="uid://jt8lb7jscbai" path="res://Code/Enemies/enemy_data.gd" id="1_hbslh"]
 [ext_resource type="Resource" uid="uid://c286vaood2fsw" path="res://Data/EnemyDatas/modern_businessman.tres" id="2_b1p45"]
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="2_bee7o"]
+[ext_resource type="Script" uid="uid://byjfawgs0wch2" path="res://Code/Enemies/spawner_data.gd" id="2_bee7o"]
 
 [resource]
 script = ExtResource("2_bee7o")

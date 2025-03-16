@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cnm1crrb5j2pq"]
 
-[ext_resource type="Script" path="res://Code/Levels/boot.gd" id="1_s4dq5"]
+[ext_resource type="Script" uid="uid://buwsdlimneydq" path="res://Code/Levels/boot.gd" id="1_s4dq5"]
 [ext_resource type="Texture2D" uid="uid://cbafig1c8vkj2" path="res://Textures/godot_splash.png" id="2_gfo66"]
 [ext_resource type="Texture2D" uid="uid://capsx3xdft7di" path="res://Textures/rid_back.png" id="3_fs46x"]
 [ext_resource type="Texture2D" uid="uid://cn40xfb4bdh5c" path="res://Textures/rid_glasses_mustache.png" id="4_xn1qa"]
@@ -313,10 +313,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwu4b"]
 _data = {
-"RESET": SubResource("Animation_8c128"),
-"godot": SubResource("Animation_rtc7d"),
-"rid": SubResource("Animation_hup1e"),
-"warning1": SubResource("Animation_52ndn")
+&"RESET": SubResource("Animation_8c128"),
+&"godot": SubResource("Animation_rtc7d"),
+&"rid": SubResource("Animation_hup1e"),
+&"warning1": SubResource("Animation_52ndn")
 }
 
 [node name="Boot" type="Node2D"]
@@ -388,5 +388,5 @@ shortcut_keys_enabled = false
 [node name="animator" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_iwu4b")
+&"": SubResource("AnimationLibrary_iwu4b")
 }

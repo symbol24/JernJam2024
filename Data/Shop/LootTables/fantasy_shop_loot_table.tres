@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://bd2ndwywnfgd" path="res://Data/Shop/Datas/shop_bandaid_data.tres" id="8_fsr3x"]
 [ext_resource type="Resource" uid="uid://k60b20jj4d0g" path="res://Data/Shop/Datas/shop_glasses_data.tres" id="9_rmswn"]
 [ext_resource type="Resource" uid="uid://qgymam4aiju5" path="res://Data/Shop/Datas/shop_protein_data.tres" id="10_5ixt5"]
-[ext_resource type="Script" path="res://Code/Pickups/loot_table.gd" id="11_kopmb"]
+[ext_resource type="Script" uid="uid://rrtvpmi6cl0s" path="res://Code/Pickups/loot_table.gd" id="11_kopmb"]
 
 [resource]
 script = ExtResource("11_kopmb")

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3 uid="uid://bt0yp6a005whg"]
 
-[ext_resource type="Script" path="res://Code/Enemies/spawner_data.gd" id="1_82hws"]
+[ext_resource type="Script" uid="uid://byjfawgs0wch2" path="res://Code/Enemies/spawner_data.gd" id="1_82hws"]
 [ext_resource type="Resource" uid="uid://cohbtvh3vmjn5" path="res://Data/PlayerCharacters/busniessman_data.tres" id="1_ym4p8"]
-[ext_resource type="Script" path="res://Code/Levels/Room/room_data.gd" id="2_im3fa"]
-[ext_resource type="Script" path="res://Code/Levels/level_data.gd" id="3_g3nv6"]
+[ext_resource type="Script" uid="uid://b73jt6iqfj1uc" path="res://Code/Levels/Room/room_data.gd" id="2_im3fa"]
+[ext_resource type="Script" uid="uid://b55abkk7mnnt3" path="res://Code/Levels/level_data.gd" id="3_g3nv6"]
 [ext_resource type="Resource" uid="uid://bc7a8ck26jkbj" path="res://Data/Levels/ModernSpawns/modern_01.tres" id="3_gnhci"]
 [ext_resource type="Resource" uid="uid://d3sys0ugbn6as" path="res://Data/Levels/ModernSpawns/modern_02.tres" id="4_i6qxp"]
 [ext_resource type="Resource" uid="uid://dlngsm21y3mlx" path="res://Data/Levels/ModernSpawns/modern_03.tres" id="5_f2758"]

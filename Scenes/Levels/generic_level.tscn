@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://13uv80udl5ab"]
 
-[ext_resource type="Script" path="res://Code/Levels/level.gd" id="1_13tu7"]
-[ext_resource type="Script" path="res://Code/Utilities/level_camera.gd" id="1_i70fi"]
-[ext_resource type="Script" path="res://Code/Pickups/loot_spawner.gd" id="2_32u33"]
-[ext_resource type="Script" path="res://Code/Enemies/enemy_spawner.gd" id="3_innv4"]
-[ext_resource type="Script" path="res://Code/Levels/map_generator.gd" id="4_02n6l"]
+[ext_resource type="Script" uid="uid://c34lbhysgydwl" path="res://Code/Levels/level.gd" id="1_13tu7"]
+[ext_resource type="Script" uid="uid://cym056a1kjjy2" path="res://Code/Utilities/level_camera.gd" id="1_i70fi"]
+[ext_resource type="Script" uid="uid://6cfbdw7fw2fa" path="res://Code/Pickups/loot_spawner.gd" id="2_32u33"]
+[ext_resource type="Script" uid="uid://dusgemvdfy26e" path="res://Code/Enemies/enemy_spawner.gd" id="3_innv4"]
+[ext_resource type="Script" uid="uid://de806ooyiskdf" path="res://Code/Levels/map_generator.gd" id="4_02n6l"]
 
 [node name="GenericLevel" type="Node2D" node_paths=PackedStringArray("camera", "enemy_spawner")]
 z_index = -500
